@@ -21,11 +21,11 @@
  * @copyright  2016 Damyon Wiese <damyon@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-define(['jquery', 'core/event'], function($, Event) {
+define(['jquery', 'core/event'], function ($, Event) {
     return {
-        enhance: function(elementid) {
+        enhance : function (elementid) {
             var element = document.getElementById(elementid);
-            $(element).on(Event.Events.FORM_FIELD_VALIDATION, function(event, msg) {
+            $(element).on(Event.Events.FORM_FIELD_VALIDATION, function (event, msg) {
                 event.preventDefault();
                 var parent = $(element).closest('.form-group');
                 var feedback = parent.find('.form-control-feedback');
