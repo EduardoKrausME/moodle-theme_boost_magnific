@@ -53,7 +53,6 @@ if ($ADMIN->fulltree) {
     $choices = [];
     $choices['math-black'] = 'math-black';
     $choices['math-write'] = 'math-write';
-    $choices['students-black'] = 'students-black';
     $choices['users-black'] = 'users-black';
     $choices['users-write'] = 'users-write';
 
@@ -81,10 +80,4 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
     $settings->add($page);
-}
-
-$sthemeboostapreset = optional_param('s_theme_boosta_preset', false, PARAM_TEXT);
-if ($sthemeboostapreset) {
-    theme_reset_all_caches();
-    header("Location: {$CFG->wwwroot}/admin/settings.php?section=themesettingboosta&key=".time());
 }

@@ -68,7 +68,10 @@ body {
             border     : none;
         }
         .breadcrumb-nav {
-            display : none;
+            margin : 15px 21px 0;
+            a, span {
+                color : #FFFFFF;
+            }
         }
         input[type="submit"] {
             margin-top : 0;
@@ -100,21 +103,8 @@ body {
     &#page-user-profile,
     &#page-message-index {
         #page-header {
-            .page-context-header {
-                display : block;
-            }
-            h1 {
-                text-align  : center;
-                font-weight : 700;
-                font-size   : 60px;
-                padding     : 0;
-                line-height : 1.2em;
-            }
-            .breadcrumb {
+            .breadcrumb-nav {
                 display : none;
-                a {
-                    color : #FFFFFF;
-                }
             }
         }
     }
@@ -301,7 +291,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
 
 .navbar-light {
     //background    : #2196F3 url("[[pix:theme|bg_users]]") repeat 0 0;
-    background     : #0B7CD6 url("[[pix:theme|bg_users]]") repeat 0 0;
+    background    : #0B7CD6 url("[[pix:theme|bg_users]]") repeat 0 0;
     border-bottom : 0;
     box-shadow    : 0 2px 3px rgba(0, 0, 0, .2);
     a {
@@ -447,7 +437,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         &:focus, &:focus {
             .icon,
             .menu-action-text {
-                color : #4D4F50  !important;
+                color : #4D4F50 !important;
             }
         }
     }
