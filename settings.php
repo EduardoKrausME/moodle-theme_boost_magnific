@@ -23,7 +23,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
-    $settings = new theme_boosta_admin_settingspage_tabs('themesettingboosta', get_string('configtitle', 'theme_boosta'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingboosta', get_string('configtitle', 'theme_boosta'));
     $page = new admin_settingpage('theme_boosta_general', get_string('generalsettings', 'theme_boosta'));
 
     // Preset.

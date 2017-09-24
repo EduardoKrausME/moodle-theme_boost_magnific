@@ -25,10 +25,6 @@
 namespace theme_boosta\output\core;
 defined('MOODLE_INTERNAL') || die();
 
-use moodle_url;
-
-require_once($CFG->dirroot . '/' . $CFG->admin . '/renderer.php');
-
 /**
  * Admin renderer class.
  *
@@ -36,17 +32,6 @@ require_once($CFG->dirroot . '/' . $CFG->admin . '/renderer.php');
  * @copyright  2016 Frédéric Massart - FMCorz.net
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class admin_renderer extends \core_admin_renderer {
-
-    /**
-     * Output a warning message.
-     *
-     * @param string $message the message to display.
-     * @param string $type type class
-     * @return string HTML to output.
-     */
-    protected function warning($message, $type = 'warning') {
-        return $this->box($message, 'generalbox m-b-1 admin' . $type);
-    }
+class admin_renderer extends \theme_boost\output\core\admin_renderer {
 
 }

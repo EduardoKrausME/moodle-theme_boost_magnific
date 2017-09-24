@@ -25,7 +25,6 @@
 namespace theme_boosta\output\core_question;
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . '/' . $CFG->admin . '/renderer.php');
 
 /**
  * Question renderer class.
@@ -34,25 +33,6 @@ require_once($CFG->dirroot . '/' . $CFG->admin . '/renderer.php');
  * @copyright  2017 onwards Ankit Agarwal <ankit.agrr@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class bank_renderer extends \core_question_bank_renderer {
+class bank_renderer extends \theme_boost\output\core_question\bank_renderer {
 
-    /**
-     * Display additional navigation if needed.
-     *
-     * @return string
-     */
-    public function extra_horizontal_navigation() {
-        // Horizontal navigation for question bank.
-        if ($questionnode = $this->page->settingsnav->find("questionbank", \navigation_node::TYPE_CONTAINER)) {
-            if ($children = $questionnode->children) {
-                $tabs = [];
-                foreach ($children as $node) {
-                    $tabs[] = new \tabobject($node->key, $node->action, $node->text);
-                }
-                $active = $questionnode->find_active_node()->key;
-                return \html_writer::div(print_tabs([$tabs], $active, null, null, true), 'questionbank-navigation');
-            }
-        }
-        return '';
-    }
 }

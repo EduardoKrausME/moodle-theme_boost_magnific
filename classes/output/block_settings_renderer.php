@@ -25,9 +25,6 @@
 namespace theme_boosta\output;
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . '/blocks/settings/renderer.php');
-
-use moodle_url;
 
 /**
  * Overriden block settings renderer.
@@ -36,15 +33,6 @@ use moodle_url;
  * @copyright  2016 Frédéric Massart - FMCorz.net
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_settings_renderer extends \block_settings_renderer {
-
-    public function search_form(moodle_url $formtarget, $searchvalue) {
-        $data = [
-            'action' => $formtarget->out(false),
-            'label' => get_string('searchinsettings', 'admin'),
-            'searchvalue' => $searchvalue
-        ];
-        return $this->render_from_template('block_settings/search_form', $data);
-    }
+class block_settings_renderer extends \theme_boost\output\block_settings_renderer {
 
 }

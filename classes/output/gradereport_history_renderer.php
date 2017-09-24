@@ -25,8 +25,6 @@
 namespace theme_boosta\output;
 defined('MOODLE_INTERNAL') || die();
 
-use gradereport_history\output\user_button;
-
 /**
  * Overriden gradereport_history renderer.
  *
@@ -34,11 +32,6 @@ use gradereport_history\output\user_button;
  * @copyright  2016 Frédéric Massart - FMCorz.net
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class gradereport_history_renderer extends \gradereport_history\output\renderer {
-
-    public function render_user_button(user_button $button) {
-        $data = $button->export_for_template($this);
-        return $this->render_from_template('gradereport_history/user_button', $data);
-    }
+class gradereport_history_renderer extends \theme_boost\output\gradereport_history_renderer {
 
 }
