@@ -1,0 +1,94 @@
+body {
+    #page-header {
+        color      : #FFFFFF;
+        background : #988901 url("[[pix:theme|bg_users]]") repeat 0 -50px;
+    }
+}
+
+#nav-drawer {
+    .list-group-item {
+        color : rgba(0, 0, 0, .54);
+        i {
+            color : rgba(0, 0, 0, .54);
+        }
+        &:focus, &:hover {
+            color : rgba(0, 0, 0, .80);
+            i {
+                color : rgba(0, 0, 0, .80);
+            }
+        }
+        &.font-weight-bold {
+            color : #988901;
+        }
+        &.sidebar-heading div {
+            color : #B7BDC1;
+        }
+    }
+}
+
+body[rel^="page-admin-"] .menu-sitesettings {
+    color : #988901;
+}
+
+.navbar-light {
+    //background     : #988901 url("[[pix:theme|bg_users]]") repeat 0 0;
+    background : #857801 url("[[pix:theme|bg_users]]") repeat 0 0;
+    .navbar-toggler {
+        &::after,
+        .material-icons {
+            color : rgba(255, 255, 255, .7);
+            &:focus, &:focus {
+                color : #FFFFFF;
+            }
+        }
+    }
+}
+
+#nav-notification-popover-container,
+#nav-message-popover-container {
+    .icon {
+        color : rgba(255, 255, 255, .7);
+        &:focus, &:focus {
+            color : #FFFFFF;
+        }
+    }
+}
+
+/**
+ * Styling the dropdown menus.
+ */
+.usermenu {
+    .dropdown-toggle::after {
+        color : #FFFFFF;
+    }
+}
+
+.dropdown-menu,
+.popover-region-container {
+    color            : #373A3C;
+    background-color : #FFFFFF;
+    border           : 1px solid #E5E5E5;
+    box-shadow       : rgba(0, 0, 0, 0.1) 0 0 3px;
+    .dropdown-item {
+        .icon,
+        .menu-action-text {
+            color : rgba(0, 0, 0, .54) !important;
+        }
+        &:focus, &:focus {
+            .icon,
+            .menu-action-text {
+                color : #4D4F50 !important;
+            }
+        }
+    }
+}
+
+.calendar-controls {
+    .arrow_link {
+        background : #988901;
+        color      : #FFFFFF;
+    }
+    .current {
+        color : #988901 !important;
+    }
+}
