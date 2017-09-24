@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/EduardoKrausME/moodle-theme_boosta.svg?branch=master)](https://travis-ci.org/EduardoKrausME/moodle-theme_boosta)
