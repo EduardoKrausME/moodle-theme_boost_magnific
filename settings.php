@@ -33,12 +33,12 @@ if ($ADMIN->fulltree) {
     $default = 'blue';
 
     $choices = [];
-    $choices['blue'] = 'blue';
-    $choices['green'] = 'green';
-    $choices['black'] = 'black';
-    $choices['red'] = 'red';
-    $choices['yellow'] = 'yellow';
-    $choices['yellow2'] = 'yellow2';
+    $choices['blue'] = 'Blue';
+    $choices['green'] = 'Green';
+    $choices['black'] = 'Black';
+    $choices['red'] = 'Red';
+    $choices['yellow'] = 'Light yellow';
+    $choices['yellow2'] = 'Dark yellow';
 
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
