@@ -131,6 +131,7 @@ class core_renderer extends \core_renderer {
      *
      */
     public function edit_button(moodle_url $url) {
+        unset($url);
         return '';
     }
 
@@ -245,8 +246,6 @@ class core_renderer extends \core_renderer {
      * This renderer is needed to enable the Bootstrap style navigation.
      */
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG;
-
         $langs = get_string_manager()->get_list_of_translations();
         $haslangmenu = $this->lang_menu() != '';
 
@@ -325,6 +324,7 @@ class core_renderer extends \core_renderer {
      * @return string HTML fragment
      */
     protected function render_tabobject(tabobject $tab) {
+        unset($tab);
         throw new coding_exception('Tab objects should not be directly rendered.');
     }
 
@@ -336,6 +336,7 @@ class core_renderer extends \core_renderer {
      * @return string the HTML to be output.
      */
     public function block(block_contents $bc, $region) {
+        unset($region);
         $bc = clone($bc); // Avoid messing up the object passed in.
         if (empty($bc->blockinstanceid) || !strip_tags($bc->title)) {
             $bc->collapsible = block_contents::NOT_HIDEABLE;

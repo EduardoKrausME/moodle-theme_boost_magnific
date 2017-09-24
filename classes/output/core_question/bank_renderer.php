@@ -46,7 +46,7 @@ class bank_renderer extends \core_question_bank_renderer {
         if ($questionnode = $this->page->settingsnav->find("questionbank", \navigation_node::TYPE_CONTAINER)) {
             if ($children = $questionnode->children) {
                 $tabs = [];
-                foreach ($children as $key => $node) {
+                foreach ($children as $node) {
                     $tabs[] = new \tabobject($node->key, $node->action, $node->text);
                 }
                 $active = $questionnode->find_active_node()->key;

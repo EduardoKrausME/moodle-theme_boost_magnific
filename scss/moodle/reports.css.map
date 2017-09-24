@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAMA,mEAAoE,CAChE,OAAO,CAAE,YAAY,CACrB,MAAM,CAAE,KAAK,CAGjB,uFAAwF,CACpF,WAAW,CAAE,CAAC",
-"sources": ["reports.scss"],
-"names": [],
-"file": "reports.css"
-}

@@ -57,16 +57,16 @@ function theme_boosta_get_main_scss_content($theme) {
     $scss = '';
     $filename = !empty($theme->settings->preset) ? $theme->settings->preset : null;
 
-    $filePreset = "{$CFG->dirroot}/theme/boosta/scss/preset/{$filename}.scss";
-    if (file_exists($filePreset)) {
+    $filepreset = "{$CFG->dirroot}/theme/boosta/scss/preset/{$filename}.scss";
+    if (file_exists($filepreset)) {
         $scss .= file_get_contents("{$CFG->dirroot}/theme/boosta/scss/boosta.scss");
-        $scss .= file_get_contents($filePreset);
-    }else{
-        $scss .=  file_get_contents("{$CFG->dirroot}/theme/boosta/scss/boosta.scss");
+        $scss .= file_get_contents($filepreset);
+    } else {
+        $scss .= file_get_contents("{$CFG->dirroot}/theme/boosta/scss/boosta.scss");
     }
 
-    $newBg= "pix:theme|bg_{$theme->settings->background}";
-    $scss = str_replace('pix:theme|bg_users', $newBg, $scss);
+    $newbg= "pix:theme|bg_{$theme->settings->background}";
+    $scss = str_replace('pix:theme|bg_users', $newbg, $scss);
 
     return $scss;
 }

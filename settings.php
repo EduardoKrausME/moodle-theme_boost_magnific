@@ -61,15 +61,6 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    // Variable $body-color.
-    // We use an empty default value because the default colour should come from the preset.
-//    $name = 'theme_boosta/brandcolor';
-//    $title = get_string('brandcolor', 'theme_boosta');
-//    $description = get_string('brandcolor_desc', 'theme_boosta');
-//    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
-//    $setting->set_updatedcallback('theme_reset_all_caches');
-//    $page->add($setting);
-
 
     // Must add the page after definiting all the settings!
     $settings->add($page);
@@ -92,8 +83,8 @@ if ($ADMIN->fulltree) {
     $settings->add($page);
 }
 
-$s_theme_boosta_preset = optional_param('s_theme_boosta_preset', false, PARAM_TEXT);
-if ($s_theme_boosta_preset)  {
+$sthemeboostapreset = optional_param('s_theme_boosta_preset', false, PARAM_TEXT);
+if ($sthemeboostapreset) {
     theme_reset_all_caches();
     header("Location: {$CFG->wwwroot}/admin/settings.php?section=themesettingboosta&key=".time());
 }
