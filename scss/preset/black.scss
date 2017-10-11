@@ -14,7 +14,7 @@ body {
         &:focus, &:hover {
             color : rgba(0, 0, 0, .80);
             i {
-                 color : rgba(0, 0, 0, .80);
+                color : rgba(0, 0, 0, .80);
             }
         }
         &.font-weight-bold {
@@ -41,6 +41,9 @@ body[rel^="page-admin-"] .menu-sitesettings {
                 color : #FFFFFF;
             }
         }
+    }
+    .navbar-nav .nav-link {
+        color : rgba(255, 254, 254, 0.535);
     }
 }
 

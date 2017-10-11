@@ -1,7 +1,7 @@
 body {
     #page-header {
         color      : #FFFFFF;
-        background : #0076a3 url("[[pix:theme|bg_users]]") repeat 0 -50px;
+        background : #0076A3 url("[[pix:theme|bg_users]]") repeat 0 -50px;
     }
 }
 
@@ -14,11 +14,11 @@ body {
         &:focus, &:hover {
             color : rgba(0, 0, 0, .80);
             i {
-                 color : rgba(0, 0, 0, .80);
+                color : rgba(0, 0, 0, .80);
             }
         }
         &.font-weight-bold {
-            color : #0076a3;
+            color : #0076A3;
         }
         &.sidebar-heading div {
             color : #B7BDC1;
@@ -27,12 +27,12 @@ body {
 }
 
 body[rel^="page-admin-"] .menu-sitesettings {
-    color : #0076a3;
+    color : #0076A3;
 }
 
 .navbar-light {
     //background    : #0076a3 url("[[pix:theme|bg_users]]") repeat 0 0;
-    background : #00678E  url("[[pix:theme|bg_users]]") repeat 0 0;
+    background : #00678E url("[[pix:theme|bg_users]]") repeat 0 0;
     .navbar-toggler {
         &::after,
         .material-icons {
@@ -41,6 +41,9 @@ body[rel^="page-admin-"] .menu-sitesettings {
                 color : #FFFFFF;
             }
         }
+    }
+    .navbar-nav .nav-link {
+        color : rgba(255, 254, 254, 0.535);
     }
 }
 
@@ -85,10 +88,10 @@ body[rel^="page-admin-"] .menu-sitesettings {
 
 .calendar-controls {
     .arrow_link {
-        background : #0076a3;
+        background : #0076A3;
         color      : #FFFFFF;
     }
     .current {
-        color : #0076a3 !important;
+        color : #0076A3 !important;
     }
 }

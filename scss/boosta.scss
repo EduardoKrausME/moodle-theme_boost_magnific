@@ -52,6 +52,23 @@ $breadcrumb-padding-x : 0 !default;
 $breadcrumb-divider : "/" !default;
 $breadcrumb-divider-rtl : "/" !default;
 
+@mixin material-icon() {
+    font-family                   : 'Material Icons';
+    font-weight                   : normal;
+    font-style                    : normal;
+    font-size                     : 20px;
+    line-height                   : 1;
+    letter-spacing                : normal;
+    text-transform                : none;
+    display                       : inline-block;
+    white-space                   : nowrap;
+    word-wrap                     : normal;
+    direction                     : ltr;
+    -webkit-font-feature-settings : 'liga';
+    -webkit-font-smoothing        : antialiased;
+    float                         : left;
+}
+
 // Import everything.
 @import "moodle";
 
@@ -88,17 +105,17 @@ body {
         .dropdown .icon {
             color : #FFFFFF;
         }
-        
+
         .pull-xs-left,
         .page-header-headings {
             float : none !important;
         }
     }
-    
+
     &.drawer-open-left #page-header {
         background-position : -200px -50px;
     }
-    
+
     &.area-courses,
     &#page-user-profile,
     &#page-message-index {
@@ -215,16 +232,17 @@ body {
             .smallicon {
                 visibility : hidden;
             }
-            
+
             .icon::before {
+                @include material-icon();
                 content : 'class';
             }
-            
+
         }
         &.font-weight-bold {
             color : #2196F3;
         }
-        
+
         &.sidebar-heading div {
             color          : #B7BDC1;
             margin-top     : 9.375px !important;
@@ -235,14 +253,19 @@ body {
             letter-spacing : normal;
             line-height    : normal;
         }
-        
+
         .m-l-1 {
             margin-left : 0 !important;
             .icon::before {
+                @include material-icon();
                 content : 'school';
             }
         }
-        
+
+        .icon::before {
+            @include material-icon();
+        }
+
         &.menu-coursehome .icon::before {
             content : "school";
         }
@@ -302,6 +325,9 @@ body[rel^="page-admin-"] .menu-sitesettings {
         .nav-item + .nav-item {
             margin-left : $spacer * 2;
         }
+        .nav-item {
+            margin-top : 5px;
+        }
         .nav-link {
             font-size      : $font-size-sm;
             text-transform : uppercase;
@@ -330,7 +356,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
             background : transparent;
             border     : 0;
         }
-        
+
     }
     .navbar-brand {
         background-color : transparent;
@@ -339,7 +365,6 @@ body[rel^="page-admin-"] .menu-sitesettings {
         font-size        : 1.6rem;
         font-weight      : 700;
         padding-top      : 1px;
-        
         padding-left     : 0;
         padding-right    : 0;
         margin-right     : $spacer * 2;
@@ -367,6 +392,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         font-size  : 24px;
         color      : rgba(255, 255, 255, .7);
         transition : color 0.5s ease;
+        float      : none;
         &:focus, &:focus {
             color : #FFFFFF;
         }
@@ -375,12 +401,14 @@ body[rel^="page-admin-"] .menu-sitesettings {
 
 #nav-notification-popover-container {
     .icon::before {
+        @include material-icon();
         content : 'notifications';
     }
 }
 
 #nav-message-popover-container {
     .icon::before {
+        @include material-icon();
         content : 'chat';
     }
 }
@@ -517,24 +545,59 @@ body.drawer-open-right {
 }
 
 .icon {
-    font-family                   : 'Material Icons';
-    font-weight                   : normal;
-    font-style                    : normal;
-    font-size                     : 20px;
-    line-height                   : 1;
-    letter-spacing                : normal;
-    text-transform                : none;
-    display                       : inline-block;
-    white-space                   : nowrap;
-    word-wrap                     : normal;
-    direction                     : ltr;
-    -webkit-font-feature-settings : 'liga';
-    -webkit-font-smoothing        : antialiased;
-    float                         : left;
-    
-    &.fa::before {
-        content : 'label';
+    &.fa-tachometer,
+    &.fa-user,
+    &.fa-table,
+    &.fa-comment,
+    &.fa-wrench,
+    &.fa-wrench,
+    &.fa-cog,
+    &.fa-sign-out,
+    &.fa-user-secret,
+    &.fa-minus,
+    &.fa-eye,
+    &.fa-plus,
+    &.fa-eye-slash,
+    &.fa-pencil,
+    &.fa-question-circle,
+    &.fa-user-plus,
+    &.fa-users,
+    &.fa-unlock-alt,
+    &.fa-file-o,
+    &.fa-folder,
+    &.fa-folder-o,
+    &.fa-th,
+    &.fa-list,
+    &.fa-ellipsis-v,
+    &.fa-ellipsis-h,
+    &.fa-comment,
+    &.fa-download,
+    &.fa-refresh,
+    &.fa-circle-o-notch,
+    &.fa-info-circle,
+    &.fa-sort,
+    &.fa-search-plus,
+    &.fa-address-card,
+    &.fa-sort-asc,
+    &.fa-sort-desc,
+    &.fa-floppy-o,
+    &.fa-times,
+    &.fa-file-zip-o,
+    &.fa-level-up,
+    &.fa-share,
+    &.fa-arrow-left,
+    &.fa-arrow-right,
+    &.fa-trash,
+    &.fa-copy,
+    &.fa-user-circle,
+    &.fa-arrows-v,
+    &.fa-arrows,
+    &.fa-arrow-circle-up,
+    &.fa-calendar,
+    &.fa-exclamation-circle {
+        @include material-icon();
     }
+
     &.fa-tachometer::before {
         content : 'dashboard';
     }
@@ -673,25 +736,6 @@ body.drawer-open-right {
     &.fa-exclamation-circle::before {
         content : 'warning';
     }
-    &.aaaaa::before {
-        content : '';
-    }
-    &.aaaaa::before {
-        content : '';
-    }
-    &.aaaaa::before {
-        content : '';
-    }
-    &.aaaaa::before {
-        content : '';
-    }
-    &.aaaaa::before {
-        content : '';
-    }
-    &.aaaaa::before {
-        content : '';
-    }
-    
 }
 
 .calendar-controls {
