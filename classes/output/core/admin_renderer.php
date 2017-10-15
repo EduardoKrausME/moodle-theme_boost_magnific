@@ -17,8 +17,8 @@
 /**
  * Admin renderer.
  *
- * @package    theme_noanme
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @package    theme_boosta
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,8 +28,8 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Admin renderer class.
  *
- * @package    theme_noanme
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @package    theme_boosta
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class admin_renderer extends \theme_boost\output\core\admin_renderer {

@@ -18,7 +18,7 @@
  * Theme functions.
  *
  * @package    theme_boosta
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

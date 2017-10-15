@@ -17,8 +17,8 @@
 /**
  * Course renderer.
  *
- * @package    theme_noanme
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @package    theme_boosta
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,8 +28,8 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Course renderer class.
  *
- * @package    theme_noanme
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @package    theme_boosta
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class course_renderer extends \theme_boost\output\core\course_renderer {

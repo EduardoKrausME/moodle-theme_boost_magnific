@@ -19,7 +19,7 @@
  * Overriden core maintenance renderer.
  *
  * @package    theme_boosta
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
  * The maintenance renderer.
  *
  * @package    theme_boosta
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class core_renderer_maintenance extends \theme_boost\output\core_renderer_maintenance {

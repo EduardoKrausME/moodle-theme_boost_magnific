@@ -18,7 +18,7 @@
  * Overriden gradereport_history renderer.
  *
  * @package    theme_boosta
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
  * Overriden gradereport_history renderer.
  *
  * @package    theme_boosta
- * @copyright  2016 Frédéric Massart - FMCorz.net
+ * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class gradereport_history_renderer extends \theme_boost\output\gradereport_history_renderer {

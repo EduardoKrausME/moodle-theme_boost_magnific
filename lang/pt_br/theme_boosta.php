@@ -26,20 +26,20 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['configtitle'] = 'BoostA';
 $string['pluginname'] = 'BoostA';
-$string['advancedsettings'] = 'Advanced settings';
-$string['choosereadme'] = 'BoostA  is a modern highly-customisable theme. This theme is intended to be used directly, or as a parent theme when creating new themes utilising Bootstrap 4.';
-$string['currentinparentheses'] = '(current)';
+$string['advancedsettings'] = 'Configurações avançadas';
+$string['choosereadme'] = 'BoostA é um tema moderno e altamente personalizável. Este tema destina-se a ser usado diretamente ou como um tema pai ao criar novos temas utilizando o Bootstrap 4. ';
+$string['currentinparentheses'] = '(atual)';
 
-$string['generalsettings'] = 'General settings';
+$string['generalsettings'] = 'Configurações gerais';
 
 $string['preset'] = 'Theme preset';
-$string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.';
+$string['preset_desc'] = 'Escolha uma predefinição para mudar amplamente a aparência do tema.';
 
-$string['background'] = 'Theme background';
+$string['background'] = 'Fundo do tema';
 $string['background_desc'] = 'background';
 
 $string['rawscss'] = 'Raw SCSS';
-$string['rawscss_desc'] = 'Use this field to provide SCSS or CSS code which will be injected at the end of the style sheet.';
-$string['rawscsspre'] = 'Raw initial SCSS';
-$string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS code, it will be injected before everything else. Most of the time you will use this setting to define variables.';
-$string['region-side-pre'] = 'Right';
+$string['rawscss_desc'] = 'Use este campo para fornecer código SCSS ou CSS que será injetado no final da folha de estilos.';
+$string['rawscsspre'] = 'Raw SCSS inicial';
+$string['rawscsspre_desc'] = 'Neste campo você pode fornecer o código SCSI de inicialização, ele será injetado antes de tudo o resto. Na maioria das vezes, você usará esta configuração para definir variáveis. ';
+$string['region-side-pre'] = 'Direita';

@@ -86,7 +86,7 @@ body {
         }
         .breadcrumb-nav {
             margin : 15px 21px 0;
-            a, span {
+            a, span, li::before {
                 color : #FFFFFF;
             }
         }
