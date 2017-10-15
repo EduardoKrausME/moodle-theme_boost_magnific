@@ -65,8 +65,9 @@ function theme_boosta_get_main_scss_content($theme) {
         $scss .= file_get_contents("{$CFG->dirroot}/theme/boosta/scss/boosta.scss");
     }
 
-    if( !strlen ($theme->settings->background) )
+    if (!strlen($theme->settings->background)) {
         $theme->settings->background = 'math-black';
+    }
 
     $newbg = "pix:theme|bg_{$theme->settings->background}";
     $scss = str_replace('pix:theme|bg_users', $newbg, $scss);
