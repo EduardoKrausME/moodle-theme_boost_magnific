@@ -38,6 +38,9 @@ $string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.
 $string['background'] = 'Theme background';
 $string['background_desc'] = 'background';
 
+$string[ 'favicon' ]     = 'Favicon';
+$string[ 'favicondesc' ] = 'Change the favicon of the theme. A .png image with transparent background and 32px height will work best.';
+
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use this field to provide SCSS or CSS code which will be injected at the end of the style sheet.';
 $string['rawscsspre'] = 'Raw initial SCSS';

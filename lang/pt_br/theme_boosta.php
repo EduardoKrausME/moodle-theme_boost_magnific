@@ -38,6 +38,9 @@ $string['preset_desc'] = 'Escolha uma predefinição para mudar amplamente a apa
 $string['background'] = 'Fundo do tema';
 $string['background_desc'] = 'background';
 
+$string[ 'favicon' ]     = 'Favicon';
+$string[ 'favicondesc' ] = 'Alterar o favicon do tema. Uma imagem .png com fundo transparente e altura de 32px terá o melhor funcionamento.';
+
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use este campo para fornecer código SCSS ou CSS que será injetado no final da folha de estilos.';
 $string['rawscsspre'] = 'Raw SCSS inicial';

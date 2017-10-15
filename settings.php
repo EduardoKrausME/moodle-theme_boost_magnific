@@ -60,6 +60,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    $name = 'theme_boosta/favicon';
+    $title = get_string ( 'favicon', 'theme_boosta' );
+    $description = get_string ( 'favicondesc', 'theme_boosta' );
+    $setting = new admin_setting_configstoredfile( $name, $title, $description, 'favicon', 0,
+        array('maxfiles' => 1, 'accepted_types' => array('png', 'jpg', 'ico')));
+    $setting->set_updatedcallback ( 'theme_reset_all_caches' );
+    $page->add($setting);
+
 
     // Must add the page after definiting all the settings!
     $settings->add($page);
