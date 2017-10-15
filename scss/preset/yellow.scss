@@ -4,6 +4,18 @@ body {
         background : #FDD835 url("[[pix:theme|bg_users]]") repeat 0 -50px;
     }
 }
+#loginone-wrapper {
+    background: #FFFFFF url([[pix:theme|login-background-yellow]]) no-repeat fixed 50%;
+    .text-primary,
+    h2,
+    .login-icone i {
+        color: #FDD835 !important;
+    }
+    #loginbtn {
+        border: 1px solid #FDD835;
+        background-color: #FDD835;
+    }
+}
 
 #nav-drawer {
     .list-group-item {
