@@ -38,42 +38,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
 </head>
 
 <body {{{ bodyattributes }}}>
 
-<div id="page-wrapper">
+<div id="loginone-wrapper">
+    <div class="login-content text-center">
+        <div class="login-inner-wrapper-2">
+            <div class="mb-2">
+                <span class="login-icone"><i class="material-icons">school</i></span>
+            </div>
+            <div class="mb-3">
+                {{{ output.course_content_header }}}
+            </div>
+            {{{ output.main_content }}}
+
+            {{{ output.course_content_footer }}}
+        </div>
+    </div>
 
     {{{ output.standard_top_of_body_html }}}
 
-    <div id="page" class="container-fluid">
-        <div id="page-content" class="row">
-            <div id="region-main-box">
-                <section id="region-main" class="col-xs-12">
-                    {{{ output.course_content_header }}}
-                    {{{ output.main_content }}}
-                    {{{ output.course_content_footer }}}
-                </section>
-            </div>
-        </div>
-    </div>
 </div>
-<footer id="page-footer" class="p-y-1 bg-inverse">
-    <div class="container">
-        <div id="course-footer">{{{ output.course_footer }}}</div>
-
-        {{# output.page_doc_link }}
-            <p class="helplink">{{{ output.page_doc_link }}}</p>
-        {{/ output.page_doc_link }}
-
-        {{{ output.login_info }}}
-        {{{ output.home_link }}}
-        {{{ output.standard_footer_html }}}
-        {{{ output.standard_end_of_body_html }}}
-    </div>
-</footer>
 
 </body>
 </html>
