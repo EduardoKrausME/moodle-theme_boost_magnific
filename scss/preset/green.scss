@@ -4,7 +4,6 @@ body {
         background: #18817d url("[[pix:theme|bg_users]]") repeat 0 -50px;
     }
 }
-
 #loginone-wrapper {
     background: #ffffff url([[pix:theme|login-background-green]]) no-repeat fixed 50%;
     .text-primary,
@@ -17,14 +16,14 @@ body {
         background-color: #18817d;
     }
 }
-
 #nav-drawer {
     .list-group-item {
         color: rgba(0, 0, 0, .54);
         i {
             color: rgba(0, 0, 0, .54);
         }
-        &:focus, &:hover {
+        &:focus,
+        &:hover {
             color: rgba(0, 0, 0, .80);
             i {
                 color: rgba(0, 0, 0, .80);
@@ -38,11 +37,9 @@ body {
         }
     }
 }
-
 body[rel^="page-admin-"] .menu-sitesettings {
     color: #1b908b;
 }
-
 .navbar-light {
     //background    : #1b908b url("[[pix:theme|bg_users]]") repeat 0 0;
     background: #177c78 url("[[pix:theme|bg_users]]") repeat 0 0;
@@ -50,7 +47,8 @@ body[rel^="page-admin-"] .menu-sitesettings {
         &::after,
         .material-icons {
             color: rgba(255, 255, 255, .7);
-            &:focus, &:focus {
+            &:focus,
+            &:focus {
                 color: #ffffff;
             }
         }
@@ -59,17 +57,16 @@ body[rel^="page-admin-"] .menu-sitesettings {
         color: rgba(255, 254, 254, 0.535);
     }
 }
-
 #nav-notification-popover-container,
 #nav-message-popover-container {
     .icon {
         color: rgba(255, 255, 255, .7);
-        &:focus, &:focus {
+        &:focus,
+        &:focus {
             color: #ffffff;
         }
     }
 }
-
 /**
  * Styling the dropdown menus.
  */
@@ -78,7 +75,6 @@ body[rel^="page-admin-"] .menu-sitesettings {
         color: #ffffff;
     }
 }
-
 .dropdown-menu,
 .popover-region-container {
     color: #373a3c;
@@ -90,7 +86,8 @@ body[rel^="page-admin-"] .menu-sitesettings {
         .menu-action-text {
             color: rgba(0, 0, 0, .54) !important;
         }
-        &:focus, &:focus {
+        &:focus,
+        &:focus {
             .icon,
             .menu-action-text {
                 color: #4d4f50 !important;
@@ -98,7 +95,6 @@ body[rel^="page-admin-"] .menu-sitesettings {
         }
     }
 }
-
 .calendar-controls {
     .arrow_link {
         background: #1b908b;

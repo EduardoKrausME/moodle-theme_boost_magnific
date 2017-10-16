@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017101506;
+$plugin->version   = 2017101601;
 $plugin->requires  = 2016120505;
-$plugin->release = 'V1.4';
+$plugin->release = 'V1.5';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'theme_boosta';

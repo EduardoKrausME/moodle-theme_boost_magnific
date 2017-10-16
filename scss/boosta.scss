@@ -6,7 +6,7 @@ $gray-lighter: #eceeef !default;
 $gray-lightest: #f7f7f9 !default;
 $brand-primary: #2f7da8 !default;
 $brand-success: #77b300 !default;
-$brand-warning: #ff8800 !default;
+$brand-warning: #f80 !default;
 $brand-danger: #ff4136 !default;
 $brand-inverse: $gray-dark !default;
 $navbar-height: 50px !default;
@@ -58,14 +58,13 @@ $breadcrumb-divider-rtl: "/" !default;
     -webkit-font-smoothing: antialiased;
     float: left;
 }
-
 // Import everything.
 @import "moodle";
 body {
     #page-header {
         padding: 7px 0 18px 0;
         width: 100%;
-        color: #ffffff;
+        color: #fff;
         margin: 50px 0 -35px;
         background: #2196f3 url("[[pix:theme|bg_users]]") repeat 0 -50px;
         transition: background-position .5s ease;
@@ -78,7 +77,7 @@ body {
             a,
             span,
             li::before {
-                color: #ffffff;
+                color: #fff;
             }
         }
         input[type="submit"] {
@@ -94,7 +93,7 @@ body {
         }
         .dropdown,
         .dropdown .icon {
-            color: #ffffff;
+            color: #fff;
         }
         
         .pull-xs-left,
@@ -117,25 +116,21 @@ body {
         }
     }
 }
-
 /**
  * User picture.
  */
 .userpicture {
     border-radius: 50%;
 }
-
 /**
  * For background in content areas.
  */
 #page.container-fluid {
     padding: 0 (2 * $spacer);
 }
-
 #block-region-side-pre {
     padding-left: 0;
 }
-
 /**
  * Dashboard styling.
  */
@@ -146,7 +141,6 @@ body {
         padding: 0;
     }
 }
-
 /**
  * Blocks.
  */
@@ -158,7 +152,6 @@ body {
         text-transform: uppercase;
     }
 }
-
 /**
  * Navigation.
  */
@@ -168,25 +161,22 @@ body {
         margin: ($spacer/2) 0;
     }
 }
-
 /**
  * Form styles.
  */
 .form-group {
     margin-top: ($spacer/2);
 }
-
 .form-inline .form-group {
     margin-top: 0;
 }
-
 #nav-drawer {
     padding: 0;
-    background: #ffffff;
+    background: #fff;
     button[data-action=toggle-drawer] {
         border-color: transparent;
         background: transparent;
-        color: #ffffff;
+        color: #fff;
         width: 24px;
         padding: 0;
         margin: 0;
@@ -211,7 +201,8 @@ body {
             float: left;
             margin-right: 11px;
         }
-        &:focus, &:hover {
+        &:focus,
+        &:hover {
             color: rgba(0, 0, 0, .80);
             i {
                 color: rgba(0, 0, 0, .80);
@@ -296,12 +287,10 @@ body {
         }
     }
 }
-
 body[rel^="page-admin-"] .menu-sitesettings {
     font-weight: 700;
     color: #2196f3;
 }
-
 .navbar-light {
     //background    : #2196F3 url("[[pix:theme|bg_users]]") repeat 0 0;
     background: #0b7cd6 url("[[pix:theme|bg_users]]") repeat 0 0;
@@ -338,11 +327,13 @@ body[rel^="page-admin-"] .menu-sitesettings {
         .material-icons {
             font-size: 36px;
             color: rgba(255, 255, 255, .7);
-            &:focus, &:focus {
-                color: #ffffff;
+            &:focus,
+            &:focus {
+                color: #fff;
             }
         }
-        &:focus, &:focus {
+        &:focus,
+        &:focus {
             background: transparent;
             border: 0;
         }
@@ -351,7 +342,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
     .navbar-brand {
         background-color: transparent;
         font-family: Roboto;
-        color: #ffffff;
+        color: #fff;
         font-size: 1.6rem;
         font-weight: 700;
         padding-top: 1px;
@@ -359,7 +350,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         padding-right: 0;
         margin-right: $spacer * 2;
         @include hover-focus {
-            color: #ffffff;
+            color: #fff;
         }
         &.has-logo {
             color: $brand-primary;
@@ -370,11 +361,9 @@ body[rel^="page-admin-"] .menu-sitesettings {
         }
     }
 }
-
 #page.container-fluid {
     padding: 0 1rem;
 }
-
 #nav-notification-popover-container,
 #nav-message-popover-container {
     padding-top: 0;
@@ -383,26 +372,24 @@ body[rel^="page-admin-"] .menu-sitesettings {
         color: rgba(255, 255, 255, .7);
         transition: color 0.5s ease;
         float: none;
-        &:focus, &:focus {
-            color: #ffffff;
+        &:focus,
+        &:focus {
+            color: #fff;
         }
     }
 }
-
 #nav-notification-popover-container {
     .icon::before {
         @include material-icon();
         content: 'notifications';
     }
 }
-
 #nav-message-popover-container {
     .icon::before {
         @include material-icon();
         content: 'chat';
     }
 }
-
 /**
  * Styling the dropdown menus.
  */
@@ -412,16 +399,15 @@ body[rel^="page-admin-"] .menu-sitesettings {
         display: none;
     }
     .dropdown-toggle::after {
-        color: #ffffff;
+        color: #fff;
     }
 }
-
 .dropdown-menu,
 .popover-region-container {
     font-size: 14px;
     color: #373a3c;
     text-align: left;
-    background-color: #ffffff;
+    background-color: #fff;
     background-clip: padding-box;
     padding: 0.5rem 0;
     list-style: none;
@@ -452,7 +438,8 @@ body[rel^="page-admin-"] .menu-sitesettings {
         .menu-action-text {
             color: rgba(0, 0, 0, .54) !important;
         }
-        &:focus, &:focus {
+        &:focus,
+        &:focus {
             .icon,
             .menu-action-text {
                 color: #4d4f50 !important;
@@ -463,29 +450,23 @@ body[rel^="page-admin-"] .menu-sitesettings {
         display: none;
     }
 }
-
 .popover-region-toggle::before,
 .popover-region-toggle::after {
     bottom: -8px;
 }
-
 $drawer-width: 200px;
 #nav-drawer.closed {
     left: -($drawer-width + $drawer-offscreen-gutter);
 }
-
 #nav-drawer {
     width: $drawer-width;
 }
-
 body.drawer-open-left {
     margin-left: $drawer-width;
 }
-
 body.drawer-open-right {
     margin-right: $drawer-width;
 }
-
 .alert {
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
@@ -512,10 +493,19 @@ body.drawer-open-right {
         color: #dc1a0c;
     }
 }
-
 @media (max-width: 600px) {
-    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
-    .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12 {
         float: none;
         width: 100%;
     }
@@ -533,7 +523,6 @@ body.drawer-open-right {
         }
     }
 }
-
 .icon {
     &.fa-tachometer,
     &.fa-user,
@@ -727,7 +716,6 @@ body.drawer-open-right {
         content: 'warning';
     }
 }
-
 .calendar-controls {
     .arrow_link {
         display: inline-block;
@@ -741,7 +729,7 @@ body.drawer-open-right {
         user-select: none;
         border: 1px solid transparent;
         background: #2196f3;
-        color: #ffffff;
+        color: #fff;
         box-sizing: border-box;
         margin: 0;
         font-size: 1em;
@@ -765,19 +753,16 @@ body.drawer-open-right {
         color: #2196f3 !important;
     }
 }
-
 .calendar_event_group i {
     font-size: 18px;
     line-height: 0.8;
 }
-
 #page-footer {
     .helplink,
     [href*="download.moodle.org/mobile"] {
         display: none;
     }
 }
-
 .coursebox {
     .content {
         display: flex;
@@ -803,5 +788,4 @@ body.drawer-open-right {
         }
     }
 }
-
 @import "login";
