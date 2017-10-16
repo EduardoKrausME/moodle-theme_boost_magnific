@@ -1,13 +1,13 @@
 // Colors
-$gray-dark: #373A3C !default;
-$gray: #55595C !default;
-$gray-light: #818A91 !default;
-$gray-lighter: #ECEEEF !default;
-$gray-lightest: #F7F7F9 !default;
-$brand-primary: #2F7DA8 !default;
-$brand-success: #77B300 !default;
-$brand-warning: #FF8800 !default;
-$brand-danger: #FF4136 !default;
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #818a91 !default;
+$gray-lighter: #eceeef !default;
+$gray-lightest: #f7f7f9 !default;
+$brand-primary: #2f7da8 !default;
+$brand-success: #77b300 !default;
+$brand-warning: #ff8800 !default;
+$brand-danger: #ff4136 !default;
 $brand-inverse: $gray-dark !default;
 $navbar-height: 50px !default;
 // Spacing
@@ -16,19 +16,19 @@ $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
 // Body
-$body-bg: #F4F4F4 !default;
-$body-color: #3A3A3A !default;
+$body-bg: #f4f4f4 !default;
+$body-color: #3a3a3a !default;
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
 $font-size-root: 14px !default;
 // Tables
 $table-bg: transparent !default;
-$table-bg-accent: #FAFAFA !default;
+$table-bg-accent: #fafafa !default;
 $table-bg-hover: lighten($brand-primary, 55%) !default;
 $table-bg-active: $table-bg-hover !default;
-$table-border-color: #F4F4F4 !default;
+$table-border-color: #f4f4f4 !default;
 // Dropdowns
-$dropdown-border-color: #E2E2E2 !default;
+$dropdown-border-color: #e2e2e2 !default;
 $dropdown-link-color: rgba(0, 0, 0, .535) !default;
 // Navbar
 $navbar-light-color: rgba(0, 0, 0, .535) !default;
@@ -58,15 +58,16 @@ $breadcrumb-divider-rtl: "/" !default;
     -webkit-font-smoothing: antialiased;
     float: left;
 }
+
 // Import everything.
 @import "moodle";
 body {
     #page-header {
         padding: 7px 0 18px 0;
         width: 100%;
-        color: #FFFFFF;
+        color: #ffffff;
         margin: 50px 0 -35px;
-        background: #2196F3 url("[[pix:theme|bg_users]]") repeat 0 -50px;
+        background: #2196f3 url("[[pix:theme|bg_users]]") repeat 0 -50px;
         transition: background-position .5s ease;
         .card {
             background: transparent;
@@ -77,7 +78,7 @@ body {
             a,
             span,
             li::before {
-                color: #FFFFFF;
+                color: #ffffff;
             }
         }
         input[type="submit"] {
@@ -93,7 +94,7 @@ body {
         }
         .dropdown,
         .dropdown .icon {
-            color: #FFFFFF;
+            color: #ffffff;
         }
         
         .pull-xs-left,
@@ -116,21 +117,25 @@ body {
         }
     }
 }
+
 /**
  * User picture.
  */
 .userpicture {
     border-radius: 50%;
 }
+
 /**
  * For background in content areas.
  */
 #page.container-fluid {
     padding: 0 (2 * $spacer);
 }
+
 #block-region-side-pre {
     padding-left: 0;
 }
+
 /**
  * Dashboard styling.
  */
@@ -141,6 +146,7 @@ body {
         padding: 0;
     }
 }
+
 /**
  * Blocks.
  */
@@ -152,6 +158,7 @@ body {
         text-transform: uppercase;
     }
 }
+
 /**
  * Navigation.
  */
@@ -161,22 +168,25 @@ body {
         margin: ($spacer/2) 0;
     }
 }
+
 /**
  * Form styles.
  */
 .form-group {
     margin-top: ($spacer/2);
 }
+
 .form-inline .form-group {
     margin-top: 0;
 }
+
 #nav-drawer {
     padding: 0;
-    background: #FFFFFF;
+    background: #ffffff;
     button[data-action=toggle-drawer] {
         border-color: transparent;
         background: transparent;
-        color: #FFFFFF;
+        color: #ffffff;
         width: 24px;
         padding: 0;
         margin: 0;
@@ -220,11 +230,11 @@ body {
             
         }
         &.font-weight-bold {
-            color: #2196F3;
+            color: #2196f3;
         }
         
         &.sidebar-heading div {
-            color: #B7BDC1;
+            color: #b7bdc1;
             margin-top: 9.375px !important;
             font-weight: 500;
             font-size: .9rem;
@@ -286,13 +296,15 @@ body {
         }
     }
 }
+
 body[rel^="page-admin-"] .menu-sitesettings {
     font-weight: 700;
-    color: #2196F3;
+    color: #2196f3;
 }
+
 .navbar-light {
     //background    : #2196F3 url("[[pix:theme|bg_users]]") repeat 0 0;
-    background: #0B7CD6 url("[[pix:theme|bg_users]]") repeat 0 0;
+    background: #0b7cd6 url("[[pix:theme|bg_users]]") repeat 0 0;
     border-bottom: 0;
     box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
     a {
@@ -327,7 +339,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
             font-size: 36px;
             color: rgba(255, 255, 255, .7);
             &:focus, &:focus {
-                color: #FFFFFF;
+                color: #ffffff;
             }
         }
         &:focus, &:focus {
@@ -339,7 +351,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
     .navbar-brand {
         background-color: transparent;
         font-family: Roboto;
-        color: #FFFFFF;
+        color: #ffffff;
         font-size: 1.6rem;
         font-weight: 700;
         padding-top: 1px;
@@ -347,7 +359,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         padding-right: 0;
         margin-right: $spacer * 2;
         @include hover-focus {
-            color: #FFFFFF;
+            color: #ffffff;
         }
         &.has-logo {
             color: $brand-primary;
@@ -358,9 +370,11 @@ body[rel^="page-admin-"] .menu-sitesettings {
         }
     }
 }
+
 #page.container-fluid {
     padding: 0 1rem;
 }
+
 #nav-notification-popover-container,
 #nav-message-popover-container {
     padding-top: 0;
@@ -370,22 +384,25 @@ body[rel^="page-admin-"] .menu-sitesettings {
         transition: color 0.5s ease;
         float: none;
         &:focus, &:focus {
-            color: #FFFFFF;
+            color: #ffffff;
         }
     }
 }
+
 #nav-notification-popover-container {
     .icon::before {
         @include material-icon();
         content: 'notifications';
     }
 }
+
 #nav-message-popover-container {
     .icon::before {
         @include material-icon();
         content: 'chat';
     }
 }
+
 /**
  * Styling the dropdown menus.
  */
@@ -395,19 +412,20 @@ body[rel^="page-admin-"] .menu-sitesettings {
         display: none;
     }
     .dropdown-toggle::after {
-        color: #FFFFFF;
+        color: #ffffff;
     }
 }
+
 .dropdown-menu,
 .popover-region-container {
     font-size: 14px;
-    color: #373A3C;
+    color: #373a3c;
     text-align: left;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     background-clip: padding-box;
     padding: 0.5rem 0;
     list-style: none;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
     border-image: initial;
     border-radius: 0.25rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px;
@@ -437,7 +455,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         &:focus, &:focus {
             .icon,
             .menu-action-text {
-                color: #4D4F50 !important;
+                color: #4d4f50 !important;
             }
         }
     }
@@ -445,49 +463,56 @@ body[rel^="page-admin-"] .menu-sitesettings {
         display: none;
     }
 }
+
 .popover-region-toggle::before,
 .popover-region-toggle::after {
     bottom: -8px;
 }
+
 $drawer-width: 200px;
 #nav-drawer.closed {
     left: -($drawer-width + $drawer-offscreen-gutter);
 }
+
 #nav-drawer {
     width: $drawer-width;
 }
+
 body.drawer-open-left {
     margin-left: $drawer-width;
 }
+
 body.drawer-open-right {
     margin-right: $drawer-width;
 }
+
 .alert {
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
     &.alert-success {
-        background-color: #E2F2E2;
-        border-color: #E2F2E2;
-        color: #459A49;
+        background-color: #e2f2e2;
+        border-color: #e2f2e2;
+        color: #459a49;
     }
     &.alert-info {
-        background-color: #E3F2FD;
-        border-color: #E3F2FD;
-        color: #31708F;
+        background-color: #e3f2fd;
+        border-color: #e3f2fd;
+        color: #31708f;
     }
     &.alert-warning {
-        background-color: #FFF6E8;
-        border-color: #FFF6E8;
-        color: #E38700;
+        background-color: #fff6e8;
+        border-color: #fff6e8;
+        color: #e38700;
     }
     &.alert-danger {
-        background-color: #FEEFEE;
-        border-color: #FEEFEE;
-        color: #DC1A0C;
+        background-color: #feefee;
+        border-color: #feefee;
+        color: #dc1a0c;
     }
 }
+
 @media (max-width: 600px) {
     .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
     .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
@@ -508,6 +533,7 @@ body.drawer-open-right {
         }
     }
 }
+
 .icon {
     &.fa-tachometer,
     &.fa-user,
@@ -701,6 +727,7 @@ body.drawer-open-right {
         content: 'warning';
     }
 }
+
 .calendar-controls {
     .arrow_link {
         display: inline-block;
@@ -713,8 +740,8 @@ body.drawer-open-right {
         -ms-user-select: none;
         user-select: none;
         border: 1px solid transparent;
-        background: #2196F3;
-        color: #FFFFFF;
+        background: #2196f3;
+        color: #ffffff;
         box-sizing: border-box;
         margin: 0;
         font-size: 1em;
@@ -735,19 +762,22 @@ body.drawer-open-right {
     }
     .current {
         font-size: 24px !important;
-        color: #2196F3 !important;
+        color: #2196f3 !important;
     }
 }
+
 .calendar_event_group i {
     font-size: 18px;
     line-height: 0.8;
 }
+
 #page-footer {
     .helplink,
     [href*="download.moodle.org/mobile"] {
         display: none;
     }
 }
+
 .coursebox {
     .content {
         display: flex;
@@ -773,4 +803,5 @@ body.drawer-open-right {
         }
     }
 }
+
 @import "login";
