@@ -21,7 +21,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Rendering of files viewer related widgets.
  * @package   theme_boosta
- * @copyright 2016 Damyon Wiese
+ * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class files_renderer extends \theme_boost\output\core\files_renderer {

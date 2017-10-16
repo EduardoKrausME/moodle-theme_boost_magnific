@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Boosta config.
+ * BoostA config.
  *
  * @package   theme_boosta
  * @copyright 2017 Eduardo Kraus

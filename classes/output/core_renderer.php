@@ -26,6 +26,9 @@ defined('MOODLE_INTERNAL') || die;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class core_renderer extends \theme_boost\output\core_renderer {
+    /**
+     * @return string
+     */
     public function favicon() {
         return $this->page->theme->setting_file_url('favicon', 'favicon');
     }

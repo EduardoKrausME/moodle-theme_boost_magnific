@@ -4,54 +4,44 @@ $gray: #55595C !default;
 $gray-light: #818A91 !default;
 $gray-lighter: #ECEEEF !default;
 $gray-lightest: #F7F7F9 !default;
-
 $brand-primary: #2F7DA8 !default;
 $brand-success: #77B300 !default;
 $brand-warning: #FF8800 !default;
 $brand-danger: #FF4136 !default;
 $brand-inverse: $gray-dark !default;
 $navbar-height: 50px !default;
-
 // Spacing
 $spacer: 1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
-
 // Body
 $body-bg: #F4F4F4 !default;
 $body-color: #3A3A3A !default;
-
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
 $font-size-root: 14px !default;
-
 // Tables
 $table-bg: transparent !default;
 $table-bg-accent: #FAFAFA !default;
 $table-bg-hover: lighten($brand-primary, 55%) !default;
 $table-bg-active: $table-bg-hover !default;
 $table-border-color: #F4F4F4 !default;
-
 // Dropdowns
 $dropdown-border-color: #E2E2E2 !default;
 $dropdown-link-color: rgba(0, 0, 0, .535) !default;
-
 // Navbar
 $navbar-light-color: rgba(0, 0, 0, .535) !default;
 $navbar-light-hover-color: $brand-primary !default;
 $navbar-light-active-color: $brand-primary !default;
-
 // Cards
 $card-border-radius: 0 !default;
 $card-border-color: rgba(238, 238, 238, 1) !default;
-
 // Breadcrumbs
 $breadcrumb-bg: transparent !default;
 $breadcrumb-padding-x: 0 !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
-
 @mixin material-icon() {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -68,10 +58,8 @@ $breadcrumb-divider-rtl: "/" !default;
     -webkit-font-smoothing: antialiased;
     float: left;
 }
-
 // Import everything.
 @import "moodle";
-
 body {
     #page-header {
         padding: 7px 0 18px 0;
@@ -86,7 +74,9 @@ body {
         }
         .breadcrumb-nav {
             margin: 15px 21px 0;
-            a, span, li::before {
+            a,
+            span,
+            li::before {
                 color: #FFFFFF;
             }
         }
@@ -126,25 +116,21 @@ body {
         }
     }
 }
-
 /**
  * User picture.
  */
 .userpicture {
     border-radius: 50%;
 }
-
 /**
  * For background in content areas.
  */
 #page.container-fluid {
     padding: 0 (2 * $spacer);
 }
-
 #block-region-side-pre {
     padding-left: 0;
 }
-
 /**
  * Dashboard styling.
  */
@@ -155,7 +141,6 @@ body {
         padding: 0;
     }
 }
-
 /**
  * Blocks.
  */
@@ -167,7 +152,6 @@ body {
         text-transform: uppercase;
     }
 }
-
 /**
  * Navigation.
  */
@@ -177,19 +161,15 @@ body {
         margin: ($spacer/2) 0;
     }
 }
-
 /**
  * Form styles.
  */
-
 .form-group {
     margin-top: ($spacer/2);
 }
-
 .form-inline .form-group {
     margin-top: 0;
 }
-
 #nav-drawer {
     padding: 0;
     background: #FFFFFF;
@@ -306,12 +286,10 @@ body {
         }
     }
 }
-
 body[rel^="page-admin-"] .menu-sitesettings {
     font-weight: 700;
     color: #2196F3;
 }
-
 .navbar-light {
     //background    : #2196F3 url("[[pix:theme|bg_users]]") repeat 0 0;
     background: #0B7CD6 url("[[pix:theme|bg_users]]") repeat 0 0;
@@ -380,11 +358,9 @@ body[rel^="page-admin-"] .menu-sitesettings {
         }
     }
 }
-
 #page.container-fluid {
     padding: 0 1rem;
 }
-
 #nav-notification-popover-container,
 #nav-message-popover-container {
     padding-top: 0;
@@ -398,21 +374,18 @@ body[rel^="page-admin-"] .menu-sitesettings {
         }
     }
 }
-
 #nav-notification-popover-container {
     .icon::before {
         @include material-icon();
         content: 'notifications';
     }
 }
-
 #nav-message-popover-container {
     .icon::before {
         @include material-icon();
         content: 'chat';
     }
 }
-
 /**
  * Styling the dropdown menus.
  */
@@ -425,7 +398,6 @@ body[rel^="page-admin-"] .menu-sitesettings {
         color: #FFFFFF;
     }
 }
-
 .dropdown-menu,
 .popover-region-container {
     font-size: 14px;
@@ -473,29 +445,23 @@ body[rel^="page-admin-"] .menu-sitesettings {
         display: none;
     }
 }
-
 .popover-region-toggle::before,
 .popover-region-toggle::after {
     bottom: -8px;
 }
-
 $drawer-width: 200px;
 #nav-drawer.closed {
     left: -($drawer-width + $drawer-offscreen-gutter);
 }
-
 #nav-drawer {
     width: $drawer-width;
 }
-
 body.drawer-open-left {
     margin-left: $drawer-width;
 }
-
 body.drawer-open-right {
     margin-right: $drawer-width;
 }
-
 .alert {
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
@@ -522,7 +488,6 @@ body.drawer-open-right {
         color: #DC1A0C;
     }
 }
-
 @media (max-width: 600px) {
     .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
     .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
@@ -543,7 +508,6 @@ body.drawer-open-right {
         }
     }
 }
-
 .icon {
     &.fa-tachometer,
     &.fa-user,
@@ -737,7 +701,6 @@ body.drawer-open-right {
         content: 'warning';
     }
 }
-
 .calendar-controls {
     .arrow_link {
         display: inline-block;
@@ -775,17 +738,39 @@ body.drawer-open-right {
         color: #2196F3 !important;
     }
 }
-
 .calendar_event_group i {
     font-size: 18px;
     line-height: 0.8;
 }
-
 #page-footer {
     .helplink,
     [href*="download.moodle.org/mobile"] {
         display: none;
     }
 }
-
+.coursebox {
+    .content {
+        display: flex;
+        flex-flow: column;
+        .summary,
+        .coursecat {
+            width: 60%;
+        }
+        .courseimage {
+            width: 36%;
+            img {
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
+        .teachers {
+            width: auto;
+            order: 1;
+        }
+        .summary {
+            width: auto;
+            order: 2;
+        }
+    }
+}
 @import "login";

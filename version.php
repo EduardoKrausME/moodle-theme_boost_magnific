@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Boosta.
+ * BoostA.
  *
  * @package    theme_boosta
  * @copyright  2017 Eduardo Kraus
@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017101504;
+$plugin->version   = 2017101505;
 $plugin->requires  = 2016120505;
 $plugin->release = 'V1.3';
 $plugin->maturity = MATURITY_STABLE;

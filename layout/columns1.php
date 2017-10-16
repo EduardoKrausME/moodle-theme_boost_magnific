@@ -18,7 +18,7 @@
  * A one column layout for the boosta theme.
  *
  * @package   theme_boosta
- * @copyright 2016 Damyon Wiese
+ * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
