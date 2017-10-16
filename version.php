@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * BoostA.
+ * Boost Magnific.
  *
- * @package    theme_boosta
+ * @package    theme_boost_magnific
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,4 +28,4 @@ $plugin->version   = 2017101602;
 $plugin->requires  = 2016120505;
 $plugin->release = 'V1.6';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->component = 'theme_boosta';
+$plugin->component = 'theme_boost_magnific';

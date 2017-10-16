@@ -15,11 +15,11 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_boosta/columns2
+    @template theme_boost_magnific/columns2
 
     Admin time setting template.
 
-    boosta 2 column layout template.
+    boost_magnific 2 column layout template.
 
     Context variables required for this template:
     * sitename - The name of the site
@@ -67,7 +67,7 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{>theme_boosta/header}}
+    {{>theme_boost_magnific/header}}
 
     {{{ output.full_header }}}
 
@@ -98,7 +98,7 @@
             </div>
         </div>
     </div>
-    {{> theme_boosta/nav-drawer }}
+    {{> theme_boost_magnific/nav-drawer }}
 </div>
 <footer id="page-footer" class="p-y-1 bg-inverse">
     <div class="container">
@@ -113,7 +113,7 @@
         <nav class="nav navbar-nav hidden-lg-up">
             {{# output.custom_menu_flat }}
                 <ul class="list-unstyled p-t-1">
-                    {{> theme_boosta/custom_menu_footer }}
+                    {{> theme_boost_magnific/custom_menu_footer }}
                 </ul>
             {{/ output.custom_menu_flat }}
         </nav>
@@ -125,8 +125,8 @@
 </body>
 </html>
 {{#js}}
-require(['theme_boosta/loader']);
-require(['theme_boosta/drawer'], function(mod) {
+require(['theme_boost_magnific/loader']);
+require(['theme_boost_magnific/drawer'], function(mod) {
     mod.init();
 });
 {{/js}}

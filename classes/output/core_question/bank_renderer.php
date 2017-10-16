@@ -17,19 +17,19 @@
 /**
  * Question renderer.
  *
- * @package    theme_boosta
+ * @package    theme_boost_magnific
  * @copyright  2017 onwards Ankit Agarwal <ankit.agrr@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_boosta\output\core_question;
+namespace theme_boost_magnific\output\core_question;
 defined('MOODLE_INTERNAL') || die();
 
 
 /**
  * Question renderer class.
  *
- * @package    theme_boosta
+ * @package    theme_boost_magnific
  * @copyright  2017 onwards Ankit Agarwal <ankit.agrr@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

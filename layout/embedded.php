@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * An embedded layout for the boosta theme.
+ * An embedded layout for the boost_magnific theme.
  *
- * @package   theme_boosta
+ * @package   theme_boost_magnific
  * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -29,4 +29,4 @@ $templatecontext = [
     'output' => $OUTPUT
 ];
 
-echo $OUTPUT->render_from_template('theme_boosta/embedded', $templatecontext);
+echo $OUTPUT->render_from_template('theme_boost_magnific/embedded', $templatecontext);

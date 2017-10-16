@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * BoostA config.
+ * Boost Magnific config.
  *
- * @package   theme_boosta
+ * @package   theme_boost_magnific
  * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,12 +26,12 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/lib.php');
 
-$THEME->name = 'boosta';
+$THEME->name = 'boost_magnific';
 $THEME->sheets = [];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
 $THEME->scss = function($theme) {
-    return theme_boosta_get_main_scss_content($theme);
+    return theme_boost_magnific_get_main_scss_content($theme);
 };
 
 $THEME->layouts = [
@@ -147,9 +147,9 @@ $THEME->layouts = [
 
 $THEME->parents = [];
 $THEME->enable_dock = false;
-$THEME->csstreepostprocessor = 'theme_boosta_css_tree_post_processor';
-$THEME->extrascsscallback = 'theme_boosta_get_extra_scss';
-$THEME->prescsscallback = 'theme_boosta_get_pre_scss';
+$THEME->csstreepostprocessor = 'theme_boost_magnific_css_tree_post_processor';
+$THEME->extrascsscallback = 'theme_boost_magnific_get_extra_scss';
+$THEME->prescsscallback = 'theme_boost_magnific_get_pre_scss';
 $THEME->yuicssmodules = array();
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';

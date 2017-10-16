@@ -16,7 +16,7 @@
 /**
  * Contain the logic for a drawer.
  *
- * @package    theme_boosta
+ * @package    theme_boost_magnific
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

@@ -17,7 +17,7 @@
 /**
  * Theme functions.
  *
- * @package    theme_boosta
+ * @package    theme_boost_magnific
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param string $tree The CSS tree.
  * @param theme_config $theme The theme config object.
  */
-function theme_boosta_css_tree_post_processor($tree, $theme) {
+function theme_boost_magnific_css_tree_post_processor($tree, $theme) {
     $prefixer = new theme_boost\autoprefixer($tree);
     $prefixer->prefix();
 }
@@ -41,7 +41,7 @@ function theme_boosta_css_tree_post_processor($tree, $theme) {
  * @param theme_config $theme The theme config object.
  * @return string
  */
-function theme_boosta_get_extra_scss($theme) {
+function theme_boost_magnific_get_extra_scss($theme) {
     return !empty($theme->settings->scss) ? $theme->settings->scss : '';
 }
 
@@ -51,18 +51,18 @@ function theme_boosta_get_extra_scss($theme) {
  * @param theme_config $theme The theme config object.
  * @return string
  */
-function theme_boosta_get_main_scss_content($theme) {
+function theme_boost_magnific_get_main_scss_content($theme) {
     global $CFG;
 
     $scss = '';
     $filename = !empty($theme->settings->preset) ? $theme->settings->preset : 'blue';
 
-    $filepreset = "{$CFG->dirroot}/theme/boosta/scss/preset/{$filename}.scss";
+    $filepreset = "{$CFG->dirroot}/theme/boost_magnific/scss/preset/{$filename}.scss";
     if (file_exists($filepreset)) {
-        $scss .= file_get_contents("{$CFG->dirroot}/theme/boosta/scss/boosta.scss");
+        $scss .= file_get_contents("{$CFG->dirroot}/theme/boost_magnific/scss/boost_magnific.scss");
         $scss .= file_get_contents($filepreset);
     } else {
-        $scss .= file_get_contents("{$CFG->dirroot}/theme/boosta/scss/boosta.scss");
+        $scss .= file_get_contents("{$CFG->dirroot}/theme/boost_magnific/scss/boost_magnific.scss");
     }
 
     if (!strlen($theme->settings->background)) {
@@ -81,7 +81,7 @@ function theme_boosta_get_main_scss_content($theme) {
  * @param theme_config $theme The theme config object.
  * @return array
  */
-function theme_boosta_get_pre_scss($theme) {
+function theme_boost_magnific_get_pre_scss($theme) {
     global $CFG;
 
     $scss = '';

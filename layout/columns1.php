@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A one column layout for the boosta theme.
+ * A one column layout for the boost_magnific theme.
  *
- * @package   theme_boosta
+ * @package   theme_boost_magnific
  * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -32,5 +32,5 @@ $templatecontext = [
     'bodyattributes' => $bodyattributes
 ];
 
-echo $OUTPUT->render_from_template('theme_boosta/columns1', $templatecontext);
+echo $OUTPUT->render_from_template('theme_boost_magnific/columns1', $templatecontext);
 

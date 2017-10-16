@@ -17,18 +17,18 @@
 /**
  * Core renderer.
  *
- * @package    theme_boosta
+ * @package    theme_boost_magnific
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_boosta\output;
+namespace theme_boost_magnific\output;
 defined('MOODLE_INTERNAL') || die;
 
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_boosta
+ * @package    theme_boost_magnific
  * @copyright  2012 Bas Brands, www.basbrands.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

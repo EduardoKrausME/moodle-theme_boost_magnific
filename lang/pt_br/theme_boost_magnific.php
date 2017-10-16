@@ -17,17 +17,17 @@
 /**
  * Language file.
  *
- * @package   theme_boosta
+ * @package   theme_boost_magnific
  * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['configtitle'] = 'BoostA';
-$string['pluginname'] = 'BoostA';
+$string['configtitle'] = 'Boost Magnific';
+$string['pluginname'] = 'Boost Magnific';
 $string['advancedsettings'] = 'Configurações avançadas';
-$string['choosereadme'] = 'BoostA é um tema moderno e altamente personalizável. Este tema destina-se a ser usado diretamente ou como um tema pai ao criar novos temas utilizando o Bootstrap 4. ';
+$string['choosereadme'] = 'Boost Magnific é um tema moderno e altamente personalizável. Este tema destina-se a ser usado diretamente ou como um tema pai ao criar novos temas utilizando o Bootstrap 4. ';
 $string['currentinparentheses'] = '(atual)';
 
 $string['generalsettings'] = 'Configurações gerais';

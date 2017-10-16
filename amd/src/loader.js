@@ -28,17 +28,17 @@ define(['jquery', './tether', 'core/event'], function (jQuery, Tether, Event) {
     window.jQuery = jQuery;
     window.Tether = Tether;
 
-    require(['theme_boosta/util',
-            'theme_boosta/alert',
-            'theme_boosta/button',
-            'theme_boosta/carousel',
-            'theme_boosta/collapse',
-            'theme_boosta/dropdown',
-            'theme_boosta/modal',
-            'theme_boosta/scrollspy',
-            'theme_boosta/tab',
-            'theme_boosta/tooltip',
-            'theme_boosta/popover'],
+    require(['theme_boost_magnific/util',
+            'theme_boost_magnific/alert',
+            'theme_boost_magnific/button',
+            'theme_boost_magnific/carousel',
+            'theme_boost_magnific/collapse',
+            'theme_boost_magnific/dropdown',
+            'theme_boost_magnific/modal',
+            'theme_boost_magnific/scrollspy',
+            'theme_boost_magnific/tab',
+            'theme_boost_magnific/tooltip',
+            'theme_boost_magnific/popover'],
         function () {
 
             // We do twice because: https://github.com/twbs/bootstrap/issues/10547.

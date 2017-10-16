@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A two column layout for the boosta theme.
+ * A two column layout for the boost_magnific theme.
  *
- * @package   theme_boosta
+ * @package   theme_boost_magnific
  * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -52,5 +52,5 @@ $templatecontext = [
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
-echo $OUTPUT->render_from_template('theme_boosta/columns2', $templatecontext);
+echo $OUTPUT->render_from_template('theme_boost_magnific/columns2', $templatecontext);
 

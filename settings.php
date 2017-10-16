@@ -15,20 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   theme_boosta
+ * @package   theme_boost_magnific
  * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
-    $settings = new theme_boost_admin_settingspage_tabs('themesettingboosta', get_string('configtitle', 'theme_boosta'));
-    $page = new admin_settingpage('theme_boosta_general', get_string('generalsettings', 'theme_boosta'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific', get_string('configtitle', 'theme_boost_magnific'));
+    $page = new admin_settingpage('theme_boost_magnific_general', get_string('generalsettings', 'theme_boost_magnific'));
 
     // Preset.
-    $name = 'theme_boosta/preset';
-    $title = get_string('preset', 'theme_boosta');
-    $description = get_string('preset_desc', 'theme_boosta');
+    $name = 'theme_boost_magnific/preset';
+    $title = get_string('preset', 'theme_boost_magnific');
+    $description = get_string('preset_desc', 'theme_boost_magnific');
     $default = 'blue';
 
     $choices = [];
@@ -44,9 +44,9 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
     // Image Background.
-    $name = 'theme_boosta/background';
-    $title = get_string('background', 'theme_boosta');
-    $description = get_string('background_desc', 'theme_boosta');
+    $name = 'theme_boost_magnific/background';
+    $title = get_string('background', 'theme_boost_magnific');
+    $description = get_string('background_desc', 'theme_boost_magnific');
     $default = 'math-write';
 
     $choices = [];
@@ -59,9 +59,9 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    $name = 'theme_boosta/favicon';
-    $title = get_string ( 'favicon', 'theme_boosta' );
-    $description = get_string ( 'favicondesc', 'theme_boosta' );
+    $name = 'theme_boost_magnific/favicon';
+    $title = get_string ( 'favicon', 'theme_boost_magnific' );
+    $description = get_string ( 'favicondesc', 'theme_boost_magnific' );
     $setting = new admin_setting_configstoredfile( $name, $title, $description, 'favicon', 0,
         array('maxfiles' => 1, 'accepted_types' => array('png', 'jpg', 'ico')));
     $setting->set_updatedcallback ( 'theme_reset_all_caches' );
@@ -72,17 +72,17 @@ if ($ADMIN->fulltree) {
     $settings->add($page);
 
     // Advanced settings.
-    $page = new admin_settingpage('theme_boosta_advanced', get_string('advancedsettings', 'theme_boosta'));
+    $page = new admin_settingpage('theme_boost_magnific_advanced', get_string('advancedsettings', 'theme_boost_magnific'));
 
     // Raw SCSS to include before the content.
-    $setting = new admin_setting_scsscode('theme_boosta/scsspre',
-        get_string('rawscsspre', 'theme_boosta'), get_string('rawscsspre_desc', 'theme_boosta'), '', PARAM_RAW);
+    $setting = new admin_setting_scsscode('theme_boost_magnific/scsspre',
+        get_string('rawscsspre', 'theme_boost_magnific'), get_string('rawscsspre_desc', 'theme_boost_magnific'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     // Raw SCSS to include after the content.
-    $setting = new admin_setting_scsscode('theme_boosta/scss', get_string('rawscss', 'theme_boosta'),
-        get_string('rawscss_desc', 'theme_boosta'), '', PARAM_RAW);
+    $setting = new admin_setting_scsscode('theme_boost_magnific/scss', get_string('rawscss', 'theme_boost_magnific'),
+        get_string('rawscss_desc', 'theme_boost_magnific'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
