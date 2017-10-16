@@ -95,17 +95,14 @@ body {
         .dropdown .icon {
             color: #fff;
         }
-        
         .pull-xs-left,
         .page-header-headings {
             float: none !important;
         }
     }
-    
     &.drawer-open-left #page-header {
         background-position: -200px -50px;
     }
-    
     &.area-courses,
     &#page-user-profile,
     &#page-message-index {
@@ -213,17 +210,14 @@ body {
             .smallicon {
                 visibility: hidden;
             }
-            
             .icon::before {
                 @include material-icon();
                 content: 'class';
             }
-            
         }
         &.font-weight-bold {
             color: #2196f3;
         }
-        
         &.sidebar-heading div {
             color: #b7bdc1;
             margin-top: 9.375px !important;
@@ -234,7 +228,6 @@ body {
             letter-spacing: normal;
             line-height: normal;
         }
-        
         .m-l-1 {
             margin-left: 0 !important;
             .icon::before {
@@ -242,11 +235,9 @@ body {
                 content: 'school';
             }
         }
-        
         .icon::before {
             @include material-icon();
         }
-        
         &.menu-coursehome .icon::before {
             content: "school";
         }
@@ -337,7 +328,6 @@ body[rel^="page-admin-"] .menu-sitesettings {
             background: transparent;
             border: 0;
         }
-        
     }
     .navbar-brand {
         background-color: transparent;
@@ -576,7 +566,6 @@ body.drawer-open-right {
     &.fa-exclamation-circle {
         @include material-icon();
     }
-    
     &.fa-tachometer::before {
         content: 'dashboard';
     }

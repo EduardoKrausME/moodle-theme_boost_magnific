@@ -1,11 +1,11 @@
 body {
     #page-header {
-        color: #ffffff;
+        color: #fff;
         background: #1c1c1c url("[[pix:theme|bg_users]]") repeat 0 -50px;
     }
 }
 #loginone-wrapper {
-    background: #ffffff url([[pix:theme|login-background-black]]) no-repeat fixed 50%;
+    background: #fff url([[pix:theme|login-background-black]]) no-repeat fixed 50%;
     .text-primary,
     h2,
     .login-icone i {
@@ -49,7 +49,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
             color: rgba(255, 255, 255, .7);
             &:focus,
             &:focus {
-                color: #ffffff;
+                color: #fff;
             }
         }
     }
@@ -63,7 +63,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         color: rgba(255, 255, 255, .7);
         &:focus,
         &:focus {
-            color: #ffffff;
+            color: #fff;
         }
     }
 }
@@ -72,13 +72,13 @@ body[rel^="page-admin-"] .menu-sitesettings {
  */
 .usermenu {
     .dropdown-toggle::after {
-        color: #ffffff;
+        color: #fff;
     }
 }
 .dropdown-menu,
 .popover-region-container {
     color: #373a3c;
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid #e5e5e5;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px;
     .dropdown-item {
@@ -98,7 +98,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
 .calendar-controls {
     .arrow_link {
         background: #1c1c1c;
-        color: #ffffff;
+        color: #fff;
     }
     .current {
         color: #1c1c1c !important;
