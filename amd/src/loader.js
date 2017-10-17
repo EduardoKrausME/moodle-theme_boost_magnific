@@ -23,49 +23,50 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @since      2.9
  */
-define(['jquery', './tether', 'core/event'], function (jQuery, Tether, Event) {
+define(['jquery', './tether', 'core/event'], function(jQuery, Tether, Event) {
 
     window.jQuery = jQuery;
     window.Tether = Tether;
 
-    require(['theme_boost_magnific/util',
-            'theme_boost_magnific/alert',
-            'theme_boost_magnific/button',
-            'theme_boost_magnific/carousel',
-            'theme_boost_magnific/collapse',
-            'theme_boost_magnific/dropdown',
-            'theme_boost_magnific/modal',
-            'theme_boost_magnific/scrollspy',
-            'theme_boost_magnific/tab',
-            'theme_boost_magnific/tooltip',
-            'theme_boost_magnific/popover'],
-        function () {
+    require(['theme_boost/util',
+            'theme_boost/alert',
+            'theme_boost/button',
+            'theme_boost/carousel',
+            'theme_boost/collapse',
+            'theme_boost/dropdown',
+            'theme_boost/modal',
+            'theme_boost/scrollspy',
+            'theme_boost/tab',
+            'theme_boost/tooltip',
+            'theme_boost/popover'],
+            function() {
 
-            // We do twice because: https://github.com/twbs/bootstrap/issues/10547.
-            jQuery('body').popover({
-                trigger  : 'focus',
-                selector : "[data-toggle=popover][data-trigger!=hover]"
-            });
+        // We do twice because: https://github.com/twbs/bootstrap/issues/10547
+        jQuery('body').popover({
+            trigger: 'focus',
+            selector: "[data-toggle=popover][data-trigger!=hover]"
+        });
 
-            jQuery("html").popover({
-                container : "body",
-                selector  : "[data-toggle=popover][data-trigger=hover]",
-                trigger   : "hover",
-                delay     : {
-                    hide : 500
-                }
-            });
+        jQuery("html").popover({
+            container: "body",
+            selector: "[data-toggle=popover][data-trigger=hover]",
+            trigger: "hover",
+            delay: {
+                hide: 500
+            }
+        });
 
-            // We need to call popover automatically if nodes are added to the page later.
-            Event.getLegacyEvents().done(function (events) {
-                jQuery(document).on(events.FILTER_CONTENT_UPDATED, function () {
-                    jQuery('body').popover({
-                        selector : '[data-toggle="popover"]',
-                        trigger  : 'focus'
-                    });
+        // We need to call popover automatically if nodes are added to the page later.
+        Event.getLegacyEvents().done(function(events) {
+            jQuery(document).on(events.FILTER_CONTENT_UPDATED, function() {
+                jQuery('body').popover({
+                    selector: '[data-toggle="popover"]',
+                    trigger: 'focus'
                 });
             });
         });
+    });
+
 
     return {};
 });

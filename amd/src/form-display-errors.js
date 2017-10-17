@@ -17,15 +17,15 @@
  * Custom form error event handler to manipulate the bootstrap markup and show
  * nicely styled errors in an mform.
  *
- * @module     theme_boost_magnific/form-display-errors
- * @copyright  2017 Eduardo Kraus
+ * @module     theme_boost/form-display-errors
+ * @copyright  2016 Damyon Wiese <damyon@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-define(['jquery', 'core/event'], function ($, Event) {
+define(['jquery', 'core/event'], function($, Event) {
     return {
-        enhance : function (elementid) {
+        enhance: function(elementid) {
             var element = document.getElementById(elementid);
-            $(element).on(Event.Events.FORM_FIELD_VALIDATION, function (event, msg) {
+            $(element).on(Event.Events.FORM_FIELD_VALIDATION, function(event, msg) {
                 event.preventDefault();
                 var parent = $(element).closest('.form-group');
                 var feedback = parent.find('.form-control-feedback');
