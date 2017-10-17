@@ -17,12 +17,10 @@
         text-align: center;
         width: 1.8em;
         text-shadow: none;
-        
         &:hover,
         &:focus {
             background-color: #fff;
         }
-        
         &.website {
             padding-top: 5px;
         }
@@ -30,52 +28,42 @@
         &.website:focus {
             color: #f42941;
         }
-        
         &.facebook:hover,
         &.facebook:focus {
             color: #4a6ea9;
         }
-        
         &.twitter:hover,
         &.twitter:focus {
             color: #00aced;
         }
-        
         &.googleplus:hover,
         &.googleplus:focus {
             color: #f42941;
         }
-        
         &.flickr:hover,
         &.flickr:focus {
             color: #ff3096;
         }
-        
         &.instagram:hover,
         &.instagram:focus {
             color: #b99c6b;
         }
-        
         &.youtube:hover,
         &.youtube:focus {
             color: #f42941;
         }
-        
         &.pinterest:hover,
         &.pinterest:focus {
             color: #f42941;
         }
-        
         &.linkedin:hover,
         &.linkedin:focus {
             color: #3e647e;
         }
-        
         &.apple:hover,
         &.apple:focus {
             color: #747474;
         }
-        
         &.android:hover,
         &.android:focus {
             color: #76b900;

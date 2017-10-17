@@ -42,6 +42,7 @@ $breadcrumb-bg: transparent !default;
 $breadcrumb-padding-x: 0 !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
+
 @mixin material-icon() {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -496,6 +497,7 @@ body.drawer-open-right {
         color: #dc1a0c;
     }
 }
+
 @media (max-width: 600px) {
     .col-sm-1,
     .col-sm-2,
@@ -790,5 +792,6 @@ body.drawer-open-right {
         }
     }
 }
+
 @import "login";
 @import "footer-icon";
