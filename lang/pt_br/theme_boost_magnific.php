@@ -38,11 +38,16 @@ $string['preset_desc'] = 'Escolha uma predefinição para mudar amplamente a apa
 $string['background'] = 'Fundo do tema';
 $string['background_desc'] = 'background';
 
-$string[ 'favicon' ]     = 'Favicon';
-$string[ 'favicondesc' ] = 'Alterar o favicon do tema. Uma imagem .png com fundo transparente e altura de 32px terá o melhor funcionamento.';
+$string['favicon'] = 'Favicon';
+$string['favicondesc'] = 'Alterar o favicon do tema. Uma imagem .png com fundo transparente e altura de 32px terá o melhor funcionamento.';
 
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use este campo para fornecer código SCSS ou CSS que será injetado no final da folha de estilos.';
 $string['rawscsspre'] = 'Raw SCSS inicial';
 $string['rawscsspre_desc'] = 'Neste campo você pode fornecer o código SCSI de inicialização, ele será injetado antes de tudo o resto. Na maioria das vezes, você usará esta configuração para definir variáveis. ';
 $string['region-side-pre'] = 'Direita';
+
+
+$string['icons'] = 'Ícones';
+$string['icon'] = 'URL do {$a}';
+$string['icondesc'] = 'Digite a URL de seu {$a}.';

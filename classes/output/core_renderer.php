@@ -39,4 +39,30 @@ class core_renderer extends \theme_boost\output\core_renderer {
     public function favicon() {
         return $this->page->theme->setting_file_url('favicon', 'favicon');
     }
+
+    /**
+     * @return string
+     */
+    public function get_icons_footer() {
+        $returnicones = '';
+
+        foreach ($this->page->theme->settings as $iconname => $setting) {
+            if (strpos($iconname, 'icon_') === 0) {
+                if (!empty($setting)) {
+
+                    $icon = str_replace('icon_', '', $iconname);
+
+                    if ($icon == 'website') {
+                        $returnicones .= '<a target="_blank" href="' . $setting . '"><span
+                                             class="footer-icon ' . $icon . '"><i class="material-icons">pages</i></span></a>';
+                    } else {
+                        $returnicones .= '<a target="_blank" href="' . $setting . '"><span
+                                             class="footer-icon ' . $icon . '"><i class="fa fa-' . $icon . '"></i></span></a>';
+                    }
+                }
+            }
+        }
+
+        return "<div class=\"icones\">$returnicones</div>";
+    }
 }

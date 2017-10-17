@@ -1,0 +1,84 @@
+/**
+ * based on https://moodle.org/plugins/theme_aardvark.
+ */
+.icones {
+    float: right;
+    .footer-icon {
+        background-color: #00bcd4;
+        border-radius: 2px;
+        color: #fff;
+        display: block;
+        float: right;
+        font-family: FontAwesome;
+        font-size: 1.5em;
+        height: 1.8em;
+        line-height: 1.8em;
+        margin: 0 0.2em 0.4em;
+        text-align: center;
+        width: 1.8em;
+        text-shadow: none;
+        
+        &:hover,
+        &:focus {
+            background-color: #fff;
+        }
+        
+        &.website {
+            padding-top: 5px;
+        }
+        &.website:hover,
+        &.website:focus {
+            color: #f42941;
+        }
+        
+        &.facebook:hover,
+        &.facebook:focus {
+            color: #4a6ea9;
+        }
+        
+        &.twitter:hover,
+        &.twitter:focus {
+            color: #00aced;
+        }
+        
+        &.googleplus:hover,
+        &.googleplus:focus {
+            color: #f42941;
+        }
+        
+        &.flickr:hover,
+        &.flickr:focus {
+            color: #ff3096;
+        }
+        
+        &.instagram:hover,
+        &.instagram:focus {
+            color: #b99c6b;
+        }
+        
+        &.youtube:hover,
+        &.youtube:focus {
+            color: #f42941;
+        }
+        
+        &.pinterest:hover,
+        &.pinterest:focus {
+            color: #f42941;
+        }
+        
+        &.linkedin:hover,
+        &.linkedin:focus {
+            color: #3e647e;
+        }
+        
+        &.apple:hover,
+        &.apple:focus {
+            color: #747474;
+        }
+        
+        &.android:hover,
+        &.android:focus {
+            color: #76b900;
+        }
+    }
+}

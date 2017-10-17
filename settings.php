@@ -60,13 +60,42 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
     $name = 'theme_boost_magnific/favicon';
-    $title = get_string ( 'favicon', 'theme_boost_magnific' );
-    $description = get_string ( 'favicondesc', 'theme_boost_magnific' );
-    $setting = new admin_setting_configstoredfile( $name, $title, $description, 'favicon', 0,
+    $title = get_string('favicon', 'theme_boost_magnific');
+    $description = get_string('favicondesc', 'theme_boost_magnific');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon', 0,
         array('maxfiles' => 1, 'accepted_types' => array('png', 'jpg', 'ico')));
-    $setting->set_updatedcallback ( 'theme_reset_all_caches' );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+
+    // Add tab icons.
+    $settings->add($page);
+
+    // Icons.
+    $page = new admin_settingpage('theme_boost_magnific_icons', get_string('icons', 'theme_boost_magnific'));
+
+    $icons = [
+        'android' => "Google Play Store",
+        'apple' => 'Apple App Store',
+        'youtube' => 'YouTube',
+        'pinterest' => 'Pinterest',
+        'linkedin' => 'LinkedIn',
+        'instagram' => 'Instagram',
+        'flickr' => 'Flickr',
+        //'googleplus' => 'Google+',
+        'twitter' => 'Twitter',
+        'facebook' => 'Facebook',
+        'website' => 'Website',
+    ];
+
+    foreach ($icons as $icon => $iconname) {
+        $name = "theme_boost_magnific/icon_{$icon}";
+        $title = get_string("icon", 'theme_boost_magnific', $iconname);
+        $description = get_string('icondesc', 'theme_boost_magnific', $iconname);
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $page->add($setting);
+    }
 
     // Must add the page after definiting all the settings!
     $settings->add($page);
