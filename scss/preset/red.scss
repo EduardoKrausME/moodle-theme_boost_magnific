@@ -9,7 +9,7 @@ body {
     .text-primary,
     h2,
     .login-icone i {
-        color: #8a2749 !important;
+        color: #8a2749;
     }
     #loginbtn {
         border: 1px solid #8a2749;
@@ -84,13 +84,13 @@ body[rel^="page-admin-"] .menu-sitesettings {
     .dropdown-item {
         .icon,
         .menu-action-text {
-            color: rgba(0, 0, 0, .54) !important;
+            color: rgba(0, 0, 0, .54);
         }
         &:focus,
         &:focus {
             .icon,
             .menu-action-text {
-                color: #4d4f50 !important;
+                color: #4d4f50;
             }
         }
     }
@@ -101,6 +101,6 @@ body[rel^="page-admin-"] .menu-sitesettings {
         color: #fff;
     }
     .current {
-        color: #8a2749 !important;
+        color: #8a2749;
     }
 }

@@ -92,12 +92,14 @@ body {
             font-family: Roboto, Arial, sans-serif;
         }
         .dropdown,
-        .dropdown .icon {
+        .dropdown .icon,
+        .dropdown .icon::before,
+        .dropdown .dropdown-toggle::after {
             color: #fff;
         }
         .pull-xs-left,
         .page-header-headings {
-            float: none !important;
+            float: none;
         }
     }
     &.drawer-open-left #page-header {
@@ -220,7 +222,7 @@ body {
         }
         &.sidebar-heading div {
             color: #b7bdc1;
-            margin-top: 9.375px !important;
+            margin-top: 9.375px;
             font-weight: 500;
             font-size: .9rem;
             font-family: inherit;
@@ -229,7 +231,7 @@ body {
             line-height: normal;
         }
         .m-l-1 {
-            margin-left: 0 !important;
+            margin-left: 0;
             .icon::before {
                 @include material-icon();
                 content: 'school';
@@ -287,8 +289,9 @@ body[rel^="page-admin-"] .menu-sitesettings {
     background: #0b7cd6 url("[[pix:theme|bg_users]]") repeat 0 0;
     border-bottom: 0;
     box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+    color: #fff;
     a {
-        color: #484747;
+        color: #fff;
     }
     .navbar-nav {
         padding-left: 0;
@@ -302,6 +305,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
             font-size: $font-size-sm;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: rgba(255, 254, 254, 0.65);
         }
     }
     .navbar-toggler {
@@ -391,6 +395,9 @@ body[rel^="page-admin-"] .menu-sitesettings {
     .dropdown-toggle::after {
         color: #fff;
     }
+    .login a {
+        color: #fff;
+    }
 }
 .dropdown-menu,
 .popover-region-container {
@@ -420,19 +427,25 @@ body[rel^="page-admin-"] .menu-sitesettings {
         font-size: 16px;
         font-family: Roboto, Arial, sans-serif;
         transition: color 0.5s ease;
+        color: rgba(0, 0, 0, .54);
         .icon {
             float: left;
             margin-right: 19px;
         }
+        a,
         .icon,
         .menu-action-text {
-            color: rgba(0, 0, 0, .54) !important;
+            color: rgba(0, 0, 0, .54);
+        }
+        a:focus,
+        a:hover {
+            color: #4d4f50;
         }
         &:focus,
-        &:focus {
+        &:hover {
             .icon,
             .menu-action-text {
-                color: #4d4f50 !important;
+                color: #4d4f50;
             }
         }
     }
@@ -507,7 +520,7 @@ body.drawer-open-right {
             left: 0;
         }
         .text-sm-right {
-            text-align: left !important;
+            text-align: left;
             font-weight: 700;
             font-family: Roboto, Arial, sans-serif;
         }
@@ -723,7 +736,7 @@ body.drawer-open-right {
         margin: 0;
         font-size: 1em;
         cursor: pointer;
-        width: auto !important;
+        width: auto;
         height: auto;
         padding: 6px 10px;
         border-radius: 4px;
@@ -738,8 +751,8 @@ body.drawer-open-right {
         }
     }
     .current {
-        font-size: 24px !important;
-        color: #2196f3 !important;
+        font-size: 24px;
+        color: #2196f3;
     }
 }
 .calendar_event_group i {
