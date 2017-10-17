@@ -22,7 +22,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
-    $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific', get_string('configtitle', 'theme_boost_magnific'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific',
+        get_string('configtitle', 'theme_boost_magnific'));
     $page = new admin_settingpage('theme_boost_magnific_general', get_string('generalsettings', 'theme_boost_magnific'));
 
     // Preset.
@@ -82,7 +83,6 @@ if ($ADMIN->fulltree) {
         'linkedin' => 'LinkedIn',
         'instagram' => 'Instagram',
         'flickr' => 'Flickr',
-        //'googleplus' => 'Google+',
         'twitter' => 'Twitter',
         'facebook' => 'Facebook',
         'website' => 'Website',
