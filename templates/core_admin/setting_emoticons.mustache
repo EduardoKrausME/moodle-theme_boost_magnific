@@ -24,29 +24,30 @@
 <div class="form-group">
     <table id="emoticonsetting" class="admintable generaltable">
         <thead>
-            <tr>
-                <th>{{#str}}emoticontext, admin{{/str}}</th>
-                <th>{{#str}}emoticonimagename, admin{{/str}}</th>
-                <th>{{#str}}emoticoncomponent, admin{{/str}}</th>
-                <th colspan="2">{{#str}}emoticonalt, admin{{/str}}</th>
-                <th></th>
-            </tr>
+        <tr>
+            <th>{{#str}}emoticontext, admin{{/str}}</th>
+            <th>{{#str}}emoticonimagename, admin{{/str}}</th>
+            <th>{{#str}}emoticoncomponent, admin{{/str}}</th>
+            <th colspan="2">{{#str}}emoticonalt, admin{{/str}}</th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
-            {{#emoticons}}
-                <tr>
-                    {{#fields}}
-                        <td class="c{{index}}">
-                            <input type="text" name="{{name}}[{{field}}]" class="form-text form-control text-ltr" value="{{value}}">
-                        </td>
-                    {{/fields}}
-                    <td>
-                        {{#icon}}
-                            {{>core/pix_icon}}
-                        {{/icon}}
+        {{#emoticons}}
+            <tr>
+                {{#fields}}
+                    <td class="c{{index}}">
+                        <input type="text" name="{{name}}[{{field}}]" class="form-text form-control text-ltr"
+                               value="{{value}}">
                     </td>
-                </tr>
-            {{/emoticons}}
+                {{/fields}}
+                <td>
+                    {{#icon}}
+                        {{>core/pix_icon}}
+                    {{/icon}}
+                </td>
+            </tr>
+        {{/emoticons}}
         </tbody>
     </table>
 </div>

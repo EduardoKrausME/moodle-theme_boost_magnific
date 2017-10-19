@@ -35,30 +35,30 @@
 
 {{! We must not use the JS helper otherwise this gets executed too late. }}
 <script type="text/javascript">
-(function() {
-    var el = document.getElementById('{{id}}'),
-        progressBar = document.getElementById('{{id}}_bar'),
-        statusIndicator = document.getElementById('{{id}}_status'),
-        estimateIndicator = document.getElementById('{{id}}_estimate');
+    (function () {
+        var el                = document.getElementById('{{id}}'),
+            progressBar       = document.getElementById('{{id}}_bar'),
+            statusIndicator   = document.getElementById('{{id}}_status'),
+            estimateIndicator = document.getElementById('{{id}}_estimate');
 
-    el.addEventListener('update', function(e) {
-        var msg = e.detail.message,
-            percent = e.detail.percent,
-            estimate = e.detail.estimate;
+        el.addEventListener('update', function (e) {
+            var msg      = e.detail.message,
+                percent  = e.detail.percent,
+                estimate = e.detail.estimate;
 
-        statusIndicator.textContent = msg;
-        progressBar.setAttribute('value', Math.round(percent));
-        if (percent === 100) {
-            progressBar.classList.add('progress-success');
-            estimateIndicator.textContent = '100%';
-        } else {
-            if (estimate) {
-                estimateIndicator.textContent = estimate + ' - ' + percent + '%';
+            statusIndicator.textContent = msg;
+            progressBar.setAttribute('value', Math.round(percent));
+            if (percent === 100) {
+                progressBar.classList.add('progress-success');
+                estimateIndicator.textContent = '100%';
             } else {
-                estimateIndicator.textContent = '' + percent + '%';
+                if (estimate) {
+                    estimateIndicator.textContent = estimate + ' - ' + percent + '%';
+                } else {
+                    estimateIndicator.textContent = '' + percent + '%';
+                }
+                progressBar.classList.remove('progress-success');
             }
-            progressBar.classList.remove('progress-success');
-        }
-    });
-})();
+        });
+    })();
 </script>

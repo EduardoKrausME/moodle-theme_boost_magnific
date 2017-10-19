@@ -33,13 +33,14 @@
 <html {{{ output.htmlattributes }}}>
 <head>
     <title>{{{ output.page_title }}}</title>
-    <link rel="shortcut icon" href="{{{ output.favicon }}}" />
+    <link rel="shortcut icon" href="{{{ output.favicon }}}"/>
     {{{ output.standard_head_html }}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,700i,900,900i"
+          rel="stylesheet">
 
 </head>
 
@@ -67,5 +68,5 @@
 </body>
 </html>
 {{#js}}
-require(['theme_boost_magnific/loader']);
+    require(['theme_boost_magnific/loader']);
 {{/js}}

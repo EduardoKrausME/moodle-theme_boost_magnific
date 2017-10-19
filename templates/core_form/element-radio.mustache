@@ -20,25 +20,26 @@
     </div>
     <div class="col-md-9 checkbox">
         <label class="form-check-label">
-        {{^element.hardfrozen}}{{#element.frozen}}{{#element.checked}}
-            <input type="hidden" name="{{element.name}}" value="{{element.value}}">
-        {{/element.checked}}{{/element.frozen}}{{/element.hardfrozen}}
-        <input type="radio" {{^element.frozen}}name="{{element.name}}"{{/element.frozen}}
-            id="{{element.id}}" value="{{element.value}}"
-            {{#element.checked}}checked{{/element.checked}}
-            {{#element.frozen}}disabled{{/element.frozen}}
-            {{#error}}
-                autofocus aria-describedby="id_error_{{element.name}}"
-            {{/error}} {{{element.attributes}}} >
-        {{#text}}
-            {{{.}}}
-        {{/text}}
-        {{^text}}
-            {{{label}}}
-        {{/text}}
+            {{^element.hardfrozen}}{{#element.frozen}}{{#element.checked}}
+                <input type="hidden" name="{{element.name}}" value="{{element.value}}">
+            {{/element.checked}}{{/element.frozen}}{{/element.hardfrozen}}
+            <input type="radio" {{^element.frozen}}name="{{element.name}}"{{/element.frozen}}
+                   id="{{element.id}}" value="{{element.value}}"
+                {{#element.checked}}checked{{/element.checked}}
+                {{#element.frozen}}disabled{{/element.frozen}}
+                {{#error}}
+                   autofocus aria-describedby="id_error_{{element.name}}"
+                {{/error}} {{{element.attributes}}} >
+            {{#text}}
+                {{{.}}}
+            {{/text}}
+            {{^text}}
+                {{{label}}}
+            {{/text}}
         </label>
         <span class="text-nowrap">
-            {{#required}}<abbr class="initialism text-danger" title="{{#str}}required{{/str}}">{{#pix}}req, core, {{#str}}required{{/str}}{{/pix}}</abbr>{{/required}}
+            {{#required}}<abbr class="initialism text-danger" title="{{#str}}required{{/str}}">{{#pix}}
+                req, core, {{#str}}required{{/str}}{{/pix}}</abbr>{{/required}}
             {{#advanced}}<abbr class="initialism text-info" title="{{#str}}advanced{{/str}}">!</abbr>{{/advanced}}
             {{{helpbutton}}}
         </span>
@@ -48,9 +49,9 @@
     </div>
 </div>
 {{^element.frozen}}
-{{#js}}
-require(['theme_boost_magnific/form-display-errors'], function(module) {
-    module.enhance({{#quote}}{{element.id}}{{/quote}});
-});
-{{/js}}
+    {{#js}}
+        require(['theme_boost_magnific/form-display-errors'], function(module) {
+        module.enhance({{#quote}}{{element.id}}{{/quote}});
+        });
+    {{/js}}
 {{/element.frozen}}

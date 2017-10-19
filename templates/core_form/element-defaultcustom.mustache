@@ -32,12 +32,12 @@
     }
 }}
 {{< core_form/element-template }}
-    {{$element}}
-        <span class="fdefaultcustom">
-        {{#element.elements}}
-            {{{separator}}}
-            {{{html}}}
-        {{/element.elements}}
-        </span>
-    {{/element}}
+{{$element}}
+<span class="fdefaultcustom">
+    {{#element.elements}}
+        {{{separator}}}
+        {{{html}}}
+    {{/element.elements}}
+</span>
+{{/element}}
 {{/ core_form/element-template }}

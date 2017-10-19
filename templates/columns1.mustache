@@ -40,7 +40,7 @@
 <html {{{ output.htmlattributes }}}>
 <head>
     <title>{{{ output.page_title }}}</title>
-    <link rel="shortcut icon" href="{{{ output.favicon }}}" />
+    <link rel="shortcut icon" href="{{{ output.favicon }}}"/>
     {{{ output.standard_head_html }}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -60,9 +60,9 @@
             <div id="region-main-box" class="col-xs-12">
                 <section id="region-main">
                     <div class="card card-block">
-                    {{{ output.course_content_header }}}
-                    {{{ output.main_content }}}
-                    {{{ output.course_content_footer }}}
+                        {{{ output.course_content_header }}}
+                        {{{ output.main_content }}}
+                        {{{ output.course_content_footer }}}
                     </div>
                 </section>
             </div>
@@ -73,5 +73,5 @@
 </body>
 </html>
 {{#js}}
-require(['theme_boost_magnific/loader']);
+    require(['theme_boost_magnific/loader']);
 {{/js}}

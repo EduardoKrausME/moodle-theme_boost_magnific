@@ -93,7 +93,8 @@
                     {{#str}}searchdatefrom, forum{{/str}}
                 </td>
                 <td class="c1 text-nowrap form-inline">
-                    <input type="checkbox" name="timefromrestrict" value="1" {{#datefromchecked}}checked{{/datefromchecked}}>
+                    <input type="checkbox" name="timefromrestrict" value="1"
+                           {{#datefromchecked}}checked{{/datefromchecked}}>
                     {{{datefromfields}}}
                     <input type="hidden" name="hfromday" value="0">
                     <input type="hidden" name="hfrommonth" value="0">
@@ -160,7 +161,7 @@
                 </tr>
             {{/tagsenabled}}
             <tr>
-                <td> </td>
+                <td></td>
                 <td class="submit">
                     <button type="submit" class="btn btn-primary">{{#str}}searchforums, forum{{/str}}</button>
                 </td>
@@ -169,20 +170,20 @@
     </form>
 </div>
 {{#js}}
-require(['jquery'], function($) {
+    require(['jquery'], function($) {
     var toggleDateFields = function(prefix, disabled) {
-        $('#searchform select[name^=' + prefix + ']').prop('disabled', disabled);
-        $('#searchform input[name^=h' + prefix + ']').val(disabled ? 1 : 0);
+    $('#searchform select[name^=' + prefix + ']').prop('disabled', disabled);
+    $('#searchform input[name^=h' + prefix + ']').val(disabled ? 1 : 0);
     };
 
     toggleDateFields('from', !$("#searchform input[name='timefromrestrict']").prop('checked'));
     $("#searchform input[name='timefromrestrict']").click(function() {
-        toggleDateFields('from', !this.checked);
+    toggleDateFields('from', !this.checked);
     });
 
     toggleDateFields('to', !$("#searchform input[name='timetorestrict']").prop('checked'));
     $("#searchform input[name='timetorestrict']").click(function() {
-        toggleDateFields('to', !this.checked);
+    toggleDateFields('to', !this.checked);
     });
-});
+    });
 {{/js}}

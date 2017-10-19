@@ -35,7 +35,8 @@
             </button>
         </div>
 
-        <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}">
+        <a href="{{{ config.wwwroot }}}"
+           class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}">
             {{# output.should_display_navbar_logo }}
                 <span class="logo hidden-xs-down">
                     <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
@@ -52,7 +53,7 @@
 
         <!-- search_box -->
         <span class="hidden-md-down">
-        {{{ output.search_box }}}
+            {{{ output.search_box }}}
         </span>
 
         <nav class="nav navbar-nav hidden-md-down">

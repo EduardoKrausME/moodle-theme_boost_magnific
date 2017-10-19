@@ -34,7 +34,7 @@
 }}
 
 <a href="#previous" data-action="previous-user">{{{larrow}}}</a>
-    <span data-region="input-field">
+<span data-region="input-field">
         <select data-action="change-user" data-assignmentid="{{assignmentid}}" data-groupid="{{groupid}}"></select>
     </span>
 <a href="#next" data-action="next-user">{{{rarrow}}}</a>
@@ -43,7 +43,8 @@
 
 <span data-region="user-count">
     <small>
-        <span data-region="user-count-summary">{{#str}}xofy, mod_assign, { "x": "{{index}}", "y": "{{count}}" }{{/str}}</span>
+        <span data-region="user-count-summary">{{#str}}
+            xofy, mod_assign, { "x": "{{index}}", "y": "{{count}}" }{{/str}}</span>
     </small>
 </span>
 
@@ -51,12 +52,14 @@
     <form>
         <label><input type="checkbox" name="filter_submitted">{{#str}}filtersubmitted, mod_assign{{/str}}</label>
         <label><input type="checkbox" name="filter_notsubmitted">{{#str}}filternotsubmitted, mod_assign{{/str}}</label>
-        <label><input type="checkbox" name="filter_requiregrading">{{#str}}filterrequiregrading, mod_assign{{/str}}</label>
+        <label><input type="checkbox" name="filter_requiregrading">{{#str}}
+            filterrequiregrading, mod_assign{{/str}}</label>
         <label><input type="checkbox" name="filter_grantedextension">{{#str}}filtergrantedextension, mod_assign{{/str}}</label>
     </form>
 </span>
 
-<a href="#" data-region="user-filters" title="{{#str}}changefilters, mod_assign{{/str}}" aria-expanded="false" aria-controls="filter-configuration-{{uniqid}}">
+<a href="#" data-region="user-filters" title="{{#str}}changefilters, mod_assign{{/str}}" aria-expanded="false"
+   aria-controls="filter-configuration-{{uniqid}}">
     <span class="accesshide">
         {{#filters}}
             {{filtername}}

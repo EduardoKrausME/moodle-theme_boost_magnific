@@ -4,12 +4,12 @@
     Example context (json): {}
 }}
 {{< core_form/element-template }}
-    {{$element}}
-        <span class="fdate_selector">
-        {{#element.elements}}
-            {{{separator}}}
-            {{{html}}}
-        {{/element.elements}}
-        </span>
-    {{/element}}
+{{$element}}
+<span class="fdate_selector">
+    {{#element.elements}}
+        {{{separator}}}
+        {{{html}}}
+    {{/element.elements}}
+</span>
+{{/element}}
 {{/ core_form/element-template }}

@@ -38,22 +38,22 @@
 }}
 
 <ul class="nav nav-tabs" role="tablist">
-<!-- First the top most node and immediate children -->
+    <!-- First the top most node and immediate children -->
     <li class="nav-item">
         <a class="nav-link active" href="#link{{node.key}}" data-toggle="tab" role="tab">{{node.text}}</a>
     </li>
-<!-- Now the first level children with sub nodes -->
-{{#node.children}}
-    {{#children.count}}
-        {{#display}}
-            {{^is_short_branch}}
-                <li class="nav-item">
-                    <a class="nav-link" href="#link{{key}}" data-toggle="tab" role="tab">{{text}}</a>
-                </li>
-            {{/is_short_branch}}
-        {{/display}}
-    {{/children.count}}
-{{/node.children}}
+    <!-- Now the first level children with sub nodes -->
+    {{#node.children}}
+        {{#children.count}}
+            {{#display}}
+                {{^is_short_branch}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#link{{key}}" data-toggle="tab" role="tab">{{text}}</a>
+                    </li>
+                {{/is_short_branch}}
+            {{/display}}
+        {{/children.count}}
+    {{/node.children}}
 </ul>
 
 <div class="tab-content">
@@ -82,8 +82,8 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            {{#action}}<h4><a href="{{action}}">{{text}}</a><h4>{{/action}}
-                                            {{^action}}<h4>{{text}}<h4>{{/action}}
+                                            {{#action}}<h4><a href="{{action}}">{{text}}</a></h4>{{/action}}
+                                            {{^action}}<h4>{{text}}</h4>{{/action}}
                                         </div>
                                         <div class="col-sm-9">
                                             <ul class="list-unstyled">
@@ -109,8 +109,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    {{#action}}<h4><a href="{{action}}">{{text}}</a><h4>{{/action}}
-                                    {{^action}}<h4>{{text}}<h4>{{/action}}
+                                    {{#action}}<h4><a href="{{action}}">{{text}}</a></h4>{{/action}}
+                                    {{^action}}<h4>{{text}}</h4>{{/action}}
                                 </div>
                                 <div class="col-sm-9">
                                     <ul class="list-unstyled">
@@ -130,8 +130,8 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                {{#action}}<h4><a href="{{action}}">{{text}}</a><h4>{{/action}}
-                                                {{^action}}<h4>{{text}}<h4>{{/action}}
+                                                {{#action}}<h4><a href="{{action}}">{{text}}</a></h4>{{/action}}
+                                                {{^action}}<h4>{{text}}</h4>{{/action}}
                                             </div>
                                             <div class="col-sm-9">
                                                 <ul class="list-unstyled">

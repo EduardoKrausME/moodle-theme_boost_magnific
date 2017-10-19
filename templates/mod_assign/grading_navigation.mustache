@@ -34,69 +34,70 @@
 }}
 
 <div class="container-fluid">
-<div data-region="grading-navigation" class="row">
+    <div data-region="grading-navigation" class="row">
 
-{{!
-    There are three chunks, which appear side-by-side at large screen sizes.
-    A) Assignment info, which has 3 rows:
-}}
+        {{!
+            There are three chunks, which appear side-by-side at large screen sizes.
+            A) Assignment info, which has 3 rows:
+        }}
 
-<div data-region="assignment-info" class="col-md-4">
+        <div data-region="assignment-info" class="col-md-4">
 
-{{!
-    Row 1) course name & link.
-}}
-<a href="{{config.wwwroot}}/course/view.php?id={{courseid}}" title="{{{coursename}}}">{{{coursename}}}</a><br/>
+            {{!
+                Row 1) course name & link.
+            }}
+            <a href="{{config.wwwroot}}/course/view.php?id={{courseid}}"
+               title="{{{coursename}}}">{{{coursename}}}</a><br/>
 
-{{!
-    Row 2) Assignment name & link.
-}}
-<a href="{{config.wwwroot}}/mod/assign/view.php?id={{cmid}}" title="{{name}}">{{name}}</a>
+            {{!
+                Row 2) Assignment name & link.
+            }}
+            <a href="{{config.wwwroot}}/mod/assign/view.php?id={{cmid}}" title="{{name}}">{{name}}</a>
 
-{{!
-    Row 3) Edit settings, due date, with tool-tip thing.
-}}
-<div role="tooltip" id="tooltip-{{uniqid}}" class="accesshide">
-{{#duedate}}
-{{#str}}duedatecolon, mod_assign, {{duedatestr}}{{/str}}
-{{/duedate}}
+            {{!
+                Row 3) Edit settings, due date, with tool-tip thing.
+            }}
+            <div role="tooltip" id="tooltip-{{uniqid}}" class="accesshide">
+                {{#duedate}}
+                    {{#str}}duedatecolon, mod_assign, {{duedatestr}}{{/str}}
+                {{/duedate}}
 
-{{#cutoffdate}}
-<br>{{cutoffdatestr}}
-{{/cutoffdate}}
+                {{#cutoffdate}}
+                    <br>{{cutoffdatestr}}
+                {{/cutoffdate}}
 
-{{#duedate}}
-<br>{{timeremainingstr}}
-{{/duedate}}
-</div>
+                {{#duedate}}
+                    <br>{{timeremainingstr}}
+                {{/duedate}}
+            </div>
 
-<br/>
-{{#caneditsettings}}
-<a href="{{config.wwwroot}}/course/modedit.php?update={{cmid}}&return=1">{{#pix}}t/edit, core,{{#str}}editsettings{{/str}}{{/pix}}</a>
-{{/caneditsettings}}
-</span>
-</div>
+            <br/>
+            {{#caneditsettings}}
+                <a href="{{config.wwwroot}}/course/modedit.php?update={{cmid}}&return=1">{{#pix}}
+                    t/edit, core,{{#str}}editsettings{{/str}}{{/pix}}</a>
+            {{/caneditsettings}}
+        </div>
 
-{{!
-    B) Current user name and info.
-}}
-<div data-region="user-info" class="col-md-4" data-assignmentid="{{assignmentid}}" data-groupid="{{groupid}}">
-    {{> mod_assign/grading_navigation_user_info }}
-</div>
+        {{!
+            B) Current user name and info.
+        }}
+        <div data-region="user-info" class="col-md-4" data-assignmentid="{{assignmentid}}" data-groupid="{{groupid}}">
+            {{> mod_assign/grading_navigation_user_info }}
+        </div>
 
-{{!
-    C) User selector widget.
-}}
-<div data-region="user-selector" class="col-md-4">
-    <div class="alignment">
-        {{> mod_assign/grading_navigation_user_selector }}
+        {{!
+            C) User selector widget.
+        }}
+        <div data-region="user-selector" class="col-md-4">
+            <div class="alignment">
+                {{> mod_assign/grading_navigation_user_selector }}
+            </div>
+        </div>
     </div>
 </div>
-</div>
-</div>
 {{#js}}
-require(['mod_assign/grading_navigation', 'core/tooltip'], function(GradingNavigation, ToolTip) {
+    require(['mod_assign/grading_navigation', 'core/tooltip'], function(GradingNavigation, ToolTip) {
     var nav = new GradingNavigation('[data-region="user-selector"]');
     var tooltip = new ToolTip('[data-region="assignment-tooltip"]');
-});
+    });
 {{/js}}
