@@ -24,8 +24,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2017102100;
+$plugin->version = 2017111700;
 $plugin->requires = 2016120500;
 $plugin->release = 'V2.8';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'theme_boost_magnific';
+
+$plugin->dependencies = array( 'theme_boost' => 2016071101 );
