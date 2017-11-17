@@ -107,12 +107,7 @@
 
         <div id="course-footer">{{{ output.course_footer }}}</div>
 
-        {{# output.page_doc_link }}
-            <p class="helplink">{{{ output.page_doc_link }}}</p>
-        {{/ output.page_doc_link }}
-
         {{{ output.login_info }}}
-        {{{ output.home_link }}}
         <nav class="nav navbar-nav hidden-lg-up">
             {{# output.custom_menu_flat }}
                 <ul class="list-unstyled p-t-1">
@@ -128,8 +123,8 @@
 </body>
 </html>
 {{#js}}
-    require(['theme_boost_magnific/loader']);
-    require(['theme_boost_magnific/drawer'], function(mod) {
-    mod.init();
+    require(['theme_boost/loader']);
+    require(['theme_boost/drawer'], function(mod) {
+        mod.init();
     });
 {{/js}}

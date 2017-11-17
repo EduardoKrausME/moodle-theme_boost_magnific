@@ -201,8 +201,7 @@ body {
             float: left;
             margin-right: 11px;
         }
-        &:focus,
-        &:hover {
+        @include hover-focus {
             color: rgba(0, 0, 0, .80);
             i {
                 color: rgba(0, 0, 0, .80);
@@ -286,31 +285,43 @@ body[rel^="page-admin-"] .menu-sitesettings {
     color: #2196f3;
 }
 .navbar-light {
-    //background    : #2196F3 url("[[pix:theme|bg_users]]") repeat 0 0;
     background: #0b7cd6 url("[[pix:theme|bg_users]]") repeat 0 0;
     border-bottom: 0;
     box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
     color: #fff;
+    padding: 0;
     a {
         color: #fff;
     }
     .navbar-nav {
-        padding-left: 0;
+        height: 50px;
         .nav-item + .nav-item {
             margin-left: $spacer * 2;
         }
         .nav-item {
-            margin-top: 5px;
+            margin-top: 0;
         }
         .nav-link {
-            font-size: $font-size-sm;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: rgba(255, 254, 254, 0.65);
+            color: #fff;
+            padding: 15px;
+            display: inline-block;
+            @include hover-focus{
+                background-color: rgba(0, 0, 0, .1);
+                color: rgba(255, 255, 255, 0.85);
+            }
+        }
+        .popover-region-toggle {
+            padding : 13px 0 15px;
+        }
+        .nav-item + .nav-item {
+            margin-left: 0;
         }
     }
     .navbar-toggler {
-        padding: 0 3px 3px;
+        padding: 6px 3px;;
         margin: 0;
         width: 2.5em;
         line-height: 1;
@@ -340,9 +351,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         color: #fff;
         font-size: 1.6rem;
         font-weight: 700;
-        padding-top: 1px;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 8px 0;
         margin-right: $spacer * 2;
         @include hover-focus {
             color: #fff;
@@ -390,6 +399,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
  */
 .usermenu {
     margin: 0;
+    padding: 7px 0;
     .usertext {
         display: none;
     }
@@ -438,12 +448,12 @@ body[rel^="page-admin-"] .menu-sitesettings {
         .menu-action-text {
             color: rgba(0, 0, 0, .54);
         }
-        a:focus,
-        a:hover {
-            color: #4d4f50;
+        a {
+            @include hover-focus {
+                color : #4D4F50;
+            }
         }
-        &:focus,
-        &:hover {
+        @include hover-focus {
             .icon,
             .menu-action-text {
                 color: #4d4f50;
@@ -456,7 +466,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
 }
 .popover-region-toggle::before,
 .popover-region-toggle::after {
-    bottom: -8px;
+    bottom: -15px;
 }
 $drawer-width: 200px;
 #nav-drawer.closed {

@@ -39,7 +39,15 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return string
      */
     public function favicon() {
-        return $this->page->theme->setting_file_url('favicon', 'favicon');
+        if ($this->page->theme->settings->favicon) {
+            return $this->page->theme->setting_file_url('favicon', 'favicon');
+        }
+
+        if (method_exists($this->page->theme, "image_url")) {
+            return $this->page->theme->image_url('favicon', 'theme');
+        } else {
+            return $this->page->theme->pix_url('favicon', 'theme');
+        }
     }
 
     /**
