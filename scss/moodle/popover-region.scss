@@ -454,10 +454,13 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
             line-height: 12px;
             margin: 0;
             width: 100%;
+            color: #7C7C7C;
+            font-weight: bold;
         }
 
         p {
             margin: 0;
+            color: #7C7C7C;
         }
     }
 

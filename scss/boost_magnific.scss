@@ -102,6 +102,11 @@ body {
         .page-header-headings {
             float: none;
         }
+        a:first-of-type > .icon,
+        span:first-of-type > .icon,
+        .header-button-title {
+            color : #FFFFFF;
+        }
     }
     &.drawer-open-left #page-header {
         background-position: -200px -50px;
