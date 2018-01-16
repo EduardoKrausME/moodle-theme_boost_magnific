@@ -105,7 +105,7 @@ body {
         a:first-of-type > .icon,
         span:first-of-type > .icon,
         .header-button-title {
-            color : #FFFFFF;
+            color: #fff;
         }
     }
     &.drawer-open-left #page-header {
@@ -313,13 +313,13 @@ body[rel^="page-admin-"] .menu-sitesettings {
             color: #fff;
             padding: 15px;
             display: inline-block;
-            @include hover-focus{
+            @include hover-focus {
                 background-color: rgba(0, 0, 0, .1);
                 color: rgba(255, 255, 255, 0.85);
             }
         }
         .popover-region-toggle {
-            padding : 13px 0 15px;
+            padding: 13px 0 15px;
         }
         .nav-item + .nav-item {
             margin-left: 0;
@@ -455,7 +455,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         }
         a {
             @include hover-focus {
-                color : #4D4F50;
+                color: #4d4f50;
             }
         }
         @include hover-focus {
@@ -512,7 +512,6 @@ body.drawer-open-right {
         color: #dc1a0c;
     }
 }
-
 @media (max-width: 600px) {
     .col-sm-1,
     .col-sm-2,
@@ -807,6 +806,5 @@ body.drawer-open-right {
         }
     }
 }
-
 @import "login";
 @import "footer-icon";
