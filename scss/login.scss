@@ -68,10 +68,13 @@
     }
     .login-content {
         float: right;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-        margin-right: 8rem;
-        width: 30rem;
+        //margin-top: 3rem;
+        //margin-bottom: 3rem;
+        //margin-right: 8rem;
+        //width: 30rem;
+        width: auto;
+        display: inline-block;
+        margin: 1.5%;
     }
     .login-inner-wrapper-2 {
         background: #fff;
