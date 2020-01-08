@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die;
  * @copyright  2012 Bas Brands, www.basbrands.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class core_renderer extends \theme_boost\output\core_renderer {
+class core_renderer extends \core_renderer {
     /**
      * Renders the custom favicon
      *
