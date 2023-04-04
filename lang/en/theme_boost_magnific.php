@@ -155,7 +155,6 @@ $string['background_color_desc'] = 'Background color for top and bottom';
 $string['background_image'] = 'Background image';
 $string['background_image_desc'] = 'Background image for top and bottom';
 
-
 $string['color_primary'] = 'Cor primária';
 $string['color_primary_desc'] = 'Selecione qual a cor primária do seu Moodle';
 $string['color_secondary'] = 'Cor secundária';
