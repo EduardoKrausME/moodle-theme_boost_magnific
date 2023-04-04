@@ -1,0 +1,176 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_boost_magnific/footer.
+    Boost Magnific footer layout template.
+}}
+{{#maintenancefooter}}
+    <footer id="page-footer" class=" footer-popover footer-dark bg-dark text-light">
+        <div id="footer">
+            <div class="footer-bootom">
+                <p class="text-center">
+                    Feito com ❤️ Por <a href="https://eduardokraus.com" target="_blank">Eduardo Kraus</a>.
+                    Powered by <a href="https://moodle.org" target="_blank">Moodle</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+{{/maintenancefooter}}
+
+{{^maintenancefooter}}
+    <footer id="page-footer" class="footer-block">
+        <div id="footer">
+            {{#footer_enable_block}}
+                <div class="footer-main">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {{#enable_block_description}}
+                                <div class="{{footer_block_class}}">
+                                    <div class="footer-desc">
+                                        <div class="logo-footer">
+                                            <a href="{{{config.wwwroot }}}/?redirect=0">
+                                                {{{logourl_footer}}}
+                                            </a>
+                                        </div>
+                                        <p>{{footer_description}}</p>
+
+                                        {{#footer_settings_edit}}
+                                            <a class="settings-edit" href="{{{footer_settings_edit}}}">
+                                                {{#pix}}edit, theme_boost_magnific{{/pix}}
+                                            </a>
+                                        {{/footer_settings_edit}}
+                                    </div>
+                                </div>
+                            {{/enable_block_description}}
+                            {{#enable_block_links}}
+                                <div class="{{footer_block_class}}">
+                                    <div class="footer-nav">
+                                        <h4>{{footer_links_title}}</h4>
+                                        <ul>
+                                            {{{footer_links}}}
+                                        </ul>
+                                        {{#footer_settings_edit}}
+                                            <a class="settings-edit" href="{{{footer_settings_edit}}}">
+                                                {{#pix}}edit, theme_boost_magnific{{/pix}}
+                                            </a>
+                                        {{/footer_settings_edit}}
+                                    </div>
+                                </div>
+                            {{/enable_block_links}}
+                            {{#enable_block_social}}
+                                <div class="{{footer_block_class}}">
+                                    <div class="social-media">
+                                        <h4>{{footer_social_title}}</h4>
+                                        <ul>
+                                            {{#social_facebook}}
+                                                <li class="smedia-01">
+                                                    <a href="{{social_facebook}}" target="_blank">
+                                                <span class="media-icon">
+                                                <i class="fa fa-facebook"></i>
+                                                </span>
+                                                        <span class="media-name">{{facebook_name}}</span>
+                                                    </a>
+                                                </li>
+                                            {{/social_facebook}}
+
+                                            {{#social_twitter}}
+                                                <li class="smedia-02">
+                                                    <a href="{{social_twitter}}" target="_blank">
+                                                        <span class="media-icon">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </span>
+                                                        <span class="media-name">{{twitter_name}}</span>
+                                                    </a>
+                                                </li>
+                                            {{/social_twitter}}
+
+                                            {{#social_instagram}}
+                                                <li class="smedia-04">
+                                                    <a href="{{social_instagram}}" target="_blank">
+                                                        <span class="media-icon">
+                                                            <i class="fa fa-instagram"></i>
+                                                        </span>
+                                                        <span class="media-name">{{instagram_name}}</span>
+                                                    </a>
+                                                </li>
+                                            {{/social_instagram}}
+
+                                            {{#footer_settings_edit}}
+                                                <a class="settings-edit" href="{{{footer_settings_edit}}}">
+                                                    {{#pix}}edit, theme_boost_magnific{{/pix}}
+                                                </a>
+                                            {{/footer_settings_edit}}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {{/enable_block_social}}
+                            {{#enable_block_contact}}
+                                <div class="{{footer_block_class}}">
+                                    <div class="footer-contact">
+                                        <h4>{{contact_footer_title}}</h4>
+
+                                        {{#contact_phone}}
+                                            <p>{{contact_address}}</p>
+                                        {{/contact_phone}}
+                                        {{#contact_phone}}
+                                            <p><i class="fa fa-phone-square"></i>{{contact_phone}}</p>
+                                        {{/contact_phone}}
+
+                                        {{#contact_email}}
+                                            <p><i class="fa fa-envelope"></i>
+                                                <a class="mail-link"
+                                                   href="mailto:{{contact_email}}">{{contact_email}}</a>
+                                            </p>
+                                        {{/contact_email}}
+
+                                        {{#footer_settings_edit}}
+                                            <a class="settings-edit" href="{{{footer_settings_edit}}}">
+                                                {{#pix}}edit, theme_boost_magnific{{/pix}}
+                                            </a>
+                                        {{/footer_settings_edit}}
+
+                                    </div>
+                                </div>
+                            {{/enable_block_contact}}
+                        </div>
+                    </div>
+                    <div class="footer-foot">
+                        <div class="container">
+                            <p class="text-center">
+                                Feito com ❤️ Por <a href="https://eduardokraus.com" target="_blank">Eduardo Kraus</a>.
+                                Powered by <a href="https://moodle.org" target="_blank">Moodle</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {{/footer_enable_block}}
+        </div>
+
+        <div class="footer-content-debugging footer-dark bg-dark text-light">
+            <div class="container-fluid footer-dark-inner">
+                {{{ output.standard_footer_html }}}
+                {{{ output.standard_end_of_body_html }}}
+                {{{ output.debug_footer_html }}}
+            </div>
+        </div>
+    </footer>
+{{/maintenancefooter}}
+{{#js}}
+    require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+    });
+{{/js}}

@@ -1,0 +1,64 @@
+define([
+    "jquery",
+], function($) {
+    return thememagnific = {
+
+        theme : function() {
+
+            var input_theme = $("#id_s_theme_boost_magnific_theme");
+
+            $(".seletor-de-theme").click(function() {
+                var themename = $(this).attr("data-name");
+                thememagnific._theme_select(themename);
+            });
+            input_theme.change(function() {
+                var themename = input_theme.val();
+                thememagnific._theme_select(themename);
+            });
+        },
+
+        _theme_select : function(themename) {
+
+            console.log(themename);
+
+            var themeDivSelected = $("#theme-" + themename);
+            themeDivSelected.find("span").each(function() {
+                var colorElement = $(this);
+                var name = colorElement.attr("data-name");
+                var color = colorElement.attr("data-color");
+
+                $("#id_s_theme_boost_magnific_" + name).val(color);
+                $("#admin-" + name + " .previewcolour").css({"background-color" : color});
+            });
+        },
+
+
+        numslides          : function() {
+            var theme_boost_magnific_slideshow_numslides = $("#id_s_theme_boost_magnific_slideshow_numslides");
+
+            theme_boost_magnific_slideshow_numslides.change(function() {
+                thememagnific._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
+            });
+
+            thememagnific._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
+        },
+        _numslides_changue : function(numslides) {
+            for (var i = 0; i <= 9; i++) {
+                if (numslides >= i) {
+                    $("#admin-slideshow_info_" + i).parent().show();
+                    $("#admin-slideshow_image_" + i).show();
+                    $("#admin-slideshow_text_" + i).show();
+                    $("#admin-slideshow_url_" + i).show();
+                } else {
+                    $("#admin-slideshow_info_" + i).parent().hide();
+                    $("#admin-slideshow_image_" + i).hide();
+                    $("#admin-slideshow_text_" + i).hide();
+                    $("#admin-slideshow_url_" + i).hide();
+                }
+            }
+        }
+    };
+});
+
+
+

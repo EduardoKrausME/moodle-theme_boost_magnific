@@ -15,9 +15,9 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_boost_magnific/columns1
+    @template theme_boost/columns1
 
-    Boost Magnific 1 column layout template.
+    Boost 1 column layout template.
 
     Context variables required for this template:
     * sitename - The name of the site
@@ -36,42 +36,39 @@
          "bodyattributes":""
     }
 }}
-{{{ output.doctype }}}
-<html {{{ output.htmlattributes }}}>
-<head>
-    <title>{{{ output.page_title }}}</title>
-    <link rel="shortcut icon" href="{{{ output.favicon }}}"/>
-    {{{ output.standard_head_html }}}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{> theme_boost/head }}
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700">
+colluna1
 
-</head>
+<body data-templates="columns1" {{{bodyattributes }}}>
+{{> core/local/toast/wrapper}}
 
-<body {{{ bodyattributes }}}>
+<div id="page-wrapper" class="d-print-block">
 
-<div id="page-wrapper">
+    {{{output.standard_top_of_body_html }}}
 
-    {{{ output.standard_top_of_body_html }}}
-
-    <div id="page" class="container-fluid">
-        <div id="page-content" class="row">
-            <div id="region-main-box" class="col-xs-12">
-                <section id="region-main">
-                    <div class="card card-block">
-                        {{{ output.course_content_header }}}
-                        {{{ output.main_content }}}
-                        {{{ output.course_content_footer }}}
-                    </div>
+    <div id="page" class="container-fluid d-print-block">
+        <div id="page-content" class="row pb-3 d-print-block">
+            <div id="region-main-box" class="col-12">
+                <section id="region-main" aria-label="{{#str}}content{{/str}}">
+                    {{{output.course_content_header }}}
+                    {{{output.main_content }}}
+                    {{{output.activity_navigation }}}
+                    {{{output.course_content_footer }}}
                 </section>
             </div>
         </div>
     </div>
+
+    {{{output.standard_after_main_region_html }}}
+
 </div>
-{{{ output.standard_end_of_body_html }}}
-</body>
+{{{output.standard_end_of_body_html }}}
+</>
 </html>
 {{#js}}
-    require(['theme_boost/loader']);
+    M.util.js_pending('theme_boost/loader');
+    require(['theme_boost/loader'], function() {
+    M.util.js_complete('theme_boost/loader');
+    });
 {{/js}}

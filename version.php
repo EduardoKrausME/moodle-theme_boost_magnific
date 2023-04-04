@@ -15,19 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Boost Magnific.
+ * version.php
  *
- * @package    theme_boost_magnific
- * @copyright  2017 Eduardo Kraus
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * This is built using the boost template to allow for new theme's using
+ * Moodle's new Boost theme engine
+ *
+ * @package     theme_boost_magnific
+ * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2020010701;
-$plugin->requires = 2016120500;
-$plugin->release = 'V2.11';
+$plugin->version = 2023040201;
 $plugin->maturity = MATURITY_STABLE;
+$plugin->release = 'v4.1';
+$plugin->requires = 2022041900;
 $plugin->component = 'theme_boost_magnific';
-
-$plugin->dependencies = array( 'theme_boost' => 2016071101 );
+$plugin->dependencies = array(
+    'theme_boost' => 2022041900,
+);

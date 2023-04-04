@@ -15,11 +15,11 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_boost_magnific/columns2
+    @template theme_boost/columns2
 
     Admin time setting template.
 
-    boost_magnific 2 column layout template.
+    Boost 2 column layout template.
 
     Context variables required for this template:
     * sitename - The name of the site
@@ -48,83 +48,55 @@
         "hasregionmainsettingsmenu": false
     }
 }}
-{{{ output.doctype }}}
-<html {{{ output.htmlattributes }}}>
-<head>
-    <title>{{{ output.page_title }}}</title>
-    <link rel="shortcut icon" href="{{{ output.favicon }}}"/>
-    {{{ output.standard_head_html }}}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{> theme_boost/head}}
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700">
+colluna2
 
-</head>
-
-<body {{{ bodyattributes }}}>
+<body data-templates="columns2" {{{bodyattributes}}}>
 
 <div id="page-wrapper">
 
-    {{{ output.standard_top_of_body_html }}}
+    {{{output.standard_top_of_body_html}}}
 
     {{>theme_boost_magnific/header}}
 
-    {{{ output.full_header }}}
-
     <div id="page" class="container-fluid">
+        <ul class="navbar-nav mr-auto">
+            {{{output.custom_menu}}}
+        </ul>
+        <div class="secondarynavigation">
+            {{#secondarymoremenu}}
+                {{> core/moremenu}}
+            {{/secondarymoremenu}}
+        </div>
 
-        <div id="page-content" class="row">
-            <div id="region-main-box" class="col-xs-12">
+        <div id="page-content" class="row pb-3">
+            <div id="region-main-box" class="col-12">
                 {{#hasregionmainsettingsmenu}}
-                    <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
-                        <div> {{{ output.region_main_settings_menu }}} </div>
+                    <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
+                        <div> {{{output.region_main_settings_menu}}} </div>
                     </div>
                 {{/hasregionmainsettingsmenu}}
-                <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
-                    <div class="card card-block">
-                        {{#hasregionmainsettingsmenu}}
-                            <div class="region_main_settings_menu_proxy"></div>
-                        {{/hasregionmainsettingsmenu}}
-                        {{{ output.course_content_header }}}
-                        {{{ output.main_content }}}
-                        {{{ output.course_content_footer }}}
-                    </div>
+                <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
+                    {{#hasregionmainsettingsmenu}}
+                        <div class="region_main_settings_menu_proxy"></div>
+                    {{/hasregionmainsettingsmenu}}
+                    {{{output.course_content_header}}}
+                    {{{output.main_content}}}
+                    {{{output.activity_navigation}}}
+                    {{{output.course_content_footer}}}
                 </section>
                 {{#hasblocks}}
-                    <section data-region="blocks-column" class="hidden-print">
-                        {{{ sidepreblocks }}}
+                    <section data-region="blocks-column" class="d-print-none">
+                        {{{sidepreblocks}}}
                     </section>
                 {{/hasblocks}}
             </div>
         </div>
     </div>
-    {{> theme_boost_magnific/nav-drawer }}
+    {{> theme_boost/nav-drawer}}
 </div>
-<footer id="page-footer" class="p-y-1 bg-inverse">
-    <div class="container">
 
-        {{{ output.get_icons_footer }}}
+{{> theme_boost_magnific/footer}}
 
-        <div id="course-footer">{{{ output.course_footer }}}</div>
 
-        {{{ output.login_info }}}
-        <nav class="nav navbar-nav hidden-lg-up">
-            {{# output.custom_menu_flat }}
-                <ul class="list-unstyled p-t-1">
-                    {{> theme_boost_magnific/custom_menu_footer }}
-                </ul>
-            {{/ output.custom_menu_flat }}
-        </nav>
-        {{{ output.standard_footer_html }}}
-        {{{ output.standard_end_of_body_html }}}
-    </div>
-</footer>
-
-</body>
-</html>
-{{#js}}
-    require(['theme_boost/loader']);
-    require(['theme_boost/drawer'], function(mod) {
-        mod.init();
-    });
-{{/js}}

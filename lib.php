@@ -15,96 +15,477 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme functions.
+ * lib.php
  *
- * @package    theme_boost_magnific
- * @copyright  2017 Eduardo Kraus
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * This is built using the boost template to allow for new theme's using
+ * Moodle's new Boost theme engine
+ *
+ * @package     theme_boost_magnific
+ * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
 
 /**
- * Post process the CSS tree.
+ * Page init functions runs every time page loads.
  *
- * @param string $tree The CSS tree.
- * @param theme_config $theme The theme config object.
+ * @param moodle_page $page
+ *
+ * @return null
  */
-function theme_boost_magnific_css_tree_post_processor($tree, $theme) {
-    $prefixer = new theme_boost\autoprefixer($tree);
-    $prefixer->prefix();
+function theme_boost_magnific_page_init(moodle_page $page) {
+    $page->requires->jquery();
 }
 
 /**
- * Inject additional SCSS.
+ * Loads the CSS Styles and replace the background images.
+ * If background image not available in the settings take the default images.
  *
- * @param theme_config $theme The theme config object.
- * @return string
+ * @param string $css
+ * @param string $theme
+ *
+ * @return string $css
  */
-function theme_boost_magnific_get_extra_scss($theme) {
-    return !empty($theme->settings->scss) ? $theme->settings->scss : '';
+function theme_boost_magnific_process_css($css, $theme) {
+    global $OUTPUT;
+
+    function color_hex_to_rgb($hex) {
+        if (isset($hex[4])) {
+            $hex = array("{$hex[1]}{$hex[2]}", "{$hex[3]}{$hex[4]}", "{$hex[5]}{$hex[6]}");
+        } else {
+            $hex = array("{$hex[1]}{$hex[1]}", "{$hex[2]}{$hex[2]}", "{$hex[3]}{$hex[3]}");
+        }
+        $rgb = implode(",", array_map('hexdec', $hex));
+
+        return $rgb;
+    }
+
+    if (preg_match('/root.*--color_theme_primary:/s', $css)) {
+        $color_primary = color_hex_to_rgb($theme->settings->color_primary);
+        $color_secondary = color_hex_to_rgb($theme->settings->color_secondary);
+        $color_buttons = color_hex_to_rgb($theme->settings->color_buttons);
+        $color_names = color_hex_to_rgb($theme->settings->color_names);
+        $color_titles = color_hex_to_rgb($theme->settings->color_titles);
+
+        $background = $OUTPUT->image_url("bg/bg_{$theme->settings->background_image}", 'theme');
+        $background_image = $background ? "url(\"{$background->out()}\") repeat 0 -50px" : "";
+
+        $csstheme = "
+            :root {
+                --color_theme_primary:   {$color_primary};
+                --color_theme_secondary: {$color_secondary};
+                --color_theme_buttons:   {$color_buttons};
+                --color_theme_names:     {$color_names};
+                --color_theme_titles:    {$color_titles};
+                
+                --color_primary:         {$theme->settings->color_primary};
+                --color_secondary:       {$theme->settings->color_secondary};
+                --color_buttons:         {$theme->settings->color_buttons};
+                --color_names:           {$theme->settings->color_names};
+                --color_titles:          {$theme->settings->color_titles};
+            }
+            body #header,
+            #footer .footer-main {
+                color: #fff;
+                background: {$theme->settings->background_color} {$background_image};
+            }
+            body .frontpage-course-list {
+                background: {$theme->settings->background_color}3d;
+            }
+            ";
+
+        if (isset($theme->settings->fontfamily[3])) {
+            $fontfamily = "@import url(https://fonts.googleapis.com/css2?family={$theme->settings->fontfamily}:" .
+                "ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap);\n";
+            $fontfamily .= "body{font-family: {$theme->settings->fontfamily}, Arial, Helvetica, sans-serif;}";
+        } else {
+            $fontfamily = "body{font-family: Arial, Helvetica, sans-serif;}";
+        }
+
+        $css = "{$css}\n{$theme->settings->customcss}\n{$csstheme}\n{$fontfamily}";
+    }
+
+    return $css;
 }
 
 /**
- * Returns the main SCSS content.
+ * Serves any files associated with the theme settings.
  *
- * @param theme_config $theme The theme config object.
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context  $context
+ * @param string   $filearea
+ * @param array    $args
+ * @param bool     $forcedownload
+ * @param array    $options
+ *
+ * @return bool
+ * @throws coding_exception
+ * @throws moodle_exception
+ */
+function theme_boost_magnific_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    static $theme;
+
+    if (empty($theme)) {
+        $theme = theme_config::load('boost_magnific');
+    }
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
+        if ($filearea === 'style') {
+            theme_boost_magnific_serve_css($args[1]);
+        } else if ($filearea === 'pagebackground') {
+            return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
+        } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else {
+            send_file_not_found();
+        }
+    } else {
+        send_file_not_found();
+    }
+}
+
+/**
+ * Serves CSS for image file updated to styles.
+ *
+ * @param string $filename
+ *
  * @return string
  */
-function theme_boost_magnific_get_main_scss_content($theme) {
+function theme_boost_magnific_serve_css($filename) {
+    global $CFG;
+    if (!empty($CFG->themedir)) {
+        $thestylepath = $CFG->themedir . '/boost_magnific/style/';
+    } else {
+        $thestylepath = $CFG->dirroot . '/theme/boost_magnific/style/';
+    }
+
+    $thesheet = $thestylepath . $filename;
+    $etagfile = md5_file($thesheet);
+    // File.
+    $lastmodified = filemtime($thesheet);
+    // Header.
+    $ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
+    $etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
+
+    if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince) == $lastmodified)) || $etagheader == $etagfile) {
+        theme_boost_magnific_send_unmodified($lastmodified, $etagfile);
+    }
+    theme_boost_magnific_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
+}
+
+/**
+ * Set browser cache used in php header.
+ *
+ * @param string $lastmodified
+ * @param string $etag
+ *
+ */
+function theme_boost_magnific_send_unmodified($lastmodified, $etag) {
+    $lifetime = 60 * 60 * 24 * 60;
+    header('HTTP/1.1 304 Not Modified');
+    header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
+    header('Cache-Control: public, max-age=' . $lifetime);
+    header('Content-Type: text/css; charset=utf-8');
+    header('Etag: "' . $etag . '"');
+    if ($lastmodified) {
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
+    }
+    die;
+}
+
+/**
+ * Cached css.
+ *
+ * @param string  $path
+ * @param string  $filename
+ * @param integer $lastmodified
+ * @param string  $etag
+ */
+function theme_boost_magnific_send_cached_css($path, $filename, $lastmodified, $etag) {
+    global $CFG;
+    require_once($CFG->dirroot . '/lib/configonlylib.php');
+    // For min_enable_zlib_compression.
+    // 60 days only - the revision may get incremented quite often.
+    $lifetime = 60 * 60 * 24 * 60;
+
+    header('Etag: "' . $etag . '"');
+    header('Content-Disposition: inline; filename="' . $filename . '"');
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
+    header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
+    header('Pragma: ');
+    header('Cache-Control: public, max-age=' . $lifetime);
+    header('Accept-Ranges: none');
+    header('Content-Type: text/css; charset=utf-8');
+    if (!min_enable_zlib_compression()) {
+        header('Content-Length: ' . filesize($path . $filename));
+    }
+
+    readfile($path . $filename);
+    die;
+}
+
+/**
+ * Returns an object containing HTML for the areas affected by settings.
+ *
+ * Do not add Clean specific logic in here, child themes should be able to
+ * rely on that function just by declaring settings with similar names.
+ *
+ * @param renderer_base $output Pass in $OUTPUT.
+ * @param moodle_page   $page   Pass in $PAGE.
+ *
+ * @return stdClass An object with the following properties:
+ *      - navbarclass A CSS class to use on the navbar. By default ''.
+ *      - heading HTML to use for the heading. A logo if one is selected or the default heading.
+ *      - footer_description HTML to use as a footer_description. By default ''.
+ * @throws coding_exception
+ */
+function theme_boost_magnific_get_html_for_settings(renderer_base $output, moodle_page $page) {
+    global $CFG;
+    $return = new stdClass;
+
+    $return->navbarclass = '';
+    if (!empty($page->theme->settings->invert)) {
+        $return->navbarclass .= ' navbar-inverse';
+    }
+
+    if (!empty($page->theme->settings->logo)) {
+        $return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));
+    } else {
+        $return->heading = $output->page_heading();
+    }
+
+    $return->footer_description = '';
+    if (!empty($page->theme->settings->footer_description)) {
+        $return->footer_description = '<div class="footer_description text-center">';
+        $return->footer_description .= format_text($page->theme->settings->footer_description) . '</div>';
+    }
+
+    return $return;
+}
+
+/**
+ * Logo Image URL Fetch from theme settings
+ *
+ * @param string $type
+ *
+ * @return string $logo
+ */
+function theme_boost_magnific_get_logo($local) {
+
+    global $OUTPUT, $SITE;
+
+    $url = $OUTPUT->get_logo_url();
+    if ($url) {
+        return "<img src='{$url->out(false)}' alt='{$SITE->fullname}'>";
+    } else {
+        return "<span>{$SITE->shortname}</span>";
+    }
+}
+
+
+/**
+ * @return string
+ */
+function theme_boost_magnific_get_body_class() {
+    return "";
+}
+
+
+/**
+ * Functions helps to get the admin config values which are related to the
+ * theme
+ *
+ * @param string $setting
+ * @param bool   $format
+ *
+ * @return bool
+ * @throws coding_exception
+ */
+function theme_boost_magnific_get_setting($setting, $format = true) {
     global $CFG;
 
-    $scss = '';
-    $filename = !empty($theme->settings->preset) ? $theme->settings->preset : 'blue';
+    require_once($CFG->dirroot . '/lib/weblib.php');
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('boost_magnific');
+    }
 
-    $filepreset = "{$CFG->dirroot}/theme/boost_magnific/scss/preset/{$filename}.scss";
-    if (file_exists($filepreset)) {
-        $scss .= file_get_contents("{$CFG->dirroot}/theme/boost_magnific/scss/boost_magnific.scss");
-        $scss .= file_get_contents($filepreset);
+    if (empty($theme->settings->$setting)) {
+        return false;
+    } else if ($format === true) {
+        return format_string($theme->settings->$setting);
+    } else if ($format === FORMAT_PLAIN) {
+        return format_text($theme->settings->$setting, FORMAT_PLAIN);
     } else {
-        $scss .= file_get_contents("{$CFG->dirroot}/theme/boost_magnific/scss/boost_magnific.scss");
+        return $theme->settings->$setting;
     }
-
-    if (!strlen($theme->settings->background)) {
-        $theme->settings->background = 'math-black';
-    }
-
-    $newbg = "pix:theme|bg_{$theme->settings->background}";
-    $scss = str_replace('pix:theme|bg_users', $newbg, $scss);
-
-    return $scss;
 }
 
 /**
- * Get SCSS to prepend.
+ * Renderer the slider images.
  *
- * @param theme_config $theme The theme config object.
+ * @param $slideshowimage
+ *
+ * @return string
+ * @throws coding_exception
+ */
+function theme_boost_magnific_get_setting_image($slideshowimage) {
+    global $PAGE;
+
+    if (theme_boost_magnific_get_setting($slideshowimage)) {
+        $slideshowimageurl = $PAGE->theme->setting_file_url($slideshowimage, $slideshowimage);
+    }
+    if (empty($slideshowimageurl)) {
+        $slideshowimageurl = '';
+    }
+
+    return $slideshowimageurl;
+}
+
+/**
+ * Return the current theme url
+ *
+ * @return string
+ */
+function theme_boost_magnific_theme_url() {
+    global $CFG, $PAGE;
+    $themeurl = $CFG->wwwroot . '/theme/' . $PAGE->theme->name;
+    return $themeurl;
+}
+
+/**
+ * Display Footer Block Custom Links
+ *
+ * @param string $menuname Footer block link name.
+ *
+ * @return string The Footer links are return.
+ */
+function theme_boost_magnific_generate_links($menuname = '') {
+    global $CFG, $PAGE;
+    $htmlstr = '';
+    $menustr = theme_boost_magnific_get_setting($menuname);
+    $menusettings = explode("\n", $menustr);
+    foreach ($menusettings as $menukey => $menuval) {
+        $expset = explode("|", $menuval);
+        if (!empty($expset) && isset($expset[0]) && isset($expset[1])) {
+            list($ltxt, $lurl) = $expset;
+            $ltxt = trim($ltxt);
+            $lurl = trim($lurl);
+            if (empty($ltxt)) {
+                continue;
+            }
+            if (empty($lurl)) {
+                $lurl = 'javascript:void(0);';
+            }
+
+            $pos = strpos($lurl, 'http');
+            if ($pos === false) {
+                $lurl = new moodle_url($lurl);
+            }
+            $htmlstr .= '<li><a href="' . $lurl . '">' . $ltxt . '</a></li>' . "\n";
+        }
+    }
+    return $htmlstr;
+}
+
+/**
+ * Fetch the hide course ids
+ *
  * @return array
  */
-function theme_boost_magnific_get_pre_scss($theme) {
-    global $CFG;
-
-    $scss = '';
-    $configurable = [
-        // Config key => [variableName, ...].
-        'brandcolor' => ['brand-primary'],
-    ];
-
-    // Prepend variables first.
-    foreach ($configurable as $configkey => $targets) {
-        $value = isset($theme->settings->{$configkey}) ? $theme->settings->{$configkey} : null;
-        if (empty($value)) {
-            continue;
+function theme_boost_magnific_hidden_courses_ids() {
+    global $DB;
+    $hcourseids = array();
+    $result = $DB->get_records_sql("SELECT id FROM {course} WHERE visible='0' ");
+    if (!empty($result)) {
+        foreach ($result as $row) {
+            $hcourseids[] = $row->id;
         }
-        array_map(function ($target) use (&$scss, $value) {
-            $scss .= '$' . $target . ': ' . $value . ";\n";
-        }, (array)$targets);
+    }
+    return $hcourseids;
+}
+
+/**
+ * Remove the html special tags from course content.
+ * This function used in course home page.
+ *
+ * @param string $text
+ *
+ * @return string
+ */
+function theme_boost_magnific_strip_html_tags($text) {
+    $text = preg_replace(
+        array(
+            // Remove invisible content.
+            '@<head[^>]*?>.*?</head>@siu',
+            '@<style[^>]*?>.*?</style>@siu',
+            '@<script[^>]*?.*?</script>@siu',
+            '@<object[^>]*?.*?</object>@siu',
+            '@<embed[^>]*?.*?</embed>@siu',
+            '@<applet[^>]*?.*?</applet>@siu',
+            '@<noframes[^>]*?.*?</noframes>@siu',
+            '@<noscript[^>]*?.*?</noscript>@siu',
+            '@<noembed[^>]*?.*?</noembed>@siu',
+            // Add line breaks before and after blocks.
+            '@</?((address)|(blockquote)|(center)|(del))@iu',
+            '@</?((div)|(h[1-9])|(ins)|(isindex)|(p)|(pre))@iu',
+            '@</?((dir)|(dl)|(dt)|(dd)|(li)|(menu)|(ol)|(ul))@iu',
+            '@</?((table)|(th)|(td)|(caption))@iu',
+            '@</?((form)|(button)|(fieldset)|(legend)|(input))@iu',
+            '@</?((label)|(select)|(optgroup)|(option)|(textarea))@iu',
+            '@</?((frameset)|(frame)|(iframe))@iu',
+        ),
+        array(
+            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+            "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0",
+            "\n\$0", "\n\$0",
+        ),
+        $text
+    );
+    return strip_tags($text);
+}
+
+/**
+ * Cut the Course content.
+ *
+ * @param string  $str
+ * @param integer $n
+ * @param string  $endchar
+ *
+ * @return string $out
+ */
+function theme_boost_magnific_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
+    if (strlen($str) < $n) {
+        return $str;
     }
 
-    // Prepend pre-scss.
-    if (!empty($theme->settings->scsspre)) {
-        $scss .= $theme->settings->scsspre;
+    $str = preg_replace("/\s+/", ' ', str_replace(array("\r\n", "\r", "\n"), ' ', $str));
+    if (strlen($str) <= $n) {
+        return $str;
     }
 
-    return $scss;
+    $out = "";
+    $small = substr($str, 0, $n);
+    $out = $small . $endchar;
+    return $out;
+}
+
+/**
+ * Function returns the rgb format with the combination of passed color hex and opacity.
+ *
+ * @param string $hexa
+ * @param int    $opacity
+ *
+ * @return string
+ */
+function theme_boost_magnific_get_hexa($hexa, $opacity) {
+    if (!empty($hexa)) {
+        list($r, $g, $b) = sscanf($hexa, "#%02x%02x%02x");
+        if ($opacity == '') {
+            $opacity = 0.0;
+        } else {
+            $opacity = $opacity / 10;
+        }
+        return "rgba($r, $g, $b, $opacity)";
+    }
 }

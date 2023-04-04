@@ -15,39 +15,182 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Language file.
+ * Strings for component 'theme_boost_magnific', language 'en'
  *
- * @package   theme_boost_magnific
- * @copyright 2017 Eduardo Kraus
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_boost_magnific
+ * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
-
-$string['configtitle'] = 'Boost Magnific';
 $string['pluginname'] = 'Boost Magnific';
-$string['advancedsettings'] = 'Advanced settings';
-$string['choosereadme'] = 'Boost Magnific is a modern highly-customisable theme. This theme is intended to be used directly, or as a parent theme when creating new themes utilising Bootstrap 4.';
-$string['currentinparentheses'] = '(current)';
+$string['choosereadme'] = 'Boost Magnific is a theme lovingly built to bring happy colors to Moodle.';
 
-$string['generalsettings'] = 'General settings';
+
+// slides.
+$string['settings_slideshow_heading'] = 'SlideShow';
+$string['theme_boost_magnific_slideshow_editbooton'] = 'Edit SlideShow';
+
+
+$string['slideshow_numslides'] = 'How many images in SlideShow';
+$string['slideshow_numslides_desc'] = 'How many images do you want in the SlideShow?';
+$string['slideshow_numslides_nenhum'] = 'No slide in Home';
+
+$string['slideshow_info'] = 'Slide {$a}';
+
+$string['slidecaption_desc'] = 'Enter the caption text to be used on the slide';
+$string['slideshow_image'] = 'Slideshow Image';
+$string['slideshow_image_desc'] = 'The image must be 1250px X 400px.';
+
+$string['slideshow_url'] = 'Slideshow button link';
+$string['slideshow_url_desc'] = 'Enter slide image button link destination destination';
+
+$string['slideshow_text'] = 'Short text describing the slide';
+$string['slideshow_text_desc'] = 'Insert a short text on the slide.';
+
+
+// About.
+$string['settings_about_heading'] = 'About your Moodle';
+$string['theme_boost_magnific_about_editbooton'] = 'Edit About Block';
+$string['frontpage_about_enable'] = 'Enable About Block';
+$string['frontpage_about_enable_desc'] = 'If checked, the About Block will appear below the Banner!';
+$string['frontpage_about_title'] = 'About Block Title';
+$string['frontpage_about_title_default'] = 'Our Global Community';
+$string['frontpage_about_logo'] = 'Different logo to be shown here';
+$string['frontpage_about_logo_desc'] = 'If set, this logo here will be used instead of the top logo.<br>
+                                          If blank, use the TOPO Logo!';
+$string['frontpage_about_description'] = 'Describe what you do';
+$string['frontpage_about_description_desc'] = 'Describe in a maximum of 5 lines the purpose of your Moodle';
+$string['frontpage_about_info'] = 'Databox {$a}';
+$string['frontpage_about_text'] = 'Data Name';
+$string['frontpage_about_text_desc'] = 'Put here the name of the data that will be shown on the homepage';
+$string['frontpage_about_number'] = 'Amount of data';
+$string['frontpage_about_number_desc'] = 'Put the above amount of information here';
+$string['frontpage_about_text_1_defalt'] = 'Courses';
+$string['frontpage_about_text_2_defalt'] = 'Professors';
+$string['frontpage_about_text_3_defalt'] = 'Students';
+$string['frontpage_about_text_4_defalt'] = 'Lessons';
+
+
+$string['theme_boost_magnific_frontpage_home'] = 'Home Blocks';
+$string['theme_boost_magnific_frontpage_bloco'] = 'Block "{$a}"';
+
+$string['footer_frontpage_blockcourses_text'] = 'Text explaining the "{$a}"';
+$string['footer_frontpage_blockcourses_text_desc'] = 'Add some text talking about "{$a}"!';
+$string['footer_frontpage_blockcourses_instructor'] = 'Show Instructor Name';
+$string['footer_frontpage_blockcourses_instructor_desc'] = 'If checked, show instructors\' names in the course list!';
+$string['instructor'] = 'Instructor';
+$string['acessar'] = 'Access Course';
+$string['continuar'] = 'Continue studying';
+$string['matricular'] = 'Enroll';
+$string['countlesson'] = '{$a} lesson';
+$string['countlessons'] = '{$a} lessons';
+$string['free_name'] = 'Free';
+
+$string['favicon'] = 'Favicon';
+$string['favicon_desc'] = 'The favicon is displayed next to the page title in the browser tab. A Moodle favicon is displayed if a custom favicon is not provided.';
+
+
+// Footer.
+$string['social_twitter'] = 'Your Twitter';
+$string['social_twitter_desc'] = 'Your organization\'s Twitter URL.';
+$string['social_instagram'] = 'Your Instagram';
+$string['social_instagram_desc'] = 'Your organization\'s Instagram URL.';
+$string['social_facebook'] = 'Your Facebook';
+$string['social_facebook_desc'] = 'Your organization\'s Facebook URL.';
+
+
+$string['settings_topo_heading'] = 'Top';
+
+$string['settings_footer_heading'] = 'Footer Block';
+
+$string['footerblock_description'] = 'Description block';
+$string['footer_description'] = 'Description';
+$string['footer_description_desc'] = 'Describe your Moodle, what you do, and this information will be shown below the logo in the Moodle Footer';
+
+$string['footerblock_links'] = 'Links block';
+$string['footer_links_title'] = 'Links Block Title';
+$string['footer_links_title_default'] = 'Footer Links';
+
+$string['footerblock_social'] = 'Social Block';
+$string['footer_social_title'] = 'Social Media Block Title Social';
+$string['footer_social_title_desc'] = 'Put the title of the Block that will appear in the Footer with data from your social networks.';
+$string['footer_social_title_default'] = 'Follow us on social media';
+$string['footerblock_contact'] = 'Contact block';
+
+$string['footerblink'] = 'Footer Block Links';
+$string['footerblink_desc'] = 'You can configure Footer Block Links here to be displayed by themes. <br>' .
+    'Each line consists of some menu text or language key or text, a link URL (optional), separated by vertical bars.For example:<br>' .
+    '<pre>Moodle Support|https://moodle.org/support</pre>';
+
+
+$string['footer_contact_title'] = 'Contact Block Title';
+$string['footer_contact_title_desc'] = 'Put the title of the Block that will appear in the Footer with the contact data.';
+$string['footer_contact_title_default'] = 'Contact us';
+
+
+$string['contact_address'] = 'Address';
+$string['contact_email'] = 'Email';
+$string['contact_phone'] = 'Phone Number';
+
+// Logos.
+$string['settings_logos_heading'] = 'Logos';
+
+// Themes and CSS.
+$string['settings_theme_heading'] = 'Theme and CSS';
 
 $string['preset'] = 'Theme preset';
 $string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.';
 
-$string['background'] = 'Theme background';
-$string['background_desc'] = 'background';
+$string['customcss'] = 'Custom CSS';
 
-$string['favicon'] = 'Favicon';
-$string['favicondesc'] = 'Change the favicon of the theme. A .png image with transparent background and 32px height will work best.';
+$string['theme'] = 'Theme Selection';
+$string['theme_desc'] = 'Select colors for Moodle texts and buttons.';
+$string['theme_blue'] = 'Blue';
+$string['theme_violet'] = 'Purple';
+$string['theme_red_d'] = 'Red';
+$string['theme_green'] = 'Green';
+$string['theme_green_d'] = 'Dark green';
 
-$string['rawscss'] = 'Raw SCSS';
-$string['rawscss_desc'] = 'Use this field to provide SCSS or CSS code which will be injected at the end of the style sheet.';
-$string['rawscsspre'] = 'Raw initial SCSS';
-$string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS code, it will be injected before everything else. Most of the time you will use this setting to define variables.';
-$string['region-side-pre'] = 'Right';
+$string['background_color'] = 'Background color';
+$string['background_color_desc'] = 'Background color for top and bottom';
+$string['background_image'] = 'Background image';
+$string['background_image_desc'] = 'Background image for top and bottom';
 
 
-$string['icons'] = 'Icons';
-$string['icon'] = '{$a} URL';
-$string['icondesc'] = 'Enter the URL of your {$a}.';
+$string['color_primary'] = 'Cor primária';
+$string['color_primary_desc'] = 'Selecione qual a cor primária do seu Moodle';
+$string['color_secondary'] = 'Cor secundária';
+$string['color_secondary_desc'] = 'Selecione qual a cor secundária do seu Moodle';
+$string['color_buttons'] = 'Cor dos botões';
+$string['color_buttons_desc'] = 'Selecione qual a cor dos botões do seu Moodle';
+$string['color_names'] = 'Cor dos nomes';
+$string['color_names_desc'] = 'Selecione qual a cor dos nomes do seu Moodle';
+$string['color_titles'] = 'Cor dos títulos';
+$string['color_titles_desc'] = 'Selecione qual a cor dos títulos do seu Moodle';
+
+$string['color_primary'] = 'Primary color';
+$string['color_primary_desc'] = 'Select your Moodle primary color';
+$string['color_secondary'] = 'Secondary Color';
+$string['color_secondary_desc'] = 'Select your Moodle secondary color';
+$string['color_buttons'] = 'Button color';
+$string['color_buttons_desc'] = 'Select the color of your Moodle buttons';
+$string['color_names'] = 'Color of names';
+$string['color_names_desc'] = 'Select the color of your Moodle names';
+$string['color_titles'] = 'Title Color';
+$string['color_titles_desc'] = 'Select the color of your Moodle titles';
+
+$string['customcss_desc'] = 'Any CSS rules you add to this text area will be reflected on all pages, making it easy to customize this theme.';
+$string['fontfamily'] = 'Website font';
+$string['fontfamily_desc'] = 'Choose how much font you want to sweat in your Moodle';
+
+$string['background_color'] = 'Background color';
+$string['background_color_desc'] = 'Top and Bottom background color!';
+$string['background_color_default'] = 'Default theme {$a}';
+$string['background_color_green'] = 'Green theme {$a}';
+$string['background_color_blue'] = 'Blue theme {$a}';
+$string['background_color_red'] = 'Red Theme {$a}';
+$string['background_color_black'] = 'Black theme {$a}';
+$string['background_color_random'] = 'Random Theme {$a}';
+
+
+// Privacy.
+$string['privacy:metadata'] = 'The boost_magnific theme does not store any personal data about any user.';

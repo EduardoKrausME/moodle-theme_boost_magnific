@@ -1,69 +1,80 @@
 {{!
-    This file is part of Moodle - http://moodle.org/
+	This file is part of Moodle - http://moodle.org/
 
-    Moodle is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+	Moodle is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
-    Moodle is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	Moodle is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+	You should have received a copy of the GNU General Public License
+	along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template none
-
-    Page header.
-
-    Example context (json): {}
+	Page header.
 }}
 
-<header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+<nav id="header" class="navbar fixed-top navbar-light navbar-expand"
+     aria-label="{{#str}}sitemenubar, admin{{/str}}">
 
-    <div class="container-fluid navbar-nav">
+    <div class="container-fluid">
+        <div class="header-menubar header-menubar-inner">
 
-        <div data-region="drawer-toggle">
-            <button class="btn pull-xs-left navbar-toggler"
-                    aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}"
-                    aria-controls="nav-drawer" type="button"
-                    data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">
-                <i class="material-icons">menu</i>
+
+            <div class="header-logo">
+                <a class="navbar-brand" href="{{{config.wwwroot }}}/?redirect=0">
+                    {{{logourl_header}}}
+                </a>
+            </div>
+
+
+            <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers"
+                    data-action="toggle" data-target="theme_boost-drawers-primary">
+                <span class="navbar-toggler-icon"></span>
+                <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
             </button>
+
+            {{#primarymoremenu}}
+                <div class="primary-navigation">
+                    {{> core/moremenu}}
+                </div>
+            {{/primarymoremenu}}
+            <div class="primary-navigation">
+                <div class="custom-menu navigation">
+                    <ul class="navbar-nav mr-auto">
+                        {{{output.custom_menu}}}
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="navbar-nav d-none d-md-flex my-1 px-1">
+                <!-- page_heading_menu -->
+                {{{output.page_heading_menu }}}
+            </ul>
+
+            <div id="usernavigation" class="navbar-nav ml-auto">
+                {{#output.search_box }}
+                    {{{output.search_box }}}
+                    <div class="divider border-left h-75 align-self-center mx-1"></div>
+                {{/output.search_box}}
+                {{#langmenu}}
+                    {{> theme_boost/language_menu }}
+                    <div class="divider border-left h-75 align-self-center mx-1"></div>
+                {{/langmenu}}
+                {{{output.navbar_plugin_output }}}
+                <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                    {{#usermenu}}
+                        {{> core/user_menu }}
+                    {{/usermenu}}
+                </div>
+                {{{output.edit_switch }}}
+            </div>
         </div>
-
-        <a href="{{{ config.wwwroot }}}"
-           class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}">
-            {{# output.should_display_navbar_logo }}
-                <span class="logo hidden-xs-down">
-                    <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
-                </span>
-            {{/ output.should_display_navbar_logo }}
-            {{^ output.should_display_navbar_logo }}
-                <span class="site-name">{{{ sitename }}}</span>
-            {{/ output.should_display_navbar_logo }}
-        </a>
-
-        <!-- user_menu -->
-        {{{ output.user_menu }}}
-
-        <!-- navbar_plugin_output -->
-        {{{ output.navbar_plugin_output }}}
-
-        <!-- search_box -->
-        <span class="hidden-md-down">
-            {{{ output.search_box }}}
-        </span>
-
-        <nav class="nav navbar-nav hidden-md-down">
-            <!-- custom_menu -->
-            {{{ output.custom_menu }}}
-            <!-- page_heading_menu -->
-            {{{ output.page_heading_menu }}}
-        </nav>
     </div>
-</header>
+</nav>
 
+{{> theme_boost/primary-drawer-mobile }}
