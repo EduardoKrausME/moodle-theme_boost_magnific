@@ -21,7 +21,7 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_boost_magnific
- * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,7 +30,6 @@ namespace theme_boost_magnific\output\core;
 
 use html_writer;
 use moodle_url;
-use lang_string;
 use core_course_category;
 use coursecat_helper;
 use stdClass;
@@ -40,7 +39,7 @@ use context_system;
 /**
  * This class has function for core course renderer
  * @package     theme_boost_magnific
- * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class course_renderer extends \core_course_renderer {
@@ -64,7 +63,7 @@ class course_renderer extends \core_course_renderer {
             'recursive' => true,
             'limit' => $CFG->frontpagecourselimit,
             'viewmoreurl' => new moodle_url('/course/index.php'),
-            'viewmoretext' => new lang_string('fulllistofcourses')
+            'viewmoretext' => get_string('fulllistofcourses')
         ));
         $courses = core_course_category::get(0)->get_courses($chelper->get_courses_display_options());
 
@@ -73,10 +72,9 @@ class course_renderer extends \core_course_renderer {
             "root_class" => "frontpage_available_courses",
             "title" => get_string('availablecourses'),
             "text" => theme_boost_magnific_get_setting("frontpage_avaliablecourses_text"),
-            "showinstructor" => theme_boost_magnific_get_setting("frontpage_avaliablecourses_instructor"),
             "courses" => [],
             "has_course_create" => $hascoursecreate,
-            "add_new_course_button" => $hascoursecreate ? $this->add_new_course_button() : "",
+            "add_new_course_button" => $hascoursecreate ? $this->add_new_course_button() : '',
         ];
 
         foreach ($courses as $course) {
@@ -99,16 +97,17 @@ class course_renderer extends \core_course_renderer {
             }
 
             $datacursos["courses"][] = [
-                "couse_class" => "col-lg-4 col-md-6",
+                "couse_class" => "col-xg-3 col-lg-4 col-sm-6",
                 "edit_course" => "{$CFG->wwwroot}/course/edit.php?id={$course->id}#fitem_id_overviewfiles_filemanager",
                 "imgurl" => course_renderer_util::couse_image($course),
                 "courseurl" => $courseurl,
                 "coursename" => $course->get_formatted_name(),
                 "countlessons" => course_renderer_util::count_lessson($course),
+                "showinstructor" => theme_boost_magnific_get_setting("frontpage_avaliablecourses_instructor") && count(course_renderer_util::get_teachers($course)),
                 "instructor" => course_renderer_util::get_teachers($course),
                 "is_enrolled" => $hascoursecreate || course_renderer_util::is_enrolled($course),
                 "acessar" => get_string("acessar", "theme_boost_magnific"),
-                "matricular" => get_string("matricular", "theme_boost_magnific"),
+                "matricular" => $priceval ? get_string("matricular", "theme_boost_magnific") : get_string("acessar", "theme_boost_magnific"),
                 "freename" => $freename,
                 "priceval" => $priceval,
             ];
@@ -140,7 +139,6 @@ class course_renderer extends \core_course_renderer {
             "root_class" => "frontpage_my_courses",
             "title" => get_string('mycourses'),
             "text" => theme_boost_magnific_get_setting("frontpage_mycourses_text"),
-            "showinstructor" => theme_boost_magnific_get_setting("frontpage_mycourses_instructor"),
             "courses" => [],
             "has_course_create" => $hascoursecreate,
         ];
@@ -150,12 +148,13 @@ class course_renderer extends \core_course_renderer {
             $course = new core_course_list_element(get_course($course->id));
 
             $datacursos["courses"][] = [
-                "couse_class" => "col-lg-3 col-md-4",
+                "couse_class" => "col-xg-3 col-lg-4 col-sm-6",
                 "edit_course" => "{$CFG->wwwroot}/course/edit.php?id={$course->id}#fitem_id_overviewfiles_filemanager",
                 "imgurl" => course_renderer_util::couse_image($course),
                 "courseurl" => course_renderer_util::course_url($course),
                 "coursename" => $course->get_formatted_name(),
                 "countlessons" => course_renderer_util::count_lessson($course),
+                "showinstructor" => theme_boost_magnific_get_setting("frontpage_mycourses_instructor") && count(course_renderer_util::get_teachers($course)),
                 "instructor" => course_renderer_util::get_teachers($course),
                 "is_enrolled" => true,
                 "acessar" => get_string("continuar", "theme_boost_magnific"),
@@ -171,9 +170,9 @@ class course_renderer extends \core_course_renderer {
      * This is an internal function, to display an information about just one course
      * please use {@link core_course_renderer::course_info_box()}
      *
-     * @param coursecat_helper                  $chelper           various display options
+     * @param coursecat_helper $chelper various display options
      * @param core_course_list_element|stdClass $course
-     * @param string                            $additionalclasses additional classes to add to the main <div> tag
+     * @param string $additionalclasses additional classes to add to the main <div> tag
      *                                                             (usually depend on the course position in list -
      *                                                             first/last/even/odd)
      *
@@ -198,7 +197,7 @@ class course_renderer extends \core_course_renderer {
         $hascoursecreate = has_capability('moodle/course:create', context_system::instance());
 
         $datacurso = [
-            "couse_class" => "col-lg-3 col-md-4",
+            "couse_class" => "col-xg-3 col-lg-4 col-sm-6",
             "edit_course" => "{$CFG->wwwroot}/course/edit.php?id={$course->id}#fitem_id_overviewfiles_filemanager",
             "imgurl" => course_renderer_util::couse_image($course),
             "courseurl" => course_renderer_util::course_url($course),
@@ -217,7 +216,7 @@ class course_renderer extends \core_course_renderer {
      *
      * This method is called from coursecat_coursebox() and may be re-used in AJAX
      *
-     * @param coursecat_helper                  $chelper various display options
+     * @param coursecat_helper $chelper various display options
      * @param stdClass|core_course_list_element $course
      *
      * @return string
@@ -231,7 +230,7 @@ class course_renderer extends \core_course_renderer {
         }
 
         $datacurso = [
-            "couse_class" => "col-lg-3 col-md-4",
+            "couse_class" => "col-xg-3 col-lg-4 col-sm-6",
             "edit_course" => "{$CFG->wwwroot}/course/edit.php?id={$course->id}#fitem_id_overviewfiles_filemanager",
             "imgurl" => course_renderer_util::couse_image($course),
             "courseurl" => course_renderer_util::course_url($course),
@@ -368,13 +367,13 @@ class course_renderer extends \core_course_renderer {
             $coursedisplayoptions['paginationurl'] = new moodle_url($baseurl, array('browse' => 'courses'));
             $catdisplayoptions['nodisplay'] = true;
             $catdisplayoptions['viewmoreurl'] = new moodle_url($baseurl, array('browse' => 'categories'));
-            $catdisplayoptions['viewmoretext'] = new lang_string('viewallsubcategories');
+            $catdisplayoptions['viewmoretext'] = get_string('viewallsubcategories');
         } else if ($browse === 'categories' || !$coursecat->get_courses_count()) {
             $coursedisplayoptions['nodisplay'] = true;
             $catdisplayoptions['offset'] = $page * $perpage;
             $catdisplayoptions['paginationurl'] = new moodle_url($baseurl, array('browse' => 'categories'));
             $coursedisplayoptions['viewmoreurl'] = new moodle_url($baseurl, array('browse' => 'courses'));
-            $coursedisplayoptions['viewmoretext'] = new lang_string('viewallcourses');
+            $coursedisplayoptions['viewmoretext'] = get_string('viewallcourses');
         } else {
             $coursedisplayoptions['viewmoreurl'] = new moodle_url($baseurl, array('browse' => 'courses', 'page' => 1));
             $catdisplayoptions['viewmoreurl'] = new moodle_url($baseurl, array('browse' => 'categories', 'page' => 1));
@@ -397,9 +396,9 @@ class course_renderer extends \core_course_renderer {
      * to retrieve display options and attributes, only methods get_show_courses(),
      * get_courses_display_option() and get_and_erase_attributes() are called.
      *
-     * @param coursecat_helper $chelper    various display options
-     * @param array            $courses    the list of courses to display
-     * @param int|null         $totalcount total number of courses (affects display mode if it is AUTO or pagination if
+     * @param coursecat_helper $chelper various display options
+     * @param array $courses the list of courses to display
+     * @param int|null $totalcount total number of courses (affects display mode if it is AUTO or pagination if
      *                                     applicable), defaulted to count($courses)
      *
      * @return string
@@ -437,7 +436,7 @@ class course_renderer extends \core_course_renderer {
                         get_string('showall', '', $totalcount)), array('class' => 'paging paging-showall'));
                 }
             } else if ($viewmoreurl = $chelper->get_courses_display_option('viewmoreurl')) {
-                $viewmoretext = $chelper->get_courses_display_option('viewmoretext', new lang_string('viewmore'));
+                $viewmoretext = $chelper->get_courses_display_option('viewmoretext', get_string('viewmore'));
                 $morelink = html_writer::tag(
                     'div',
                     html_writer::link($viewmoreurl, $viewmoretext, ['class' => 'btn btn-secondary']),

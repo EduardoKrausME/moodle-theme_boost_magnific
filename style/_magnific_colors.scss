@@ -1,0 +1,509 @@
+///////////////////
+// heme-select-item
+.theme-select-item {
+    float: left;
+}
+.theme-select-item .preview {
+    width: 50px;
+    height: 50px;
+    margin: 1.5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+.seletor-de-theme-boost_magnific {
+    display: flex;
+    align-items: center;
+    background: #e6e6e6;
+    width: fit-content;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    span {
+        display: inline-block;
+        padding: 2px;
+        margin: 3px;
+        border-radius: 4px;
+    }
+}
+// theme-default
+.theme-default1 #header,
+.theme-default1 #nav-drawer .list-group-item.active > div,
+.theme-default1 #nav-drawer .list-group-item.active:hover,
+.theme-default1 #footer .footer-main,
+.theme-select-default1 .preview {
+    background: #f55ff2;
+}
+.theme-default1 {
+    #site-news-forum--,
+    .frontpage-course-list {
+        background: #f55ff23d;
+        .btn-primary {
+            background: #f54266;
+        }
+    }
+    .nn-btn-primary {
+        background: #f54266;
+    }
+    &[data-templates=login] {
+        background-color: #c961f7;
+    }
+}
+///////////////////
+// theme-default1
+.theme-default2 #header,
+.theme-default2 #nav-drawer .list-group-item.active > div,
+.theme-default2 #nav-drawer .list-group-item.active:hover,
+.theme-default2 #footer .footer-main,
+.theme-select-default2 .preview {
+    background: #fd81b5;
+}
+.theme-default2 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #fd81b53d;
+        .btn-primary {
+            background: #c961f7;
+        }
+    }
+    .nn-btn-primary {
+        background: #c961f7;
+    }
+    .theme-default2.loginbody:before {
+        background-image: url([[pix:theme|background/C961F7]]);
+    }
+    &[data-templates=login] {
+        background-color: #c961f7;
+    }
+}
+///////////////////
+// theme-green1
+.theme-green1 #header,
+.theme-green1 #nav-drawer .list-group-item.active > div,
+.theme-green1 #nav-drawer .list-group-item.active:hover,
+.theme-green1 #footer .footer-main,
+.theme-select-green1 .preview {
+    background: #00c3b0;
+}
+.theme-green1 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #00c3b03d;
+        .btn-primary {
+            background: #00c3b0;
+        }
+    }
+    .nn-btn-primary {
+        background: #00c3b0;
+    }
+    &[data-templates=login] {
+        background-color: #00c3b0;
+    }
+}
+///////////////////
+// theme-green2
+.theme-green2 #header,
+.theme-green2 #nav-drawer .list-group-item.active > div,
+.theme-green2 #nav-drawer .list-group-item.active:hover,
+.theme-green2 #footer .footer-main,
+.theme-select-green2 .preview {
+    background: #30e8bf;
+}
+.theme-green2 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #30e8bf3d;
+        .btn-primary {
+            background: #30e8bf;
+        }
+    }
+    .nn-btn-primary {
+        background: #30e8bf;
+    }
+    &[data-templates=login] {
+        background-color: #30e8bf;
+    }
+}
+///////////////////
+// theme-green3
+.theme-green3 #header,
+.theme-green3 #nav-drawer .list-group-item.active > div,
+.theme-green3 #nav-drawer .list-group-item.active:hover,
+.theme-green3 #footer .footer-main,
+.theme-select-green3 .preview {
+    background: #00bf8f;
+}
+.theme-green3 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #00bf8f3d;
+        .btn-primary {
+            background: #00bf8f;
+        }
+    }
+    .nn-btn-primary {
+        background: #00bf8f;
+    }
+    &[data-templates=login] {
+        background-color: #00bf8f;
+    }
+}
+///////////////////
+// theme-blue1
+.theme-blue1 #header,
+.theme-blue1 #nav-drawer .list-group-item.active > div,
+.theme-blue1 #nav-drawer .list-group-item.active:hover,
+.theme-blue1 #footer .footer-main,
+.theme-select-blue1 .preview {
+    background: #007bc3;
+}
+.theme-blue1 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #007bc33d;
+        .btn-primary {
+            background: #007bc3;
+        }
+    }
+    .nn-btn-primary {
+        background: #007bc3;
+    }
+    &[data-templates=login] {
+        background-color: #007bc3;
+    }
+}
+///////////////////
+// theme-blue2
+.theme-blue2 #header,
+.theme-blue2 #nav-drawer .list-group-item.active > div,
+.theme-blue2 #nav-drawer .list-group-item.active:hover,
+.theme-blue2 #footer .footer-main,
+.theme-select-blue2 .preview {
+    background: #000428;
+}
+.theme-blue2 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #0004283d;
+        .btn-primary {
+            background: #000428;
+        }
+    }
+    .nn-btn-primary {
+        background: #000428;
+    }
+    &[data-templates=login] {
+        background-color: #000428;
+    }
+}
+///////////////////
+// theme-blue3
+.theme-blue3 #header,
+.theme-blue3 #nav-drawer .list-group-item.active > div,
+.theme-blue3 #nav-drawer .list-group-item.active:hover,
+.theme-blue3 #footer .footer-main,
+.theme-select-blue3 .preview {
+    background: #314755;
+}
+.theme-blue3 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #3147553d;
+        .btn-primary {
+            background: #314755;
+        }
+    }
+    .nn-btn-primary {
+        background: #314755;
+    }
+    &[data-templates=login] {
+        background-color: #314755;
+    }
+}
+///////////////////
+// theme-blue4
+.theme-blue4 #header,
+.theme-blue4 #nav-drawer .list-group-item.active > div,
+.theme-blue4 #nav-drawer .list-group-item.active:hover,
+.theme-blue4 #footer .footer-main,
+.theme-select-blue4 .preview {
+    background: #03001e;
+}
+.theme-blue4 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #03001e3d;
+        .btn-primary {
+            background: #7303c0;
+        }
+    }
+    .nn-btn-primary {
+        background: #7303c0;
+    }
+    &[data-templates=login] {
+        background-color: #7303c0;
+    }
+}
+///////////////////
+// theme-blue5
+.theme-blue5 #header,
+.theme-blue5 #nav-drawer .list-group-item.active > div,
+.theme-blue5 #nav-drawer .list-group-item.active:hover,
+.theme-blue5 #footer .footer-main,
+.theme-select-blue5 .preview {
+    background: #00f0ff;
+}
+.theme-blue5 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #00f0ff3d;
+        .btn-primary {
+            background: #00f0ff;
+        }
+    }
+    .nn-btn-primary {
+        background: #00f0ff;
+    }
+    &[data-templates=login] {
+        background-color: #00f0ff;
+    }
+}
+///////////////////
+// theme-blue6
+.theme-blue6 #header,
+.theme-blue6 #nav-drawer .list-group-item.active > div,
+.theme-blue6 #nav-drawer .list-group-item.active:hover,
+.theme-blue6 #footer .footer-main,
+.theme-select-blue6 .preview {
+    background: #83a4d4;
+}
+.theme-blue6 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #83a4d43d;
+        .btn-primary {
+            background: #83a4d4;
+        }
+    }
+    .nn-btn-primary {
+        background: #83a4d4;
+    }
+    &[data-templates=login] {
+        background-color: #83a4d4;
+    }
+}
+///////////////////
+// theme-red1
+.theme-red1 #header,
+.theme-red1 #nav-drawer .list-group-item.active > div,
+.theme-red1 #nav-drawer .list-group-item.active:hover,
+.theme-red1 #footer .footer-main,
+.theme-select-red1 .preview {
+    background: #c10f41;
+}
+.theme-red1 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #c10f413d;
+        .btn-primary {
+            background: #c10f41;
+        }
+    }
+    .nn-btn-primary {
+        background: #c10f41;
+    }
+    &[data-templates=login] {
+        background-color: #c10f41;
+    }
+}
+///////////////////
+// theme-red2
+.theme-red2 #header,
+.theme-red2 #nav-drawer .list-group-item.active > div,
+.theme-red2 #nav-drawer .list-group-item.active:hover,
+.theme-red2 #footer .footer-main,
+.theme-select-red2 .preview {
+    background: #1a2a6c;
+}
+.theme-red2 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #1a2a6c3d;
+        .btn-primary {
+            background: #b21f1f;
+        }
+    }
+    .nn-btn-primary {
+        background: #b21f1f;
+    }
+    &[data-templates=login] {
+        background-color: #b21f1f;
+    }
+}
+///////////////////
+// theme-red3
+.theme-red3 #header,
+.theme-red3 #nav-drawer .list-group-item.active > div,
+.theme-red3 #nav-drawer .list-group-item.active:hover,
+.theme-red3 #footer .footer-main,
+.theme-select-red3 .preview {
+    background: #ceac7a;
+}
+.theme-red3 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #ceac7a3d;
+        .btn-primary {
+            background: #ceac7a;
+        }
+    }
+    .nn-btn-primary {
+        background: #ceac7a;
+    }
+    &[data-templates=login] {
+        background-color: #ceac7a;
+    }
+}
+///////////////////
+// theme-red4
+.theme-red4 #header,
+.theme-red4 #nav-drawer .list-group-item.active > div,
+.theme-red4 #nav-drawer .list-group-item.active:hover,
+.theme-red4 #footer .footer-main,
+.theme-select-red4 .preview {
+    background: #e65c00;
+}
+.theme-red4 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #e65c003d;
+        .btn-primary {
+            background: #e65c00;
+        }
+    }
+    .nn-btn-primary {
+        background: #e65c00;
+    }
+    &[data-templates=login] {
+        background-color: #e65c00;
+    }
+}
+///////////////////
+// theme-red5
+.theme-red5 #header,
+.theme-red5 #nav-drawer .list-group-item.active > div,
+.theme-red5 #nav-drawer .list-group-item.active:hover,
+.theme-red5 #footer .footer-main,
+.theme-select-red5 .preview {
+    background: #d12924;
+}
+.theme-red5 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #d129243d;
+        .btn-primary {
+            background: #d12924;
+        }
+    }
+    .nn-btn-primary {
+        background: #d12924;
+    }
+    &[data-templates=login] {
+        background-color: #d12924;
+    }
+}
+///////////////////
+// theme-red6
+.theme-red6 #header,
+.theme-red6 #nav-drawer .list-group-item.active > div,
+.theme-red6 #nav-drawer .list-group-item.active:hover,
+.theme-red6 #footer .footer-main,
+.theme-select-red6 .preview {
+    background: #ff512f;
+}
+.theme-red6 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #ff512f3d;
+        .btn-primary {
+            background: #ff512f;
+        }
+    }
+    .nn-btn-primary {
+        background: #ff512f;
+    }
+    &[data-templates=login] {
+        background-color: #ff512f;
+    }
+}
+///////////////////
+// theme-red7
+.theme-red7 #header,
+.theme-red7 #nav-drawer .list-group-item.active > div,
+.theme-red7 #nav-drawer .list-group-item.active:hover,
+.theme-red7 #footer .footer-main,
+.theme-select-red7 .preview {
+    background: #fc354c;
+}
+.theme-red7 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #fc354c3d;
+        .btn-primary {
+            background: #fc354c;
+        }
+    }
+    .nn-btn-primary {
+        background: #fc354c;
+    }
+    &[data-templates=login] {
+        background-color: #fc354c;
+    }
+}
+///////////////////
+// theme-red8
+.theme-red8 #header,
+.theme-red8 #nav-drawer .list-group-item.active > div,
+.theme-red8 #nav-drawer .list-group-item.active:hover,
+.theme-red8 #footer .footer-main,
+.theme-select-red8 .preview {
+    background: #86377b;
+}
+.theme-red8 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #86377b3d;
+        .btn-primary {
+            background: #86377b;
+        }
+    }
+    .nn-btn-primary {
+        background: #86377b;
+    }
+    &[data-templates=login] {
+        background-color: #86377b;
+    }
+}
+///////////////////
+// theme-black1
+.theme-black1 #header,
+.theme-black1 #nav-drawer .list-group-item.active > div,
+.theme-black1 #nav-drawer .list-group-item.active:hover,
+.theme-black1 #footer .footer-main,
+.theme-select-black1 .preview {
+    background: #070000;
+}
+.theme-black1 {
+    #site-news-forum,
+    .frontpage-course-list {
+        background: #0700003d;
+        .btn-primary {
+            background: #4c0001;
+        }
+    }
+    .nn-btn-primary {
+        background: #4c0001;
+    }
+    &[data-templates=login] {
+        background-color: #4c0001;
+    }
+}

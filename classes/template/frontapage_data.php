@@ -20,7 +20,7 @@ namespace theme_boost_magnific\template;
  * slideshow.php
  *
  * @package     theme_boost_magnific
- * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class frontapage_data {
@@ -76,7 +76,6 @@ class frontapage_data {
     public static function about() {
         global $OUTPUT;
 
-
         $frontpageaboutenable = theme_boost_magnific_get_setting("frontpage_about_enable");
 
         $logo = theme_boost_magnific_get_setting_image("frontpage_about_logo");
@@ -91,7 +90,7 @@ class frontapage_data {
             "frontpage_about_enable" => $frontpageaboutenable,
             "frontpage_about_logo" => $logo,
             "frontpage_about_title" => theme_boost_magnific_get_setting("frontpage_about_title"),
-            "frontpage_about_description" => theme_boost_magnific_get_setting("frontpage_about_description", false),
+            "frontpage_about_description" => theme_boost_magnific_get_setting("frontpage_about_description", FORMAT_HTML),
             "frontpage_about_edit_settings" => self::edit_settings("theme_boost_magnific_about"),
             "about_numbers" => []
         ];

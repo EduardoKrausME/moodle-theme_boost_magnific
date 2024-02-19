@@ -21,7 +21,7 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_boost_magnific
- * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die;
@@ -32,7 +32,7 @@ if (is_siteadmin()) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific', get_string('pluginname', 'theme_boost_magnific'));
 
 
-    $ADMIN->add('themes', new admin_category('theme_boost_magnific', 'Boost Magnific Theme'));
+    $ADMIN->add('themes', new admin_category('theme_boost_magnific', 'boost_magnific Theme'));
 
     require_once(__DIR__ . "/settings-home.php");
 
@@ -47,4 +47,6 @@ if (is_siteadmin()) {
     require_once(__DIR__ . "/settings-topo.php");
 
     require_once(__DIR__ . "/settings-footer.php");
+
+    require_once(__DIR__ . "/settings-login.php");
 }

@@ -1,7 +1,7 @@
 define([
     "jquery",
 ], function($) {
-    return slideshow = {
+    var slideshow = {
 
         slideIndex : 1,
 
@@ -11,7 +11,6 @@ define([
             setInterval(function() {
                 slideshow.plusSlides(1);
             }, 7000);
-
 
             $(".slideshow-prev").click(function() {
                 slideshow.plusSlides(-1);
@@ -43,6 +42,8 @@ define([
             $(".slideshow-dot-" + slideshow.slideIndex).addClass("active");
         }
     };
+
+    return slideshow;
 });
 
 

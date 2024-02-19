@@ -21,47 +21,43 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$temp = new admin_settingpage('theme_boost_magnific_frontpage_home',
+$page = new admin_settingpage('theme_boost_magnific_frontpage_home',
     get_string('theme_boost_magnific_frontpage_home', 'theme_boost_magnific'));
 
-$name = "theme_boost_magnific/theme_boost_magnific_frontpage_bloco";
-$heading = get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('availablecourses'));
-$setting = new admin_setting_heading($name, $heading, "");
-$temp->add($setting);
+$setting = new admin_setting_heading("theme_boost_magnific/heart", '',
+    get_string('heart', 'theme_boost_magnific', 'https://moodle.org/plugins/theme_boost_magnific'));
+$page->add($setting);
 
-$name = 'theme_boost_magnific/frontpage_avaliablecourses_text';
-$title = get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('availablecourses'));
-$description = get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('availablecourses'));
-$default = "";
-$setting = new admin_setting_configtextarea($name, $title, $description, $default);
-$temp->add($setting);
+$setting = new admin_setting_heading("theme_boost_magnific/theme_boost_magnific_frontpage_bloco",
+    get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('availablecourses')), '');
+$page->add($setting);
 
-$name = 'theme_boost_magnific/frontpage_avaliablecourses_instructor';
-$title = get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific');
-$description = get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific');
-$default = 1;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$temp->add($setting);
+$setting = new admin_setting_configtextarea('theme_boost_magnific/frontpage_avaliablecourses_text',
+    get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('availablecourses')),
+    get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('availablecourses')), '');
+$page->add($setting);
 
-
-$name = "theme_boost_magnific/theme_boost_magnific_frontpage_bloco";
-$heading = get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('mycourses'));
-$setting = new admin_setting_heading($name, $heading, "");
-$temp->add($setting);
-
-$name = 'theme_boost_magnific/frontpage_mycourses_text';
-$title = get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('mycourses'));
-$description = get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('mycourses'));
-$default = "";
-$setting = new admin_setting_configtextarea($name, $title, $description, $default);
-$temp->add($setting);
-
-$name = 'theme_boost_magnific/frontpage_mycourses_instructor';
-$title = get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific');
-$description = get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific');
-$default = 1;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$temp->add($setting);
+$setting = new admin_setting_configcheckbox('theme_boost_magnific/frontpage_avaliablecourses_instructor',
+    get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific'),
+    get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific'),
+    1);
+$page->add($setting);
 
 
-$settings->add($temp);
+$setting = new admin_setting_heading("theme_boost_magnific/theme_boost_magnific_frontpage_bloco",
+    get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('mycourses')), '');
+$page->add($setting);
+
+$setting = new admin_setting_configtextarea('theme_boost_magnific/frontpage_mycourses_text',
+    get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('mycourses')),
+    get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('mycourses')), '');
+$page->add($setting);
+
+$setting = new admin_setting_configcheckbox('theme_boost_magnific/frontpage_mycourses_instructor',
+    get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific'),
+    get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific'),
+    1);
+$page->add($setting);
+
+
+$settings->add($page);

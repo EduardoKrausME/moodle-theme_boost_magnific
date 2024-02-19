@@ -21,7 +21,7 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_boost_magnific
- * @copyright   2023 Eduardo kraus (http://eduardokraus.com)
+ * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -34,7 +34,11 @@
  * @return null
  */
 function theme_boost_magnific_page_init(moodle_page $page) {
+    global $CFG;
+
     $page->requires->jquery();
+
+    $CFG->enableuserfeedback = false;
 }
 
 /**
@@ -45,67 +49,43 @@ function theme_boost_magnific_page_init(moodle_page $page) {
  * @param string $theme
  *
  * @return string $css
+ * @throws coding_exception
  */
 function theme_boost_magnific_process_css($css, $theme) {
-    global $OUTPUT;
+    $css .=
+        ":root {\n" .
+        "    --color_theme_primary:   " . theme_boost_magnific_process_color_hex("theme_color__color_primary") . ";\n" .
+        "    --color_theme_secondary: " . theme_boost_magnific_process_color_hex("theme_color__color_secondary") . ";\n" .
+        "    --color_theme_buttons:   " . theme_boost_magnific_process_color_hex("theme_color__color_buttons") . ";\n" .
+        "    --color_theme_names:     " . theme_boost_magnific_process_color_hex("theme_color__color_names") . ";\n" .
+        "    --color_theme_titles:    " . theme_boost_magnific_process_color_hex("theme_color__color_titles") . ";\n" .
+        "}";
 
-    function color_hex_to_rgb($hex) {
-        if (isset($hex[4])) {
-            $hex = array("{$hex[1]}{$hex[2]}", "{$hex[3]}{$hex[4]}", "{$hex[5]}{$hex[6]}");
-        } else {
-            $hex = array("{$hex[1]}{$hex[1]}", "{$hex[2]}{$hex[2]}", "{$hex[3]}{$hex[3]}");
-        }
-        $rgb = implode(",", array_map('hexdec', $hex));
-
-        return $rgb;
+    $fontfamily = theme_boost_magnific_get_setting("fontfamily");
+    if (isset($fontfamily[3])) {
+        $fontfamily =
+            "@import url('https://fonts.googleapis.com/css2?family={$fontfamily}:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');\n" .
+            "body{font-family:{$fontfamily}, Arial, Helvetica, sans-serif;}";
+    } else {
+        $fontfamily = "body{font-family:Arial, Helvetica, sans-serif;}";
     }
 
-    if (preg_match('/root.*--color_theme_primary:/s', $css)) {
-        $color_primary = color_hex_to_rgb($theme->settings->color_primary);
-        $color_secondary = color_hex_to_rgb($theme->settings->color_secondary);
-        $color_buttons = color_hex_to_rgb($theme->settings->color_buttons);
-        $color_names = color_hex_to_rgb($theme->settings->color_names);
-        $color_titles = color_hex_to_rgb($theme->settings->color_titles);
-
-        $background = $OUTPUT->image_url("bg/bg_{$theme->settings->background_image}", 'theme');
-        $background_image = $background ? "url(\"{$background->out()}\") repeat 0 -50px" : "";
-
-        $csstheme = "
-            :root {
-                --color_theme_primary:   {$color_primary};
-                --color_theme_secondary: {$color_secondary};
-                --color_theme_buttons:   {$color_buttons};
-                --color_theme_names:     {$color_names};
-                --color_theme_titles:    {$color_titles};
-                
-                --color_primary:         {$theme->settings->color_primary};
-                --color_secondary:       {$theme->settings->color_secondary};
-                --color_buttons:         {$theme->settings->color_buttons};
-                --color_names:           {$theme->settings->color_names};
-                --color_titles:          {$theme->settings->color_titles};
-            }
-            body #header,
-            #footer .footer-main {
-                color: #fff;
-                background: {$theme->settings->background_color} {$background_image};
-            }
-            body .frontpage-course-list {
-                background: {$theme->settings->background_color}3d;
-            }
-            ";
-
-        if (isset($theme->settings->fontfamily[3])) {
-            $fontfamily = "@import url(https://fonts.googleapis.com/css2?family={$theme->settings->fontfamily}:" .
-                "ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap);\n";
-            $fontfamily .= "body{font-family: {$theme->settings->fontfamily}, Arial, Helvetica, sans-serif;}";
-        } else {
-            $fontfamily = "body{font-family: Arial, Helvetica, sans-serif;}";
-        }
-
-        $css = "{$css}\n{$theme->settings->customcss}\n{$csstheme}\n{$fontfamily}";
-    }
+    $customcss = theme_boost_magnific_get_setting("customcss");
+    $css = "{$css}\n{$customcss}\n{$fontfamily}";
 
     return $css;
+}
+
+/**
+ * @param $colorname
+ * @return string
+ * @throws coding_exception
+ */
+function theme_boost_magnific_process_color_hex($colorname) {
+    $color = theme_boost_magnific_get_setting($colorname);
+
+    $hex = [hexdec(substr($color, 1, 2)), hexdec(substr($color, 3, 2)), hexdec(substr($color, 5, 2))];
+    return implode(",", $hex);
 }
 
 /**
@@ -113,11 +93,11 @@ function theme_boost_magnific_process_css($css, $theme) {
  *
  * @param stdClass $course
  * @param stdClass $cm
- * @param context  $context
- * @param string   $filearea
- * @param array    $args
- * @param bool     $forcedownload
- * @param array    $options
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
  *
  * @return bool
  * @throws coding_exception
@@ -196,10 +176,10 @@ function theme_boost_magnific_send_unmodified($lastmodified, $etag) {
 /**
  * Cached css.
  *
- * @param string  $path
- * @param string  $filename
+ * @param string $path
+ * @param string $filename
  * @param integer $lastmodified
- * @param string  $etag
+ * @param string $etag
  */
 function theme_boost_magnific_send_cached_css($path, $filename, $lastmodified, $etag) {
     global $CFG;
@@ -231,7 +211,7 @@ function theme_boost_magnific_send_cached_css($path, $filename, $lastmodified, $
  * rely on that function just by declaring settings with similar names.
  *
  * @param renderer_base $output Pass in $OUTPUT.
- * @param moodle_page   $page   Pass in $PAGE.
+ * @param moodle_page $page Pass in $PAGE.
  *
  * @return stdClass An object with the following properties:
  *      - navbarclass A CSS class to use on the navbar. By default ''.
@@ -271,12 +251,27 @@ function theme_boost_magnific_get_html_for_settings(renderer_base $output, moodl
  * @return string $logo
  */
 function theme_boost_magnific_get_logo($local) {
+    global $SITE;
 
-    global $OUTPUT, $SITE;
+    $logocolor = get_config('theme_boost_magnific', 'logo_color');
+    $logowrite = get_config('theme_boost_magnific', 'logo_write');
+    if (empty($logocolor)) {
+        return "<span>{$SITE->shortname}</span>";
+    }
 
-    $url = $OUTPUT->get_logo_url();
-    if ($url) {
-        return "<img src='{$url->out(false)}' alt='{$SITE->fullname}'>";
+    $urllogocolor = moodle_url::make_pluginfile_url(context_system::instance()->id, 'theme_boost_magnific', 'logo_color', '',
+        theme_get_revision(), $logocolor);
+    $urllogowrite = moodle_url::make_pluginfile_url(context_system::instance()->id, 'theme_boost_magnific', 'logo_write', '',
+        theme_get_revision(), $logowrite);
+
+    if ($urllogocolor) {
+        if ($urllogowrite) {
+            return "
+                <img class='logo-color' src='{$urllogocolor->out(false)}' alt='{$SITE->fullname}'>
+                <img class='logo-write' src='{$urllogowrite->out(false)}' alt='{$SITE->fullname}'>";
+        } else {
+            return "<img class='logo-all' src='{$urllogocolor->out(false)}' alt='{$SITE->fullname}'>";
+        }
     } else {
         return "<span>{$SITE->shortname}</span>";
     }
@@ -285,9 +280,10 @@ function theme_boost_magnific_get_logo($local) {
 
 /**
  * @return string
+ * @throws coding_exception
  */
 function theme_boost_magnific_get_body_class() {
-    return "";
+    return "theme-" . theme_boost_magnific_get_setting("background_color", false);
 }
 
 
@@ -296,7 +292,7 @@ function theme_boost_magnific_get_body_class() {
  * theme
  *
  * @param string $setting
- * @param bool   $format
+ * @param bool $format
  *
  * @return bool
  * @throws coding_exception
@@ -316,6 +312,8 @@ function theme_boost_magnific_get_setting($setting, $format = true) {
         return format_string($theme->settings->$setting);
     } else if ($format === FORMAT_PLAIN) {
         return format_text($theme->settings->$setting, FORMAT_PLAIN);
+    } else if ($format === FORMAT_HTML) {
+        return format_text($theme->settings->$setting, FORMAT_HTML);
     } else {
         return $theme->settings->$setting;
     }
@@ -324,22 +322,22 @@ function theme_boost_magnific_get_setting($setting, $format = true) {
 /**
  * Renderer the slider images.
  *
- * @param $slideshowimage
+ * @param $imagesetting
  *
  * @return string
  * @throws coding_exception
  */
-function theme_boost_magnific_get_setting_image($slideshowimage) {
+function theme_boost_magnific_get_setting_image($imagesetting) {
     global $PAGE;
 
-    if (theme_boost_magnific_get_setting($slideshowimage)) {
-        $slideshowimageurl = $PAGE->theme->setting_file_url($slideshowimage, $slideshowimage);
+    if (theme_boost_magnific_get_setting($imagesetting)) {
+        $imagesettingurl = $PAGE->theme->setting_file_url($imagesetting, $imagesetting);
     }
-    if (empty($slideshowimageurl)) {
-        $slideshowimageurl = '';
+    if (empty($imagesettingurl)) {
+        $imagesettingurl = '';
     }
 
-    return $slideshowimageurl;
+    return $imagesettingurl;
 }
 
 /**
@@ -448,9 +446,9 @@ function theme_boost_magnific_strip_html_tags($text) {
 /**
  * Cut the Course content.
  *
- * @param string  $str
+ * @param string $str
  * @param integer $n
- * @param string  $endchar
+ * @param string $endchar
  *
  * @return string $out
  */
@@ -464,7 +462,7 @@ function theme_boost_magnific_course_trim_char($str, $n = 500, $endchar = '&#823
         return $str;
     }
 
-    $out = "";
+    $out = '';
     $small = substr($str, 0, $n);
     $out = $small . $endchar;
     return $out;
@@ -474,7 +472,7 @@ function theme_boost_magnific_course_trim_char($str, $n = 500, $endchar = '&#823
  * Function returns the rgb format with the combination of passed color hex and opacity.
  *
  * @param string $hexa
- * @param int    $opacity
+ * @param int $opacity
  *
  * @return string
  */

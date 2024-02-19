@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
  * User: Eduardo Kraus
- * Date: 02/04/2023
+ * Date: 02/04/2024
  * Time: 19:18
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$temp = new admin_settingpage('theme_boost_magnific_slideshow', get_string('settings_slideshow_heading', 'theme_boost_magnific'));
+$page = new admin_settingpage('theme_boost_magnific_slideshow', get_string('settings_slideshow_heading', 'theme_boost_magnific'));
 
 // Number of slides.
 $name = 'theme_boost_magnific/slideshow_numslides';
@@ -40,7 +40,7 @@ $choices = [
     8 => '8',
     9 => '9',
 ];
-$temp->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+$page->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 
 global $PAGE;
 $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'numslides');
@@ -49,30 +49,26 @@ $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'numslides');
 $slideshownumslides = get_config('theme_boost_magnific', 'slideshow_numslides');
 for ($i = 1; $i <= 9; $i++) {
 
-    $name = "theme_boost_magnific/slideshow_info_{$i}";
     $heading = get_string('slideshow_info', 'theme_boost_magnific', $i);
-    $setting = new admin_setting_heading($name, "<span id='admin-slideshow_info_{$i}'>{$heading}</span>", "");
-    $temp->add($setting);
+    $setting = new admin_setting_heading("theme_boost_magnific/slideshow_info_{$i}", "<span id='admin-slideshow_info_{$i}'>{$heading}</span>", '');
+    $page->add($setting);
 
-    $name = "theme_boost_magnific/slideshow_image_{$i}";
-    $title = get_string('slideshow_image', 'theme_boost_magnific');
-    $description = get_string('slideshow_image_desc', 'theme_boost_magnific');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, "slideshow_image_{$i}");
+    $setting = new admin_setting_configstoredfile("theme_boost_magnific/slideshow_image_{$i}",
+        get_string('slideshow_image', 'theme_boost_magnific'),
+        get_string('slideshow_image_desc', 'theme_boost_magnific'),
+        "slideshow_image_{$i}");
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $page->add($setting);
 
-    $name = "theme_boost_magnific/slideshow_url_{$i}";
-    $title = get_string('slideshow_url', 'theme_boost_magnific');
-    $description = get_string('slideshow_url_desc', 'theme_boost_magnific');
-    $default = 'http://www.example.com/';
-    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
-    $temp->add($setting);
+    $setting = new admin_setting_configtext("theme_boost_magnific/slideshow_url_{$i}",
+        get_string('slideshow_url', 'theme_boost_magnific'),
+        get_string('slideshow_url_desc', 'theme_boost_magnific'),
+        'http://www.example.com/', PARAM_URL);
+    $page->add($setting);
 
-    $name = "theme_boost_magnific/slideshow_text_{$i}";
-    $title = get_string('slideshow_text', 'theme_boost_magnific');
-    $description = get_string('slideshow_text_desc', 'theme_boost_magnific');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
-    $temp->add($setting);
+    $setting = new admin_setting_configtext("theme_boost_magnific/slideshow_text_{$i}",
+        get_string('slideshow_text', 'theme_boost_magnific'),
+        get_string('slideshow_text_desc', 'theme_boost_magnific'), '', PARAM_TEXT);
+    $page->add($setting);
 }
-$settings->add($temp);
+$settings->add($page);

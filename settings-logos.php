@@ -21,22 +21,30 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$temp = new admin_settingpage('theme_boost_magnific_logos', get_string('settings_logos_heading', 'theme_boost_magnific'));
+$page = new admin_settingpage('theme_boost_magnific_logos', get_string('settings_logos_heading', 'theme_boost_magnific'));
 
-// Logo file setting.
-$title = get_string('logo', 'admin');
-$description = get_string('logo_desc', 'admin');
-$setting = new admin_setting_configstoredfile('core_admin/logo', $title, $description, 'logo', 0,
+$setting = new admin_setting_configstoredfile('theme_boost_magnific/logo_color',
+    get_string('logo_color', 'theme_boost_magnific'),
+    get_string('logo_color_desc', 'theme_boost_magnific'),
+    'logo_color', 0,
     ['maxfiles' => 1, 'accepted_types' => ['.jpg', '.png']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$temp->add($setting);
+$page->add($setting);
 
-// Favicon file setting.
-$title = get_string('favicon', 'theme_boost_magnific');
-$description = get_string('favicon_desc', 'theme_boost_magnific');
-$setting = new admin_setting_configstoredfile('core_admin/favicon', $title, $description, 'favicon', 0,
+$setting = new admin_setting_configstoredfile('theme_boost_magnific/logo_write',
+    get_string('logo_write', 'theme_boost_magnific'),
+    get_string('logo_write_desc', 'theme_boost_magnific'),
+    'logo_write', 0,
+    ['maxfiles' => 1, 'accepted_types' => ['.jpg', '.png']]);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$setting = new admin_setting_configstoredfile('core_admin/favicon',
+    get_string('favicon', 'theme_boost_magnific'),
+    get_string('favicon_desc', 'theme_boost_magnific'),
+    'favicon', 0,
     ['maxfiles' => 1, 'accepted_types' => ['image']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$temp->add($setting);
+$page->add($setting);
 
-$settings->add($temp);
+$settings->add($page);
