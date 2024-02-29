@@ -52,26 +52,26 @@ function theme_boost_magnific_page_init(moodle_page $page) {
  * @throws coding_exception
  */
 function theme_boost_magnific_process_css($css, $theme) {
-    $css .=
+    $css =
         ":root {\n" .
-        "    --color_theme_primary:   " . theme_boost_magnific_process_color_hex("theme_color__color_primary") . ";\n" .
-        "    --color_theme_secondary: " . theme_boost_magnific_process_color_hex("theme_color__color_secondary") . ";\n" .
-        "    --color_theme_buttons:   " . theme_boost_magnific_process_color_hex("theme_color__color_buttons") . ";\n" .
-        "    --color_theme_names:     " . theme_boost_magnific_process_color_hex("theme_color__color_names") . ";\n" .
-        "    --color_theme_titles:    " . theme_boost_magnific_process_color_hex("theme_color__color_titles") . ";\n" .
-        "}";
+        "    --color_primary:   " . theme_boost_magnific_process_color_hex("theme_color__color_primary") . ";\n" .
+        "    --color_secondary: " . theme_boost_magnific_process_color_hex("theme_color__color_secondary") . ";\n" .
+        "    --color_buttons:   " . theme_boost_magnific_process_color_hex("theme_color__color_buttons") . ";\n" .
+        "    --color_names:     " . theme_boost_magnific_process_color_hex("theme_color__color_names") . ";\n" .
+        "    --color_titles:    " . theme_boost_magnific_process_color_hex("theme_color__color_titles") . ";\n" .
+        "}" . $css;
 
     $fontfamily = theme_boost_magnific_get_setting("fontfamily");
     if (isset($fontfamily[3])) {
-        $fontfamily =
-            "@import url('https://fonts.googleapis.com/css2?family={$fontfamily}:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');\n" .
-            "body{font-family:{$fontfamily}, Arial, Helvetica, sans-serif;}";
+        $fontfamily1 = "@import url('https://fonts.googleapis.com/css2?family={$fontfamily}:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');";
+        $fontfamily2 = "body,*{font-family:{$fontfamily}, Arial, Helvetica, sans-serif;}";
     } else {
-        $fontfamily = "body{font-family:Arial, Helvetica, sans-serif;}";
+        $fontfamily1 = "";
+        $fontfamily2 = "body,*{font-family:Arial, Helvetica, sans-serif;}";
     }
 
-    $customcss = theme_boost_magnific_get_setting("customcss");
-    $css = "{$css}\n{$customcss}\n{$fontfamily}";
+    $customcss = str_replace("&gt;", ">", theme_boost_magnific_get_setting("customcss"));
+    $css = "{$fontfamily1}{$fontfamily2}\n\n{$css}\n{$customcss}\n{$fontfamily2}";
 
     return $css;
 }
