@@ -99,9 +99,7 @@ $string['social_linkedin_desc'] = 'URL на LinkedIn на вашата орга�
 $string['social_instagram'] = 'Вашият Instagram';
 $string['social_instagram_desc'] = 'URL на Instagram на вашата организация.';
 $string['social_facebook'] = 'Вашият Facebook';
-$string['social_facebook_desc'] = 'URL на Facebook на вашата организ
-
-ация.';
+$string['social_facebook_desc'] = 'URL на Facebook на вашата организация.';
 
 
 $string['settings_topo_heading'] = 'Горе';
