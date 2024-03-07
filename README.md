@@ -29,6 +29,8 @@ O "boost_magnific" também oferece recursos de personalização que permitem que
 
 ![setting-07.png](https://raw.githubusercontent.com/EduardoKrausME/moodle-theme_boost_magnific/master/pix/prints/setting-07.png)
 
+![setting-08.png](https://raw.githubusercontent.com/EduardoKrausME/moodle-theme_boost_magnific/master/pix/prints/setting-08.png)
+
 Em resumo, o tema "boost_magnific" é uma excelente opção para instituições de ensino que buscam um ambiente virtual de aprendizagem moderno, elegante e fácil de usar. Com sua estética minimalista e recursos de personalização, ele certamente proporcionará uma experiência de aprendizagem agradável e eficaz para os usuários do Moodle.
 
 ## instalando
