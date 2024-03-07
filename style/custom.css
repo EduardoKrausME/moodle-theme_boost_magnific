@@ -1,9 +1,9 @@
 :root {
-    --color_theme_primary: 43, 78, 132;
-    --color_theme_secondary: 43, 78, 132;
-    --color_theme_buttons: 24, 48, 84;
-    --color_theme_names: 192, 204, 220;
-    --color_theme_titles: 232, 240, 251;
+    --color_primary: 43, 78, 132;
+    --color_secondary: 43, 78, 132;
+    --color_buttons: 24, 48, 84;
+    --color_names: 192, 204, 220;
+    --color_titles: 232, 240, 251;
 
     --color_white_8: 247, 247, 247;
     --color_white_26: 229, 229, 229;

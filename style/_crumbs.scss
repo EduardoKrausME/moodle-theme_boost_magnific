@@ -16,7 +16,7 @@
             margin: 9px 10px 0 0;
             font-size: 20px;
             text-decoration: none;
-            color: rgb(var(--color_theme_primary));
+            color: rgb(var(--color_primary));
             height: 34px;
             display: flex;
             align-items: center;
@@ -40,10 +40,10 @@
             }
         }
         a:hover {
-            background: rgb(var(--color_theme_primary));
+            background: rgb(var(--color_primary));
             color: #fff;
             &:after {
-                border-left-color: rgb(var(--color_theme_primary));
+                border-left-color: rgb(var(--color_primary));
                 color: #fff;
             }
         }

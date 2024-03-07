@@ -83,7 +83,7 @@
                             clip: initial;
                             position: initial;
                             white-space: initial;
-                            color: rgb(var(--color_theme_primary));
+                            color: rgb(var(--color_primary));
                         }
                     }
                     #username,
@@ -128,7 +128,7 @@
                 line-height: 20px;
             }
             a {
-                color: rgb(var(--color_theme_buttons));
+                color: rgb(var(--color_buttons));
             }
             label {
                 margin-bottom: 0 !important;
@@ -205,7 +205,7 @@
             .fdescription,
             label,
             a {
-                color: rgb(var(--color_theme_buttons));
+                color: rgb(var(--color_buttons));
             }
         }
     }
@@ -216,6 +216,8 @@
             padding-top: 35px;
             img {
                 max-height: 60px;
+                max-width: 380px;
+                width: auto;
             }
             span {
                 font-size: 35px;
