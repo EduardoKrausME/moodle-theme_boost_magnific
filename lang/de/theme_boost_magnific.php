@@ -23,182 +23,182 @@
  */
 
 $string['pluginname'] = 'boost_magnific';
-$string['choosereadme'] = 'boost_magnific ist ein mit Liebe gestaltetes Thema, das fröhliche Farben in Moodle bringt.';
+$string['choosereadme'] = 'boost_magnific es un tema creado con cariño para añadir colores vibrantes a Moodle.';
 
 // Slides.
-$string['settings_slideshow_heading'] = 'Slideshow';
-$string['theme_boost_magnific_slideshow_editbooton'] = 'Slideshow bearbeiten';
+$string['settings_slideshow_heading'] = 'Presentación de diapositivas';
+$string['theme_boost_magnific_slideshow_editbooton'] = 'Editar presentación de diapositivas';
 
-$string['slideshow_numslides'] = 'Wie viele Bilder in der Slideshow';
-$string['slideshow_numslides_desc'] = 'Wie viele Bilder sollen in der Slideshow angezeigt werden?';
-$string['slideshow_numslides_nenhum'] = 'Keine Slides auf der Startseite';
+$string['slideshow_numslides'] = 'Cantidad de imágenes en la presentación de diapositivas';
+$string['slideshow_numslides_desc'] = '¿Cuántas imágenes quieres en la presentación de diapositivas?';
+$string['slideshow_numslides_nenhum'] = 'Ninguna diapositiva en la página principal';
 
-$string['slideshow_info'] = 'Slide {$a}';
+$string['slideshow_info'] = 'Diapositiva {$a}';
 
-$string['slidecaption_desc'] = 'Geben Sie den Text für die Bildunterschrift ein';
-$string['slideshow_image'] = 'Slide-Bild';
-$string['slideshow_image_desc'] = 'Das Bild sollte 1250px x 400px haben.';
+$string['slidecaption_desc'] = 'Ingresa el texto de la leyenda que se utilizará en la diapositiva';
+$string['slideshow_image'] = 'Imagen de la diapositiva';
+$string['slideshow_image_desc'] = 'La imagen debe tener 1250px X 400px.';
 
-$string['slideshow_url'] = 'Link für Slideshow-Button';
-$string['slideshow_url_desc'] = 'Geben Sie das Ziel des Links für den Slideshow-Button ein';
+$string['slideshow_url'] = 'Enlace del botón de la diapositiva';
+$string['slideshow_url_desc'] = 'Ingresa el destino del enlace del botón de la imagen de la diapositiva';
 
-$string['slideshow_text'] = 'Kurzer beschreibender Text des Slides';
-$string['slideshow_text_desc'] = 'Geben Sie einen kurzen Text zum Slide ein.';
+$string['slideshow_text'] = 'Texto corto descriptivo de la diapositiva';
+$string['slideshow_text_desc'] = 'Ingresa un pequeño texto sobre la diapositiva.';
 
 
 // About.
-$string['settings_about_heading'] = 'Über Ihr Moodle';
-$string['theme_boost_magnific_about_editbooton'] = 'Über-Block bearbeiten';
-$string['frontpage_about_enable'] = 'Über-Block aktivieren';
-$string['frontpage_about_enable_desc'] = 'Wenn aktiviert, wird der Über-Block unter dem Banner angezeigt!';
-$string['frontpage_about_title'] = 'Titel des Über-Blocks';
-$string['frontpage_about_title_default'] = 'Unsere globale Gemeinschaft';
-$string['frontpage_about_logo'] = 'Anderes Logo hier anzeigen';
-$string['frontpage_about_logo_desc'] = 'Wenn festgelegt, wird dieses Logo hier verwendet, anstelle des Top-Logos.<br>
-                                         Leer lassen, um das Top-Logo zu verwenden!';
-$string['frontpage_about_description'] = 'Beschreiben Sie, was Sie tun';
-$string['frontpage_about_description_desc'] = 'Beschreiben Sie in maximal 5 Zeilen den Zweck Ihres Moodles';
-$string['frontpage_about_info'] = 'Datenfeld {$a}';
-$string['frontpage_about_text'] = 'Name der Daten';
-$string['frontpage_about_text_desc'] = 'Geben Sie hier den Namen der Daten ein, der auf der Startseite angezeigt wird';
-$string['frontpage_about_number'] = 'Anzahl der Daten';
-$string['frontpage_about_number_desc'] = 'Geben Sie hier die Anzahl der oben genannten Informationen ein';
-$string['frontpage_about_text_1_defalt'] = 'Kurse';
-$string['frontpage_about_text_2_defalt'] = 'Lehrer';
-$string['frontpage_about_text_3_defalt'] = 'Studierende';
-$string['frontpage_about_text_4_defalt'] = 'Lektionen';
+$string['settings_about_heading'] = 'Acerca de tu Moodle';
+$string['theme_boost_magnific_about_editbooton'] = 'Editar bloque Acerca de';
+$string['frontpage_about_enable'] = 'Habilitar bloque Acerca de';
+$string['frontpage_about_enable_desc'] = 'Si está marcado, el bloque Acerca de aparecerá debajo del banner.';
+$string['frontpage_about_title'] = 'Título del bloque Acerca de';
+$string['frontpage_about_title_default'] = 'Nuestra Comunidad Global';
+$string['frontpage_about_logo'] = 'Logo diferente a mostrar aquí';
+$string['frontpage_about_logo_desc'] = 'Si se establece, se usará este logo aquí en lugar del logo superior.<br>
+                                         En blanco usa el logo superior.';
+$string['frontpage_about_description'] = 'Describe lo que haces';
+$string['frontpage_about_description_desc'] = 'Describe en un máximo de 5 líneas el propósito de tu Moodle';
+$string['frontpage_about_info'] = 'Caja de datos {$a}';
+$string['frontpage_about_text'] = 'Nombre del dato';
+$string['frontpage_about_text_desc'] = 'Ingresa aquí el nombre del dato que se mostrará en la página principal';
+$string['frontpage_about_number'] = 'Cantidad de datos';
+$string['frontpage_about_number_desc'] = 'Ingresa aquí la cantidad de información mencionada anteriormente';
+$string['frontpage_about_text_1_defalt'] = 'Cursos';
+$string['frontpage_about_text_2_defalt'] = 'Profesores';
+$string['frontpage_about_text_3_defalt'] = 'Estudiantes';
+$string['frontpage_about_text_4_defalt'] = 'Lecciones';
 
 
-$string['theme_boost_magnific_frontpage_home'] = 'Home-Blöcke';
-$string['heart'] = 'Wenn Ihnen dieses Thema gefällt, vergessen Sie nicht, auf der Themen-Seite auf ❤️ zu klicken <a href="{$a}" target="_blank">hier</a>';
-$string['theme_boost_magnific_frontpage_bloco'] = 'Block "{$a}"';
+$string['theme_boost_magnific_frontpage_home'] = 'Bloques de la Página Principal';
+$string['heart'] = 'Si te gusta este tema, no olvides hacer clic en ❤️ en la página de temas <a href="{$a}" target="_blank">haciendo clic aquí</a>';
+$string['theme_boost_magnific_frontpage_bloco'] = 'Bloque "{$a}"';
 
-$string['footer_frontpage_blockcourses_text'] = 'Kurzer Text, der den Block "{$a}" erklärt';
-$string['footer_frontpage_blockcourses_text_desc'] = 'Fügen Sie einen Text hinzu, der die "{$a}" erklärt!';
-$string['footer_frontpage_blockcourses_instructor'] = 'Namen des Lehrers anzeigen';
-$string['footer_frontpage_blockcourses_instructor_desc'] = 'Wenn aktiviert, werden die Namen der Lehrer in der Kursliste angezeigt!';
-$string['instructor'] = 'Lehrer';
-$string['acessar'] = 'Kurs betreten';
-$string['continuar'] = 'Weiterlernen';
-$string['matricular'] = 'Einschreiben';
-$string['countlesson'] = '{$a} Lektion';
-$string['countlessons'] = '{$a} Lektionen';
-$string['free_name'] = 'Kostenlos';
+$string['footer_frontpage_blockcourses_text'] = 'Texto corto explicando el bloque "{$a}"';
+$string['footer_frontpage_blockcourses_text_desc'] = 'Agrega un texto que hable de "{$a}"';
+$string['footer_frontpage_blockcourses_instructor'] = 'Mostrar nombre del profesor';
+$string['footer_frontpage_blockcourses_instructor_desc'] = 'Si está marcado, muestra los nombres de los profesores en la lista de cursos.';
+$string['instructor'] = 'Profesor';
+$string['acessar'] = 'Acceder al curso';
+$string['continuar'] = 'Continuar estudiando';
+$string['matricular'] = 'Inscribirse';
+$string['countlesson'] = '{$a} lección';
+$string['countlessons'] = '{$a} lecciones';
+$string['free_name'] = 'Gratis';
 
 $string['favicon'] = 'Favicon';
-$string['favicon_desc'] = 'Das Favicon wird neben dem Seitentitel im Browser-Tab angezeigt. Ein Moodle-Favicon wird angezeigt, wenn kein benutzerdefiniertes Favicon bereitgestellt wird.';
+$string['favicon_desc'] = 'El favicon se muestra junto al título de la página en la pestaña del navegador. Se mostrará el favicon de Moodle si no se proporciona un favicon personalizado.';
 
 
 // Footer.
-$string['social_twitter'] = 'Ihr Twitter';
-$string['social_twitter_desc'] = 'Die URL des Twitter-Accounts Ihrer Organisation.';
-$string['social_youtube'] = 'Ihr YouTube';
-$string['social_youtube_desc'] = 'Die URL des YouTube-Kanals Ihrer Organisation.';
-$string['social_linkedin'] = 'Ihr LinkedIn';
-$string['social_linkedin_desc'] = 'Die URL des LinkedIn-Profils Ihrer Organisation.';
-$string['social_instagram'] = 'Ihr Instagram';
-$string['social_instagram_desc'] = 'Die URL des Instagram-Accounts Ihrer Organisation.';
-$string['social_facebook'] = 'Ihr Facebook';
-$string['social_facebook_desc'] = 'Die URL der Facebook-Seite Ihrer Organisation.';
+$string['social_twitter'] = 'Tu Twitter';
+$string['social_twitter_desc'] = 'La URL del Twitter de tu organización.';
+$string['social_youtube'] = 'Tu Youtube';
+$string['social_youtube_desc'] = 'La URL de Youtube de tu organización.';
+$string['social_linkedin'] = 'Tu Linkedin';
+$string['social_linkedin_desc'] = 'La URL de Linkedin de tu organización.';
+$string['social_instagram'] = 'Tu Instagram';
+$string['social_instagram_desc'] = 'La URL de Instagram de tu organización.';
+$string['social_facebook'] = 'Tu Facebook';
+$string['social_facebook_desc'] = 'La URL de Facebook de tu organización.';
 
 
-$string['settings_topo_heading'] = 'Oben';
+$string['settings_topo_heading'] = 'Superior';
 
-$string['settings_footer_heading'] = 'Footer-Block';
+$string['settings_footer_heading'] = 'Bloque del Pie de página';
 
-$string['footerblock_description'] = 'Blockbeschreibung';
-$string['footer_description'] = 'Beschreibung';
-$string['footer_description_desc'] = 'Beschreiben Sie Ihr Moodle, was Sie tun, und diese Informationen werden unter dem Logo im Footer angezeigt';
+$string['footerblock_description'] = 'Bloque de descripción';
+$string['footer_description'] = 'Descripción';
+$string['footer_description_desc'] = 'Describe tu Moodle, lo que haces y esta información se mostrará debajo del logo en el pie de página de Moodle.';
 
-$string['footerblock_links'] = 'Link-Block';
-$string['footer_links_title'] = 'Titel des Link-Blocks';
-$string['footer_links_title_default'] = 'Wichtige Links';
+$string['footerblock_links'] = 'Bloque de enlaces';
+$string['footer_links_title'] = 'Título del bloque de enlaces';
+$string['footer_links_title_default'] = 'Enlaces importantes';
 
-$string['footerblock_social'] = 'Social-Media-Block';
-$string['footer_social_title'] = 'Titel des Social-Media-Blocks';
-$string['footer_social_title_desc'] = 'Geben Sie den Titel des Blocks an, der im Footer mit den Daten Ihrer Social-Media-Profile angezeigt wird.';
-$string['footer_social_title_default'] = 'Folgen Sie uns in sozialen Medien';
-$string['footerblock_contact'] = 'Kontakt-Block';
+$string['footerblock_social'] = 'Bloque social';
+$string['footer_social_title'] = 'Título del bloque de redes sociales';
+$string['footer_social_title_desc'] = 'Ingresa el título del bloque que aparecerá en el pie de página con los datos de tus redes sociales.';
+$string['footer_social_title_default'] = 'Síguenos en redes sociales';
+$string['footerblock_contact'] = 'Bloque de contacto';
 
-$string['footerblink'] = 'Links im Footer-Block';
-$string['footerblink_desc'] = 'Sie können hier einen Footer-Block-Link konfigurieren, der von Themen angezeigt wird. <br>' .
-    'Jede Zeile besteht aus einem Menütext oder einer Sprachschlüsselzeichenfolge oder einem Text, gefolgt von einem vertikalen Strich und einer optionalen Link-URL. Zum Beispiel:<br>' .
-    '<pre>Moodle-Support|https://moodle.org/support</pre>';
-
-
-$string['footer_contact_title'] = 'Titel des Kontakt-Blocks';
-$string['footer_contact_title_desc'] = 'Geben Sie den Titel des Blocks an, der im Footer mit Ihren Kontaktinformationen angezeigt wird.';
-$string['footer_contact_title_default'] = 'Kontakt aufnehmen';
+$string['footerblink'] = 'Enlaces del bloque del pie de página';
+$string['footerblink_desc'] = 'Puedes configurar aquí los enlaces del bloque del pie de página que se mostrarán por temas. <br>' .
+    'Cada línea consiste en algún texto de menú o clave de idioma o texto, un URL de enlace (opcional), separado por barras verticales. Por ejemplo:<br>' .
+    '<pre>Soporte de Moodle|https://moodle.org/support</pre>';
 
 
-$string['contact_address'] = 'Adresse';
-$string['contact_email'] = 'E-Mail';
-$string['contact_phone'] = 'Telefonnummer';
+$string['footer_contact_title'] = 'Título del bloque de contacto';
+$string['footer_contact_title_desc'] = 'Ingresa el título del bloque que aparecerá en el pie de página con los datos de contacto.';
+$string['footer_contact_title_default'] = 'Contáctanos';
 
-$string['footerblock_copywriter'] = 'Mit ❤️ erstellt';
-$string['footer_show_copywriter'] = 'Zeige "Mit ❤️ erstellt"';
-$string['footer_show_copywriter_desc'] = 'Deaktivieren Sie dies, wenn Sie "Mit ❤️ erstellt" ausblenden möchten';
+
+$string['contact_address'] = 'Dirección';
+$string['contact_email'] = 'Correo electrónico';
+$string['contact_phone'] = 'Número de teléfono';
+
+$string['footerblock_copywriter'] = 'Hecho con ❤️';
+$string['footer_show_copywriter'] = 'Mostrar "Hecho con ❤️"';
+$string['footer_show_copywriter_desc'] = 'Desmarca si deseas ocultar "Hecho con ❤️"';
 
 // Logos.
 $string['settings_logos_heading'] = 'Logos';
-$string['logo_color'] = 'Farbiges Logo';
-$string['logo_color_desc'] = 'Bitte laden Sie Ihr farbiges Logo hoch, wenn Sie es im Header einschließen möchten. Dieses Logo wird angezeigt, wenn die Seite gescrollt wird und das Menü wird auf weißem Hintergrund angezeigt.';
-$string['logo_write'] = 'Weißes Logo';
-$string['logo_write_desc'] = 'Bitte laden Sie Ihr weißes Logo hoch, wenn Sie es im Header einschließen möchten. Dieses Logo wird angezeigt, wenn die Seite oben gescrollt wird, und das Menü wird auf farbigem Hintergrund angezeigt.';
+$string['logo_color'] = 'Logo a color';
+$string['logo_color_desc'] = 'Por favor, carga tu LOGO a color si deseas incluirla en la parte superior. Esta logo se mostrará a medida que se desplaza la página y el menú se mostrará en un fondo blanco.';
+$string['logo_write'] = 'Logo blanca';
+$string['logo_write_desc'] = 'Por favor, carga tu LOGO blanca si deseas incluirla en la parte superior. Esta logo se mostrará cuando el desplazamiento permanezca en la parte superior y el menú se mostrará en un fondo de color.';
 
-// Themas und CSS.
-$string['settings_theme_heading'] = 'Thema und CSS';
-$string['customcss'] = 'Benutzerdefiniertes CSS';
-$string['customcss_desc'] = 'Alle CSS-Regeln, die Sie in diesem Textbereich hinzufügen, werden auf allen Seiten reflektiert und erleichtern die Anpassung dieses Themas.';
-$string['fontfamily'] = 'Schriftart der Website';
-$string['fontfamily_desc'] = 'Wählen Sie die Schriftart aus, die Sie in Ihrem Moodle verwenden möchten';
+// Temas y CSS.
+$string['settings_theme_heading'] = 'Tema y CSS';
+$string['customcss'] = 'CSS personalizado';
+$string['customcss_desc'] = 'Cualquier regla CSS que añadas en esta área de texto se reflejará en todas las páginas, facilitando la personalización de este tema.';
+$string['fontfamily'] = 'Fuente del sitio';
+$string['fontfamily_desc'] = 'Elige la fuente que quieres usar en tu Moodle';
 
-$string['theme_color'] = 'Farbauswahl';
-$string['theme_color_desc'] = 'Wählen Sie die Farben für Texte und Schaltflächen in Moodle aus oder klicken Sie auf die Zeile unten:';
-$string['theme_color_blue'] = 'Blau';
-$string['theme_color_violet'] = 'Violett';
-$string['theme_color_red_d'] = 'Rot';
-$string['theme_color_green'] = 'Grün';
-$string['theme_color_green_d'] = 'Dunkelgrün';
-$string['theme_color-color_primary'] = 'Primärfarbe';
-$string['theme_color-color_primary_desc'] = 'Die Haupt-Primärfarbe des Themas, normalerweise für hervorgehobene und betonte Elemente verwendet.';
-$string['theme_color-color_secondary'] = 'Sekundärfarbe';
-$string['theme_color-color_secondary_desc'] = 'Eine sekundäre Farbe, die die Primärfarbe ergänzt und für das Hervorheben von Sekundärelementen oder den Kontrast zur Primärfarbe verwendet wird.';
-$string['theme_color-color_buttons'] = 'Farbe der Schaltflächen';
-$string['theme_color-color_buttons_desc'] = 'Die Farbe für Schaltflächen, um visuelle Kohärenz hinzuzufügen und interaktive Aktionen hervorzuheben.';
-$string['theme_color-color_names'] = 'Farbe der Namen';
-$string['theme_color-color_names_desc'] = 'Die Farbe, die zum Hervorheben von Namen oder Identifikatoren verwendet wird, um Klarheit und Betonung für bestimmte Textinformationen zu bieten.';
-$string['theme_color-color_titles'] = 'Farbe der Titel';
-$string['theme_color-color_titles_desc'] = 'Die Farbe, die für Titel verwendet wird, um Hervorhebung und visuelle Struktur für den Seiteninhalt bereitzustellen.';
+$string['theme_color'] = 'Selección de colores';
+$string['theme_color_desc'] = 'Selecciona los colores de los textos y botones de Moodle o haz clic en la línea de abajo:';
+$string['theme_color_blue'] = 'Azul';
+$string['theme_color_violet'] = 'Morado';
+$string['theme_color_red_d'] = 'Rojo';
+$string['theme_color_green'] = 'Verde';
+$string['theme_color_green_d'] = 'Verde oscuro';
+$string['theme_color-color_primary'] = 'Color primario';
+$string['theme_color-color_primary_desc'] = 'El color primario principal del tema, generalmente utilizado para elementos destacados y de énfasis.';
+$string['theme_color-color_secondary'] = 'Color secundario';
+$string['theme_color-color_secondary_desc'] = 'Un color secundario que complementa el color primario, utilizado para resaltar elementos secundarios o para contrastar con el color primario.';
+$string['theme_color-color_buttons'] = 'Color de los botones';
+$string['theme_color-color_buttons_desc'] = 'El color utilizado para los botones, proporcionando cohesión visual y enfatizando las acciones interactivas.';
+$string['theme_color-color_names'] = 'Color de los nombres';
+$string['theme_color-color_names_desc'] = 'Color utilizado para resaltar nombres o identificadores, proporcionando claridad y énfasis en información de texto específica.';
+$string['theme_color-color_titles'] = 'Color de los títulos';
+$string['theme_color-color_titles_desc'] = 'El color utilizado para los títulos, proporcionando destaque y estructura visual al contenido de la página.';
 
-$string['background_color'] = 'Hintergrundfarbe';
-$string['background_color_desc'] = 'Hintergrundfarbe des Headers und Fußzeile!';
-$string['background_color_default'] = 'Standardthema {$a}';
-$string['background_color_green'] = 'Grünes Thema {$a}';
-$string['background_color_blue'] = 'Blaues Thema {$a}';
-$string['background_color_red'] = 'Rotes Thema {$a}';
-$string['background_color_black'] = 'Schwarzes Thema {$a}';
-$string['background_color_random'] = 'Zufälliges Thema {$a}';
+$string['background_color'] = 'Color de fondo';
+$string['background_color_desc'] = 'Color de fondo de la parte superior y el pie de página.';
+$string['background_color_default'] = 'Tema predeterminado {$a}';
+$string['background_color_green'] = 'Tema Verde {$a}';
+$string['background_color_blue'] = 'Tema Azul {$a}';
+$string['background_color_red'] = 'Tema Rojo {$a}';
+$string['background_color_black'] = 'Tema Negro {$a}';
+$string['background_color_random'] = 'Tema Aleatorio {$a}';
 
-$string['settings_login_heading'] = 'Anmeldebildschirm';
-$string['login_theme'] = 'Anmeldebildschirm-Thema';
-$string['login_theme_desc'] = 'Wählen Sie das gewünschte Thema für den Anmeldebildschirm';
-$string['login_theme_block'] = 'Zentraler weißer Block mit optionalem Hintergrund';
-$string['login_theme_image_login'] = 'Bildhintergrund und Anmeldung auf der Seite';
-$string['login_theme_imagetext_login'] = 'Bildhintergrund, Text über dem Bild und Anmeldung auf der Seite';
-$string['login_theme_login'] = 'Nur Anmeldebildschirm, ohne seitliches Bild';
-$string['theme_login_branco'] = 'Nur Anmeldebildschirm, ohne seitliches Bild, mit Formular auf weißem Hintergrund';
-$string['login_backgroundfoto'] = 'Hintergrundbild';
-$string['login_backgroundfoto_desc'] = 'Wählen Sie das Hintergrundbild für Anmeldung, Passwort zurücksetzen und Konto erstellen aus. Standardbild ist: {$a}';
-$string['login_backgroundcolor'] = 'Hintergrundfarbe';
-$string['login_backgroundcolor_desc'] = 'Wählen Sie die Hintergrundfarbe für die Passwort-zurücksetzen-Seite aus';
+$string['settings_login_heading'] = 'Pantalla de inicio de sesión';
+$string['login_theme'] = 'Tema de inicio de sesión';
+$string['login_theme_desc'] = 'Elige qué tema quieres en el área de inicio de sesión';
+$string['login_theme_block'] = 'Bloque blanco central con fondo opcional';
+$string['login_theme_image_login'] = 'Imagen de fondo y inicio de sesión a un lado';
+$string['login_theme_imagetext_login'] = 'Imagen de fondo, texto sobre la imagen e inicio de sesión a un lado';
+$string['login_theme_login'] = 'Solo pantalla de inicio de sesión, sin imagen lateral';
+$string['theme_login_branco'] = 'Solo pantalla de inicio de sesión, sin imagen lateral, con el formulario en fondo blanco';
+$string['login_backgroundfoto'] = 'Imagen de fondo';
+$string['login_backgroundfoto_desc'] = 'Selecciona la imagen de fondo de Inicio de sesión/Recuperar contraseña/Crear cuenta. La imagen predeterminada es: {$a}';
+$string['login_backgroundcolor'] = 'Color de fondo';
+$string['login_backgroundcolor_desc'] = 'Selecciona el color de fondo de la página de recuperación de contraseña';
 
-$string['login_login_description'] = 'Text auf der Seite des Anmeldebildschirms';
-$string['login_login_description_desc'] = 'Text, der nur auf der Anmeldeseite angezeigt wird';
-$string['login_forgot_description'] = 'Text auf der Seite zum Zurücksetzen des Passworts';
-$string['login_forgot_description_desc'] = 'Text, der nur auf der Seite zum Zurücksetzen des Passworts angezeigt wird';
-$string['login_signup_description'] = 'Text auf der Seite zum Erstellen eines Kontos';
-$string['login_signup_description_desc'] = 'Text, der nur auf der Seite zum Erstellen eines Kontos angezeigt wird';
+$string['login_login_description'] = 'Texto en el lateral de la pantalla de inicio de sesión';
+$string['login_login_description_desc'] = 'Texto que aparecerá solo en la pantalla de inicio de sesión';
+$string['login_forgot_description'] = 'Texto en el lateral de la pantalla de recuperación de contraseña';
+$string['login_forgot_description_desc'] = 'Texto que aparecerá solo en la pantalla de recuperación de contraseña';
+$string['login_signup_description'] = 'Texto en el lateral de la pantalla de crear una cuenta';
+$string['login_signup_description_desc'] = 'Texto que aparecerá solo en la pantalla de crear una cuenta';
 
-// Privacy.
-$string['privacy:metadata'] = 'Das boost_magnific-Theme speichert keine persönlichen Daten über Benutzer.';
+// Privacidad.
+$string['privacy:metadata'] = 'El tema boost_magnific no almacena ningún dato personal sobre ningún usuario.';
