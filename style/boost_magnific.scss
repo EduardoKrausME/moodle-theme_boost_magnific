@@ -2745,8 +2745,9 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
     padding: 0 15px;
 }
 .header-logo {
-    float: left;
     margin: 10px 0;
+    display: flex;
+    align-items: center;
     a.navbar-brand {
         max-width: 250px;
         padding: 0;
