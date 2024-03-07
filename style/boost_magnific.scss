@@ -2111,6 +2111,7 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
     .observed,
     .navbar-nav {
         height: 100%;
+        align-items: center;
     }
     .navbar-nav {
         flex-wrap: nowrap;
@@ -2138,32 +2139,37 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
 .header-menubar .langmenu .dropdown .dropdown-toggle {
     color: #fff;
 }
-.header-menubar .primary-navigation ul.navbar-nav {
-    li a {
-        color: #fff;
-        padding: 11px 15px !important;
-        border: 0;
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-        &.active {
-            font-weight: bold;
-        }
-        &:hover,
-        &:focus {
-            color: #e6e6e6;
-        }
-    }
-    .dropdown-menu {
-        a {
-            color: rgb(var(--color_primary));
-            &.active,
+.header-menubar .primary-navigation {
+    ul.navbar-nav {
+        li a {
+            color: #fff;
+            padding: 11px 15px !important;
+            border: 0;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            &.active {
+                font-weight: bold;
+            }
             &:hover,
             &:focus {
-                font-weight: bold;
-                color: rgb(var(--color_primary));
+                color: #e6e6e6;
             }
         }
+        .dropdown-menu {
+            a {
+                color: rgb(var(--color_primary));
+                &.active,
+                &:hover,
+                &:focus {
+                    font-weight: bold;
+                    color: rgb(var(--color_primary));
+                }
+            }
+        }
+    }
+    .navigation {
+        height: 100%;
     }
 }
 .header-menubar .navbar-nav .usermenu .dropdown a {
@@ -2717,7 +2723,7 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
         padding: 0;
         top: 0;
         position: fixed;
-        background: #fff !important;
+        // background: #fff !important;
         .logo-color {
             display: initial;
         }
