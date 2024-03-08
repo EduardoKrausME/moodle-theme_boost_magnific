@@ -68,14 +68,14 @@ function xmldb_theme_boost_magnific_install() {
         }
     }
 
-    set_config("background_color", "blue1", "theme_boost_magnific");
+    //set_config("background_color", "blue1", "theme_boost_magnific");
+    //set_config("theme_color", "theme_color_blue", "theme_boost_magnific");
+    //set_config("theme_color__color_primary", "#2B4E84", "theme_boost_magnific");
+    //set_config("theme_color__color_secondary", "#3E65A0", "theme_boost_magnific");
+    //set_config("theme_color__color_buttons", "#183054", "theme_boost_magnific");
+    //set_config("theme_color__color_names", "#C0CCDC", "theme_boost_magnific");
+    //set_config("theme_color__color_titles", "#E8F0FB", "theme_boost_magnific");
 
-    set_config("theme_color", "theme_color_blue", "theme_boost_magnific");
-    set_config("theme_color__color_primary", "#2B4E84", "theme_boost_magnific");
-    set_config("theme_color__color_secondary", "#3E65A0", "theme_boost_magnific");
-    set_config("theme_color__color_buttons", "#183054", "theme_boost_magnific");
-    set_config("theme_color__color_names", "#C0CCDC", "theme_boost_magnific");
-    set_config("theme_color__color_titles", "#E8F0FB", "theme_boost_magnific");
     set_config("footer_description", $SITE->fullname, "theme_boost_magnific");
     set_config("footer_links_title", get_string("footer_links_title_default", "theme_boost_magnific"), "theme_boost_magnific");
     set_config("footer_links", '', "theme_boost_magnific");
@@ -92,8 +92,17 @@ function xmldb_theme_boost_magnific_install() {
 
     set_config("login_theme", "theme_image_login", "theme_boost_magnific");
     set_config("login_backgroundfoto", '', "theme_boost_magnific");
+    set_config("login_backgroundcolor", '', "theme_boost_magnific");
 
     set_config("login_login_description", '', "theme_boost_magnific");
     set_config("login_forgot_description", '', "theme_boost_magnific");
     set_config("login_signup_description", '', "theme_boost_magnific");
+
+    set_config("frontpage_mycourses_text", '', "theme_boost_magnific");
+    set_config("frontpage_mycourses_instructor", '', "theme_boost_magnific");
+    set_config("logo_color", '', "theme_boost_magnific");
+    set_config("logo_write", '', "theme_boost_magnific");
+    set_config("fontfamily", 'Roboto', "theme_boost_magnific");
+    set_config("customcss", '', "theme_boost_magnific");
+    set_config("footer_show_copywriter", 1, "theme_boost_magnific");
 }

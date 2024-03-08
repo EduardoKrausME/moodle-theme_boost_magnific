@@ -47,7 +47,11 @@ $choices = [
     'black1' => get_string('background_color_black', 'theme_boost_magnific', 1),
 ];
 
-$htmlselect = '';
+if (strpos($_SERVER['REQUEST_URI'], "admin/upgradesettings.php") > 0) {
+    $htmlselect = "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magnific/style/boost_magnific.css\" />";
+} else {
+    $htmlselect = "";
+}
 foreach ($choices as $choice => $lang) {
     $onclick = "$('#id_s_theme_boost_magnific_background_color').val('{$choice}');";
     $onclick .= "$('body').attr('class',function(i,c){return c.replace(/(^|\s)theme-\S+/g,'')+' theme-{$choice}';})";
@@ -105,7 +109,7 @@ $colorss = [
 $choices = [];
 $description = get_string('theme_color_desc', 'theme_boost_magnific');
 foreach ($colorss as $colorname => $colors) {
-     $html = '';
+    $html = '';
     foreach ($colors as $key => $cor) {
         $cor = strtoupper($cor);
 

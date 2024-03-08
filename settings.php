@@ -31,17 +31,17 @@ $settings = null;
 if ($ADMIN->fulltree) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific', get_string('pluginname', 'theme_boost_magnific'));
 
+    require_once(__DIR__ . "/settings-theme.php");
+
+    require_once(__DIR__ . "/settings-logos.php");
+
+    require_once(__DIR__ . "/settings-topo.php");
+
     require_once(__DIR__ . "/settings-home.php");
 
     require_once(__DIR__ . "/settings-slideshow.php");
 
     require_once(__DIR__ . "/settings-about.php");
-
-    require_once(__DIR__ . "/settings-logos.php");
-
-    require_once(__DIR__ . "/settings-theme.php");
-
-    require_once(__DIR__ . "/settings-topo.php");
 
     require_once(__DIR__ . "/settings-footer.php");
 
