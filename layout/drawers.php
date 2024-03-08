@@ -30,9 +30,9 @@ require_once($CFG->dirroot . '/course/lib.php');
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 
-user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
-user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
-user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
+$USER->ajax_updatable_user_prefs['drawer-open-nav'] = PARAM_ALPHA;
+$USER->ajax_updatable_user_prefs['drawer-open-index'] = PARAM_BOOL;
+$USER->ajax_updatable_user_prefs['drawer-open-block'] = PARAM_BOOL;
 
 if (isloggedin()) {
     $courseindexopen = (get_user_preferences('drawer-open-index', true) == true);
@@ -81,6 +81,7 @@ if ($PAGE->has_secondary_navigation()) {
 }
 
 
+require_once("{$CFG->dirroot}/theme/boost_magnific/classes/navigation/primary.php");
 $primary = new \theme_boost_magnific\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
@@ -109,6 +110,9 @@ $templatedata = [
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton
 ];
+
+require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/footer_data.php");
+require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/frontapage_data.php");
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer_data::get_data());
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\frontapage_data::topo());
 echo $OUTPUT->render_from_template('theme_boost_magnific/drawers', $templatedata);
