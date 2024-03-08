@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die;
 
 $settings = null;
 
-if (is_siteadmin()) {
+if ($ADMIN->fulltree) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific', get_string('pluginname', 'theme_boost_magnific'));
 
 
