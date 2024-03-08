@@ -31,9 +31,6 @@ $settings = null;
 if ($ADMIN->fulltree) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific', get_string('pluginname', 'theme_boost_magnific'));
 
-
-    $ADMIN->add('themes', new admin_category('theme_boost_magnific', 'boost_magnific Theme'));
-
     require_once(__DIR__ . "/settings-home.php");
 
     require_once(__DIR__ . "/settings-slideshow.php");
