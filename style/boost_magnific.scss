@@ -4559,6 +4559,9 @@ button.btn-footer-popover:active {
 #page {
     margin-top: 100px !important;
 }
+.pagelayout-maintenance #page {
+    margin-top: 0 !important;
+}
 .drawer-left,
 .drawer-right {
     top: 90px !important;
