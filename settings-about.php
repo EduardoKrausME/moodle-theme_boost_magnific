@@ -46,7 +46,6 @@ $setting = new admin_setting_confightmleditor('theme_boost_magnific/frontpage_ab
 $page->add($setting);
 
 for ($i = 1; $i <= 4; $i++) {
-
     $setting = new admin_setting_heading("theme_boost_magnific/frontpage_about_info_{$i}",
         get_string('frontpage_about_info', 'theme_boost_magnific', $i), '');
     $page->add($setting);
@@ -63,3 +62,6 @@ for ($i = 1; $i <= 4; $i++) {
 }
 
 $settings->add($page);
+
+global $PAGE;
+$PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'about');

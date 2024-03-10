@@ -45,7 +45,7 @@ function xmldb_theme_boost_magnific_install() {
         set_config("slideshow_text_{$i}", '', "theme_boost_magnific");
     }
 
-    set_config("frontpage_about_enable", 1, "theme_boost_magnific");
+    set_config("frontpage_about_enable", 0, "theme_boost_magnific");
     set_config("frontpage_about_logo", '', "theme_boost_magnific");
     set_config("frontpage_about_title", get_string("frontpage_about_title_default", "theme_boost_magnific"), "theme_boost_magnific");
     set_config("frontpage_about_description", '', "theme_boost_magnific");

@@ -1,20 +1,18 @@
-define([
-    "jquery",
-], function($) {
-    var theme = {
+define(["jquery"], function($) {
+    var theme_boost_magnific = {
 
         theme_color         : function() {
             var boost_magnific_theme_color = $("#id_s_theme_boost_magnific_theme_color");
 
             $(".seletor-de-theme-boost_magnific").click(function() {
                 var themename = $(this).attr("data-name");
-                theme._theme_color_select(themename);
+                theme_boost_magnific._theme_color_select(themename);
 
                 boost_magnific_theme_color.val(themename);
             });
             boost_magnific_theme_color.change(function() {
                 var themename = boost_magnific_theme_color.val();
-                theme._theme_color_select(themename);
+                theme_boost_magnific._theme_color_select(themename);
 
                 boost_magnific_theme_color.val(themename);
             });
@@ -39,10 +37,10 @@ define([
             var theme_boost_magnific_slideshow_numslides = $("#id_s_theme_boost_magnific_slideshow_numslides");
 
             theme_boost_magnific_slideshow_numslides.change(function() {
-                theme._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
+                theme_boost_magnific._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
             });
 
-            theme._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
+            theme_boost_magnific._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
         },
         _numslides_changue : function(numslides) {
             for (var i = 0; i <= 9; i++) {
@@ -64,10 +62,10 @@ define([
             var login_theme = $("#id_s_theme_boost_magnific_login_theme");
 
             login_theme.change(function() {
-                theme._login_changue(login_theme.val());
+                theme_boost_magnific._login_changue(login_theme.val());
             });
 
-            theme._login_changue(login_theme.val());
+            theme_boost_magnific._login_changue(login_theme.val());
         },
 
         _login_changue : function(themename) {
@@ -96,10 +94,35 @@ define([
                 case 'theme_login_branco' :
                     break;
             }
-        }
+        },
+
+        about : function() {
+            var about_enable = $("#id_s_theme_boost_magnific_frontpage_about_enable");
+
+            about_enable.change(theme_boost_magnific._about_changue);
+            about_enable.click(theme_boost_magnific._about_changue);
+            theme_boost_magnific._about_changue();
+        },
+
+        _about_changue : function() {
+            var about_enable = $("#id_s_theme_boost_magnific_frontpage_about_enable");
+            if (about_enable.is(":checked")) {
+                $("#theme_boost_magnific_about > fieldset > div").show();
+                $("#theme_boost_magnific_about > fieldset > h3").show();
+            } else {
+                $("#theme_boost_magnific_about > fieldset > div").hide();
+                $("#theme_boost_magnific_about > fieldset > h3").hide();
+            }
+
+            $("#admin-frontpage_about_enable").show();
+            setTimeout(function() {
+                $("#admin-frontpage_about_enable").show();
+            }, 200);
+        },
+
     };
 
-    return theme;
+    return theme_boost_magnific;
 });
 
 
