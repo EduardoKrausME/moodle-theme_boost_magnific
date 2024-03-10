@@ -103,11 +103,13 @@ class course_renderer extends \core_course_renderer {
                 "courseurl" => $courseurl,
                 "coursename" => $course->get_formatted_name(),
                 "countlessons" => course_renderer_util::count_lessson($course),
-                "showinstructor" => theme_boost_magnific_get_setting("frontpage_avaliablecourses_instructor") && count(course_renderer_util::get_teachers($course)),
+                "showinstructor" => theme_boost_magnific_get_setting("frontpage_avaliablecourses_instructor")
+                    && count(course_renderer_util::get_teachers($course)),
                 "instructor" => course_renderer_util::get_teachers($course),
                 "is_enrolled" => $hascoursecreate || course_renderer_util::is_enrolled($course),
                 "acessar" => get_string("acessar", "theme_boost_magnific"),
-                "matricular" => $priceval ? get_string("matricular", "theme_boost_magnific") : get_string("acessar", "theme_boost_magnific"),
+                "matricular" =>
+                    $priceval ? get_string("matricular", "theme_boost_magnific") : get_string("acessar", "theme_boost_magnific"),
                 "freename" => $freename,
                 "priceval" => $priceval,
             ];
@@ -154,7 +156,8 @@ class course_renderer extends \core_course_renderer {
                 "courseurl" => course_renderer_util::course_url($course),
                 "coursename" => $course->get_formatted_name(),
                 "countlessons" => course_renderer_util::count_lessson($course),
-                "showinstructor" => theme_boost_magnific_get_setting("frontpage_mycourses_instructor") && count(course_renderer_util::get_teachers($course)),
+                "showinstructor" => theme_boost_magnific_get_setting("frontpage_mycourses_instructor") &&
+                    count(course_renderer_util::get_teachers($course)),
                 "instructor" => course_renderer_util::get_teachers($course),
                 "is_enrolled" => true,
                 "acessar" => get_string("continuar", "theme_boost_magnific"),

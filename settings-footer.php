@@ -21,7 +21,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$page = new admin_settingpage('theme_boost_magnific_footer', get_string('settings_footer_heading', 'theme_boost_magnific'));
+$page = new admin_settingpage('theme_boost_magnific_footer',
+    get_string('settings_footer_heading', 'theme_boost_magnific'));
 
 $setting = new admin_setting_heading('theme_boost_magnific_footerblock_description',
     get_string('footerblock_description', 'theme_boost_magnific'), '');
@@ -41,7 +42,8 @@ $setting = new admin_setting_configtext('theme_boost_magnific/footer_links_title
     get_string("footer_links_title_default", "theme_boost_magnific"));
 $page->add($setting);
 
-$setting = new admin_setting_configtextarea('theme_boost_magnific/footer_links', get_string('footerblink', 'theme_boost_magnific') . ' 2',
+$setting = new admin_setting_configtextarea('theme_boost_magnific/footer_links',
+    get_string('footerblink', 'theme_boost_magnific') . ' 2',
     get_string('footerblink_desc', 'theme_boost_magnific'), '');
 $page->add($setting);
 

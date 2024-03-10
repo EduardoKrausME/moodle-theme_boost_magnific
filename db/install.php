@@ -68,14 +68,6 @@ function xmldb_theme_boost_magnific_install() {
         }
     }
 
-    //set_config("background_color", "blue1", "theme_boost_magnific");
-    //set_config("theme_color", "theme_color_blue", "theme_boost_magnific");
-    //set_config("theme_color__color_primary", "#2B4E84", "theme_boost_magnific");
-    //set_config("theme_color__color_secondary", "#3E65A0", "theme_boost_magnific");
-    //set_config("theme_color__color_buttons", "#183054", "theme_boost_magnific");
-    //set_config("theme_color__color_names", "#C0CCDC", "theme_boost_magnific");
-    //set_config("theme_color__color_titles", "#E8F0FB", "theme_boost_magnific");
-
     set_config("footer_description", $SITE->fullname, "theme_boost_magnific");
     set_config("footer_links_title", get_string("footer_links_title_default", "theme_boost_magnific"), "theme_boost_magnific");
     set_config("footer_links", '', "theme_boost_magnific");

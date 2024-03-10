@@ -45,12 +45,11 @@ $page->add(new admin_setting_configselect($name, $title, $description, $default,
 global $PAGE;
 $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'numslides');
 
-
-$slideshownumslides = get_config('theme_boost_magnific', 'slideshow_numslides');
 for ($i = 1; $i <= 9; $i++) {
 
     $heading = get_string('slideshow_info', 'theme_boost_magnific', $i);
-    $setting = new admin_setting_heading("theme_boost_magnific/slideshow_info_{$i}", "<span id='admin-slideshow_info_{$i}'>{$heading}</span>", '');
+    $setting = new admin_setting_heading("theme_boost_magnific/slideshow_info_{$i}",
+        "<span id='admin-slideshow_info_{$i}'>{$heading}</span>", '');
     $page->add($setting);
 
     $setting = new admin_setting_configstoredfile("theme_boost_magnific/slideshow_image_{$i}",
