@@ -1996,20 +1996,6 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
 .jsenabled .form-group a.visibleifjs {
     vertical-align: text-bottom;
 }
-.navbar.fixed-top {
-    border: none;
-    .usermenu .login.nav-link {
-        color: #fff;
-    }
-    .usermenu .dropdown-menu .submenu .header {
-        color: #fff;
-    }
-    .usermenu .moodle-actionmenu .dropdown-menu a.dropdown-item {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid rgb(var(--color_white_26));
-    }
-}
 .usermenu .moodle-actionmenu .dropdown-menu a.dropdown-item i {
     color: #fff;
 }
@@ -2723,7 +2709,8 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
         padding: 0;
         top: 0;
         position: fixed;
-        // background: #fff !important;
+        border: none;
+        background: #fff !important;
         .logo-color {
             display: initial;
         }
@@ -2735,6 +2722,17 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
         }
         #usernavigation {
             padding: 0;
+        }
+        .usermenu .login.nav-link {
+            color: rgb(var(--color_white_26));
+        }
+        .usermenu .dropdown-menu .submenu .header {
+            color: rgb(var(--color_white_26));
+        }
+        .usermenu .moodle-actionmenu .dropdown-menu a.dropdown-item {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgb(var(--color_white_26));
         }
     }
 }
