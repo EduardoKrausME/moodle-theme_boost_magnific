@@ -54,16 +54,17 @@ function theme_boost_magnific_page_init(moodle_page $page) {
 function theme_boost_magnific_process_css($css, $theme) {
     $css =
         ":root {\n" .
-        "    --color_primary:   " . theme_boost_magnific_process_color_hex("theme_color__color_primary") . ";\n" .
-        "    --color_secondary: " . theme_boost_magnific_process_color_hex("theme_color__color_secondary") . ";\n" .
-        "    --color_buttons:   " . theme_boost_magnific_process_color_hex("theme_color__color_buttons") . ";\n" .
-        "    --color_names:     " . theme_boost_magnific_process_color_hex("theme_color__color_names") . ";\n" .
-        "    --color_titles:    " . theme_boost_magnific_process_color_hex("theme_color__color_titles") . ";\n" .
+        "    --color_primary:   " . theme_boost_magnific_process_color_hex("theme_color__color_primary") . " !important;\n" .
+        "    --color_secondary: " . theme_boost_magnific_process_color_hex("theme_color__color_secondary") . " !important;\n" .
+        "    --color_buttons:   " . theme_boost_magnific_process_color_hex("theme_color__color_buttons") . " !important;\n" .
+        "    --color_names:     " . theme_boost_magnific_process_color_hex("theme_color__color_names") . " !important;\n" .
+        "    --color_titles:    " . theme_boost_magnific_process_color_hex("theme_color__color_titles") . " !important;\n" .
         "}" . $css;
 
     $fontfamily = theme_boost_magnific_get_setting("fontfamily");
     if (isset($fontfamily[3])) {
-        $fontfamily1 = "@import url('https://fonts.googleapis.com/css2?family={$fontfamily}:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');";
+        $sizes = "0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+        $fontfamily1 = "@import url('https://fonts.googleapis.com/css2?family={$fontfamily}:ital,wght@{$sizes}');";
         $fontfamily2 = "body,*{font-family:{$fontfamily}, Arial, Helvetica, sans-serif;}";
     } else {
         $fontfamily1 = "";
@@ -325,19 +326,45 @@ function theme_boost_magnific_get_setting($setting, $format = true) {
  * @param $imagesetting
  *
  * @return string
+ *
  * @throws coding_exception
+ * @throws dml_exception
  */
 function theme_boost_magnific_get_setting_image($imagesetting) {
-    global $PAGE;
-
     if (theme_boost_magnific_get_setting($imagesetting)) {
-        $imagesettingurl = $PAGE->theme->setting_file_url($imagesetting, $imagesetting);
+        $imagesettingurl = theme_boost_magnific_setting_file_url($imagesetting, $imagesetting);
     }
     if (empty($imagesettingurl)) {
         $imagesettingurl = '';
     }
 
     return $imagesettingurl;
+}
+
+/**
+ * @param $setting
+ * @param $filearea
+ *
+ * @return moodle_url|null
+ *
+ * @throws dml_exception
+ */
+function theme_boost_magnific_setting_file_url($setting, $filearea) {
+    global $CFG, $PAGE;
+
+    if (empty($PAGE->theme->settings->$setting)) {
+        return null;
+    }
+
+    $itemid = theme_get_revision();
+    $filepath = $PAGE->theme->settings->$setting;
+    $syscontext = context_system::instance();
+
+    $url = moodle_url::make_file_url(
+        "$CFG->wwwroot/pluginfile.php",
+        "/{$syscontext->id}/theme_boost_magnific/{$filearea}/{$itemid}{$filepath}");
+
+    return $url;
 }
 
 /**
