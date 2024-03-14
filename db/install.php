@@ -25,8 +25,7 @@
  * Theme_boost_magnific install function.
  *
  * @return void
- * @throws coding_exception
- * @throws dml_exception
+ * @throws Exception
  */
 function xmldb_theme_boost_magnific_install() {
     global $DB, $SITE;
@@ -98,6 +97,48 @@ function xmldb_theme_boost_magnific_install() {
     magnific_set_config("fontfamily", 'Roboto');
     magnific_set_config("customcss", '');
     magnific_set_config("footer_show_copywriter", 1);
+
+    // Icons.
+    install_settings_icons();
+}
+
+/**
+ * @throws dml_exception
+ */
+function install_settings_icons() {
+    global $CFG;
+
+    for ($i = 1; $i <= 20; $i++) {
+        set_config("settings_icons_name_{$i}", "", "theme_boost_magnific");
+        set_config("settings_icons_image_{$i}", "", "theme_boost_magnific");
+    }
+
+    $files = ['audio_file', 'video_file', 'book', 'game', 'money', 'slide', 'support', 'download'];
+    set_config('settings_icons_num', count($files), "theme_boost_magnific");
+
+    $fs = get_file_storage();
+    $filerecord = new stdClass();
+    $filerecord->component = 'theme_boost_magnific';
+    $filerecord->contextid = context_system::instance()->id;
+    $filerecord->userid = get_admin()->id;
+    $filerecord->filepath = '/';
+    $filerecord->itemid = 0;
+
+    $i = 1;
+    foreach ($files as $file) {
+        $filerecord->filearea = "settings_icons_image_{$i}";
+        $filerecord->filename = "{$file}.svg";
+        try {
+            $fs->create_file_from_pathname($filerecord, "{$CFG->dirroot}/theme/boost_magnific/pix/material/{$file}.svg");
+
+            $default = get_string("settings_icons_default_{$file}", "theme_boost_magnific");
+            set_config("settings_icons_name_{$i}", $default, "theme_boost_magnific");
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+        }
+
+        $i++;
+    }
 }
 
 /**

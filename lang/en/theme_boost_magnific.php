@@ -45,7 +45,6 @@ $string['slideshow_url_desc'] = 'Insert the destination link for the slide image
 $string['slideshow_text'] = 'Short descriptive text for the Slide';
 $string['slideshow_text_desc'] = 'Insert a short text about the slide.';
 
-
 // About.
 $string['settings_about_heading'] = 'About your Moodle';
 $string['theme_boost_magnific_about_editbooton'] = 'Edit About block';
@@ -68,7 +67,6 @@ $string['frontpage_about_text_2_defalt'] = 'Teachers';
 $string['frontpage_about_text_3_defalt'] = 'Students';
 $string['frontpage_about_text_4_defalt'] = 'Lessons';
 
-
 $string['theme_boost_magnific_frontpage_home'] = 'Home blocks';
 $string['heart'] = 'If you like this theme, don\'t forget to click ❤️ on the themes page <a href="{$a}" target="_blank">by clicking here</a>';
 $string['theme_boost_magnific_frontpage_bloco'] = 'Block "{$a}"';
@@ -88,7 +86,6 @@ $string['free_name'] = 'Free';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'The favicon is displayed next to the page title in the browser tab. A Moodle favicon is displayed if a custom favicon is not provided.';
 
-
 // Footer.
 $string['social_twitter'] = 'Your Twitter';
 $string['social_twitter_desc'] = 'Your organization\'s Twitter URL.';
@@ -100,7 +97,6 @@ $string['social_instagram'] = 'Your Instagram';
 $string['social_instagram_desc'] = 'Your organization\'s Instagram URL.';
 $string['social_facebook'] = 'Your Facebook';
 $string['social_facebook_desc'] = 'Your organization\'s Facebook URL.';
-
 
 $string['settings_topo_heading'] = 'Top';
 
@@ -125,11 +121,9 @@ $string['footerblink_desc'] = 'You can configure a Footer Block Links here to be
     'Each line consists of some menu text or language key or text, a link URL (optional), separated by vertical bars. For example:<br>' .
     '<pre>Moodle Support|https://moodle.org/support</pre>';
 
-
 $string['footer_contact_title'] = 'Contact Block Title';
 $string['footer_contact_title_desc'] = 'Enter the title of the block that will appear in the footer with the contact details.';
 $string['footer_contact_title_default'] = 'Contact us';
-
 
 $string['contact_address'] = 'Address';
 $string['contact_email'] = 'Email';
@@ -202,3 +196,25 @@ $string['login_signup_description_desc'] = 'Text that will appear only on the Cr
 
 // Privacy.
 $string['privacy:metadata'] = 'The boost_magnific theme does not store any personal data about any user.';
+
+// Settings icons.
+$string['settings_icons_heading'] = 'Icons';
+$string['settings_icons_num'] = 'Number of Icons';
+$string['settings_icons_num_desc'] = 'Quantity of custom icons you want to add';
+$string['settings_icons_block'] = 'Icon {$a}';
+$string['settings_icons_none'] = 'No custom icons';
+$string['settings_icons_name'] = 'Icon Name';
+$string['settings_icons_name_desc'] = 'Add the icon name for easy selection in the module';
+$string['settings_icons_image'] = 'Icon Image';
+$string['settings_icons_image_desc'] = 'Upload the SVG or PNG image of the desired icon to replace in the course.<br>Recommended size: 24px. If PNG, remember transparency.';
+$string['settings_icons_change_icons'] = 'Change the default icon in the course list';
+$string['settings_icons_select_icon'] = 'Select the custom icon. Edit in {$a}';
+$string['settings_icons_module_disable'] = 'Custom icon selection is disabled. Activate in {$a}';
+$string['settings_icons_default_audio_file'] = 'Audio';
+$string['settings_icons_default_video_file'] = 'Video';
+$string['settings_icons_default_book'] = 'Book';
+$string['settings_icons_default_game'] = 'Game';
+$string['settings_icons_default_money'] = 'Financial';
+$string['settings_icons_default_slide'] = 'Slides';
+$string['settings_icons_default_support'] = 'Support';
+$string['settings_icons_default_download'] = 'Download';

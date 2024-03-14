@@ -45,7 +45,6 @@ $string['slideshow_url_desc'] = 'Въведете целта на връзкат
 $string['slideshow_text'] = 'Кратко описание на слайда';
 $string['slideshow_text_desc'] = 'Въведете кратък текст за слайда.';
 
-
 // About.
 $string['settings_about_heading'] = 'Относно вашия Moodle';
 $string['theme_boost_magnific_about_editbooton'] = 'Редакция на блока "Относно"';
@@ -68,7 +67,6 @@ $string['frontpage_about_text_2_defalt'] = 'Преподаватели';
 $string['frontpage_about_text_3_defalt'] = 'Студенти';
 $string['frontpage_about_text_4_defalt'] = 'Уроци';
 
-
 $string['theme_boost_magnific_frontpage_home'] = 'Блокове за началната страница';
 $string['heart'] = 'Ако ви харесва тази тема, не забравяйте да кликнете ❤️ на страницата с темите <a href="{$a}" target="_blank">тук</a>';
 $string['theme_boost_magnific_frontpage_bloco'] = 'Блок "{$a}"';
@@ -88,7 +86,6 @@ $string['free_name'] = 'Безплатно';
 $string['favicon'] = 'Фавикон';
 $string['favicon_desc'] = 'Фавиконът се показва до заглавието на страницата в раздела на браузъра. Ако не е предоставен персонализиран фавикон на Moodle, се използва фавикон на Moodle.';
 
-
 // Footer.
 $string['social_twitter'] = 'Вашият Twitter';
 $string['social_twitter_desc'] = 'URL на Twitter на вашата организация.';
@@ -100,7 +97,6 @@ $string['social_instagram'] = 'Вашият Instagram';
 $string['social_instagram_desc'] = 'URL на Instagram на вашата организация.';
 $string['social_facebook'] = 'Вашият Facebook';
 $string['social_facebook_desc'] = 'URL на Facebook на вашата организация.';
-
 
 $string['settings_topo_heading'] = 'Горе';
 
@@ -125,11 +121,9 @@ $string['footerblink_desc'] = 'Можете да конфигурирате бл
     'Всяка линия съдържа текст на меню, ключ на езика или текст, URL на връзка (по избор), разделени със знаци за вертикална черта. Например:<br>' .
     '<pre>Moodle Support|https://moodle.org/support</pre>';
 
-
 $string['footer_contact_title'] = 'Заглавие на блока за контакт';
 $string['footer_contact_title_desc'] = 'Въведете заглавие на блока, което ще се показва в долната част с информация за контакт.';
 $string['footer_contact_title_default'] = 'Свържете се с нас';
-
 
 $string['contact_address'] = 'Адрес';
 $string['contact_email'] = 'Имейл';
@@ -202,3 +196,25 @@ $string['login_signup_description_desc'] = 'Текст, който ще се п�
 
 // Privacy.
 $string['privacy:metadata'] = 'Темата boost_magnific не съхранява лични данни за нито един потребител.';
+
+// Settings icons.
+$string['settings_icons_heading'] = 'Икони';
+$string['settings_icons_num'] = 'Брой икони';
+$string['settings_icons_num_desc'] = 'Брой на персонализираните икони, които искате да добавите';
+$string['settings_icons_block'] = 'Икона {$a}';
+$string['settings_icons_none'] = 'Няма персонализирани икони';
+$string['settings_icons_name'] = 'Име на иконата';
+$string['settings_icons_name_desc'] = 'Добавете името на иконата, за да бъде по-лесно избиране в модула';
+$string['settings_icons_image'] = 'Изображение на иконата';
+$string['settings_icons_image_desc'] = 'Качете SVG или PNG изображението на желаната икона, за да замени в курса.<br>Препоръчителен размер: 24px. Ако е PNG, помнете за прозрачността.';
+$string['settings_icons_change_icons'] = 'Промяна на стандартната икона в списъка с курсове';
+$string['settings_icons_select_icon'] = 'Изберете персонализираната икона. Редактирайте я в {$a}';
+$string['settings_icons_module_disable'] = 'Изборът на персонализирана икона е изключен. Включете го в {$a}';
+$string['settings_icons_default_audio_file'] = 'Аудио';
+$string['settings_icons_default_video_file'] = 'Видео';
+$string['settings_icons_default_book'] = 'Книга';
+$string['settings_icons_default_game'] = 'Игра';
+$string['settings_icons_default_money'] = 'Финанси';
+$string['settings_icons_default_slide'] = 'Слайдове';
+$string['settings_icons_default_support'] = 'Поддръжка';
+$string['settings_icons_default_download'] = 'Изтегляне';

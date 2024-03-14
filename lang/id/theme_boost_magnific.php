@@ -29,7 +29,6 @@ $string['choosereadme'] = 'boost_magnific adalah tema yang dibuat dengan penuh k
 $string['settings_slideshow_heading'] = 'SlideShow';
 $string['theme_boost_magnific_slideshow_editbooton'] = 'Edit SlideShow';
 
-
 $string['slideshow_numslides'] = 'Berapa banyak gambar dalam SlideShow';
 $string['slideshow_numslides_desc'] = 'Berapa banyak gambar yang ingin Anda tampilkan dalam SlideShow?';
 $string['slideshow_numslides_nenhum'] = 'Tidak ada slide di Beranda';
@@ -45,7 +44,6 @@ $string['slideshow_url_desc'] = 'Masukkan tujuan tautan tombol gambar slide';
 
 $string['slideshow_text'] = 'Teks Singkat Deskripsi Slide';
 $string['slideshow_text_desc'] = 'Masukkan teks singkat tentang slide.';
-
 
 // About.
 $string['settings_about_heading'] = 'Tentang Moodle Anda';
@@ -69,7 +67,6 @@ $string['frontpage_about_text_2_defalt'] = 'Pengajar';
 $string['frontpage_about_text_3_defalt'] = 'Mahasiswa';
 $string['frontpage_about_text_4_defalt'] = 'Pelajaran';
 
-
 $string['theme_boost_magnific_frontpage_home'] = 'Blok Rumah';
 $string['heart'] = 'Jika Anda menyukai tema ini, jangan lupa klik ❤️ di halaman tema <a href="{$a}" target="_blank">klik di sini</a>';
 $string['theme_boost_magnific_frontpage_bloco'] = 'Blok "{$a}"';
@@ -89,7 +86,6 @@ $string['free_name'] = 'Gratis';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'Favicon ditampilkan di samping judul halaman di tab peramban. Favicon Moodle ditampilkan jika favicon kustom tidak disediakan.';
 
-
 // Footer.
 $string['social_twitter'] = 'Twitter Anda';
 $string['social_twitter_desc'] = 'URL Twitter organisasi Anda.';
@@ -101,7 +97,6 @@ $string['social_instagram'] = 'Instagram Anda';
 $string['social_instagram_desc'] = 'URL Instagram organisasi Anda.';
 $string['social_facebook'] = 'Facebook Anda';
 $string['social_facebook_desc'] = 'URL Facebook organisasi Anda.';
-
 
 $string['settings_topo_heading'] = 'Atas';
 
@@ -126,11 +121,9 @@ $string['footerblink_desc'] = 'Anda dapat mengonfigurasi Blok Tautan Footer di s
     'Setiap baris terdiri dari beberapa teks menu atau kunci bahasa atau teks, URL tautan (opsional), dipisahkan oleh garis vertikal. Contohnya:<br>' .
     '<pre>Dukungan Moodle|https://moodle.org/support</pre>';
 
-
 $string['footer_contact_title'] = 'Judul Blok Kontak';
 $string['footer_contact_title_desc'] = 'Masukkan judul Blok yang akan muncul di Footer dengan data kontak.';
 $string['footer_contact_title_default'] = 'Hubungi kami';
-
 
 $string['contact_address'] = 'Alamat';
 $string['contact_email'] = 'Surel';
@@ -203,3 +196,25 @@ $string['login_signup_description_desc'] = 'Teks yang hanya muncul di Layar Buat
 
 // Privacy.
 $string['privacy:metadata'] = 'Tema boost_magnific tidak menyimpan data pribadi tentang pengguna.';
+
+// Pengaturan ikon.
+$string['settings_icons_heading'] = 'Ikon';
+$string['settings_icons_num'] = 'Jumlah Ikon';
+$string['settings_icons_num_desc'] = 'Jumlah ikon kustom yang ingin Anda tambahkan';
+$string['settings_icons_block'] = 'Ikon {$a}';
+$string['settings_icons_none'] = 'Tidak ada ikon kustom';
+$string['settings_icons_name'] = 'Nama Ikon';
+$string['settings_icons_name_desc'] = 'Tambahkan nama ikon untuk memudahkan pemilihan dalam modul';
+$string['settings_icons_image'] = 'Gambar Ikon';
+$string['settings_icons_image_desc'] = 'Unggah gambar SVG atau PNG dari ikon yang diinginkan untuk menggantikan dalam kursus.<br>Ukuran yang disarankan: 24px. Jika PNG, ingatlah transparansinya.';
+$string['settings_icons_change_icons'] = 'Ubah ikon default dalam daftar kursus';
+$string['settings_icons_select_icon'] = 'Pilih ikon kustom. Edit di {$a}';
+$string['settings_icons_module_disable'] = 'Pemilihan ikon kustom dinonaktifkan. Aktifkan di {$a}';
+$string['settings_icons_default_audio_file'] = 'Audio';
+$string['settings_icons_default_video_file'] = 'Video';
+$string['settings_icons_default_book'] = 'Buku';
+$string['settings_icons_default_game'] = 'Permainan';
+$string['settings_icons_default_money'] = 'Keuangan';
+$string['settings_icons_default_slide'] = 'Slide';
+$string['settings_icons_default_support'] = 'Dukungan';
+$string['settings_icons_default_download'] = 'Unduh';

@@ -28,7 +28,6 @@ $string['choosereadme'] = 'boost_magnific é um thema construido com carinho par
 $string['settings_slideshow_heading'] = 'SlideShow';
 $string['theme_boost_magnific_slideshow_editbooton'] = 'Editar SlideShow';
 
-
 $string['slideshow_numslides'] = 'Quantos imagens no SlideShow';
 $string['slideshow_numslides_desc'] = 'Quantas imagens queres no SlideShow?';
 $string['slideshow_numslides_nenhum'] = 'Sem slide na Home';
@@ -44,7 +43,6 @@ $string['slideshow_url_desc'] = 'Insira o destino de destino do link do botão d
 
 $string['slideshow_text'] = 'Texto curto descritivo do Slide';
 $string['slideshow_text_desc'] = 'Insira um pequenos textos sobre o slide.';
-
 
 // About.
 $string['settings_about_heading'] = 'Sobre seu Moodle';
@@ -68,7 +66,6 @@ $string['frontpage_about_text_2_defalt'] = 'Professores';
 $string['frontpage_about_text_3_defalt'] = 'Estudantes';
 $string['frontpage_about_text_4_defalt'] = 'Lições';
 
-
 $string['theme_boost_magnific_frontpage_home'] = 'Blocos da Home';
 $string['heart'] = 'Se está gostando desse tema, não esqueça de clicar em ❤️ na página dos themas <a href="{$a}" target="_blank">clicando aqui</a>';
 $string['theme_boost_magnific_frontpage_bloco'] = 'Bloco "{$a}"';
@@ -88,7 +85,6 @@ $string['free_name'] = 'Gratis';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'O favicon é exibido ao lado do título da página na guia do navegador. Um favicon do Moodle é exibido se um favicon personalizado não for fornecido.';
 
-
 // Footer.
 $string['social_twitter'] = 'Seu Twitter';
 $string['social_twitter_desc'] = 'A URL do Twitter da sua organização.';
@@ -100,7 +96,6 @@ $string['social_instagram'] = 'Seu Instagram';
 $string['social_instagram_desc'] = 'A URL do Instagram da sua organização.';
 $string['social_facebook'] = 'Seu Facebook';
 $string['social_facebook_desc'] = 'A URL do Facebook da sua organização.';
-
 
 $string['settings_topo_heading'] = 'Topo';
 
@@ -125,11 +120,9 @@ $string['footerblink_desc'] = 'Você pode configurar um Bloco de Rodapé Links a
     'Cada linha consiste em algum texto de menu ou chave de idioma ou texto, um URL de link (opcional),separado por barras verticais.Por exemplo:<br>' .
     '<pre>Moodle Support|https://moodle.org/support</pre>';
 
-
 $string['footer_contact_title'] = 'Título do Bloco de Contato';
 $string['footer_contact_title_desc'] = 'Coloque o título do Bloco que aparecerá no Rodapé com os dados de contato.';
 $string['footer_contact_title_default'] = 'Entre em contato';
-
 
 $string['contact_address'] = 'Endereço';
 $string['contact_email'] = 'E-mail';
@@ -202,3 +195,25 @@ $string['login_signup_description_desc'] = 'Texto que aparecerá apenas na tela 
 
 // Privacy.
 $string['privacy:metadata'] = 'O tema boost_magnific não armazena nenhum dado pessoal sobre nenhum usuário.';
+
+// Settings icons.
+$string['settings_icons_heading'] = 'Ícones';
+$string['settings_icons_num'] = 'Número de ícones';
+$string['settings_icons_num_desc'] = 'Quantidade de ícones personalizados que deseja adicionar';
+$string['settings_icons_block'] = 'Ícone {$a}';
+$string['settings_icons_none'] = 'Nenhum ícone personalizado';
+$string['settings_icons_name'] = 'Nome do ícone';
+$string['settings_icons_name_desc'] = 'Adicione o nome do ícone para facilitar a seleção no módulo';
+$string['settings_icons_image'] = 'Imagem do ícone';
+$string['settings_icons_image_desc'] = 'Carregue a imagem SVG ou PNG do ícone desejado para substituir no curso.<br>Tamanho recomendado: 24px. Se for PNG, lembre-se da transparência.';
+$string['settings_icons_change_icons'] = 'Mudar o ícone padrão na lista de cursos';
+$string['settings_icons_select_icon'] = 'Selecione o ícone personalizado. Edite em {$a}';
+$string['settings_icons_module_disable'] = 'A seleção de ícone personalizado está desativada. Ative em {$a}';
+$string['settings_icons_default_audio_file'] = 'Áudio';
+$string['settings_icons_default_video_file'] = 'Vídeo';
+$string['settings_icons_default_book'] = 'Livro';
+$string['settings_icons_default_game'] = 'Jogo';
+$string['settings_icons_default_money'] = 'Financeiro';
+$string['settings_icons_default_slide'] = 'Slides';
+$string['settings_icons_default_support'] = 'Suporte';
+$string['settings_icons_default_download'] = 'Download';

@@ -29,7 +29,6 @@ $string['choosereadme'] = 'boost_magnific is \'n tema met sorg gebou om vrolike 
 $string['settings_slideshow_heading'] = 'SlideShow';
 $string['theme_boost_magnific_slideshow_editbooton'] = 'Wysig SlideShow';
 
-
 $string['slideshow_numslides'] = 'Hoeveel beelde in SlideShow';
 $string['slideshow_numslides_desc'] = 'Hoeveel beelde wil jy in die SlideShow hê?';
 $string['slideshow_numslides_nenhum'] = 'Geen skyf op die Tuisblad';
@@ -45,7 +44,6 @@ $string['slideshow_url_desc'] = 'Voer die doel van die skakel van die beeld skyf
 
 $string['slideshow_text'] = 'Kort beskrywende teks van Slide';
 $string['slideshow_text_desc'] = 'Voer \'n kort teks in oor die slide.';
-
 
 // About.
 $string['settings_about_heading'] = 'Oor jou Moodle';
@@ -69,7 +67,6 @@ $string['frontpage_about_text_2_defalt'] = 'Onderwysers';
 $string['frontpage_about_text_3_defalt'] = 'Studente';
 $string['frontpage_about_text_4_defalt'] = 'Lesse';
 
-
 $string['theme_boost_magnific_frontpage_home'] = 'Blokke van die Tuisblad';
 $string['heart'] = 'As jy van hierdie tema hou, moenie vergeet om op ❤️ te klik op die thema-bladsy <a href="{$a}" target="_blank">deur hier te klik</a>';
 $string['theme_boost_magnific_frontpage_bloco'] = 'Blok "{$a}"';
@@ -89,7 +86,6 @@ $string['free_name'] = 'Gratis';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'Die favicon word langs die bladsytitel in die skakelbalk vertoon. \'n Moodle favicon word vertoon as \'n aangepaste favicon nie voorsien word nie.';
 
-
 // Footer.
 $string['social_twitter'] = 'Jou Twitter';
 $string['social_twitter_desc'] = 'Die URL van jou organisasie se Twitter-rekening.';
@@ -101,7 +97,6 @@ $string['social_instagram'] = 'Jou Instagram';
 $string['social_instagram_desc'] = 'Die URL van jou organisasie se Instagram-rekening.';
 $string['social_facebook'] = 'Jou Facebook';
 $string['social_facebook_desc'] = 'Die URL van jou organisasie se Facebook-bladsy.';
-
 
 $string['settings_topo_heading'] = 'Bander';
 
@@ -126,11 +121,9 @@ $string['footerblink_desc'] = 'Jy kan \'n Voetblok Skakels hier instel om deur t
     'Elke lyn bestaan uit \'n bietjie menu- of taalsleutelteks, \'n skakel-URL (opsioneel), geskei deur vertikale strepies. Byvoorbeeld:<br>' .
     '<pre>Moodle-ondersteuning|https://moodle.org/ondersteuning</pre>';
 
-
 $string['footer_contact_title'] = 'Titel van die Kontakblok';
 $string['footer_contact_title_desc'] = 'Voer die titel van die blok in wat in die voet met jou kontakinligting vertoon sal word.';
 $string['footer_contact_title_default'] = 'Kontak Ons';
-
 
 $string['contact_address'] = 'Adres';
 $string['contact_email'] = 'E-pos';
@@ -203,4 +196,26 @@ $string['login_signup_description_desc'] = 'Teks wat net op die Skep Rekening-sk
 
 // Privacy.
 $string['privacy:metadata'] = 'Die boost_magnific-tema stoor geen persoonlike data oor enige gebruiker nie.';
+
+// Instellingsikone.
+$string['settings_icons_heading'] = 'Ikonse';
+$string['settings_icons_num'] = 'Aantal ikone';
+$string['settings_icons_num_desc'] = 'Hoeveelheid aangepaste ikone wat u wil byvoeg';
+$string['settings_icons_block'] = 'Icoon {$a}';
+$string['settings_icons_none'] = 'Geen aangepaste ikoon';
+$string['settings_icons_name'] = 'Naam van die ikoon';
+$string['settings_icons_name_desc'] = 'Voeg die naam van die ikoon by vir maklike keuse in die module';
+$string['settings_icons_image'] = 'Beeld van die ikoon';
+$string['settings_icons_image_desc'] = 'Laai die SVG- of PNG-beeld van die gewenste ikoon op om in die kursus te vervang.<br>Aanbevole grootte: 24px. Onthou transparansie as dit PNG is.';
+$string['settings_icons_change_icons'] = 'Verander die verstek-ikoon in die lys van kursusse';
+$string['settings_icons_select_icon'] = 'Kies die aangepaste ikoon. Redigeer in {$a}';
+$string['settings_icons_module_disable'] = 'Die keuse van aangepaste ikoon is afgeskakel. Skakel in {$a} aan';
+$string['settings_icons_default_audio_file'] = 'Liggaam';
+$string['settings_icons_default_video_file'] = 'Video';
+$string['settings_icons_default_book'] = 'Boek';
+$string['settings_icons_default_game'] = 'Speletjie';
+$string['settings_icons_default_money'] = 'Finansieel';
+$string['settings_icons_default_slide'] = 'Dias';
+$string['settings_icons_default_support'] = 'Ondersteuning';
+$string['settings_icons_default_download'] = 'Laai af';
 

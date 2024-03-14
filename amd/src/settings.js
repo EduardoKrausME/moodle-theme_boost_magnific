@@ -34,17 +34,15 @@ define(["jquery"], function($) {
         },
 
         numslides          : function() {
-            var theme_boost_magnific_slideshow_numslides = $("#id_s_theme_boost_magnific_slideshow_numslides");
+            var slideshow_numslides = $("#id_s_slideshow_numslides");
 
-            theme_boost_magnific_slideshow_numslides.change(function() {
-                theme_boost_magnific._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
-            });
-
-            theme_boost_magnific._numslides_changue(theme_boost_magnific_slideshow_numslides.val());
+            slideshow_numslides.change(theme_boost_magnific._numslides_changue);
+            theme_boost_magnific._numslides_changue();
         },
         _numslides_changue : function(numslides) {
+            var slideshow_numslides = $("#id_s_slideshow_numslides");
             for (var i = 0; i <= 9; i++) {
-                if (numslides >= i) {
+                if (slideshow_numslides.val() >= i) {
                     $("#admin-slideshow_info_" + i).parent().show();
                     $("#admin-slideshow_image_" + i).show();
                     $("#admin-slideshow_text_" + i).show();
@@ -118,6 +116,28 @@ define(["jquery"], function($) {
             setTimeout(function() {
                 $("#admin-frontpage_about_enable").show();
             }, 200);
+        },
+
+        icons : function() {
+            var settings_icons_num = $("#id_s_theme_boost_magnific_settings_icons_num");
+
+            settings_icons_num.change(theme_boost_magnific._icons_changue);
+            theme_boost_magnific._icons_changue();
+        },
+
+        _icons_changue : function() {
+            var settings_icons_num = $("#id_s_theme_boost_magnific_settings_icons_num");
+            for (var i = 0; i <= 50; i++) {
+                if (settings_icons_num.val() >= i) {
+                    $("#admin-settings_icons_block_" + i).parent().show(300);
+                    $("#admin-settings_icons_name_" + i).show(300);
+                    $("#admin-settings_icons_image_" + i).show(300);
+                } else {
+                    $("#admin-settings_icons_block_" + i).parent().hide(300);
+                    $("#admin-settings_icons_name_" + i).hide(300);
+                    $("#admin-settings_icons_image_" + i).hide(300);
+                }
+            }
         },
 
     };

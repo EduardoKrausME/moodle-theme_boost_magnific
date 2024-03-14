@@ -196,3 +196,25 @@ $string['login_signup_description_desc'] = 'Texto que aparecerá solo en la pant
 
 // Privacidad.
 $string['privacy:metadata'] = 'El tema boost_magnific no almacena ningún dato personal sobre ningún usuario.';
+
+// Configuración de iconos.
+$string['settings_icons_heading'] = 'Iconos';
+$string['settings_icons_num'] = 'Número de iconos';
+$string['settings_icons_num_desc'] = 'Cantidad de iconos personalizados que desea agregar';
+$string['settings_icons_block'] = 'Icono {$a}';
+$string['settings_icons_none'] = 'Ningún icono personalizado';
+$string['settings_icons_name'] = 'Nombre del icono';
+$string['settings_icons_name_desc'] = 'Agrega el nombre del icono para facilitar la selección en el módulo';
+$string['settings_icons_image'] = 'Imagen del icono';
+$string['settings_icons_image_desc'] = 'Sube la imagen SVG o PNG del icono deseado para reemplazar en el curso.<br>Tamaño recomendado: 24px. Si es PNG, recuerda la transparencia.';
+$string['settings_icons_change_icons'] = 'Cambiar el icono predeterminado en la lista de cursos';
+$string['settings_icons_select_icon'] = 'Selecciona el icono personalizado. Edítalo en {$a}';
+$string['settings_icons_module_disable'] = 'La selección de icono personalizado está desactivada. Actívala en {$a}';
+$string['settings_icons_default_audio_file'] = 'Audio';
+$string['settings_icons_default_video_file'] = 'Video';
+$string['settings_icons_default_book'] = 'Libro';
+$string['settings_icons_default_game'] = 'Juego';
+$string['settings_icons_default_money'] = 'Financiero';
+$string['settings_icons_default_slide'] = 'Diapositivas';
+$string['settings_icons_default_support'] = 'Soporte';
+$string['settings_icons_default_download'] = 'Descargar';

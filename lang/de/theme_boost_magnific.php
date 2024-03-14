@@ -45,7 +45,6 @@ $string['slideshow_url_desc'] = 'Ingresa el destino del enlace del botón de la 
 $string['slideshow_text'] = 'Texto corto descriptivo de la diapositiva';
 $string['slideshow_text_desc'] = 'Ingresa un pequeño texto sobre la diapositiva.';
 
-
 // About.
 $string['settings_about_heading'] = 'Acerca de tu Moodle';
 $string['theme_boost_magnific_about_editbooton'] = 'Editar bloque Acerca de';
@@ -68,7 +67,6 @@ $string['frontpage_about_text_2_defalt'] = 'Profesores';
 $string['frontpage_about_text_3_defalt'] = 'Estudiantes';
 $string['frontpage_about_text_4_defalt'] = 'Lecciones';
 
-
 $string['theme_boost_magnific_frontpage_home'] = 'Bloques de la Página Principal';
 $string['heart'] = 'Si te gusta este tema, no olvides hacer clic en ❤️ en la página de temas <a href="{$a}" target="_blank">haciendo clic aquí</a>';
 $string['theme_boost_magnific_frontpage_bloco'] = 'Bloque "{$a}"';
@@ -88,7 +86,6 @@ $string['free_name'] = 'Gratis';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'El favicon se muestra junto al título de la página en la pestaña del navegador. Se mostrará el favicon de Moodle si no se proporciona un favicon personalizado.';
 
-
 // Footer.
 $string['social_twitter'] = 'Tu Twitter';
 $string['social_twitter_desc'] = 'La URL del Twitter de tu organización.';
@@ -100,7 +97,6 @@ $string['social_instagram'] = 'Tu Instagram';
 $string['social_instagram_desc'] = 'La URL de Instagram de tu organización.';
 $string['social_facebook'] = 'Tu Facebook';
 $string['social_facebook_desc'] = 'La URL de Facebook de tu organización.';
-
 
 $string['settings_topo_heading'] = 'Superior';
 
@@ -125,11 +121,9 @@ $string['footerblink_desc'] = 'Puedes configurar aquí los enlaces del bloque de
     'Cada línea consiste en algún texto de menú o clave de idioma o texto, un URL de enlace (opcional), separado por barras verticales. Por ejemplo:<br>' .
     '<pre>Soporte de Moodle|https://moodle.org/support</pre>';
 
-
 $string['footer_contact_title'] = 'Título del bloque de contacto';
 $string['footer_contact_title_desc'] = 'Ingresa el título del bloque que aparecerá en el pie de página con los datos de contacto.';
 $string['footer_contact_title_default'] = 'Contáctanos';
-
 
 $string['contact_address'] = 'Dirección';
 $string['contact_email'] = 'Correo electrónico';
@@ -202,3 +196,25 @@ $string['login_signup_description_desc'] = 'Texto que aparecerá solo en la pant
 
 // Privacidad.
 $string['privacy:metadata'] = 'El tema boost_magnific no almacena ningún dato personal sobre ningún usuario.';
+
+// Einstellungen für Symbole.
+$string['settings_icons_heading'] = 'Symbole';
+$string['settings_icons_num'] = 'Anzahl der Symbole';
+$string['settings_icons_num_desc'] = 'Anzahl der benutzerdefinierten Symbole, die Sie hinzufügen möchten';
+$string['settings_icons_block'] = 'Symbol {$a}';
+$string['settings_icons_none'] = 'Kein benutzerdefiniertes Symbol';
+$string['settings_icons_name'] = 'Name des Symbols';
+$string['settings_icons_name_desc'] = 'Geben Sie den Namen des Symbols an, um die Auswahl im Modul zu erleichtern';
+$string['settings_icons_image'] = 'Bild des Symbols';
+$string['settings_icons_image_desc'] = 'Laden Sie das gewünschte SVG- oder PNG-Bild des Symbols hoch, um es im Kurs zu ersetzen.<br>Empfohlene Größe: 24px. Wenn es sich um PNG handelt, beachten Sie die Transparenz.';
+$string['settings_icons_change_icons'] = 'Standard-Symbol in der Kursliste ändern';
+$string['settings_icons_select_icon'] = 'Wählen Sie das benutzerdefinierte Symbol aus. Bearbeiten Sie es in {$a}';
+$string['settings_icons_module_disable'] = 'Die Auswahl des benutzerdefinierten Symbols ist deaktiviert. Aktivieren Sie es in {$a}';
+$string['settings_icons_default_audio_file'] = 'Audio';
+$string['settings_icons_default_video_file'] = 'Video';
+$string['settings_icons_default_book'] = 'Buch';
+$string['settings_icons_default_game'] = 'Spiel';
+$string['settings_icons_default_money'] = 'Finanzwesen';
+$string['settings_icons_default_slide'] = 'Folien';
+$string['settings_icons_default_support'] = 'Support';
+$string['settings_icons_default_download'] = 'Download';

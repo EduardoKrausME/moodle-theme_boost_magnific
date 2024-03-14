@@ -45,8 +45,7 @@ $string['slideshow_url_desc'] = 'Insérez la destination du lien du bouton de l\
 $string['slideshow_text'] = 'Texte court descriptif de la diapositive';
 $string['slideshow_text_desc'] = 'Insérez un petit texte sur la diapositive.';
 
-
-// À propos.
+// About.
 $string['settings_about_heading'] = 'À propos de votre Moodle';
 $string['theme_boost_magnific_about_editbooton'] = 'Modifier le bloc À propos';
 $string['frontpage_about_enable'] = 'Activer le bloc À propos';
@@ -68,7 +67,6 @@ $string['frontpage_about_text_2_defalt'] = 'Enseignants';
 $string['frontpage_about_text_3_defalt'] = 'Étudiants';
 $string['frontpage_about_text_4_defalt'] = 'Leçons';
 
-
 $string['theme_boost_magnific_frontpage_home'] = 'Blocs de la page d\'accueil';
 $string['heart'] = 'Si vous appréciez ce thème, n\'oubliez pas de cliquer sur ❤️ sur la page des thèmes <a href="{$a}" target="_blank">en cliquant ici</a>';
 $string['theme_boost_magnific_frontpage_bloco'] = 'Bloc "{$a}"';
@@ -88,7 +86,6 @@ $string['free_name'] = 'Gratuit';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'Le favicon est affiché à côté du titre de la page dans l\'onglet du navigateur. Un favicon Moodle est affiché si aucun favicon personnalisé n\'est fourni.';
 
-
 // Pied de page.
 $string['social_twitter'] = 'Votre Twitter';
 $string['social_twitter_desc'] = 'L\'URL Twitter de votre organisation.';
@@ -100,7 +97,6 @@ $string['social_instagram'] = 'Votre Instagram';
 $string['social_instagram_desc'] = 'L\'URL Instagram de votre organisation.';
 $string['social_facebook'] = 'Votre Facebook';
 $string['social_facebook_desc'] = 'L\'URL Facebook de votre organisation.';
-
 
 $string['settings_topo_heading'] = 'Haut';
 
@@ -125,11 +121,9 @@ $string['footerblink_desc'] = 'Vous pouvez configurer ici un bloc de liens du pi
     'Chaque ligne se compose d\'un texte de menu ou d\'une clé de langue ou d\'un texte, d\'une URL de lien (facultatif), séparés par des barres verticales. Par exemple :<br>' .
     '<pre>Support Moodle|https://moodle.org/support</pre>';
 
-
 $string['footer_contact_title'] = 'Titre du bloc de contact';
 $string['footer_contact_title_desc'] = 'Ajoutez le titre du bloc qui apparaîtra dans le pied de page avec les coordonnées de contact.';
 $string['footer_contact_title_default'] = 'Contactez-nous';
-
 
 $string['contact_address'] = 'Adresse';
 $string['contact_email'] = 'E-mail';
@@ -202,3 +196,25 @@ $string['login_signup_description_desc'] = 'Texte qui apparaîtra uniquement sur
 
 // Confidentialité.
 $string['privacy:metadata'] = 'Le thème boost_magnific ne stocke aucune donnée personnelle sur aucun utilisateur.';
+
+// Icônes de paramètres.
+$string['settings_icons_heading'] = 'Icônes';
+$string['settings_icons_num'] = 'Nombre d\'icônes';
+$string['settings_icons_num_desc'] = 'Quantité d\'icônes personnalisées que vous souhaitez ajouter';
+$string['settings_icons_block'] = 'Icône {$a}';
+$string['settings_icons_none'] = 'Aucune icône personnalisée';
+$string['settings_icons_name'] = 'Nom de l\'icône';
+$string['settings_icons_name_desc'] = 'Ajoutez le nom de l\'icône pour faciliter la sélection dans le module';
+$string['settings_icons_image'] = 'Image de l\'icône';
+$string['settings_icons_image_desc'] = 'Téléchargez l\'image SVG ou PNG de l\'icône souhaitée à remplacer dans le cours.<br>Taille recommandée : 24px. Si c\'est du PNG, pensez à la transparence.';
+$string['settings_icons_change_icons'] = 'Changer l\'icône par défaut dans la liste des cours';
+$string['settings_icons_select_icon'] = 'Sélectionnez l\'icône personnalisée. Modifiez dans {$a}';
+$string['settings_icons_module_disable'] = 'La sélection d\'icône personnalisée est désactivée. Activez dans {$a}';
+$string['settings_icons_default_audio_file'] = 'Audio';
+$string['settings_icons_default_video_file'] = 'Vidéo';
+$string['settings_icons_default_book'] = 'Livre';
+$string['settings_icons_default_game'] = 'Jeu';
+$string['settings_icons_default_money'] = 'Financier';
+$string['settings_icons_default_slide'] = 'Diapositives';
+$string['settings_icons_default_support'] = 'Support';
+$string['settings_icons_default_download'] = 'Téléchargement';
