@@ -4493,7 +4493,7 @@ div.dropdown-item:focus-within {
         right: auto;
     }
 }
-@import "magnific_footer";
+@import "footer";
 
 button.btn-footer-popover,
 button.btn-footer-popover:hover,
@@ -4861,17 +4861,17 @@ a#message-user-button {
 .pagelayout-embedded #page {
     margin-top: 0 !important;
 }
-@import "magnific_frontpage_slideshow";
-@import "magnific_frontpage_about";
-@import "magnific_frontpage_forum";
-@import "magnific_frontpage_search";
-@import "magnific_frontpage_courselist";
-@import "magnific_frontpage_categories";
-@import "magnific_colors";
-@import "magnific_login";
+@import "frontpage_slideshow";
+@import "frontpage_about";
+@import "frontpage_forum";
+@import "frontpage_search";
+@import "frontpage_courselist";
+@import "frontpage_categories";
+@import "colors";
+@import "login";
 
 @import "replace-boost";
-@import "magnific_moremenu";
+@import "moremenu";
 
 @import "admin";
 
