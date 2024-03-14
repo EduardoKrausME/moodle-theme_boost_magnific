@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'boost_magnific';
 
-$THEME->sheets = ['boost_magnific', 'custom'];
+$THEME->sheets = ['initial', 'style'];
 
 $THEME->editor_sheets = [];
 
@@ -46,7 +46,7 @@ $THEME->requiredblocks = '';
 
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 
-$THEME->csstreepostprocessor = 'theme_boost_magnific_css_tree_post_processor';
+$THEME->csspostprocess = 'theme_boost_magnific_process_css';
 
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
 
@@ -58,9 +58,6 @@ $THEME->usescourseindex = false;
 $THEME->activityheaderconfig = [
     'notitle' => true
 ];
-
-
-$THEME->csspostprocess = 'theme_boost_magnific_process_css';
 
 
 $THEME->layouts = [
