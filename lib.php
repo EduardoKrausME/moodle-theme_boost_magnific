@@ -30,8 +30,6 @@
  * Page init functions runs every time page loads.
  *
  * @param moodle_page $page
- *
- * @return null
  */
 function theme_boost_magnific_page_init(moodle_page $page) {
     global $CFG;
@@ -42,44 +40,10 @@ function theme_boost_magnific_page_init(moodle_page $page) {
 }
 
 /**
- * Loads the CSS Styles and replace the background images.
- * If background image not available in the settings take the default images.
- *
- * @param string $css
- * @param string $theme
- *
- * @return string $css
- * @throws coding_exception
- */
-function theme_boost_magnific_process_css($css, $theme) {
-    $css =
-        ":root {\n" .
-        "    --color_primary:   " . theme_boost_magnific_process_color_hex("theme_color__color_primary") . " !important;\n" .
-        "    --color_secondary: " . theme_boost_magnific_process_color_hex("theme_color__color_secondary") . " !important;\n" .
-        "    --color_buttons:   " . theme_boost_magnific_process_color_hex("theme_color__color_buttons") . " !important;\n" .
-        "    --color_names:     " . theme_boost_magnific_process_color_hex("theme_color__color_names") . " !important;\n" .
-        "    --color_titles:    " . theme_boost_magnific_process_color_hex("theme_color__color_titles") . " !important;\n" .
-        "}" . $css;
-
-    $fontfamily = theme_boost_magnific_get_setting("fontfamily");
-    if (isset($fontfamily[3])) {
-        $sizes = "0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
-        $fontfamily1 = "@import url('https://fonts.googleapis.com/css2?family={$fontfamily}:ital,wght@{$sizes}');";
-        $fontfamily2 = "body,*{font-family:{$fontfamily}, Arial, Helvetica, sans-serif;}";
-    } else {
-        $fontfamily1 = "";
-        $fontfamily2 = "body,*{font-family:Arial, Helvetica, sans-serif;}";
-    }
-
-    $customcss = str_replace("&gt;", ">", theme_boost_magnific_get_setting("customcss"));
-    $css = "{$fontfamily1}{$fontfamily2}\n\n{$css}\n{$customcss}\n{$fontfamily2}";
-
-    return $css;
-}
-
-/**
  * @param $colorname
+ *
  * @return string
+ *
  * @throws coding_exception
  */
 function theme_boost_magnific_process_color_hex($colorname) {
@@ -90,47 +54,9 @@ function theme_boost_magnific_process_color_hex($colorname) {
 }
 
 /**
- * Serves any files associated with the theme settings.
- *
- * @param stdClass $course
- * @param stdClass $cm
- * @param context $context
- * @param string $filearea
- * @param array $args
- * @param bool $forcedownload
- * @param array $options
- *
- * @return bool
- * @throws coding_exception
- * @throws moodle_exception
- */
-function theme_boost_magnific_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-    static $theme;
-
-    if (empty($theme)) {
-        $theme = theme_config::load('boost_magnific');
-    }
-    if ($context->contextlevel == CONTEXT_SYSTEM) {
-        if ($filearea === 'style') {
-            theme_boost_magnific_serve_css($args[1]);
-        } else if ($filearea === 'pagebackground') {
-            return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
-        } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
-            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
-        } else {
-            send_file_not_found();
-        }
-    } else {
-        send_file_not_found();
-    }
-}
-
-/**
  * Serves CSS for image file updated to styles.
  *
  * @param string $filename
- *
- * @return string
  */
 function theme_boost_magnific_serve_css($filename) {
     global $CFG;
@@ -159,7 +85,6 @@ function theme_boost_magnific_serve_css($filename) {
  *
  * @param string $lastmodified
  * @param string $etag
- *
  */
 function theme_boost_magnific_send_unmodified($lastmodified, $etag) {
     $lifetime = 60 * 60 * 24 * 60;
@@ -218,6 +143,7 @@ function theme_boost_magnific_send_cached_css($path, $filename, $lastmodified, $
  *      - navbarclass A CSS class to use on the navbar. By default ''.
  *      - heading HTML to use for the heading. A logo if one is selected or the default heading.
  *      - footer_description HTML to use as a footer_description. By default ''.
+ *
  * @throws coding_exception
  */
 function theme_boost_magnific_get_html_for_settings(renderer_base $output, moodle_page $page) {
@@ -247,11 +173,13 @@ function theme_boost_magnific_get_html_for_settings(renderer_base $output, moodl
 /**
  * Logo Image URL Fetch from theme settings
  *
- * @param string $type
+ * @param string $local
  *
  * @return string $logo
+ *
+ * @throws dml_exception
  */
-function theme_boost_magnific_get_logo($local) {
+function theme_boost_magnific_get_logo($local = null) {
     global $SITE;
 
     $logocolor = get_config('theme_boost_magnific', 'logo_color');
@@ -384,9 +312,10 @@ function theme_boost_magnific_theme_url() {
  * @param string $menuname Footer block link name.
  *
  * @return string The Footer links are return.
+ * @throws coding_exception
+ * @throws moodle_exception
  */
 function theme_boost_magnific_generate_links($menuname = '') {
-    global $CFG, $PAGE;
     $htmlstr = '';
     $menustr = theme_boost_magnific_get_setting($menuname);
     $menusettings = explode("\n", $menustr);
@@ -417,6 +346,7 @@ function theme_boost_magnific_generate_links($menuname = '') {
  * Fetch the hide course ids
  *
  * @return array
+ * @throws dml_exception
  */
 function theme_boost_magnific_hidden_courses_ids() {
     global $DB;
@@ -489,7 +419,6 @@ function theme_boost_magnific_course_trim_char($str, $n = 500, $endchar = '&#823
         return $str;
     }
 
-    $out = '';
     $small = substr($str, 0, $n);
     $out = $small . $endchar;
     return $out;
@@ -513,4 +442,182 @@ function theme_boost_magnific_get_hexa($hexa, $opacity) {
         }
         return "rgba($r, $g, $b, $opacity)";
     }
+
+    return "";
+}
+
+/**
+ * @param moodleform_mod $data The moodle quickforms wrapper object.
+ * @param MoodleQuickForm $mform The actual form object (required to modify the form).
+ *
+ * @throws coding_exception
+ * @throws dml_exception
+ */
+function theme_boost_magnific_coursemodule_standard_elements($data, $mform) {
+    global $CFG;
+
+    $mform->addElement('header', 'theme_boost_magnific_icons',
+        get_string('settings_icons_change_icons', 'theme_boost_magnific'));
+    $configuration = get_string('configuration');
+    $link = "<a href='{$CFG->wwwroot}/admin/settings.php?section=themesettingboost_magnific#theme_boost_magnific_icons'
+                target='_blank'>{$configuration}</a>";
+
+    if ($settingsiconsnum = get_config('theme_boost_magnific', 'settings_icons_num')) {
+
+        $choices = [0 => get_string("settings_icons_none", 'theme_boost_magnific')];
+        for ($i = 1; $i <= $settingsiconsnum; $i++) {
+            $name = get_config('theme_boost_magnific', "settings_icons_name_{$i}");
+            $image = get_config('theme_boost_magnific', "settings_icons_image_{$i}");
+
+            if ($name && $image) {
+                $choices[$i] = $name;
+            }
+        }
+
+        if ($data->get_coursemodule() && isset($data->get_coursemodule()->id)) {
+            $name = "theme_boost_magnific_customicon_{$data->get_coursemodule()->id}";
+            $customicon = get_config('theme_boost_magnific', $name);
+
+            $data->set_data(['theme_boost_magnific_customicon' => $customicon]);
+        }
+
+        $mform->addElement('select', 'theme_boost_magnific_customicon',
+            get_string('settings_icons_select_icon', 'theme_boost_magnific', $link),
+            $choices);
+    } else {
+        $mform->addElement('html', get_string('settings_icons_module_disable', 'theme_boost_magnific', $link));
+    }
+}
+
+/**
+ * Hook the add/edit of the course module.
+ *
+ * @param moodleform $data Data from the form submission.
+ * @param stdClass $course The course.
+ *
+ * @return moodleform
+ *
+ * @throws dml_exception
+ */
+function theme_boost_magnific_coursemodule_edit_post_actions($data, $course) {
+    $name = "theme_boost_magnific_customicon_{$data->coursemodule}";
+    $customicon = get_config('theme_boost_magnific', $name);
+    if ($customicon != $data->theme_boost_magnific_customicon) {
+        set_config($name, $data->theme_boost_magnific_customicon, 'theme_boost_magnific');
+        theme_reset_all_caches();
+    }
+
+    return $data;
+}
+
+/**
+ * Serves any files associated with the theme settings.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ *
+ * @return bool
+ *
+ * @throws coding_exception
+ * @throws moodle_exception
+ */
+function theme_boost_magnific_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    static $theme;
+
+    if (empty($theme)) {
+        $theme = theme_config::load('boost_magnific');
+    }
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
+        if ($filearea === 'style') {
+            theme_boost_magnific_serve_css($args[1]);
+        } else if ($filearea === 'pagebackground') {
+            return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
+        } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else {
+            send_file_not_found();
+        }
+    } else {
+        send_file_not_found();
+    }
+
+    return false;
+}
+
+/**
+ * Loads the CSS Styles and replace the background images.
+ * If background image not available in the settings take the default images.
+ *
+ * @param string $css
+ * @param string $theme
+ *
+ * @return string $css
+ *
+ * @throws coding_exception
+ * @throws dml_exception
+ */
+function theme_boost_magnific_process_css($css, $theme) {
+    global $DB;
+
+    $css =
+        ":root {\n" .
+        "    --color_primary:   " . theme_boost_magnific_process_color_hex("theme_color__color_primary") . " !important;\n" .
+        "    --color_secondary: " . theme_boost_magnific_process_color_hex("theme_color__color_secondary") . " !important;\n" .
+        "    --color_buttons:   " . theme_boost_magnific_process_color_hex("theme_color__color_buttons") . " !important;\n" .
+        "    --color_names:     " . theme_boost_magnific_process_color_hex("theme_color__color_names") . " !important;\n" .
+        "    --color_titles:    " . theme_boost_magnific_process_color_hex("theme_color__color_titles") . " !important;\n" .
+        "}" . $css;
+
+    $fontfamily = theme_boost_magnific_get_setting("fontfamily");
+    if (isset($fontfamily[3])) {
+        $sizes = "0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+        $fontfamily1 = "@import url('https://fonts.googleapis.com/css2?family={$fontfamily}:ital,wght@{$sizes}');";
+        $fontfamily2 = "body,*{font-family:{$fontfamily}, Arial, Helvetica, sans-serif;}";
+    } else {
+        $fontfamily1 = "";
+        $fontfamily2 = "body,*{font-family:Arial, Helvetica, sans-serif;}";
+    }
+
+    $customcss = str_replace("&gt;", ">", theme_boost_magnific_get_setting("customcss"));
+    $css = "{$fontfamily1}{$fontfamily2}\n\n{$css}\n{$customcss}\n{$fontfamily2}";
+
+    $sql = "SELECT name, value  FROM {config_plugins} WHERE name LIKE 'theme_boost_magnific_customicon_%'";
+    $customicons = $DB->get_records_sql($sql);
+    foreach ($customicons as $customicon) {
+        $moduleid = str_replace("theme_boost_magnific_customicon_", "", $customicon->name);
+        $slideshowimage = theme_boost_magnific_get_setting_image("settings_icons_image_{$customicon->value}");
+        $css .= "
+            #module-{$moduleid} .courseicon img,
+            .cmid-{$moduleid} #page-header .activityiconcontainer img {
+                content : url('{$slideshowimage}');
+            }
+            #course-index-cm-{$moduleid} .courseindex-link {
+                display     : flex;
+                align-items : center;
+            }
+            #course-index-cm-{$moduleid} .courseindex-link::before {
+                content           : '';
+                display           : block;
+                height            : 20px;
+                width             : 20px;
+                min-width         : 20px;
+                background-image  : url('{$slideshowimage}');
+                background-size   : contain;
+                background-repeat : no-repeat;
+                margin-right      : 5px;
+            }
+            #course-index-cm-{$moduleid}.pageitem .courseindex-link::before {
+                filter: invert(1);
+            }
+            #course-index-cm-{$moduleid}.pageitem:hover .courseindex-link::before {
+                filter: invert(0);
+            }";
+    }
+
+    return $css;
 }
