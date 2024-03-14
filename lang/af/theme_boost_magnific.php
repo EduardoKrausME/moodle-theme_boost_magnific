@@ -22,8 +22,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'boost_magnific';
-$string['choosereadme'] = 'boost_magnific is \'n tema met sorg gebou om vrolike kleure na Moodle te bring.';
+$string['pluginname'] = 'Boost Magnific';
+$string['choosereadme'] = 'Boost Magnific is \'n tema met sorg gebou om vrolike kleure na Moodle te bring.';
 
 // Slides.
 $string['settings_slideshow_heading'] = 'SlideShow';
@@ -195,7 +195,7 @@ $string['login_signup_description'] = 'Teks aan die kant van die Skep Rekening-s
 $string['login_signup_description_desc'] = 'Teks wat net op die Skep Rekening-skerm verskyn';
 
 // Privacy.
-$string['privacy:metadata'] = 'Die boost_magnific-tema stoor geen persoonlike data oor enige gebruiker nie.';
+$string['privacy:metadata'] = 'Die Boost Magnific tema stoor geen persoonlike data oor enige gebruiker nie.';
 
 // Instellingsikone.
 $string['settings_icons_heading'] = 'Ikonse';

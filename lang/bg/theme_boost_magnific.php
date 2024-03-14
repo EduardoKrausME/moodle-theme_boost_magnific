@@ -22,8 +22,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'boost_magnific';
-$string['choosereadme'] = 'boost_magnific е тема, създадена с любов, за да внесе радостни цветове в Moodle.';
+$string['pluginname'] = 'Boost Magnific';
+$string['choosereadme'] = 'Boost Magnific е тема, създадена с любов, за да внесе радостни цветове в Moodle.';
 
 // Slides.
 $string['settings_slideshow_heading'] = 'Слайдшоу';
@@ -195,7 +195,7 @@ $string['login_signup_description'] = 'Текст встрани от Екран
 $string['login_signup_description_desc'] = 'Текст, който ще се появи само на екрана за създаване на акаунт';
 
 // Privacy.
-$string['privacy:metadata'] = 'Темата boost_magnific не съхранява лични данни за нито един потребител.';
+$string['privacy:metadata'] = 'Темата Boost Magnific не съхранява лични данни за нито един потребител.';
 
 // Settings icons.
 $string['settings_icons_heading'] = 'Икони';

@@ -22,8 +22,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'boost_magnific';
-$string['choosereadme'] = 'boost_magnific es un tema creado con cariño para llevar colores alegres a Moodle.';
+$string['pluginname'] = 'Boost Magnific';
+$string['choosereadme'] = 'Boost Magnific es un tema creado con cariño para llevar colores alegres a Moodle.';
 
 // Slides.
 $string['settings_slideshow_heading'] = 'Presentación de diapositivas';
@@ -196,7 +196,7 @@ $string['login_signup_description'] = 'Texto en el lateral de la pantalla de cre
 $string['login_signup_description_desc'] = 'Texto que aparecerá solo en la pantalla de crear una cuenta';
 
 // Privacidad.
-$string['privacy:metadata'] = 'El tema boost_magnific no almacena ningún dato personal sobre ningún usuario.';
+$string['privacy:metadata'] = 'El tema Boost Magnific no almacena ningún dato personal sobre ningún usuario.';
 
 // Configuración de iconos.
 $string['settings_icons_heading'] = 'Iconos';
