@@ -21,7 +21,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$page = new admin_settingpage('theme_boost_magnific_topo', get_string('settings_topo_heading', 'theme_boost_magnific'));
+$page = new admin_settingpage('theme_boost_magnific_topo', get_string('settings_top_heading', 'theme_boost_magnific'));
 
 $page->add(new admin_setting_configtextarea('custommenuitems',
     get_string('custommenuitems', 'admin'),

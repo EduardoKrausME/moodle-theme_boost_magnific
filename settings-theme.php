@@ -70,6 +70,29 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 
+// Cores do topo
+$setting = new admin_setting_heading("theme_boost_magnific/top_color_heading", '',
+    get_string('top_color_heading', 'theme_boost_magnific'));
+$page->add($setting);
+
+$setting = new admin_setting_configcolourpicker("theme_boost_magnific/top_scroll_background_color",
+    get_string("top_scroll_background_color", 'theme_boost_magnific'),
+    get_string("top_scroll_background_color_desc", 'theme_boost_magnific'), '#FFFFFF');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$setting = new admin_setting_configcolourpicker("theme_boost_magnific/top_scroll_text_color",
+    get_string("top_scroll_text_color", 'theme_boost_magnific'),
+    get_string("top_scroll_text_color_desc", 'theme_boost_magnific'), '#646464');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+
+// Cores dos botões
+$setting = new admin_setting_heading("theme_boost_magnific/theme_color_heading", '',
+    get_string('top_color_heading', 'theme_boost_magnific'));
+$page->add($setting);
+
 $colorss = [
     'theme_color_blue' => [
         'color_primary' => '#2b4e84',
