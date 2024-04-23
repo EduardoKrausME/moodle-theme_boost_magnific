@@ -34,7 +34,7 @@
 function xmldb_theme_boost_magnific_upgrade($oldversion) {
     if ($oldversion < 2024031007) {
         require_once(__DIR__ . "/install.php");
-        install_settings_icons();
+        boost_magnific_install_settings_icons();
 
         upgrade_plugin_savepoint(true, 2024031007, 'theme', 'boost_magnific');
     }

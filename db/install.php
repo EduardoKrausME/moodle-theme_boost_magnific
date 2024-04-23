@@ -99,13 +99,13 @@ function xmldb_theme_boost_magnific_install() {
     magnific_set_config("footer_show_copywriter", 1);
 
     // Icons.
-    install_settings_icons();
+    boost_magnific_install_settings_icons();
 }
 
 /**
  * @throws dml_exception
  */
-function install_settings_icons() {
+function boost_magnific_install_settings_icons() {
     global $CFG;
 
     for ($i = 1; $i <= 20; $i++) {
