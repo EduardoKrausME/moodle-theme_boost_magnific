@@ -24,10 +24,6 @@ defined('MOODLE_INTERNAL') || die;
 $page = new admin_settingpage('theme_boost_magnific_slideshow', get_string('settings_slideshow_heading', 'theme_boost_magnific'));
 
 // Number of slides.
-$name = 'theme_boost_magnific/slideshow_numslides';
-$title = get_string('slideshow_numslides', 'theme_boost_magnific');
-$description = get_string('slideshow_numslides_desc', 'theme_boost_magnific');
-$default = 0;
 $choices = [
     0 => get_string("slideshow_numslides_nenhum", 'theme_boost_magnific'),
     1 => '1',
@@ -40,10 +36,10 @@ $choices = [
     8 => '8',
     9 => '9',
 ];
-$page->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
-
-global $PAGE;
-$PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'numslides');
+$settingslideshownumslides = new admin_setting_configselect('theme_boost_magnific/slideshow_numslides',
+    get_string('slideshow_numslides', 'theme_boost_magnific'),
+    get_string('slideshow_numslides_desc', 'theme_boost_magnific'), 0, $choices);
+$page->add($settingslideshownumslides);
 
 for ($i = 1; $i <= 9; $i++) {
 
@@ -71,3 +67,6 @@ for ($i = 1; $i <= 9; $i++) {
     $page->add($setting);
 }
 $settings->add($page);
+
+global $PAGE;
+$PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'numslides', [$settingslideshownumslides->get_id()]);
