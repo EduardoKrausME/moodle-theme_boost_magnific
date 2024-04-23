@@ -39,9 +39,11 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         upgrade_plugin_savepoint(true, 2024031007, 'theme', 'boost_magnific');
     }
 
-    if ($oldversion < 2024042200) {
-        magnific_set_config("footer_type", 0);
-        magnific_set_config("home_type", 0);
+    if ($oldversion < 2024042301) {
+        set_config("footer_type", 0, "theme_boost_magnific");
+        set_config("home_type", 0, "theme_boost_magnific");
+
+        upgrade_plugin_savepoint(true, 2024042301, 'theme', 'boost_magnific');
     }
 
     return true;
