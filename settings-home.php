@@ -24,40 +24,61 @@ defined('MOODLE_INTERNAL') || die;
 $page = new admin_settingpage('theme_boost_magnific_frontpage_home',
     get_string('theme_boost_magnific_frontpage_home', 'theme_boost_magnific'));
 
-$setting = new admin_setting_heading("theme_boost_magnific/heart", '',
-    get_string('heart', 'theme_boost_magnific', 'https://moodle.org/plugins/theme_boost_magnific'));
+
+$home = get_string('content_type_home', 'theme_boost_magnific');
+if (get_config('theme_boost_magnific', 'home_type') != 0) {
+    $description =
+        get_string('content_type_desc', 'theme_boost_magnific', $home) . "<br><br>" .
+        get_string('editor_link_home', 'theme_boost_magnific', "{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home");
+} else {
+    $description = get_string('content_type_desc', 'theme_boost_magnific', $home);
+}
+$choices = [
+    0 => get_string("content_type_default", 'theme_boost_magnific'),
+    1 => get_string("content_type_html", 'theme_boost_magnific'),
+];
+$setting = new admin_setting_configselect('theme_boost_magnific/home_type',
+    get_string('content_type', 'theme_boost_magnific', $home),
+    $description, 0, $choices);
 $page->add($setting);
-
-$setting = new admin_setting_heading("theme_boost_magnific/theme_boost_magnific_frontpage_bloco",
-    get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('availablecourses')), '');
-$page->add($setting);
-
-$setting = new admin_setting_configtextarea('theme_boost_magnific/frontpage_avaliablecourses_text',
-    get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('availablecourses')),
-    get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('availablecourses')), '');
-$page->add($setting);
-
-$setting = new admin_setting_configcheckbox('theme_boost_magnific/frontpage_avaliablecourses_instructor',
-    get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific'),
-    get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific'),
-    1);
-$page->add($setting);
+$PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'autosubmit', [$setting->get_id()]);
 
 
-$setting = new admin_setting_heading("theme_boost_magnific/theme_boost_magnific_frontpage_bloco",
-    get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('mycourses')), '');
-$page->add($setting);
+if (get_config('theme_boost_magnific', 'home_type') == 0) {
+    $setting = new admin_setting_heading("theme_boost_magnific/heart", '',
+        get_string('heart', 'theme_boost_magnific', 'https://moodle.org/plugins/theme_boost_magnific'));
+    $page->add($setting);
 
-$setting = new admin_setting_configtextarea('theme_boost_magnific/frontpage_mycourses_text',
-    get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('mycourses')),
-    get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('mycourses')), '');
-$page->add($setting);
+    $setting = new admin_setting_heading("theme_boost_magnific/theme_boost_magnific_frontpage_bloco",
+        get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('availablecourses')), '');
+    $page->add($setting);
 
-$setting = new admin_setting_configcheckbox('theme_boost_magnific/frontpage_mycourses_instructor',
-    get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific'),
-    get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific'),
-    1);
-$page->add($setting);
+    $setting = new admin_setting_configtextarea('theme_boost_magnific/frontpage_avaliablecourses_text',
+        get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('availablecourses')),
+        get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('availablecourses')), '');
+    $page->add($setting);
 
+    $setting = new admin_setting_configcheckbox('theme_boost_magnific/frontpage_avaliablecourses_instructor',
+        get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific'),
+        get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific'),
+        1);
+    $page->add($setting);
+
+
+    $setting = new admin_setting_heading("theme_boost_magnific/theme_boost_magnific_frontpage_bloco",
+        get_string('theme_boost_magnific_frontpage_bloco', 'theme_boost_magnific', get_string('mycourses')), '');
+    $page->add($setting);
+
+    $setting = new admin_setting_configtextarea('theme_boost_magnific/frontpage_mycourses_text',
+        get_string('footer_frontpage_blockcourses_text', 'theme_boost_magnific', get_string('mycourses')),
+        get_string('footer_frontpage_blockcourses_text_desc', 'theme_boost_magnific', get_string('mycourses')), '');
+    $page->add($setting);
+
+    $setting = new admin_setting_configcheckbox('theme_boost_magnific/frontpage_mycourses_instructor',
+        get_string('footer_frontpage_blockcourses_instructor', 'theme_boost_magnific'),
+        get_string('footer_frontpage_blockcourses_instructor_desc', 'theme_boost_magnific'),
+        1);
+    $page->add($setting);
+}
 
 $settings->add($page);
