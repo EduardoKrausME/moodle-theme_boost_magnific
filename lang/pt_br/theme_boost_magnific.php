@@ -22,7 +22,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $string['pluginname'] = 'Boost Magnific';
-$string['choosereadme'] = 'Boost Magnific é um thema construido com carinho para trazer cores alegres ao Moodle.';
+$string['choosereadme'] = 'O Boost Magnific é um tema cuidadosamente elaborado para adicionar cores vibrantes e uma atmosfera alegre ao Moodle.';
 
 // Slides.
 $string['settings_slideshow_heading'] = 'SlideShow';
