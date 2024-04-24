@@ -58,7 +58,7 @@ if (get_config('theme_boost_magnific', 'footer_type') != 0) {
         }
     }
 } else {
-    $description = get_string('content_type_desc', 'theme_boost_magnific');
+    $description = get_string('content_type_footer_desc', 'theme_boost_magnific');
 }
 $choices = [
     0 => get_string("content_type_default", 'theme_boost_magnific'),
