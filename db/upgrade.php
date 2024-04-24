@@ -46,5 +46,19 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         upgrade_plugin_savepoint(true, 2024042301, 'theme', 'boost_magnific');
     }
 
+    if ($oldversion < 2024042400) {
+        $htmldata = get_config("theme_boost_magnific", "home_htmldata");
+        $cssdata = get_config("theme_boost_magnific", "home_cssdata");
+        $html = "{$htmldata}\n<style>{$cssdata}</style>";
+        set_config("home_htmleditor_all", $html, "theme_boost_magnific");
+
+        $htmldata = get_config("theme_boost_magnific", "footer_htmldata");
+        $cssdata = get_config("theme_boost_magnific", "footer_cssdata");
+        $html = "{$htmldata}\n<style>{$cssdata}</style>";
+        set_config("footer_htmleditor_all", $html, "theme_boost_magnific");
+
+        upgrade_plugin_savepoint(true, 2024042400, 'theme', 'boost_magnific');
+    }
+
     return true;
 }

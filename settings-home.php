@@ -27,18 +27,45 @@ $page = new admin_settingpage('theme_boost_magnific_frontpage_home',
 
 $home = get_string('content_type_home', 'theme_boost_magnific');
 if (get_config('theme_boost_magnific', 'home_type') != 0) {
-    $description =
-        get_string('content_type_desc', 'theme_boost_magnific', $home) . "<br><br>" .
-        get_string('editor_link_home', 'theme_boost_magnific', "{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home");
+    $description = get_string('content_type_home_desc', 'theme_boost_magnific', $home) . "<br>";
+
+    $empty_text = get_string('content_type_empty', 'theme_boost_magnific');
+
+    $text = get_string('editor_link_home_all', 'theme_boost_magnific');
+    $html = "<a class='btn btn-info mt-1 mb-2' href='{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home&editlang=all'>{$text}</a>";
+    if (!isset(get_config("theme_boost_magnific", "home_htmleditor_all")[3]))
+        $html = "{$html} <strong class='alert-warning'>{$empty_text}</strong>";
+    $description .= "{$html}<br>";
+
+    if ($CFG->langmenu) {
+        $list_of_translations = get_string_manager()->get_list_of_translations();
+        $lang_name = $list_of_translations[$CFG->lang];
+
+        $text = get_string('editor_link_home', 'theme_boost_magnific', $lang_name);
+        $html = "<a class='btn btn-info mt-1 mb-2' href='{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home&editlang={$CFG->lang}'>{$text}</a>";
+        if (!isset(get_config("theme_boost_magnific", "home_htmleditor_{$CFG->lang}")[3]))
+            $html = "{$html} <strong class='alert-warning'>{$empty_text}</strong>";
+        $description .= "{$html}<br>";
+
+        foreach ($list_of_translations as $lang_key => $lang_name) {
+            if ($CFG->lang == $lang_key) continue;
+
+            $text = get_string('editor_link_home', 'theme_boost_magnific', $lang_name);
+            $html = "<a class='btn btn-info mt-1' href='{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home&editlang={$lang_key}'>{$text}</a>";
+            if (!isset(get_config("theme_boost_magnific", "home_htmleditor_{$lang_key}")[3]))
+                $html = "{$html} <strong class='alert-warning'>{$empty_text}</strong>";
+            $description .= "{$html}<br>";
+        }
+    }
 } else {
-    $description = get_string('content_type_desc', 'theme_boost_magnific', $home);
+    $description = get_string('content_type_desc', 'theme_boost_magnific');
 }
 $choices = [
     0 => get_string("content_type_default", 'theme_boost_magnific'),
     1 => get_string("content_type_html", 'theme_boost_magnific'),
 ];
 $setting = new admin_setting_configselect('theme_boost_magnific/home_type',
-    get_string('content_type', 'theme_boost_magnific', $home),
+    get_string('content_type_home', 'theme_boost_magnific'),
     $description, 0, $choices);
 $page->add($setting);
 $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'autosubmit', [$setting->get_id()]);
