@@ -152,15 +152,15 @@ if (get_config('theme_boost_magnific', 'footer_type') == 0) {
     $setting = new admin_setting_configtext('theme_boost_magnific/contact_email',
         get_string('contact_email', 'theme_boost_magnific'), '', '');
     $page->add($setting);
+
+    $setting = new admin_setting_heading('theme_boost_magnific_footerblock_copywriter',
+        get_string('footerblock_copywriter', 'theme_boost_magnific'), '');
+    $page->add($setting);
+
+    $setting = new admin_setting_configcheckbox('theme_boost_magnific/footer_show_copywriter',
+        get_string('footer_show_copywriter', 'theme_boost_magnific'),
+        get_string('footer_show_copywriter_desc', 'theme_boost_magnific'), 1);
+    $page->add($setting);
 }
-
-$setting = new admin_setting_heading('theme_boost_magnific_footerblock_copywriter',
-    get_string('footerblock_copywriter', 'theme_boost_magnific'), '');
-$page->add($setting);
-
-$setting = new admin_setting_configcheckbox('theme_boost_magnific/footer_show_copywriter',
-    get_string('footer_show_copywriter', 'theme_boost_magnific'),
-    get_string('footer_show_copywriter_desc', 'theme_boost_magnific'), 1);
-$page->add($setting);
 
 $settings->add($page);
