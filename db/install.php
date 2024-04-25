@@ -47,10 +47,10 @@ function xmldb_theme_boost_magnific_install() {
 
     theme_boost_magnific_set_config("frontpage_about_enable", 0);
     theme_boost_magnific_set_config("frontpage_about_logo", '');
-    theme_boost_magnific_set_config("frontpage_about_title", magnific_get_string("frontpage_about_title_default"));
+    theme_boost_magnific_set_config("frontpage_about_title", boost_magnific_get_string("frontpage_about_title_default"));
     theme_boost_magnific_set_config("frontpage_about_description", '');
     for ($i = 1; $i <= 4; $i++) {
-        theme_boost_magnific_set_config("frontpage_about_text_{$i}", magnific_get_string("frontpage_about_text_{$i}_defalt"));
+        theme_boost_magnific_set_config("frontpage_about_text_{$i}", boost_magnific_get_string("frontpage_about_text_{$i}_defalt"));
         if ($i == 1) {
             $count = $DB->get_field_select("course", "COUNT(*)", "id != {$SITE->id}");
             theme_boost_magnific_set_config("frontpage_about_number_{$i}", $count);
@@ -70,15 +70,15 @@ function xmldb_theme_boost_magnific_install() {
 
     theme_boost_magnific_set_config("footer_type", 0);
     theme_boost_magnific_set_config("footer_description", $SITE->fullname);
-    theme_boost_magnific_set_config("footer_links_title", magnific_get_string("footer_links_title_default"));
+    theme_boost_magnific_set_config("footer_links_title", boost_magnific_get_string("footer_links_title_default"));
     theme_boost_magnific_set_config("footer_links", '');
-    theme_boost_magnific_set_config("footer_social_title", magnific_get_string("footer_social_title_default"));
+    theme_boost_magnific_set_config("footer_social_title", boost_magnific_get_string("footer_social_title_default"));
     theme_boost_magnific_set_config("social_youtube", '');
     theme_boost_magnific_set_config("social_linkedin", '');
     theme_boost_magnific_set_config("social_facebook", '');
     theme_boost_magnific_set_config("social_twitter", '');
     theme_boost_magnific_set_config("social_instagram", '');
-    theme_boost_magnific_set_config("contact_footer_title", magnific_get_string("footer_contact_title_default"));
+    theme_boost_magnific_set_config("contact_footer_title", boost_magnific_get_string("footer_contact_title_default"));
     theme_boost_magnific_set_config("contact_address", '');
     theme_boost_magnific_set_config("contact_phone", '');
     theme_boost_magnific_set_config("contact_email", '');
@@ -160,6 +160,6 @@ function theme_boost_magnific_set_config($name, $value) {
  *
  * @throws coding_exception
  */
-function magnific_get_string($name) {
+function boost_magnific_get_string($name) {
     return get_string($name, "theme_boost_magnific");
 }
