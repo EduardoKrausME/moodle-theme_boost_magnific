@@ -1518,7 +1518,7 @@ body.limitedwidth #page.drawers .main-inner,
     height: auto;
     padding: 0;
     margin: 0;
-    overflow-y: hidden;
+    // overflow-y: hidden;
 }
 .pagelayout-admin #page.drawers {
     overflow-y: auto !important;

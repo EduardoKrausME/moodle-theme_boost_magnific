@@ -505,7 +505,7 @@ require_capability('moodle/site:config', context_system::instance());
                            </form>
                            <form class="form-preview-preview" method="post" target="home-preview"
                                  style="display:none;margin:0;"
-                                 action="<?php echo $CFG->wwwroot ?>/">
+                                 action="<?php echo $CFG->wwwroot ?>/#<?php echo $chave ?>">
                                <input type="hidden" name="chave"    value="<?php echo $chave ?>">
                                <input type="hidden" name="editlang" value="<?php echo $editlang ?>">
                                <input type="hidden" name="sesskey"  value="<?php echo sesskey() ?>">
