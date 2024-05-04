@@ -644,11 +644,3 @@ function theme_boost_magnific_process_css($css, $theme) {
 
     return $css;
 }
-
-/**
- * @param string $identifier
- */
-function theme_boost_magnific_get_string($identifier) {
-    //$CFG->debugdeveloper = 0;
-    echo get_string($identifier, 'theme_boost_magnific');
-}
