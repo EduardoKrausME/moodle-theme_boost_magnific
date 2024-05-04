@@ -132,14 +132,13 @@ $string['footer_show_copywriter'] = 'Tampilkan Dibuat dengan ❤️';
 $string['footer_show_copywriter_desc'] = 'Jangan centang jika Anda ingin menyembunyikan "Dibuat dengan ❤️"';
 
 // Logos.
-$string['settings_logos_heading'] = 'Logos';
 $string['logo_color'] = 'Logo berwarna';
 $string['logo_color_desc'] = 'Silakan unggah LOGO berwarna Anda jika ingin menyertakannya di bagian atas. Logo ini akan ditampilkan saat halaman digulir, dan menu akan ditampilkan pada latar belakang putih.';
-$string['logo_write'] = 'Logo Putih';
-$string['logo_write_desc'] = 'Silakan unggah LOGO putih Anda jika ingin menyertakannya di bagian atas. Logo ini akan ditampilkan saat guliran tetap di atas, dan menu akan ditampilkan pada latar belakang berwarna.';
+$string['logo_write'] = 'Logo menu atas saat digulir';
+$string['logo_write_desc'] = 'Silakan unggah logo Anda jika Anda ingin menyertakannya di bagian atas. Logo ini akan ditampilkan saat pengguliran tetap berada di bagian atas, dan menu akan ditampilkan pada latar belakang berwarna.';
 
 // Themes and CSS.
-$string['settings_theme_heading'] = 'Tema dan CSS';
+$string['settings_theme_heading'] = 'Tema';
 $string['customcss'] = 'CSS Kustom';
 $string['customcss_desc'] = 'Setiap aturan CSS yang Anda tambahkan ke area teks ini akan tercermin di semua halaman, memudahkan penyesuaian tema ini.';
 $string['fontfamily'] = 'Font situs';

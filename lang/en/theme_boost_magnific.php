@@ -132,14 +132,13 @@ $string['footer_show_copywriter'] = 'Show Made with ❤️';
 $string['footer_show_copywriter_desc'] = 'Uncheck if you want to hide the "Made with ❤️"';
 
 // Logos.
-$string['settings_logos_heading'] = 'Logos';
 $string['logo_color'] = 'Colored Logo';
 $string['logo_color_desc'] = 'Please upload your colored LOGO if you want to include it at the top. This logo will be displayed as the page is scrolled, and the menu will be displayed on a white background.';
-$string['logo_write'] = 'White Logo';
-$string['logo_write_desc'] = 'Please upload your white LOGO if you want to include it at the top. This logo will be displayed when scrolling remains at the top, and the menu will be displayed on a colored background.';
+$string['logo_write'] = 'Top menu logo on scroll';
+$string['logo_write_desc'] = 'Please upload your logo if you wish to include it at the top. This logo will be displayed when scrolling remains at the top, and the menu will be displayed on a colored background.';
 
 // Themes and CSS.
-$string['settings_theme_heading'] = 'Theme and CSS';
+$string['settings_theme_heading'] = 'Theme';
 $string['customcss'] = 'Custom CSS';
 $string['customcss_desc'] = 'Any CSS rules you add to this text area will be reflected on all pages, making it easy to customize this theme.';
 $string['fontfamily'] = 'Site Font';

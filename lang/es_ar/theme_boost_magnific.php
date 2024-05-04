@@ -132,14 +132,13 @@ $string['footer_show_copywriter'] = 'Mostrar "Hecho con ❤️"';
 $string['footer_show_copywriter_desc'] = 'Desmarca esto si deseas ocultar el "Hecho con ❤️"';
 
 // Logos.
-$string['settings_logos_heading'] = 'Logos';
 $string['logo_color'] = 'Logo a color';
 $string['logo_color_desc'] = 'Por favor, carga tu LOGO a color si deseas incluirla en la parte superior. Esta logo se mostrará a medida que se desplaza la página y el menú se mostrará en un fondo blanco.';
-$string['logo_write'] = 'Logo blanca';
-$string['logo_write_desc'] = 'Por favor, carga tu LOGO blanca si deseas incluirla en la parte superior. Esta logo se mostrará cuando el desplazamiento permanezca en la parte superior y el menú se mostrará en un fondo de color.';
+$string['logo_write'] = 'Logotipo del menú superior al desplazar';
+$string['logo_write_desc'] = 'Por favor, carga tu logotipo si deseas incluirlo en la parte superior. Este logotipo se mostrará cuando el desplazamiento permanezca en la parte superior, y el menú se mostrará en un fondo de color.';
 
 // Temas y CSS.
-$string['settings_theme_heading'] = 'Tema y CSS';
+$string['settings_theme_heading'] = 'Tema';
 $string['customcss'] = 'CSS personalizado';
 $string['customcss_desc'] = 'Cualquier regla CSS que agregues en esta área de texto se reflejará en todas las páginas, facilitando la personalización de este tema.';
 $string['fontfamily'] = 'Fuente del sitio';

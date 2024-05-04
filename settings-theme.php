@@ -22,7 +22,7 @@
 defined('MOODLE_INTERNAL') || die;
 global $PAGE;
 
-$page = new admin_settingpage('theme_boost_magnific_css', get_string('settings_theme_heading', 'theme_boost_magnific'));
+$page = new admin_settingpage('theme_boost_magnific_theme', get_string('settings_theme_heading', 'theme_boost_magnific'));
 
 $choices = [
     'default1' => get_string('background_color_default', 'theme_boost_magnific', 1),
@@ -69,10 +69,18 @@ $setting = new admin_setting_configselect('theme_boost_magnific/background_color
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$setting = new admin_setting_configstoredfile('theme_boost_magnific/logo_color',
+    get_string('logo_color', 'theme_boost_magnific'),
+    get_string('logo_color_desc', 'theme_boost_magnific'),
+    'logo_color', 0,
+    ['maxfiles' => 1, 'accepted_types' => ['.jpg', '.png']]);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 
 // Cores do topo
-$setting = new admin_setting_heading("theme_boost_magnific/top_color_heading", '',
-    get_string('top_color_heading', 'theme_boost_magnific'));
+$setting = new admin_setting_heading("theme_boost_magnific/top_color_heading",
+    get_string('top_color_heading', 'theme_boost_magnific'), '');
 $page->add($setting);
 
 $setting = new admin_setting_configcolourpicker("theme_boost_magnific/top_scroll_background_color",
@@ -87,10 +95,18 @@ $setting = new admin_setting_configcolourpicker("theme_boost_magnific/top_scroll
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$setting = new admin_setting_configstoredfile('theme_boost_magnific/logo_write',
+    get_string('logo_write', 'theme_boost_magnific'),
+    get_string('logo_write_desc', 'theme_boost_magnific'),
+    'logo_write', 0,
+    ['maxfiles' => 1, 'accepted_types' => ['.jpg', '.png']]);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 
 // Cores dos botões
-$setting = new admin_setting_heading("theme_boost_magnific/theme_color_heading", '',
-    get_string('top_color_heading', 'theme_boost_magnific'));
+$setting = new admin_setting_heading("theme_boost_magnific/theme_color_heading",
+    get_string('theme_color_heading', 'theme_boost_magnific'),  '');
 $page->add($setting);
 
 $colorss = [
@@ -171,6 +187,20 @@ foreach ($colors as $color) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 }
+
+
+// Favicon
+$setting = new admin_setting_heading("theme_boost_magnific/favicon_heading",
+    get_string('favicon', 'admin'), '');
+$page->add($setting);
+
+$setting = new admin_setting_configstoredfile('core_admin/favicon',
+    get_string('favicon', 'theme_boost_magnific'),
+    get_string('favicon_desc', 'theme_boost_magnific'),
+    'favicon', 0,
+    ['maxfiles' => 1, 'accepted_types' => ['image']]);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
 
 
 $fontsarr = [
