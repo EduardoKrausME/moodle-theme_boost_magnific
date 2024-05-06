@@ -80,7 +80,6 @@ if ($PAGE->has_secondary_navigation()) {
     }
 }
 
-
 require_once("{$CFG->dirroot}/theme/boost_magnific/classes/navigation/primary.php");
 $primary = new \theme_boost_magnific\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');

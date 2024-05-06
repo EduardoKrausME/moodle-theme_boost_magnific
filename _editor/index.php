@@ -71,7 +71,7 @@ $langs = json_decode(file_get_contents(__DIR__ . "/js/locale/{$currentlang}.json
             }
             set_config("{$chave}_htmleditor_{$editlang}", $html, "theme_boost_magnific");
 
-            $home_type = get_config("theme_boost_magnific", "home_type");
+            $hometype = get_config("theme_boost_magnific", "home_type");
 
             redirect("{$CFG->wwwroot}/admin/settings.php?section=themesettingboost_magnific#theme_boost_magnific_{$chave}");
         }
@@ -522,7 +522,6 @@ $langs = json_decode(file_get_contents(__DIR__ . "/js/locale/{$currentlang}.json
             el.setAttribute('data-tooltip', title);
             el.setAttribute('title', '');
         }
-
 
         function showButtonUpdate() {
             var html = editor.getHtml();

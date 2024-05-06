@@ -21,7 +21,6 @@
 
 namespace theme_boost_magnific\output\core;
 
-
 use context_course;
 use moodle_url;
 use user_picture;

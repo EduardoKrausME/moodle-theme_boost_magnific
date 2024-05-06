@@ -14,7 +14,6 @@ Outra vantagem deste tema é a sua responsividade, ou seja, ele é capaz de se a
 
 O "boost_magnific" também oferece recursos de personalização que permitem que os administradores do Moodle ajustem o tema de acordo com as necessidades da instituição. É possível escolher cores personalizadas, adicionar logos e modificar a disposição dos elementos da página.
 
-
 ![setting-01.png](https://raw.githubusercontent.com/EduardoKrausME/moodle-theme_boost_magnific/master/pix/prints/setting-01.png)
 
 ![setting-02.png](https://raw.githubusercontent.com/EduardoKrausME/moodle-theme_boost_magnific/master/pix/prints/setting-02.png)

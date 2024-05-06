@@ -216,7 +216,6 @@ $string['settings_icons_default_slide'] = 'Slides';
 $string['settings_icons_default_support'] = 'Support';
 $string['settings_icons_default_download'] = 'Download';
 
-
 $string['top_color_heading'] = 'Scroll Top Color';
 $string['top_scroll_background_color'] = 'Background Color of Top Menu on Scroll';
 $string['top_scroll_background_color_desc'] = 'Set the background color when scrolling the page.';
