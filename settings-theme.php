@@ -22,7 +22,8 @@
 defined('MOODLE_INTERNAL') || die;
 global $PAGE;
 
-$page = new admin_settingpage('theme_boost_magnific_theme', get_string('settings_theme_heading', 'theme_boost_magnific'));
+$page = new admin_settingpage('theme_boost_magnific_theme',
+    get_string('settings_theme_heading', 'theme_boost_magnific'));
 
 if ($CFG->theme != "boost_training") {
     $choices = [
