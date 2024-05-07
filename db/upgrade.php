@@ -36,14 +36,14 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         require_once(__DIR__ . "/install.php");
         boost_magnific_install_settings_icons();
 
-        upgrade_plugin_savepoint(true, 2024031007, 'theme', 'boost_magnific');
+        upgrade_plugin_savepoint(true, 2024031007, "theme", "boost_magnific");
     }
 
     if ($oldversion < 2024042301) {
         set_config("footer_type", 0, "theme_boost_magnific");
         set_config("home_type", 0, "theme_boost_magnific");
 
-        upgrade_plugin_savepoint(true, 2024042301, 'theme', 'boost_magnific');
+        upgrade_plugin_savepoint(true, 2024042301, "theme", "boost_magnific");
     }
 
     if ($oldversion < 2024042400) {
@@ -57,7 +57,7 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         $html = "{$htmldata}\n<style>{$cssdata}</style>";
         set_config("footer_htmleditor_all", $html, "theme_boost_magnific");
 
-        upgrade_plugin_savepoint(true, 2024042400, 'theme', 'boost_magnific');
+        upgrade_plugin_savepoint(true, 2024042400, "theme", "boost_magnific");
     }
 
     if ($oldversion < 2024050200) {
@@ -73,7 +73,32 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
             "&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700" .
             "&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');\n</style>";
         set_config("pagefonts", $fonts, "theme_boost_magnific");
-        upgrade_plugin_savepoint(true, 2024050200, 'theme', 'boost_magnific');
+        upgrade_plugin_savepoint(true, 2024050200, "theme", "boost_magnific");
+    }
+
+    if ($oldversion < 2024050607) {
+        $fonts = "<style>\n@import url('https://fonts.googleapis.com/css2?" .
+            "&family=Briem+Hand:wght@100..900" .
+            "&family=Epilogue:ital,wght@0,100..900;1,100..900" .
+            "&family=Inter+Tight:ital,wght@0,100..900;1,100..900" .
+            "&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900" .
+            "&family=Manrope:wght@200..800" .
+            "&family=Montserrat:ital,wght@0,100..900;1,100..900" .
+            "&family=Open+Sans:ital,wght@0,300..800;1,300..800" .
+            "&family=Oswald:wght@200..700" .
+            "&family=Oxygen:wght@300;400;700" .
+            "&family=Poetsen+One" .
+            "&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900" .
+            "&family=Raleway:ital,wght@0,100..900;1,100..900" .
+            "&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900" .
+            "&display=swap');\n</style>";
+        set_config("sitefonts", $fonts, "theme_boost_magnific");
+
+        set_config("fontfamily_title", "Montserrat", "theme_degrade");
+        set_config("fontfamily_menus", "Roboto", "theme_degrade");
+        set_config("fontfamily_sitename", "Oswald", "theme_degrade");
+
+        upgrade_plugin_savepoint(true, 2024050607, "theme", "boost_magnific");
     }
 
     return true;
