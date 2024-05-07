@@ -38,6 +38,9 @@ function xmldb_theme_boost_magnific_install() {
     set_config("frontpage_avaliablecourses_text", "", "theme_boost_magnific");
     set_config("frontpage_avaliablecourses_instructor", 1, "theme_boost_magnific");
 
+    set_config("top_scroll_background_color", "#5C5D5F", "theme_boost_magnific");
+    set_config("top_scroll_text_color", "#FFFFFF", "theme_boost_magnific");
+
     set_config("slideshow_numslides", 0, "theme_boost_magnific");
     for ($i = 1; $i <= 9; $i++) {
         set_config("slideshow_info_{$i}", "", "theme_boost_magnific");
