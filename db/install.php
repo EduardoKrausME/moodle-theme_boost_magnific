@@ -157,8 +157,8 @@ function boost_magnific_install_settings_icons() {
 }
 
 /**
- * @param $name
- * @param $value
+ * @param object $name
+ * @param object $value
  *
  * @return mixed
  */
@@ -167,7 +167,7 @@ function theme_boost_magnific_set_config($name, $value) {
 }
 
 /**
- * @param $name
+ * @param object $name
  *
  * @return string
  *
