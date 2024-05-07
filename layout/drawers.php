@@ -107,7 +107,7 @@ $templatedata = [
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'overflow' => $overflow,
     'headercontent' => $headercontent,
-    'addblockbutton' => $addblockbutton
+    'addblockbutton' => $addblockbutton,
 ];
 
 require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/footer_data.php");

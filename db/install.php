@@ -118,6 +118,8 @@ function xmldb_theme_boost_magnific_install() {
 }
 
 /**
+ * boost_magnific_install_settings_icons function
+ *
  * @throws dml_exception
  */
 function boost_magnific_install_settings_icons() {
@@ -157,6 +159,8 @@ function boost_magnific_install_settings_icons() {
 }
 
 /**
+ * theme_boost_magnific_set_config function
+ *
  * @param object $name
  * @param object $value
  *
