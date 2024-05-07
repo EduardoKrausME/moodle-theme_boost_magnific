@@ -88,13 +88,13 @@ if ($CFG->theme != "boost_training") {
 
     $setting = new admin_setting_configcolourpicker("theme_boost_magnific/top_scroll_background_color",
         get_string("top_scroll_background_color", 'theme_boost_magnific'),
-        get_string("top_scroll_background_color_desc", 'theme_boost_magnific'), '#FFFFFF');
+        get_string("top_scroll_background_color_desc", 'theme_boost_magnific'), '#5C5D5F');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     $setting = new admin_setting_configcolourpicker("theme_boost_magnific/top_scroll_text_color",
         get_string("top_scroll_text_color", 'theme_boost_magnific'),
-        get_string("top_scroll_text_color_desc", 'theme_boost_magnific'), '#646464');
+        get_string("top_scroll_text_color_desc", 'theme_boost_magnific'), '#FFFFFF');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
