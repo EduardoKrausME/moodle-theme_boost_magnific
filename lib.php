@@ -650,7 +650,8 @@ function theme_boost_magnific_process_css($css, $theme) {
             .navbar-light.fixed-top .navbar-nav .nav-link.show,
             .navbar-light.fixed-top .navbar-nav .nav-link.active,
             .fixed-top .header-logo a.navbar-brand img,
-            .fixed-top .header-logo a.navbar-brand span {
+            .fixed-top .header-logo a.navbar-brand span,
+            .fixed-top .header-menubar .primary-navigation ul.navbar-nav > li > a {
                 color: {$topscrolltextcolor} !important;
             }
             .fixed-top .custom-switch .custom-control-label:after{
@@ -658,10 +659,6 @@ function theme_boost_magnific_process_css($css, $theme) {
             }
             .fixed-top {
                 background: {$topscrollbackgroundcolor} !important;
-            }
-            .fixed-top *,
-            .fixed-top :before {
-                color: {$topscrolltextcolor} !important;
             }";
     }
 
