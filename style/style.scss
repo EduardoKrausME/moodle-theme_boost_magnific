@@ -2159,51 +2159,12 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
             overflow-y: initial !important;
         }
     }
-}
-#header.navbar-expand .container-fluid {
-    padding: 0 15px;
-}
-.navbar-light .navbar-brand {
-    color: #fff;
+    &.navbar-expand .container-fluid {
+        padding: 0 15px;
+    }
 }
 .header-bottom {
     background: rgb(var(--color_primary));
-}
-#header .usermenu:focus-within,
-div.dropdown-item:focus-within {
-    box-shadow: none;
-}
-#header .usermenu .dropdown .dropdown-toggle {
-    border: 0;
-}
-#header .usermenu .dropdown .dropdown-menu {
-    width: auto;
-    min-width: 150px;
-    left: auto;
-    right: 0;
-    overflow: hidden;
-    border: 1px solid #fff;
-}
-#header .usermenu .dropdown .dropdown-menu .dropdown-divider {
-    margin: 0;
-    border: 0;
-}
-#header > .divider {
-    display: none;
-}
-#header .popover-region {
-    float: left;
-}
-#header .popover-region .popover-region-toggle i.icon {
-    font-weight: normal;
-    color: #fff;
-}
-#header nav.nav a.nav-link {
-    color: rgb(var(--color_primary));
-    margin-top: 5px;
-}
-#header nav.nav .dropdown .dropdown-menu {
-    margin-top: 15px;
 }
 .header-main {
     background: rgb(var(--color_secondary));
