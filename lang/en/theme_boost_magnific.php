@@ -330,7 +330,6 @@ $string['grapsjs-stylemanager-sectors-general'] = 'General';
 $string['grapsjs-stylemanager-sectors-layout'] = 'Layout';
 $string['grapsjs-stylemanager-sectors-typography'] = 'Typography';
 $string['grapsjs-stylemanager-sectors-decorations'] = 'Decorations';
-$string['grapsjs-stylemanager-sectors-extra'] = 'Extra';
 $string['grapsjs-stylemanager-sectors-flex'] = 'Flex';
 $string['grapsjs-stylemanager-sectors-dimension'] = 'Dimension';
 $string['grapsjs-stylemanager-properties-float'] = 'Float';
