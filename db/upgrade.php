@@ -94,9 +94,9 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
             "&display=swap');\n</style>";
         set_config("sitefonts", $fonts, "theme_boost_magnific");
 
-        set_config("fontfamily_title", "Montserrat", "theme_degrade");
-        set_config("fontfamily_menus", "Roboto", "theme_degrade");
-        set_config("fontfamily_sitename", "Oswald", "theme_degrade");
+        set_config("fontfamily_title", "Montserrat", "theme_boost_magnific");
+        set_config("fontfamily_menus", "Roboto", "theme_boost_magnific");
+        set_config("fontfamily_sitename", "Oswald", "theme_boost_magnific");
 
         upgrade_plugin_savepoint(true, 2024050700, "theme", "boost_magnific");
     }

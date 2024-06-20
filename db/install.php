@@ -147,7 +147,7 @@ function xmldb_theme_boost_magnific_install() {
     set_config("fontfamily", "Roboto", "theme_boost_magnific");
     set_config("fontfamily_title", "Montserrat", "theme_boost_magnific");
     set_config("fontfamily_menus", "Roboto", "theme_boost_magnific");
-    set_config("fontfamily_sitename", "Oswald", "theme_degrade");
+    set_config("fontfamily_sitename", "Oswald", "theme_boost_magnific");
     set_config("customcss", "", "theme_boost_magnific");
     set_config("footer_show_copywriter", 1, "theme_boost_magnific");
 
