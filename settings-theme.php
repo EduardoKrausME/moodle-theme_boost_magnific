@@ -199,7 +199,7 @@ $setting = new admin_setting_configstoredfile('core_admin/favicon',
     get_string('favicon', 'theme_boost_magnific'),
     get_string('favicon_desc', 'theme_boost_magnific'),
     'favicon', 0,
-    ['maxfiles' => 1, 'accepted_types' => ['image']]);
+    ['maxfiles' => 1, 'accepted_types' => ['.png', '.ico']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
