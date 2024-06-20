@@ -42,6 +42,8 @@ if ($ADMIN->fulltree) {
 
     require_once(__DIR__ . "/settings-slideshow.php");
 
+    require_once(__DIR__ . "/settings-mycourses.php");
+
     if (get_config('theme_boost_magnific', 'home_type') == 0) {
         require_once(__DIR__ . "/settings-about.php");
     }
