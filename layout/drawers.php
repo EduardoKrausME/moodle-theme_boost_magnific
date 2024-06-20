@@ -111,11 +111,11 @@ $templatedata = [
     'addblockbutton' => $addblockbutton,
 ];
 
-require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/footer_data.php");
 require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/frontapage_data.php");
-$templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer_data::get_data());
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\frontapage_data::topo());
 
+require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/footer_data.php");
+$templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer_data::get_data());
 
 $contextcourse = context_course::instance($COURSE->id);
 $course_update = has_capability('moodle/course:update', $contextcourse);
