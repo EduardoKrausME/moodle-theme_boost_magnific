@@ -226,11 +226,6 @@ $string['theme_color-color_titles_desc'] = 'The color used for titles, providing
 
 $string['background_color'] = 'Background Color';
 $string['background_color_desc'] = 'Top and Footer background color!';
-$string['background_color_default'] = 'Default Theme {$a}';
-$string['background_color_green'] = 'Green Theme {$a}';
-$string['background_color_blue'] = 'Blue Theme {$a}';
-$string['background_color_red'] = 'Red Theme {$a}';
-$string['background_color_black'] = 'Black Theme {$a}';
 $string['background_color_random'] = 'Random Theme {$a}';
 
 $string['settings_login_heading'] = 'Login Screen';
@@ -284,6 +279,8 @@ $string['top_scroll_background_color_desc'] = 'Set the background color when scr
 $string['top_scroll_text_color'] = 'Text Color of Menu on Scroll';
 $string['top_scroll_text_color_desc'] = 'Set the text color of the menu when scrolling the page.';
 $string['theme_color_heading'] = 'Environment Color Selection';
+$string['theme_color_sugestion'] = 'Color suggestion';
+$string['theme_color_sugestion_text'] = 'Click on the line to apply the color to the fields below:';
 
 // Link para editor da home e footer.
 $string['content_type_home'] = 'Content type for homepage';

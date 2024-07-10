@@ -1,6 +1,4 @@
-define([
-    "jquery",
-], function($) {
+define(["jquery"], function($) {
     var slideshow_boost_magnific = {
 
         slideIndex : 1,

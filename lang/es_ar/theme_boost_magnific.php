@@ -164,11 +164,6 @@ $string['theme_color-color_titles_desc'] = 'El color utilizado para los títulos
 
 $string['background_color'] = 'Color de fondo';
 $string['background_color_desc'] = 'Color de fondo del encabezado y el pie de página.';
-$string['background_color_default'] = 'Tema predeterminado {$a}';
-$string['background_color_green'] = 'Tema Verde {$a}';
-$string['background_color_blue'] = 'Tema Azul {$a}';
-$string['background_color_red'] = 'Tema Rojo {$a}';
-$string['background_color_black'] = 'Tema Negro {$a}';
 $string['background_color_random'] = 'Tema Aleatorio {$a}';
 
 $string['settings_login_heading'] = 'Pantalla de inicio de sesión';

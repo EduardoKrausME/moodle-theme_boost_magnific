@@ -47,11 +47,12 @@ $setting = new admin_setting_configstoredfile("theme_boost_magnific/login_backgr
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-$setting = new admin_setting_configcolourpicker("theme_boost_magnific/login_backgroundcolor",
+$setting = new admin_setting_configtext("theme_boost_magnific/login_backgroundcolor",
     get_string('login_backgroundcolor', 'theme_boost_magnific'),
     get_string('login_backgroundcolor_desc', 'theme_boost_magnific'), "");
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
+$PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'minicolors', [$setting->get_id()]);
 
 $setting = new admin_setting_confightmleditor('theme_boost_magnific/login_login_description',
     get_string('login_login_description', 'theme_boost_magnific'),

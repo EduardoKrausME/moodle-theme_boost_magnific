@@ -66,11 +66,12 @@ for ($i = 1; $i <= $mycoursesnumblocos; $i++) {
     $page->add($setting);
 
     $default = $colors[$mycoursesnumblocos - 1];
-    $setting = new admin_setting_configcolourpicker("theme_boost_magnific/mycourses_color_{$i}",
+    $setting = new admin_setting_configtext("theme_boost_magnific/mycourses_color_{$i}",
         get_string("mycourses_color", 'theme_boost_magnific'),
         get_string("mycourses_color_desc", 'theme_boost_magnific'), $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
+    $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'minicolors', [$setting->get_id()]);
 }
 
 $settings->add($page);

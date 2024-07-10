@@ -35,6 +35,15 @@ function xmldb_theme_boost_magnific_install() {
         core_plugin_manager::reset_caches();
     }
 
+    set_config("background_color", "#007bc3", "theme_boost_magnific");
+    set_config("theme_color", "theme_color_blue", "theme_boost_magnific");
+    set_config("theme_color__color_primary", "#2B4E84", "theme_boost_magnific");
+    set_config("theme_color__color_secondary", "#3E65A0", "theme_boost_magnific");
+    set_config("theme_color__color_buttons", "#183054", "theme_boost_magnific");
+    set_config("theme_color__color_names", "#C0CCDC", "theme_boost_magnific");
+    set_config("theme_color__color_titles", "#E8F0FB", "theme_boost_magnific");
+
+    set_config("frontpage_about_title", "", "theme_boost_magnific");
     set_config("frontpage_avaliablecourses_text", "", "theme_boost_magnific");
     set_config("frontpage_avaliablecourses_instructor", 1, "theme_boost_magnific");
 
@@ -53,44 +62,45 @@ function xmldb_theme_boost_magnific_install() {
     for ($i = 1; $i <= 4; $i++) {
         $blocks = [
             [
-                'url' => "{$CFG->wwwroot}/message/index.php",
-                'title' => get_string('messages', 'message'),
-                'icon' => 'message',
-                'color' => "#2441e7",
+                "url" => "{$CFG->wwwroot}/message/index.php",
+                "title" => get_string("messages", "message"),
+                "icon" => "message",
+                "color" => "#2441e7",
             ], [
-                'url' => "{$CFG->wwwroot}/user/profile.php",
-                'title' => get_string('profile'),
-                'icon' => 'profile',
-                'color' => "#FF1053",
+                "url" => "{$CFG->wwwroot}/user/profile.php",
+                "title" => get_string("profile"),
+                "icon" => "profile",
+                "color" => "#FF1053",
             ], [
-                'url' => "{$CFG->wwwroot}/user/preferences.php",
-                'title' => get_string('preferences'),
-                'icon' => 'preferences',
-                'color' => "#00A78E",
+                "url" => "{$CFG->wwwroot}/user/preferences.php",
+                "title" => get_string("preferences"),
+                "icon" => "preferences",
+                "color" => "#00A78E",
             ], [
-                'url' => "{$CFG->wwwroot}/grade/report/overview/index.php",
-                'title' => get_string('grades', 'grades'),
-                'icon' => 'grade',
-                'color' => "#ECD06F",
+                "url" => "{$CFG->wwwroot}/grade/report/overview/index.php",
+                "title" => get_string("grades", "grades"),
+                "icon" => "grade",
+                "color" => "#ECD06F",
             ]
         ];
         $block = $blocks[$i - 1];
 
         $fs = get_file_storage();
         $filerecord = new stdClass();
-        $filerecord->component = 'theme_boost_magnific';
+        $filerecord->component = "theme_boost_magnific";
         $filerecord->contextid = context_system::instance()->id;
         $filerecord->userid = get_admin()->id;
         $filerecord->filearea = "mycourses_icon_{$i}";
-        $filerecord->filepath = '/';
+        $filerecord->filepath = "/";
         $filerecord->itemid = 0;
-        $filerecord->filename = "{$block['icon']}.svg";
-        $file = $fs->create_file_from_pathname($filerecord, "{$CFG->dirroot}/theme/boost_magnific/pix/blocks/{$block['icon']}.svg");
+        $filerecord->filename = "{$block["icon"]}.svg";
+        $file = $fs->create_file_from_pathname($filerecord, "{$CFG->dirroot}/theme/boost_magnific/pix/blocks/{$block["icon"]}.svg");
 
         set_config("mycourses_icon_{$i}", $file->get_id(), "theme_boost_magnific");
-        set_config("mycourses_title_{$i}", $block['title'], "theme_boost_magnific");
-        set_config("mycourses_url_{$i}", $block['url'], "theme_boost_magnific");
-        set_config("mycourses_color_{$i}", $block['color'], "theme_boost_magnific");
+        set_config("mycourses_title_{$i}", $block["title"], "theme_boost_magnific");
+        set_config("mycourses_url_{$i}", $block["url"], "theme_boost_magnific");
+        set_config("mycourses_color_{$i}", $block["color"], "theme_boost_magnific");
+        set_config("frontpage_about_text_{$i}", "", "theme_boost_magnific");
     }
 
     set_config("frontpage_about_enable", 0, "theme_boost_magnific");
@@ -116,6 +126,8 @@ function xmldb_theme_boost_magnific_install() {
         }
     }
 
+    set_config("footer_links_title", "", "theme_boost_magnific");
+    set_config("footer_social_title", "", "theme_boost_magnific");
     set_config("footer_type", 0, "theme_boost_magnific");
     set_config("footer_description", $SITE->fullname, "theme_boost_magnific");
     set_config("footer_links_title", get_string("footer_links_title_default", "theme_boost_magnific"));
@@ -126,6 +138,8 @@ function xmldb_theme_boost_magnific_install() {
     set_config("social_facebook", "", "theme_boost_magnific");
     set_config("social_twitter", "", "theme_boost_magnific");
     set_config("social_instagram", "", "theme_boost_magnific");
+
+    set_config("contact_footer_title", "", "theme_boost_magnific");
     set_config("contact_footer_title", get_string("footer_contact_title_default", "theme_boost_magnific"));
     set_config("contact_address", "", "theme_boost_magnific");
     set_config("contact_phone", "", "theme_boost_magnific");
