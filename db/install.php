@@ -35,7 +35,6 @@ function xmldb_theme_boost_magnific_install() {
         core_plugin_manager::reset_caches();
     }
 
-    set_config("background_color", "#007bc3", "theme_boost_magnific");
     set_config("theme_color", "theme_color_blue", "theme_boost_magnific");
     set_config("theme_color__color_primary", "#2B4E84", "theme_boost_magnific");
     set_config("theme_color__color_secondary", "#3E65A0", "theme_boost_magnific");

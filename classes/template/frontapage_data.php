@@ -38,10 +38,12 @@ class frontapage_data {
     /**
      * @return array
      * @throws \dml_exception
+     * @throws \coding_exception
      */
     public static function topo() {
         return [
             'logourl_header' => theme_boost_magnific_get_logo("header"),
+            'top_scroll' => theme_boost_magnific_get_setting("top_scroll") ? 1 : 0,
         ];
     }
 

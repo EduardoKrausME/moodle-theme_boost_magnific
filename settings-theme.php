@@ -37,8 +37,19 @@ $setting = new admin_setting_configstoredfile('theme_boost_magnific/logo_color',
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+
 // Cores do topo.
 if ($CFG->theme != "boost_training") {
+
+    $setting = new admin_setting_configcheckbox('theme_boost_magnific/top_scroll',
+        get_string('top_scroll', 'theme_boost_magnific'),
+        get_string('top_scroll_desc', 'theme_boost_magnific'),
+        0);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+    $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'top_scroll');
+
+
     $setting = new admin_setting_heading("theme_boost_magnific/top_color_heading",
         get_string('top_color_heading', 'theme_boost_magnific'), '');
     $page->add($setting);
