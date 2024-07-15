@@ -36,37 +36,86 @@ $contextid = $context->id;
 $adminid = get_admin()->id;
 $filearea = "editor_{$chave}";
 
-if (isset($_FILES['files']['name'])) {
-    foreach ($_FILES['files']['name'] as $fileid => $name) {
-        $extension = pathinfo($name, PATHINFO_EXTENSION);
-        if (in_array($extension, ['png', 'jpg', 'jpeg', 'gif', 'svg'])) {
-            $fs = get_file_storage();
-            $filerecord = [
-                "component" => $component,
-                "contextid" => $contextid,
-                "userid" => $adminid,
-                "filearea" => $filearea,
-                "filepath" => '/',
-                "itemid" => time() - 1714787612,
-                "filename" => $_FILES['files']['name'][$fileid],
-            ];
-            $fs->create_file_from_pathname($filerecord, $_FILES['files']['tmp_name'][$fileid]);
-        }
+if (isset($_FILES['file']['name'])) {
+
+    $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+    if (in_array($extension, ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'])) {
+        $fs = get_file_storage();
+        $filerecord = (object)[
+            "component" => $component,
+            "contextid" => $contextid,
+            "userid" => $adminid,
+            "filearea" => $filearea,
+            "filepath" => '/',
+            "itemid" => time() - 1714787612,
+            "filename" => $_FILES['file']['name'],
+        ];
+        $fs->create_file_from_pathname($filerecord, $_FILES['file']['tmp_name']);
+
+        $url = moodle_url::make_file_url(
+            "$CFG->wwwroot/pluginfile.php",
+            "/{$contextid}/theme_boost_magnific/{$filerecord->filearea}/{$filerecord->itemid}{$filerecord->filepath}{$filerecord->filename}");
+
+        echo json_encode([
+            "name" => $_FILES['file']['name'],
+            "type" => "file",
+            "path" => $url->out(false),
+            "size" => filesize($_FILES['file']['tmp_name']),
+        ]);
+
+        die();
+    } else {
+        // header($_SERVER['SERVER_PROTOCOL'] . ' 404', true, 500);
+        die("File type {$extension} not allowed!");
     }
 }
 
 $fs = get_file_storage();
 $files = $fs->get_area_files($contextid, $component, $filearea, false, $sort = "filename", false);
 
-$images = [];
+$items = [];
 /** @var stored_file $file */
 foreach ($files as $file) {
     $url = moodle_url::make_file_url(
         "$CFG->wwwroot/pluginfile.php",
         "/{$contextid}/theme_boost_magnific/{$file->get_filearea()}/{$file->get_itemid()}{$file->get_filepath()}{$file->get_filename()}");
-    $images[] = $url->out(false);
+    $items[] = [
+        "name" => $file->get_filename(),
+        "type" => "file",
+        "path" => $url->out(false),
+        "size" => $file->get_filesize(),
+        "info" => "Upload file",
+    ];
+}
+
+$sql = "SELECT * FROM {course}";
+$courses = $DB->get_records_sql($sql);
+
+foreach ($courses as $course) {
+    $courseobj = new core_course_list_element($course);
+    foreach ($courseobj->get_course_overviewfiles() as $file) {
+        $isimage = $file->is_valid_image();
+        if ($isimage) {
+            $courseimage = file_encode_url("{$CFG->wwwroot}/pluginfile.php",
+                "/{$file->get_contextid()}/{$file->get_component()}/" .
+                "{$file->get_filearea()}{$file->get_filepath()}{$file->get_filename()}", !$isimage);
+
+            $items[] = [
+                "name" => $file->get_filename(),
+                "type" => "file",
+                "path" => $courseimage,
+                "size" => $file->get_filesize(),
+                "info" => "Course file",
+            ];
+        }
+    }
 }
 
 header("Content-Type: application/json");
-echo json_encode(['data' => $images]);
+echo json_encode([
+    "name" => "",
+    "type" => "folder",
+    "path" => "",
+    "items" => $items
+]);
 die();
