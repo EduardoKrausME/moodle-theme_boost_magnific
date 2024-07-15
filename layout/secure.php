@@ -70,7 +70,7 @@ $templatedata = [
     "customclass" => $class,
 ];
 
-echo $OUTPUT->render_from_template('theme_boost_magnific/header', $templatedata);
+echo $OUTPUT->render_from_template('theme_boost_magnific/includes/header', $templatedata);
 ?>
 
 <div id="page">
@@ -114,7 +114,7 @@ $templatedata = [
 ];
 
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer_data::get_data());
-$footerlayout = $OUTPUT->render_from_template('theme_boost_magnific/footer', $templatedata);
+$footerlayout = $OUTPUT->render_from_template('theme_boost_magnific/includes/footer', $templatedata);
 ?>
 
 </body>
