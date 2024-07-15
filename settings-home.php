@@ -31,7 +31,7 @@ if (get_config('theme_boost_magnific', 'home_type') != 0) {
     $emptytext = get_string('content_type_empty', 'theme_boost_magnific');
 
     $text = get_string('editor_link_home_all', 'theme_boost_magnific');
-    $html = "<a class='btn btn-info mt-1 mb-2'
+    $html = "<a class='btn btn-info mt-1 mb-2' target='_blank'
                 href='{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home&editlang=all'>{$text}</a>";
     if (!isset(get_config("theme_boost_magnific", "home_htmleditor_all")[40])) {
         $html = "{$html} <strong class='alert-warning'>{$emptytext}</strong>";
@@ -43,7 +43,7 @@ if (get_config('theme_boost_magnific', 'home_type') != 0) {
         $langname = $listoftranslations[$CFG->lang];
 
         $text = get_string('editor_link_home', 'theme_boost_magnific', $langname);
-        $html = "<a class='btn btn-info mt-1 mb-2'
+        $html = "<a class='btn btn-info mt-1 mb-2' target='_blank'
                     href='{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home&editlang={$CFG->lang}'>{$text}</a>";
         if (!isset(get_config("theme_boost_magnific", "home_htmleditor_{$CFG->lang}")[40])) {
             $html = "{$html} <strong class='alert-warning'>{$emptytext}</strong>";
@@ -56,7 +56,7 @@ if (get_config('theme_boost_magnific', 'home_type') != 0) {
             }
 
             $text = get_string('editor_link_home', 'theme_boost_magnific', $langname);
-            $html = "<a class='btn btn-info mt-1'
+            $html = "<a class='btn btn-info mt-1' target='_blank'
                         href='{$CFG->wwwroot}/theme/boost_magnific/_editor/?chave=home&editlang={$langkey}'>{$text}</a>";
             if (!isset(get_config("theme_boost_magnific", "home_htmleditor_{$langkey}")[40])) {
                 $html = "{$html} <strong class='alert-warning'>{$emptytext}</strong>";
