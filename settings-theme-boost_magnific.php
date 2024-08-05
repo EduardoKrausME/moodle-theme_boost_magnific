@@ -51,7 +51,7 @@ $cores = [
  ];
 
 
-if (strpos(@$_SERVER['REQUEST_URI'], "admin/upgradesettings.php") > 0) {
+if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], "admin/upgradesettings.php") > 0) {
     $htmlselect = "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magnific/style/initial.css\" />";
     $htmlselect .= "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magnific/style/style.css\" />";
 } else {
