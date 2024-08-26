@@ -115,7 +115,8 @@ $templatedata = [
 
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer_data::get_data());
 $footerlayout = $OUTPUT->render_from_template('theme_boost_magnific/includes/footer', $templatedata);
-?>
 
+echo $OUTPUT->standard_end_of_body_html();
+?>
 </body>
 </html>
