@@ -654,3 +654,4 @@ class course_renderer extends \core_course_renderer {
         return $output;
     }
 }
+
