@@ -126,8 +126,8 @@ require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/footer_data.
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer_data::get_data());
 
 $contextcourse = context_course::instance($COURSE->id);
-$course_update = has_capability('moodle/course:update', $contextcourse);
-if (!$course_update && strpos($_SERVER['REQUEST_URI'], "/scorm/player.php") > 1) {
+$courseupdate = has_capability('moodle/course:update', $contextcourse);
+if (!$courseupdate && strpos($_SERVER['REQUEST_URI'], "/scorm/player.php") > 1) {
     echo $OUTPUT->render_from_template('theme_boost_magnific/drawers_scorm', $templatedata);
 } else {
     echo $OUTPUT->render_from_template('theme_boost_magnific/drawers', $templatedata);

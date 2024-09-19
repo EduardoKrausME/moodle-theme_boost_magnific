@@ -13,43 +13,46 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
+ * Theme Settings File
+ *
  * @package     theme_boost_magnific
  * @copyright   2024 Eduardo Kraus https://eduardokraus.com/
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
 
 $cores = [
-    "#000428", // Azul Escuro
-    "#070000", // Preto
-    "#1a2a6c", // Azul Escuro
-    "#314755", // Cinza Escuro
-    "#007bc3", // Azul
-    "#007fff", // Azul Neon
-    "#00bf8f", // Verde Azulado
-    "#00c3b0", // Turquesa
-    "#30e8bf", // Verde Claro
-    "#83a4d4", // Azul Claro
-    "#7303c0", // Roxo
-    "#8000ff", // Roxo Neon
-    "#86377b", // Roxo Escuro
-    "#b21f1f", // Vermelho Escuro
-    "#c10f41", // Vermelho
-    "#d12924", // Vermelho Claro
-    "#fc354c", // vermelho Claro
-    "#ff0000", // Vermelho Brilhante
-    "#ff007f", // Rosa Neon
-    "#ff00ff", // Magenta Brilhante
-    "#f55ff2", // Rosa
-    "#fd81b5", // Rosa Claro
-    "#ff512f", // Laranja Claro
-    "#e65c00", // Laranja
-    "#ff8000", // Laranja Neon
-    "#ffbf00", // Amarelo Neon
-    "#ceac7a", // Bege
+    "#000428", // Azul Escuro.
+    "#070000", // Preto.
+    "#1a2a6c", // Azul Escuro.
+    "#314755", // Cinza Escuro.
+    "#007bc3", // Azul.
+    "#007fff", // Azul Neon.
+    "#00bf8f", // Verde Azulado.
+    "#00c3b0", // Turquesa.
+    "#30e8bf", // Verde Claro.
+    "#83a4d4", // Azul Claro.
+    "#7303c0", // Roxo.
+    "#8000ff", // Roxo Neon.
+    "#86377b", // Roxo Escuro.
+    "#b21f1f", // Vermelho Escuro.
+    "#c10f41", // Vermelho.
+    "#d12924", // Vermelho Claro.
+    "#fc354c", // Vermelho Claro.
+    "#ff0000", // Vermelho Brilhante.
+    "#ff007f", // Rosa Neon.
+    "#ff00ff", // Magenta Brilhante.
+    "#f55ff2", // Rosa.
+    "#fd81b5", // Rosa Claro.
+    "#ff512f", // Laranja Claro.
+    "#e65c00", // Laranja.
+    "#ff8000", // Laranja Neon.
+    "#ffbf00", // Amarelo Neon.
+    "#ceac7a", // Bege.
  ];
-
 
 if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], "admin/upgradesettings.php") > 0) {
     $htmlselect = "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magnific/style/initial.css\" />";

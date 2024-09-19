@@ -13,7 +13,10 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
+ * CSS Settings File
+ *
  * @package     theme_boost_magnific
  * @copyright   2024 Eduardo Kraus https://eduardokraus.com/
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -68,14 +71,14 @@ $setting = new admin_setting_configselect('theme_boost_magnific/fontfamily_siten
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-
 $icon = $OUTPUT->image_url("google-fonts", "theme_boost_magnific")->out(false);
-$extra = "<br><a href=\"https://fonts.google.com/selection/embed\" target=\"google\">Embed code Page</a><br><img src=\"{$icon}\" style=\"max-width: 100%;width: 420px;\">";
+$extra = "<br><a href=\"https://fonts.google.com/selection/embed\"
+                 target=\"google\">Embed code Page</a><br><img src=\"{$icon}\"
+                 style=\"max-width: 100%;width: 420px;\">";
 $setting = new admin_setting_configtextarea('theme_boost_magnific/sitefonts',
     get_string('sitefonts', 'theme_boost_magnific'),
     get_string('sitefonts_desc', 'theme_boost_magnific') . $extra, "");
 $page->add($setting);
-
 
 $setting = new admin_setting_configtextarea('theme_boost_magnific/customcss',
     get_string('customcss', 'theme_boost_magnific'),

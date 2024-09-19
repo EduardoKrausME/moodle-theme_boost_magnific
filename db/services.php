@@ -17,7 +17,7 @@
 /**
  * service file
  *
- * @package    local_kopere_mobile
+ * @package    theme_boost_magnific
  * @copyright  2024 Eduardo Kraus {@link http://eduardokraus.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
