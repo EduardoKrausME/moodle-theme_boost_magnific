@@ -372,7 +372,7 @@ Vvveb.Components.extend("_base", "html/listgroup", {
             on: "list-group-horizontal",
             off: ""
         }
-    }]    
+    }]
 });
 
 Vvveb.Components.extend("_base", "html/listitem", {
@@ -439,7 +439,7 @@ Vvveb.Components.extend("_base", "html/listitem", {
             on: "disabled",
             off: ""
         }
-    }]    
+    }]
 });
 
 Vvveb.Components.extend("_base", "html/breadcrumbs", {
@@ -456,7 +456,7 @@ Vvveb.Components.extend("_base", "html/breadcrumbs", {
 		key: "--bs-breadcrumb-divider",
 		htmlAttr: "style",
 		inputtype: TextInput
-	}]        
+	}]
 });
 
 Vvveb.Components.extend("_base", "html/breadcrumbitem", {
@@ -599,7 +599,7 @@ Vvveb.Components.extend("_base", "html/progress", {
                 text: "100%"
             }]
         }
-    }, 
+    },
     {
         name: "Progress background",
         key: "background",
@@ -663,7 +663,7 @@ Vvveb.Components.extend("_base", "html/navbar", {
 				</div>
 			  </div>
 			</nav>`,
-    
+
     properties: [{
         name: "Color theme",
         key: "color",
@@ -737,7 +737,7 @@ Vvveb.Components.extend("_base", "html/gridcolumn", {
 		beforeInit: function(node) {
 			_class = node.getAttribute("class");
 			
-			let reg = /col(-[^-\$ ]*)?-?(\d+)?/g; 
+			let reg = /col(-[^-\$ ]*)?-?(\d+)?/g;
 			let match;
 
 			while ((match = reg.exec(_class)) != null) {
@@ -777,7 +777,7 @@ Vvveb.Components.extend("_base", "html/gridrow", {
 		node.querySelectorAll('[class*="col-"],.col').forEach(el => {
 			_class = el.getAttribute("class");
 			
-			let reg = /col(-[^-\$ ]*)?-?(\d+)?/g; 
+			let reg = /col(-[^-\$ ]*)?-?(\d+)?/g;
 			let match;
 			let data = {};
 
@@ -831,7 +831,7 @@ Vvveb.Components.extend("_base", "html/gridrow", {
 
 		return node;
 	},
-    
+
     properties: [{
         name: "Direction",
         key: "direction",
@@ -873,7 +873,7 @@ Vvveb.Components.extend("_base", "html/gridrow", {
                 checked:false,
             }],
         },
-	},{       
+	},{
 		name: "Vertical align",
         key: "vertical-align",
         htmlAttr: "class",
@@ -971,7 +971,7 @@ Vvveb.Components.extend("_base", "html/gridrow", {
                 checked:false,
             }],
         },
-	},{       
+	},{
         name: "Wrap",
         key: "wrap",
         htmlAttr: "class",
@@ -1018,10 +1018,10 @@ Vvveb.Components.extend("_base", "html/gridrow", {
         onChange: function(node)
         {
 			 node.append(generateElements('<div class="col-3"><h3>Col-3</h3></div>')[0]);
-			 
+			
 			 //render component properties again to include the new column inputs
 			 Vvveb.Components.render("html/gridrow");
-			 
+			
 			 return node;
 		}
 	}]

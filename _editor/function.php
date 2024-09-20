@@ -22,18 +22,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function vvveb__add_css($html) {
-    global $CFG;
-
-    $css = [];
-    if (strpos($html, "bootstrap-vvveb.css") === false) {
-        $css[] = "<link href='{$CFG->wwwroot}/theme/boost_magnific/_editor/_default/bootstrap-vvveb.css' rel='stylesheet'>";
-    }
-
-    $css = implode("\n", $css);
-    return "{$css}\n\n{$html}";
-}
-
 function vvveb__changue_langs($html) {
     global $CFG, $SITE;
 
@@ -86,11 +74,6 @@ function vvveb__change_courses($html) {
     return str_replace("{course-itens}", $courseshtml, $html);
 }
 
-/**
- * @param \core_course_list_element $course
- *
- * @return string
- */
 function couse_image($course) {
     global $CFG, $OUTPUT;
 
