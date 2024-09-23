@@ -13960,7 +13960,7 @@ a#message-user-button {
 .que.ddwtos sub {
     bottom: -0.2em;
 }
-.que.ddimageortext div.droparea .draghome {
+.que.ddimageortext div.droparea img.draghome {
     min-height: 62px;
     min-width: 62px;
 }
