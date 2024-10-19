@@ -167,17 +167,16 @@ Vvveb.Components.extend("_base", "elements/font-icon", {
 /*
 V.Resources.Icons =
 [{
-	value: `stopwatch.svg`,
-	text: "Star"
+    value: `stopwatch.svg`,
+    text: "Star"
 },
 {
-	value: `envelope.svg`,
-	text: "Sections"
+    value: `envelope.svg`,
+    text: "Sections"
 },{
-	value: `star.svg`,
-	text: "Flipbox"
+    value: `star.svg`,
+    text: "Flipbox"
 }];*/
-
 
 Vvveb.Components.add("elements/svg-element", {
     nodes      : ["path", "line", "polyline", "polygon", "rect", "circle", "ellipse", "g"],
@@ -233,37 +232,37 @@ Vvveb.Components.add("elements/gallery", {
         <div class="gallery masonry has-shadow" data-component-gallery>
             <div class="item">
                 <a>
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/1.jpg">
+                    <img src="https://dummyimage.com/450x339/9a9458/333">
                 </a>
             </div>
             <div class="item">
                 <a>
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/2.jpg">
+                    <img src="https://dummyimage.com/450x339/9a9458/333">
                 </a>
             </div>
             <div class="item">
                 <a>
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/3.jpg">
+                    <img src="https://dummyimage.com/450x339/9a9458/333">
                 </a>
             </div>
             <div class="item">
                 <a>
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/4.jpg">
+                    <img src="https://dummyimage.com/450x339/9a9458/333">
                 </a>
             </div>
             <div class="item">
                 <a>
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/5.jpg">
+                    <img src="https://dummyimage.com/450x339/9a9458/333">
                 </a>
             </div>
             <div class="item">
                 <a>
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/6.jpg">
+                    <img src="https://dummyimage.com/450x339/9a9458/333">
                 </a>
             </div>
             <div class="item">
                 <a>
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/7.jpg">
+                    <img src="https://dummyimage.com/450x339/9a9458/333">
                 </a>
             </div>
         </div>`,
@@ -360,7 +359,7 @@ Vvveb.Components.add("elements/gallery", {
         inputtype : ButtonInput,
         data      : {text : "Add image", icon : "la la-plus"},
         onChange  : function(node) {
-            node.append(generateElements(`<div class="item"><a><img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/1.jpg"></a></div>`)[0]);
+            node.append(generateElements(`<div class="item"><a><img src="https://github.com/user-attachments/assets/d5b0db9f-afb1-4900-a5bc-0882c5ce3492"></a></div>`)[0]);
 
             //render component properties again to include the new image
             //Vvveb.Components.render("ellements/gallery");
@@ -597,15 +596,15 @@ Vvveb.Components.add("elements/accordion", {
                     let index = element.childElementCount + 1;
 
                     node.append(generateElements(`<div class="accordion-item">
-							<h2 class="accordion-header" id="heading-${index}-${random}">
-							  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${index}-${random}" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #${index}</button>
-							</h2>
-							<div id="collapse-${index}-${random}" class="accordion-collapse collapse" aria-labelledby="heading-${index}-${random}" data-bs-parent="#accordion-${accordionId}">
-							  <div class="accordion-body">
-								<p>Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin</p>
-							  </div>
-							</div>
-						  </div>`)[0]);
+                            <h2 class="accordion-header" id="heading-${index}-${random}">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${index}-${random}" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #${index}</button>
+                            </h2>
+                            <div id="collapse-${index}-${random}" class="accordion-collapse collapse" aria-labelledby="heading-${index}-${random}" data-bs-parent="#accordion-${accordionId}">
+                              <div class="accordion-body">
+                                <p>Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin</p>
+                              </div>
+                            </div>
+                          </div>`)[0]);
 
                     //temporary solution to better update list
                     Vvveb.Components.render("elements/accordion");
@@ -651,7 +650,7 @@ Vvveb.Components.add("elements/flip-box", {
         <div class="flip-box-inner">
             <div class="flip-box-front">
                 <div class="card">
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/1.jpg" class="card-img-top" alt="Post">
+                    <img src="https://github.com/user-attachments/assets/d5b0db9f-afb1-4900-a5bc-0882c5ce3492" class="card-img-top" alt="Post">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -660,18 +659,18 @@ Vvveb.Components.add("elements/flip-box", {
                     </div>
                 </div>
             </div>
-        
+
             <div class="flip-box-back">
                 <div class="d-flex align-items-center flex-column">
                     <div class="flex-shrink-0">
-                        <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/2.jpg" alt="Post">
+                        <img src="https://github.com/user-attachments/assets/2880443c-4958-4dc4-9a66-9e0113a66549" alt="Post">
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <p>
                             This is some content from a media component. You can replace this with any content and adjust it as
                             needed.
                         </p>
-        
+
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
@@ -799,10 +798,10 @@ Vvveb.Components.add("elements/social-icons", {
             if (event.action) {
                 if (event.action == "add") {
                     node.append(generateElements(`<li>
-							<a href="https://twitter.com">
-								<i class="lab la-twitter la-2x"></i> <span>Twitter</span>
-							</a>
-						</li>`)[0]);
+                            <a href="https://twitter.com">
+                                <i class="lab la-twitter la-2x"></i> <span>Twitter</span>
+                            </a>
+                        </li>`)[0]);
 
                     //temporary solution to better update list
                     Vvveb.Components.render("elements/social-icons");
@@ -857,37 +856,37 @@ function carouselAfterDrop(node) {
         lib.src = '../../libs/swiper/swiper-bundle.js';
         code.type = 'text/javascript';
         code.text = `
-		let swiper = [];
-		function initSwiper(onlyNew = false) {
-			if (typeof Swiper == "undefined") return;
-			let list = document.querySelectorAll('.swiper' + (onlyNew ? ":not(.swiper-initialized)" : "") );
-			list.forEach(el => {
-				let params = {
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-					pagination: {
-						el: ".swiper-pagination",
-				  },
-				};
-				for (i in el.dataset) {
-					let param = el.dataset[i];
-					if (param[0] = '{') {
-						param = JSON.parse(param);
-					}
-					params[i] = param;
-				}
-				swiper.push(new Swiper(el, params))
-				//swiper.push(new Swiper(el, { ...{autoplay:{delay: 500}}, ...el.dataset}))		
-			});
-		}
+        let swiper = [];
+        function initSwiper(onlyNew = false) {
+            if (typeof Swiper == "undefined") return;
+            let list = document.querySelectorAll('.swiper' + (onlyNew ? ":not(.swiper-initialized)" : "") );
+            list.forEach(el => {
+                let params = {
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                  },
+                };
+                for (i in el.dataset) {
+                    let param = el.dataset[i];
+                    if (param[0] = '{') {
+                        param = JSON.parse(param);
+                    }
+                    params[i] = param;
+                }
+                swiper.push(new Swiper(el, params))
+                //swiper.push(new Swiper(el, { ...{autoplay:{delay: 500}}, ...el.dataset}))
+            });
+        }
 
-		if (document.readyState !== 'loading') {
-			initSwiper();
-		  } else {
-			document.addEventListener('DOMContentLoaded', initSwiper);
-		  }`;
+        if (document.readyState !== 'loading') {
+            initSwiper();
+          } else {
+            document.addEventListener('DOMContentLoaded', initSwiper);
+          }`;
 
         body.appendChild(link);
         body.appendChild(lib);
@@ -910,22 +909,22 @@ Vvveb.Components.add("elements/carousel", {
     html      : `
         <div class="swiper" data-slides-per-view="3" data-draggable="true">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="${wwwroot}/theme/boost_magnific/_editor/media/4.jpg" class="img-fluid">
+                <div class="swiper-slide"><img src="https://github.com/user-attachments/assets/2198065a-5e8b-4096-ab22-beb35740d9b5" class="img-fluid">
                     <p>Slide 1</p></div>
-                <div class="swiper-slide"><img src="${wwwroot}/theme/boost_magnific/_editor/media/2.jpg" class="img-fluid">
+                <div class="swiper-slide"><img src="https://github.com/user-attachments/assets/11ed8332-1535-4839-9395-37700970a52f" class="img-fluid">
                     <p>Slide 2</p></div>
-                <div class="swiper-slide"><img src="${wwwroot}/theme/boost_magnific/_editor/media/5.jpg" class="img-fluid">
+                <div class="swiper-slide"><img src="https://github.com/user-attachments/assets/f31f5c43-4e79-49b9-8f1c-2d9377ca92e0" class="img-fluid">
                     <p>Slide 3</p></div>
-                <div class="swiper-slide"><img src="${wwwroot}/theme/boost_magnific/_editor/media/7.jpg" class="img-fluid">
+                <div class="swiper-slide"><img src="https://github.com/user-attachments/assets/1d0d8383-b51a-4eb5-b6e5-283ad580b420" class="img-fluid">
                     <p>Slide 4</p></div>
             </div>
             <div class="swiper-pagination"></div>
-        
+
             <!--
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
             -->
-        
+
             <!-- <div class="swiper-scrollbar"></div> -->
         </div>`,
     afterDrop : carouselAfterDrop,
@@ -965,7 +964,11 @@ Vvveb.Components.add("elements/carousel", {
                 if (event.action == "add") {
                     let random = Math.floor(Math.random() * 6) + 1;
                     let index = element.swiper.slides.length + 1;
-                    element.swiper.appendSlide(generateElements(`<div class="swiper-slide"><img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/${random}.jpg" class="img-fluid"><p>Slide ${index}</p></div>`)[0]);
+                    element.swiper.appendSlide(generateElements(
+                        `<div class="swiper-slide">
+                             <img src="https://dummyimage.com/450x339/9a9458/333" class="img-fluid">
+                             <p>Slide ${index}</p>
+                         </div>`)[0]);
                     element.swiper.slideTo(index);
                     //temporary solution to better update list
                     Vvveb.Components.render("elements/carousel");
@@ -1088,13 +1091,13 @@ Vvveb.Components.add("elements/carousel", {
     }, /*{
         name: "direction",
         key: "direction",
-		htmlAttr:"data-direction",
-		section: style_section,
+        htmlAttr:"data-direction",
+        section: style_section,
         col:6,
         inline:false,
         inputtype: RadioButtonInput,
         data: {
-			extraclass:"btn-group-sm btn-group-fullwidth",
+            extraclass:"btn-group-sm btn-group-fullwidth",
             options: [{
                 value: "horizontal",
                 icon:"la la-arrow-down",
@@ -1105,8 +1108,8 @@ Vvveb.Components.add("elements/carousel", {
                 title: "Vertical",
                 icon:"la la-arrow-right",
                 checked:false,
-			}],
-		}
+            }],
+        }
     }*/]
 });
 
@@ -1119,23 +1122,23 @@ Vvveb.Components.add("elements/slider", {
              data-navigation='{"nextEl": ".swiper-button-next","prevEl": ".swiper-button-prev"}'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/1.jpg" class="img-fluid">
-                    <p>Slider 1</p></div>
+                    <img src="https://github.com/user-attachments/assets/d5b0db9f-afb1-4900-a5bc-0882c5ce3492" class="img-fluid">
+                    <p>Slider 1</p>
+                </div>
                 <div class="swiper-slide">
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/2.jpg" class="img-fluid">
-                    <p>Slider 2</p></div>
+                    <img src="https://github.com/user-attachments/assets/2880443c-4958-4dc4-9a66-9e0113a66549" class="img-fluid">
+                    <p>Slider 2</p>
+                </div>
                 <div class="swiper-slide">
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/3.jpg" class="img-fluid">
-                    <p>Slider 3</p></div>
-                <div class="swiper-slide">
-                    <img src="${wwwroot}/theme/boost_magnific/_editor/media/posts/4.jpg" class="img-fluid">
-                    <p>Slider 4</p></div>
+                    <img src="https://github.com/user-attachments/assets/ab3d0cf9-f0d7-41c4-abc1-c6031d15fbff" class="img-fluid">
+                    <p>Slider 3</p>
+                </div>
             </div>
             <div class="swiper-pagination"></div>
-        
+
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-        
+
             <!-- <div class="swiper-scrollbar"></div> -->
         </div>`,
     afterDrop : carouselAfterDrop,

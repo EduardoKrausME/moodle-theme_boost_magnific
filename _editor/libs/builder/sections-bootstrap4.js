@@ -17,7 +17,10 @@ https://github.com/givanz/Vvvebjs
 */
 
 Vvveb.SectionsGroup['Bootstrap'] =
-    ["bootstrap4/signin-split", "bootstrap4/image-gallery", "bootstrap4/video-header", "bootstrap4/slider-header", "bootstrap4/about-team", "bootstrap4/portfolio-one-column", "bootstrap4/portfolio-two-column", "bootstrap4/portfolio-three-column", "bootstrap4/portfolio-four-column"];
+    [
+        "bootstrap4/signin-split", "bootstrap4/image-gallery", "bootstrap4/video-header",
+        // "bootstrap4/slider-header",
+        "bootstrap4/about-team", "bootstrap4/portfolio-one-column", "bootstrap4/portfolio-two-column", "bootstrap4/portfolio-three-column", "bootstrap4/portfolio-four-column"];
 
 
 Vvveb.Sections.add("bootstrap4/image-gallery", {
@@ -36,62 +39,62 @@ Vvveb.Sections.add("bootstrap4/image-gallery", {
 
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/459ba8/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/459ba8/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/78c5d6/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/78c5d6/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/79c267/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/79c267/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/c5d647/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/c5d647/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/459ba8/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/459ba8/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/78c5d6/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/78c5d6/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/79c267/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/79c267/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/c5d647/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/c5d647/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/459ba8/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/459ba8/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/78c5d6/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/78c5d6/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/79c267/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/79c267/fff" alt="" width="100%">
           </a>
     </div>
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/400x300/c5d647/fff" alt="">
+            <img class="img-fluid img-thumbnail" src="https://dummyimage.com/400x300/c5d647/fff" alt="" width="100%">
           </a>
     </div>
   </div>
@@ -115,21 +118,21 @@ Vvveb.Sections.add("bootstrap4/slider-header", {
     </ol>
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('https://via.placeholder.com/1920x1080/c5d647/fff')">
+      <div class="carousel-item active" style="background-image: url('https://dummyimage.com/1920x1080/c5d647/fff')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">First Slide</h2>
           <p class="lead">This is a description for the first slide.</p>
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1920x1080/c5d647/fff')">
+      <div class="carousel-item" style="background-image: url('https://dummyimage.com/1920x1080/c5d647/fff')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Second Slide</h2>
           <p class="lead">This is a description for the second slide.</p>
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1920x1080/c5d647/fff')">
+      <div class="carousel-item" style="background-image: url('https://dummyimage.com/1920x1080/c5d647/fff')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Third Slide</h2>
           <p class="lead">This is a description for the third slide.</p>
@@ -170,7 +173,7 @@ Vvveb.Sections.add("bootstrap4/video-header", {
 <header class="video" data-name="header-video">
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="${wwwroot}/theme/boost_magnific/_editor/media/sample.webm" type="video/mp4">
+    <source src="https://github.com/user-attachments/assets/6893853e-fc76-497d-83d2-d87c7395be57" type="video/mp4">
   </video>
   <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
@@ -234,7 +237,7 @@ header.video .overlay {
 
 @media (pointer: coarse) and (hover: none) {
   header {
-    background: url('https://via.placeholder.com/1600x900/c5d647/fff') black no-repeat center center scroll;
+    background: url('https://dummyimage.com/1600x900/c5d647/fff') black no-repeat center center scroll;
   }
   header video {
     display: none;
@@ -263,7 +266,7 @@ Vvveb.Sections.add("bootstrap4/about-team", {
     <!-- Team Member 1 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://via.placeholder.com/500x350/459ba8/fff" class="card-img-top" alt="...">
+        <img src="https://raw.githubusercontent.com/givanz/landing/3096991d336d9eac9171c06acfc43f8537c7b171/img/sections/team/1.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Team Member</h5>
           <div class="card-text text-black-50">Web Developer</div>
@@ -273,7 +276,7 @@ Vvveb.Sections.add("bootstrap4/about-team", {
     <!-- Team Member 2 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://via.placeholder.com/500x350/459ba8/fff" class="card-img-top" alt="...">
+        <img src="https://raw.githubusercontent.com/givanz/landing/3096991d336d9eac9171c06acfc43f8537c7b171/img/sections/team/2.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Team Member</h5>
           <div class="card-text text-black-50">Web Developer</div>
@@ -283,7 +286,7 @@ Vvveb.Sections.add("bootstrap4/about-team", {
     <!-- Team Member 3 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://via.placeholder.com/500x350/459ba8/fff" class="card-img-top" alt="...">
+        <img src="https://raw.githubusercontent.com/givanz/landing/3096991d336d9eac9171c06acfc43f8537c7b171/img/sections/team/3.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Team Member</h5>
           <div class="card-text text-black-50">Web Developer</div>
@@ -293,7 +296,7 @@ Vvveb.Sections.add("bootstrap4/about-team", {
     <!-- Team Member 4 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://via.placeholder.com/500x350/459ba8/fff" class="card-img-top" alt="...">
+        <img src="https://raw.githubusercontent.com/givanz/landing/3096991d336d9eac9171c06acfc43f8537c7b171/img/sections/team/4.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Team Member</h5>
           <div class="card-text text-black-50">Web Developer</div>
@@ -326,7 +329,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-one-column", {
       <div class="row">
         <div class="col-md-7">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300/CCCCCC/9C9C9C" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="https://dummyimage.com/700x300/CCCCCC/9C9C9C" alt="" width="100%">
           </a>
         </div>
         <div class="col-md-5">
@@ -343,7 +346,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-one-column", {
       <div class="row">
         <div class="col-md-7">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300/CCCCCC/9C9C9C" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="https://dummyimage.com/700x300/CCCCCC/9C9C9C" alt="" width="100%">
           </a>
         </div>
         <div class="col-md-5">
@@ -360,7 +363,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-one-column", {
       <div class="row">
         <div class="col-md-7">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300/CCCCCC/9C9C9C" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="https://dummyimage.com/700x300/CCCCCC/9C9C9C" alt="" width="100%">
           </a>
         </div>
         <div class="col-md-5">
@@ -378,7 +381,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-one-column", {
 
         <div class="col-md-7">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300/CCCCCC/9C9C9C" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="https://dummyimage.com/700x300/CCCCCC/9C9C9C" alt="" width="100%">
           </a>
         </div>
         <div class="col-md-5">
@@ -438,7 +441,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-two-column", {
   <div class="row">
     <div class="col-lg-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project One</a>
@@ -449,7 +452,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-two-column", {
     </div>
     <div class="col-lg-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Two</a>
@@ -460,7 +463,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-two-column", {
     </div>
     <div class="col-lg-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Three</a>
@@ -471,7 +474,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-two-column", {
     </div>
     <div class="col-lg-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Four</a>
@@ -482,7 +485,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-two-column", {
     </div>
     <div class="col-lg-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Five</a>
@@ -493,7 +496,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-two-column", {
     </div>
     <div class="col-lg-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Six</a>
@@ -551,7 +554,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-three-column", {
   <div class="row">
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project One</a>
@@ -562,7 +565,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-three-column", {
     </div>
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Two</a>
@@ -573,7 +576,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-three-column", {
     </div>
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Three</a>
@@ -584,7 +587,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-three-column", {
     </div>
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Four</a>
@@ -595,7 +598,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-three-column", {
     </div>
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Five</a>
@@ -606,7 +609,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-three-column", {
     </div>
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Six</a>
@@ -664,7 +667,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
   <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project One</a>
@@ -675,7 +678,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Two</a>
@@ -686,7 +689,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Three</a>
@@ -697,7 +700,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Four</a>
@@ -708,7 +711,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Five</a>
@@ -719,7 +722,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Six</a>
@@ -730,7 +733,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Seven</a>
@@ -741,7 +744,7 @@ Vvveb.Sections.add("bootstrap4/portfolio-four-column", {
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400/CCCCCC/9C9C9C" alt=""></a>
+        <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x400/CCCCCC/9C9C9C" alt="" width="100%"></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="#">Project Eight</a>
