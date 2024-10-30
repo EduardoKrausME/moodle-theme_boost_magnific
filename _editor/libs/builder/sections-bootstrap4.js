@@ -19,7 +19,7 @@ https://github.com/givanz/Vvvebjs
 Vvveb.SectionsGroup['Bootstrap'] =
     [
         "bootstrap4/signin-split", "bootstrap4/image-gallery", "bootstrap4/video-header",
-        // "bootstrap4/slider-header",
+       // "bootstrap4/slider-header",
         "bootstrap4/about-team", "bootstrap4/portfolio-one-column", "bootstrap4/portfolio-two-column", "bootstrap4/portfolio-three-column", "bootstrap4/portfolio-four-column"];
 
 
