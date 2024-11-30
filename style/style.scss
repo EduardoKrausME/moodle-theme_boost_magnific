@@ -91,6 +91,9 @@ body {
 }
 .btn-link {
     color: rgb(var(--color_primary));
+    border: none !important;
+    text-transform: initial !important;
+    padding: 4px 9px !important;
 }
 .btn-link:hover,
 .btn-link:focus,
@@ -1258,8 +1261,8 @@ tr.discussion .btn i.icon {
             background: rgb(var(--color_primary));
         }
     }
-    &.editing_delete{
-        background: #E91E63;
+    &.editing_delete {
+        background: #e91e63;
         &, * {
             color: #fff;
         }
@@ -4143,6 +4146,8 @@ a#message-user-button {
 @import "fixed-top";
 
 @import "minicolors";
+
+@import "repositoriessetting";
 
 .activity-item .inplaceeditable input {
     width: 550px;

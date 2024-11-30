@@ -10520,6 +10520,9 @@ body {
 
 .btn-link {
   color: rgb(var(--color_primary));
+  border: none !important;
+  text-transform: initial !important;
+  padding: 4px 9px !important;
 }
 
 .btn-link:hover,
@@ -11827,7 +11830,7 @@ tr.discussion .btn i.icon {
   background: rgb(var(--color_primary));
 }
 .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete {
-  background: #E91E63;
+  background: #e91e63;
 }
 .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete, .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete * {
   color: #fff;
@@ -17566,6 +17569,14 @@ a#message-user-button {
 
 .minicolors-theme-semanticui input {
   text-indent: 30px;
+}
+
+#repositoriessetting td.centeralign .mdl-left br {
+  display: none;
+}
+
+.fp-repo-items .btn {
+  padding: 6px 13px !important;
 }
 
 .activity-item .inplaceeditable input {
