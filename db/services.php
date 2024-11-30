@@ -36,4 +36,13 @@ $functions = [
         'ajax' => true,
         'loginrequired' => false,
     ],
+    'theme_boost_magnific_userprerence_layout' => [
+        'classname' => '\theme_boost_magnific\external\userprerence',
+        'classpath' => 'theme/boost_magnific/classes/external/userprerence.php',
+        'methodname' => 'layout',
+        'description' => 'Save user preference Layout',
+        'type' => 'write',
+        'ajax' => true,
+        'loginrequired' => false,
+    ],
 ];
