@@ -715,7 +715,7 @@ function theme_boost_magnific_process_css($css, $theme) {
             }
             #site-news-forum,
             .frontpage-course-list {
-                /*background: {$backgroundcolor}3d;*/
+                /* background: {$backgroundcolor}3d;*/
             }
             .frontpage-course-list .btn-primary {
                 background: {$backgroundcolor};
@@ -733,5 +733,5 @@ function theme_boost_magnific_process_css($css, $theme) {
  * @return array
  */
 function theme_boost_magnific_add_htmlattributes() {
-    \theme_boost_magnific\core_hook_output::before_html_attributes();
+    // \theme_boost_magnific\core_hook_output::before_html_attributes();
 }
