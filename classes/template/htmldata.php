@@ -37,8 +37,20 @@ use theme_boost_magnific\output\core\course_renderer_util;
  */
 class htmldata {
 
+    /**
+     * Var replaces
+     *
+     * @var array
+     */
     private static $replaces = [];
 
+    /**
+     * Function vvveb__change_courses
+     *
+     * @param $html
+     *
+     * @return mixed|null|string|string[]
+     */
     public static function vvveb__change_courses($html) {
         self::vvveb__change_my_courses($html);
         self::vvveb__change_popular_courses($html);
@@ -59,6 +71,13 @@ class htmldata {
         return $html;
     }
 
+    /**
+     * Function vvveb__change_my_courses
+     *
+     * @param $html
+     *
+     * @return mixed
+     */
     private static function vvveb__change_my_courses($html) {
 
         if (strpos($html, "vvveb_home_automatically_my_course") === false) {
@@ -97,6 +116,13 @@ class htmldata {
         ];
     }
 
+    /**
+     * Function vvveb__change_popular_courses
+     *
+     * @param $html
+     *
+     * @return mixed
+     */
     private static function vvveb__change_popular_courses($html) {
 
         if (strpos($html, "vvveb_home_automatically_popular") === false) {
@@ -175,6 +201,13 @@ class htmldata {
         ];
     }
 
+    /**
+     * Function vvveb__change_catalogo
+     *
+     * @param $html
+     *
+     * @return mixed
+     */
     private static function vvveb__change_catalogo($html) {
 
         if (strpos($html, "vvveb_home_automatically_catalogo") === false) {
@@ -196,11 +229,11 @@ class htmldata {
 
             $course = new \stdClass();
 
-            $precoInt = str_replace(".", "", $koperepaydetalhe->preco);
-            $precoInt = str_replace(",", ".", $precoInt);
-            $precoInt = floatval("0{$precoInt}");
+            $precoint = str_replace(".", "", $koperepaydetalhe->preco);
+            $precoint = str_replace(",", ".", $precoint);
+            $precoint = floatval("0{$precoint}");
 
-            if (!$precoInt) {
+            if (!$precoint) {
                 $course->cursopreco = "Gratis";
             } else {
                 $course->cursopreco = "R$ {$koperepaydetalhe->preco}";
@@ -327,6 +360,13 @@ class htmldata {
         ];
     }
 
+    /**
+     * Function enrolled
+     *
+     * @param $courseid
+     *
+     * @return bool
+     */
     private static function enrolled($courseid) {
         global $DB, $USER;
 
@@ -357,6 +397,14 @@ class htmldata {
         }
     }
 
+    /**
+     * Function truncate_text
+     *
+     * @param $texto
+     * @param $caracteres
+     *
+     * @return string
+     */
     private static function truncate_text($texto, $caracteres) {
         if (strlen($texto) > $caracteres) {
             $a = explode(" ", $texto);
