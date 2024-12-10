@@ -16324,7 +16324,7 @@ a#message-user-button {
 #slideshow .slideshow-dot-area {
   text-align: center;
   margin-top: -29px;
-  z-index: 99;
+  z-index: 70;
   position: relative;
 }
 #slideshow .slideshow-dot-area .slideshow-dot {
