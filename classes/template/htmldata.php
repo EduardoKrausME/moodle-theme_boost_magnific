@@ -117,8 +117,6 @@ class htmldata {
     }
 
     /**
-     * phpcs:moodle.Strings.ForbiddenStrings.Found
-     *
      * Function vvveb__change_popular_courses
      *
      * @param $html
@@ -133,11 +131,10 @@ class htmldata {
 
         global $OUTPUT, $DB, $CFG;
         $sql = "
-            SELECT c.*,
-                   COUNT(ue.id)      AS enrolments
-              FROM {course}          AS c
-              JOIN {enrol}           AS e  ON e.courseid = c.id
-              JOIN {user_enrolments} AS ue ON ue.enrolid = e.id
+            SELECT c.*, COUNT(ue.id) AS enrolments
+              FROM {course}          c
+              JOIN {enrol}           e  ON e.courseid = c.id
+              JOIN {user_enrolments} ue ON ue.enrolid = e.id
              WHERE c.visible = 1
           GROUP BY c.id
           ORDER BY enrolments DESC
