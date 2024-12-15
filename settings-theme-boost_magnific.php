@@ -52,7 +52,7 @@ $cores = [
     "#ff8000", // Laranja Neon.
     "#ffbf00", // Amarelo Neon.
     "#ceac7a", // Bege.
- ];
+];
 
 if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], "admin/upgradesettings.php") > 0) {
     $htmlselect = "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magnific/style/initial.css\" />";
@@ -61,22 +61,32 @@ if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], "admin/upg
     $htmlselect = "";
 }
 foreach ($cores as $id => $cor) {
-    $onclick  = "$('#id_s_theme_boost_magnific_background_color').val('{$cor}').minicolors('settings',{value:'{$cor}'});";
+    $onclick = "$('#id_s_theme_boost_magnific_background_color').val('{$cor}').minicolors('settings',{value:'{$cor}'});";
     $onclick .= "$('#header').attr('style', 'background:{$cor}!important');";
     $onclick .= "$('#nav-drawer .list-group-item.active > div').css({background:'{$cor}'});";
     $onclick .= "$('#nav-drawer .list-group-item.active:hover').css({background:'{$cor}'});";
     $onclick .= "$('#footer .footer-main').css({background:'{$cor}'});";
 
-    $htmlselect .=
-        "<div class=\"boost_magnific-theme-select-item\"
-              onclick=\"{$onclick}\">
-             <div class=\"preview\" style=\"background:{$cor}\"></div>
-         </div>";
+    $htmlselect .= trim("
+        <div class=\"boost_magnific-theme-select-item\"
+             onclick=\"{$onclick}\">
+            <div class=\"preview\" style=\"background:{$cor}\"></div>
+        </div>");
 }
 $setting = new admin_setting_configtext('theme_boost_magnific/background_color',
     get_string('background_color', 'theme_boost_magnific'),
     get_string('background_color_desc', 'theme_boost_magnific') . $htmlselect,
     '#007bc3');
 $setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
 $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'minicolors', [$setting->get_id()]);
+$page->add($setting);
+
+$setting = new admin_setting_configtext('theme_boost_magnific/background_text_color',
+    get_string('background_text_color', 'theme_boost_magnific'),
+    get_string('background_text_color_desc', 'theme_boost_magnific'),
+    '#FFFFFF');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'minicolors', [$setting->get_id()]);
+$page->add($setting);
+
+
