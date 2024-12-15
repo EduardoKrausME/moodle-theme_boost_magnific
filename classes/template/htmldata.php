@@ -83,7 +83,7 @@ class htmldata {
         if (strpos($html, "vvveb_home_automatically_my_course") === false) {
             return;
         }
-        
+
         if (!isloggedin()) {
             preg_match_all('/<div.*?vvveb_home_automatically_my_course.*?>(.*?)<\/div>/s', $html, $htmls);
             self::$replaces[] = [
