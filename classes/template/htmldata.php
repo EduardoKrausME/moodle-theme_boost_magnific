@@ -364,6 +364,13 @@ class htmldata {
         ];
     }
 
+    /**
+     * Function text_course
+     *
+     * @param $course
+     *
+     * @return string
+     */
     private static function text_course($course) {
         $text = get_config("local_kopere_dashboard", "builder_topo_{$course->id}");
 
