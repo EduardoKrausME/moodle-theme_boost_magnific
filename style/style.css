@@ -13026,7 +13026,7 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
   position: fixed;
 }
 .header-menubar .navbar-nav .simplesearchform .btn-open {
-  color: #fff;
+  color: #fff !important;
 }
 .header-menubar .navbar-nav .simplesearchform .collapse form .input-group .form-control {
   height: 43px;
@@ -17732,33 +17732,6 @@ a#next-activity-link {
   background-color: rgb(var(--color_primary));
 }
 
-.boost_magnific-theme-select-item {
-  float: left;
-}
-.boost_magnific-theme-select-item .preview {
-  width: 50px;
-  height: 50px;
-  margin: 1.5px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s ease-out;
-}
-
-.boost_magnific-seletor-de-theme {
-  display: flex;
-  align-items: center;
-  background: #e6e6e6;
-  width: fit-content;
-  border-radius: 4px;
-  margin-bottom: 5px;
-}
-.boost_magnific-seletor-de-theme span {
-  display: inline-block;
-  padding: 2px;
-  margin: 3px;
-  border-radius: 4px;
-}
-
 #page-contentbank .cb-toolbar-container .dropdown-scrollable {
   max-height: 290px;
   width: 300px;
@@ -17790,6 +17763,10 @@ a#next-activity-link {
     margin: 1.75rem auto;
   }
 }
+.notloggedin .hide-nologin {
+  display: none;
+}
+
 .dark-animation,
 .dark-animation *,
 .dark-animation *::before,
@@ -18315,7 +18292,7 @@ a#next-activity-link {
   [data-bs-theme=auto] .moremenu .active > .nav-link,
   [data-bs-theme=auto] .moremenu .nav-link.show,
   [data-bs-theme=auto] .moremenu .nav-link.active {
-    background: #202124 !important;
+    background: transparent !important;
   }
   [data-bs-theme=auto] .dropdown-divider {
     height: 0;
@@ -19295,7 +19272,7 @@ a#next-activity-link {
 [data-bs-theme=dark] .moremenu .active > .nav-link,
 [data-bs-theme=dark] .moremenu .nav-link.show,
 [data-bs-theme=dark] .moremenu .nav-link.active {
-  background: #202124 !important;
+  background: transparent !important;
 }
 [data-bs-theme=dark] .dropdown-divider {
   height: 0;
@@ -21673,8 +21650,31 @@ body .ui-tooltip {
 }
 
 /* Overlays */
-.notloggedin .hide-nologin {
-  display: none;
+.boost_magnific-theme-select-item {
+  float: left;
+}
+.boost_magnific-theme-select-item .preview {
+  width: 50px;
+  height: 50px;
+  margin: 1.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.boost_magnific-seletor-de-theme {
+  display: flex;
+  align-items: center;
+  background: #e6e6e6;
+  width: fit-content;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+.boost_magnific-seletor-de-theme span {
+  display: inline-block;
+  padding: 2px;
+  margin: 3px;
+  border-radius: 4px;
 }
 
 /*# sourceMappingURL=style.css.map */
