@@ -1263,10 +1263,13 @@ tr.discussion .btn i.icon {
     }
     &.editing_delete {
         background: #e91e63;
+        &:hover {
+            background: #f84a5b;
+        }
         &, * {
             color: #fff;
         }
-        *{
+        * {
             background: transparent;
         }
     }
@@ -4256,7 +4259,6 @@ a#next-activity-link {
         display: none;
     }
 }
-
 @import "dark-mode";
 @import "jquery-ui";
 @import "boost_magnific";

@@ -11832,6 +11832,9 @@ tr.discussion .btn i.icon {
 .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete {
   background: #e91e63;
 }
+.menubar .dropdown .dropdown-menu .dropdown-item.editing_delete:hover {
+  background: #f84a5b;
+}
 .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete, .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete * {
   color: #fff;
 }
