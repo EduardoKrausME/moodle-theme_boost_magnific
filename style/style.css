@@ -11153,7 +11153,7 @@ body:not(.pagelayout-frontpage) #region-main {
 .btn.btn-outline-secondary.dropdown-toggle:focus,
 .btn.btn-outline-secondary.dropdown-toggle:focus:active,
 .btn.btn-outline-secondary.dropdown-toggle:active {
-  color: #fff;
+  color: #666;
   filter: none;
 }
 
@@ -11834,6 +11834,9 @@ tr.discussion .btn i.icon {
 }
 .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete, .menubar .dropdown .dropdown-menu .dropdown-item.editing_delete * {
   color: #fff;
+}
+.menubar .dropdown .dropdown-menu .dropdown-item.editing_delete * {
+  background: transparent;
 }
 
 .menubar img {
@@ -16817,6 +16820,7 @@ a#message-user-button {
   padding: 15px;
   border: 2px solid rgba(255, 255, 255, 0.2196078431);
   margin: 0 27px;
+  width: 100%;
 }
 .pagelayout-frontpage fieldset legend {
   float: none;
@@ -17715,7 +17719,6 @@ a#prev-activity-link,
 a#next-activity-link {
   color: #fff;
   border: none;
-  white-space: nowrap !important;
 }
 a#prev-activity-link:hover,
 a#next-activity-link:hover {
