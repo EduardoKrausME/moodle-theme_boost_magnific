@@ -51,7 +51,5 @@ class event_observers {
                 \cache::make("theme_boost_magnific", "logo_cache")->purge();
                 break;
         }
-
-        error_log($eventname);
     }
 }
