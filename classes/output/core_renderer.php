@@ -303,11 +303,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         } else {
             throw new coding_exception('The continue param to $OUTPUT->confirm() must be either a URL (string/moodle_url) or a single_button instance.');
         }
-        if ($continue->label == get_string("delete")) {
+        //if ($continue->label == get_string("delete")) {
             if ($continue->type == single_button::BUTTON_PRIMARY) {
                 $continue->type = single_button::BUTTON_DANGER;
             }
-        }
+        //}
 
         if ($cancel instanceof single_button) {
             // ok
