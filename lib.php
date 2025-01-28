@@ -626,7 +626,7 @@ function theme_boost_magnific_process_css($css, $theme) {
           FROM {files}
          WHERE component LIKE 'theme_boost_magnific'
            AND filearea  LIKE 'theme_boost_magnific_customicon'
-           AND filename  LIKE '%.%'";
+           AND filename  LIKE '__%'";
     $customicons = $DB->get_records_sql($sql);
     foreach ($customicons as $customicon) {
         $imageurl = moodle_url::make_file_url(
