@@ -562,7 +562,7 @@ function theme_boost_magnific_pluginfile($course, $cm, $context, $filearea, $arg
         } else {
             send_file_not_found();
         }
-    }else if ($context->contextlevel == CONTEXT_MODULE) {
+    } else if ($context->contextlevel == CONTEXT_MODULE) {
         $fullpath = sha1("/{$context->id}/theme_boost_magnific/{$filearea}/{$args[0]}/{$args[1]}");
         $fs = get_file_storage();
         if ($file = $fs->get_file_by_hash($fullpath)) {
@@ -631,7 +631,14 @@ function theme_boost_magnific_process_css($css, $theme) {
     foreach ($customicons as $customicon) {
         $imageurl = moodle_url::make_file_url(
             "$CFG->wwwroot/pluginfile.php",
-            "/{$customicon->contextid}/theme_boost_magnific/theme_boost_magnific_customicon/{$customicon->itemid}/{$customicon->filename}");
+            implode("/", [
+                "",
+                $customicon->contextid,
+                "theme_boost_magnific",
+                "theme_boost_magnific_customicon",
+                $customicon->itemid,
+                $customicon->filename,
+            ]));
         $css .= "
             #module-{$customicon->itemid} .courseicon img,
             .cmid-{$customicon->itemid} #page-header .activityiconcontainer img {
