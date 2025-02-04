@@ -471,17 +471,19 @@ function theme_boost_magnific_coursemodule_standard_elements(&$formwrapper, $mfo
         $mform->addElement("header", "theme_boost_magnific_icons",
             get_string("settings_icons_change_icons", "theme_boost_magnific"));
 
-        $context = context_module::instance($formwrapper->get_current()->coursemodule);
+        if (isset($formwrapper->get_current()->coursemodule) && $formwrapper->get_current()->coursemodule) {
+            $context = context_module::instance($formwrapper->get_current()->coursemodule);
 
-        $draftitemid = file_get_submitted_draft_itemid("theme_boost_magnific_customicon");
-        file_prepare_draft_area(
-            $draftitemid,
-            $context->id,
-            "theme_boost_magnific", "theme_boost_magnific_customicon", $formwrapper->get_current()->coursemodule);
+            $draftitemid = file_get_submitted_draft_itemid("theme_boost_magnific_customicon");
+            file_prepare_draft_area(
+                $draftitemid,
+                $context->id,
+                "theme_boost_magnific", "theme_boost_magnific_customicon", $formwrapper->get_current()->coursemodule);
 
-        $formwrapper->set_data([
-            "theme_boost_magnific_customicon" => $draftitemid,
-        ]);
+            $formwrapper->set_data([
+                "theme_boost_magnific_customicon" => $draftitemid,
+            ]);
+        }
 
         $filemanageroptions = [
             "accepted_types" => [".svg", ".png"],
@@ -597,7 +599,7 @@ function theme_boost_magnific_process_css($css, $theme) {
     }
 
     // Import site fonts.
-    $fontimport = \theme_boost_magnific\fonts\font_util::css("sitefonts");
+    $fontimport = \theme_boost_magnific\fonts\font_util::css();
     $css = "@import url('{$fontimport}');\n{$css}";
 
     // Local css.
