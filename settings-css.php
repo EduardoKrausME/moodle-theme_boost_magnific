@@ -17,22 +17,24 @@
 /**
  * CSS Settings File
  *
- * @package     theme_boost_magnific
- * @copyright   2024 Eduardo Kraus https://eduardokraus.com/
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   theme_boost_magnific
+ * @copyright 2024 Eduardo Kraus https://eduardokraus.com/
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 global $PAGE;
 
-$fontslist = \theme_boost_magnific\fonts\font_util::site('sitefonts');
+$fontslist = \theme_boost_magnific\fonts\font_util::site();
 $description = "";
 foreach ($fontslist as $font) {
     $description .= "<div style='font-family:\"{$font}\";font-size:1.2em'>
                          <a href='https://fonts.google.com/specimen/{$font}'
                             target='_blank' style='font-family:\"{$font}\"'>{$font}</a>
                          - \"Lorem ipsum dolor sit amet.
-                            <strong>strong</strong>  <em>em</em> <strong><em>strong/em</em></strong>\"</div>";
+                            <strong style='font-family:\"{$font}\"'>strong</strong>  
+                            <em style='font-family:\"{$font}\"'>em</em> 
+                            <strong><em style='font-family:\"{$font}\"'>strong/em</em></strong>\"</div>";
 }
 
 $page = new admin_settingpage('theme_boost_magnific_css',
@@ -46,7 +48,7 @@ $page->add($setting);
 $setting = new admin_setting_configselect('theme_boost_magnific/fontfamily_title',
     get_string('fontfamily_title', 'theme_boost_magnific'),
     get_string('fontfamily_title_desc', 'theme_boost_magnific'),
-    'Montserrat', $fontslist);
+    'Bree Serif', $fontslist);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
