@@ -17,9 +17,9 @@
 /**
  * A drawer based layout for the boost theme.
  *
- * @package     theme_boost_magnific
- * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   theme_boost_magnific
+ * @copyright 2024 Eduardo kraus (http://eduardokraus.com)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
@@ -127,8 +127,8 @@ $templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer
 
 $contextcourse = context_course::instance($COURSE->id);
 $courseupdate = has_capability('moodle/course:update', $contextcourse);
-if (!$courseupdate && strpos($_SERVER['REQUEST_URI'], "/scorm/player.php") > 1) {
-    echo $OUTPUT->render_from_template('theme_boost_magnific/drawers_scorm', $templatedata);
+if ( optional_param("embed-frame-top", 0, PARAM_INT)) {
+    echo $OUTPUT->render_from_template('theme_boost_magnific/drawers_embed', $templatedata);
 } else {
     echo $OUTPUT->render_from_template('theme_boost_magnific/drawers', $templatedata);
 }
