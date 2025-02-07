@@ -65,8 +65,8 @@ class htmldata {
         }
 
         $html = "
-            <link href=\"https://moodle.aulaemvideo.com.br/theme/boost_magnific/_editor/libs/aos/aos.css\" rel=\"stylesheet\">
-            <link href=\"https://moodle.aulaemvideo.com.br/theme/boost_magnific/_editor/libs/aos/aos.js\" rel=\"stylesheet\">
+            <link href=\"/theme/boost_magnific/_editor/libs/aos/aos.css\" rel=\"stylesheet\">
+            <link href=\"/theme/boost_magnific/_editor/libs/aos/aos.js\" rel=\"stylesheet\">
             " . trim($html);
         return $html;
     }
