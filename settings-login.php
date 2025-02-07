@@ -17,9 +17,9 @@
 /**
  * Login Settings File
  *
- * @package     theme_boost_magnific
- * @copyright   2024 Eduardo Kraus https://eduardokraus.com/
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   theme_boost_magnific
+ * @copyright 2024 Eduardo Kraus https://eduardokraus.com/
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
@@ -46,7 +46,7 @@ $setting = new admin_setting_configstoredfile("theme_boost_magnific/login_backgr
     get_string('login_backgroundfoto', 'theme_boost_magnific'),
     get_string('login_backgroundfoto_desc', 'theme_boost_magnific', $link),
     "login_backgroundfoto", 0,
-    ['maxfiles' => 1, 'accepted_types' => ['image']]);
+    ['maxfiles' => 1, 'accepted_types' => [".jpg", ".jpeg", ".svg", ".png"]]);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
