@@ -319,7 +319,8 @@ class core_hook_output {
                 "acctoolbar_zoom_block_header", "acctoolbar_btn_cursor_white", "acctoolbar_btn_cursor_black",
                 "acctoolbar_btn_zoom_in",
             ], "theme_boost_magnific");
-            $PAGE->requires->js_call_amd('theme_boost_magnific/acctoolbar', 'init', [$OUTPUT->image_url('acctoolbar/icon', 'theme')->out()]);
+            $PAGE->requires->js_call_amd('theme_boost_magnific/acctoolbar', 'init',
+                [$OUTPUT->image_url('acctoolbar/icon', 'theme')->out()]);
         }
     }
 }

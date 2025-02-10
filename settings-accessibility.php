@@ -24,7 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$page = new admin_settingpage("theme_boost_magnific_accessibility", get_string("settings_accessibility_heading", "theme_boost_magnific"));
+$page = new admin_settingpage("theme_boost_magnific_accessibility",
+    get_string("settings_accessibility_heading", "theme_boost_magnific"));
 
 $page->add(new admin_setting_configcheckbox("theme_boost_magnific/enable_accessibility",
     get_string("settings_accessibility", "theme_boost_magnific"),
