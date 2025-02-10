@@ -20,35 +20,30 @@
  * This is built using the boost template to allow for new theme's using
  * Moodle's new Boost theme engine
  *
- * @package     theme_boost_magnific
- * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   theme_boost_magnific
+ * @copyright 2024 Eduardo kraus (http://eduardokraus.com)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 defined('MOODLE_INTERNAL') || die;
 
-if ($ADMIN->fulltree) {
+if (is_siteadmin()) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingboost_magnific',
         get_string('pluginname', 'theme_boost_magnific'));
 
+    $ADMIN->add('themes', new admin_category('theme_boost_magnific', get_string('pluginname', 'theme_boost_magnific')));
+
     require_once(__DIR__ . "/settings-theme.php");
-
     require_once(__DIR__ . "/settings-css.php");
-
     require_once(__DIR__ . "/settings-accessibility.php");
-
+    require_once(__DIR__ . "/settings-course.php");
     require_once(__DIR__ . "/settings-topo.php");
-
     require_once(__DIR__ . "/settings-home.php");
-
     require_once(__DIR__ . "/settings-slideshow.php");
-
     require_once(__DIR__ . "/settings-mycourses.php");
-
     if (get_config('theme_boost_magnific', 'home_type') == 0) {
         require_once(__DIR__ . "/settings-about.php");
     }
-
     require_once(__DIR__ . "/settings-footer.php");
-
     require_once(__DIR__ . "/settings-login.php");
 }

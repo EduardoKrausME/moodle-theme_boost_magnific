@@ -19,9 +19,9 @@
  * This is built using the boost template to allow for new theme's using
  * Moodle's new Boost theme engine
  *
- * @package     theme_boost_magnific
- * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   theme_boost_magnific
+ * @copyright 2024 Eduardo kraus (http://eduardokraus.com)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 use theme_boost_magnific\core_hook_output;
@@ -591,7 +591,6 @@ function theme_boost_magnific_pluginfile($course, $cm, $context, $filearea, $arg
  * @throws dml_exception
  */
 function theme_boost_magnific_process_css($css, $theme) {
-
     $cache = \cache::make("theme_boost_magnific", "css_cache");
     $cachekey = "theme_boost_magnific_process_css";
     if ($cache->has($cachekey)) {
@@ -743,6 +742,14 @@ function theme_boost_magnific_process_css($css, $theme) {
             }";
 
     $css .= "{$fontfamilytext}\n{$fontfamilytitle}\n{$fontfamilysitename}\n{$fontfamilymenus}\n{$themecss}";
+
+    $backgroundurl = theme_boost_magnific_get_setting_image("background_profile_image");
+    if ($backgroundurl) {
+        $css .= "
+            .usermenu-modal-userlinks .modal-content .modal-header{
+                background-image: url({$backgroundurl});
+            }";
+    }
 
     $cache->set($cachekey, $css);
     return $css;
