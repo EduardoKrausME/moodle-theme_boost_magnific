@@ -212,6 +212,10 @@ class course {
                AND instanceid = :courseid";
         $data = $DB->get_record_sql($sql, ["courseid" => $course->id]);
 
+        if (!isset($data->intvalue)) {
+            $data = (object)["intvalue" => 0];
+        }
+
         // Marcou não nas configurações.
         if ($data->intvalue == 2) {
             return false;
