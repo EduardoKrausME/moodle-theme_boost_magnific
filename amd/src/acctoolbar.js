@@ -4,7 +4,7 @@
 define(["core/templates"], function(Templates) {
     return {
         init: function() {
-            Templates.render('theme_boost_magnific/settings/acctoolbar', [])
+            Templates.render('theme_boost_magnific/settings/acctoolbar', {})
                 .then(function(html, js) {
                     window.micAccessTool = new boost_magnific_AccessTool(html);
                 })
@@ -66,8 +66,6 @@ function boost_magnific_AccessTool(html) {
 
 boost_magnific_AccessTool.prototype.initialApp = function() {
 
-    console.log("boost_magnific_AccessTool.prototype.initialApp 3");
-
     window.boost_magnific_toolboxAppstate = JSON.parse(localStorage.getItem('boost_magnific_ACCESSTOOL')) || {
         bodyClassList: {},
         fontSize: 1,
@@ -78,7 +76,6 @@ boost_magnific_AccessTool.prototype.initialApp = function() {
 
     const iframe = document.querySelector("iframe.h5p-initialized");
     if (iframe) {
-        console.log("if iframe 4");
         const cssLink = iframe.contentDocument.createElement("link");
         cssLink.rel = "stylesheet";
         cssLink.href = `${M.cfg.wwwroot}/theme/boost_magnific/style/style-h5p.css`;
