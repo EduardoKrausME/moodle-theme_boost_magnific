@@ -15,35 +15,30 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * settings-course.php
- *
- * This is built using the boost template to allow for new theme's using
- * Moodle's new Boost theme engine
+ * Theme Settings File
  *
  * @package   theme_boost_magnific
- * @copyright 2024 Eduardo kraus (http://eduardokraus.com)
+ * @copyright 2024 Eduardo Kraus https://eduardokraus.com/
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$page = new admin_settingpage("theme_boost_magnific_course", get_string("settings_course_heading", "theme_boost_magnific"));
+$page = new admin_settingpage("theme_boost_magnific_top", get_string("settings_top_heading", "theme_boost_magnific"));
 
 // Profile background image.
-$setting = new admin_setting_configstoredfile("theme_boost_magnific/background_course_image",
-    get_string("background_course_image", "theme_boost_magnific"),
-    get_string("background_course_image_desc", "theme_boost_magnific"),
-    "background_course_image", 0,
+$setting = new admin_setting_configstoredfile("theme_boost_magnific/background_profile_image",
+    get_string("background_profile_image", "theme_boost_magnific"),
+    get_string("background_profile_image_desc", "theme_boost_magnific"),
+    "background_profile_image", 0,
     ["maxfiles" => 1, "accepted_types" => [".jpg", ".jpeg", ".svg", ".png"]]);
 $setting->set_updatedcallback("theme_reset_all_caches");
 $page->add($setting);
 
-if (file_exists("{$CFG->dirroot}/customfield/field/picture/version.php")) {
-    require_once(__DIR__ . "/db/version-background_course_image.php");
-} else {
-    $setting = new admin_setting_description("theme_boost_magnific/customfield_picture_missing",
-        "", get_string("customfield_picture_missing", "theme_boost_magnific"));
-    $page->add($setting);
-}
+$setting = new admin_setting_configtextarea("custommenuitems",
+    get_string("custommenuitems", "theme_boost_magnific"),
+    get_string("custommenuitems_desc", "theme_boost_magnific"),
+    "", PARAM_RAW, "50", "10");
+$page->add($setting);
 
 $settings->add($page);
