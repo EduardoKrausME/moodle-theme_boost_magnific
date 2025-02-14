@@ -69,10 +69,10 @@ class event_observers {
         $sql = "
             SELECT *
               FROM {files}
-             WHERE component    = 'theme_boost_magnific'
-               AND filearea     = 'theme_boost_magnific_customicon'
-               AND itemid       = :coursemodule
-               AND filename  LIKE '__%'";
+             WHERE component   = 'theme_boost_magnific'
+               AND filearea    = 'theme_boost_magnific_customicon'
+               AND itemid      = :coursemodule
+               AND filename LIKE '__%'";
         $files = $DB->get_records_sql($sql, ["coursemodule" => $coursemodule]);
 
         $fs = get_file_storage();
