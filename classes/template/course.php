@@ -41,12 +41,28 @@ class course {
      *
      * @param $courseid
      *
-     * @return mixed
+     * @return bool | string
+     *
      * @throws \coding_exception
      * @throws \dml_exception
      */
     public static function courseindex($courseid) {
-        global $USER, $OUTPUT, $DB, $CFG;
+        global $USER, $OUTPUT, $DB, $CFG, $PAGE;
+
+        // If the course index is explicitly set and if it should be hidden.
+        if ($PAGE->get_show_course_index() === false) {
+            return false;
+        }
+
+        // Only add course index on non-site course pages.
+        if (!$PAGE->course || $PAGE->course->id == SITEID) {
+            return false;
+        }
+
+        // Show course index to users can access the course only.
+        if (!can_access_course($PAGE->course, null, '', true)) {
+            return false;
+        }
 
         $result = [
             "all-completion" => 0,
