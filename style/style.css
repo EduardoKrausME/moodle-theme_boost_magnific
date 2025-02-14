@@ -7909,6 +7909,9 @@ body {
     height: auto;
     min-height: 100%;
 }
+body, body * {
+    font-family: var(--fontfamily_text);
+}
 .aabtn.focus,
 .btn-link.focus,
 .nav-link.focus,
@@ -7987,35 +7990,28 @@ body {
 .btn-link:active {
     color: rgb(var(--color_primary));
 }
-h1 {
-    font-weight: normal;
-    font-size: 42px;
+h2, h2, h3, h4, h5, h6 {
     color: rgb(var(--color_primary));
+    font-weight: normal;
+    font-family: var(--fontfamily_title);
+}
+h1 {
+    font-size: 42px;
 }
 h2 {
-    font-weight: normal;
     font-size: 34px;
-    color: rgb(var(--color_primary));
 }
 h3 {
-    font-weight: normal;
     font-size: 26px;
-    color: rgb(var(--color_primary));
 }
 h4 {
-    font-weight: normal;
     font-size: 23px;
-    color: rgb(var(--color_primary));
 }
 h5 {
-    font-weight: normal;
     font-size: 21px;
-    color: rgb(var(--color_primary));
 }
 h6 {
-    font-weight: normal;
     font-size: 18px;
-    color: rgb(var(--color_primary));
 }
 a {
     color: rgb(var(--color_primary));
@@ -8484,6 +8480,13 @@ body:not(.pagelayout-frontpage) #region-main {
 }
 .icons-collapse-expand .expanded-icon {
     margin: 0 auto;
+}
+.btn.btn-icon.icons-collapse-expand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color_primary));
+    background-color: rgba(var(--color_primary), 0.18);
 }
 .form-item {
     margin-bottom: 15px;
@@ -9480,8 +9483,8 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
 }
 .header-maxwidth .navigation .nav-tabs .nav-item .nav-link:hover,
 .secondary-navigation .navigation .nav-tabs .nav-item .nav-link:hover {
-    background-color: rgba(var(--color_secondary), 0.8);
-    color: #fff;
+    background-color: rgba(var(--color_primary), 0.7);
+    color: #fff !important;
 }
 .header-maxwidth .navigation .nav-tabs .nav-item .nav-link.active,
 .secondary-navigation .navigation .nav-tabs .nav-item .nav-link.active {
@@ -9492,7 +9495,7 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner #page-content {
 .header-maxwidth .navigation .nav-tabs .nav-item .nav-link.active:hover,
 .secondary-navigation .navigation .nav-tabs .nav-item .nav-link.active:hover {
     background-color: rgba(var(--color_primary), 0.8);
-    color: #fff;
+    color: #fff !important;
 }
 @media (min-width: 1200px) {
     .form-buttons {
@@ -10565,6 +10568,7 @@ div.dropdown-item:focus-within {
     align-items: center;
     justify-content: space-between;
     background-image: url([[pix:theme_boost_magnific|user-modal-background]]);
+    background-image: url(var(--background_profile));
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -10666,6 +10670,30 @@ div.dropdown-item:focus-within {
     .usermenu-modal-userlinks .modal-content .usermenu-modal-tabs .usermenu-modal-tabs-content {
         display: none;
     }
+}
+.header-menubar .primary-navigation ul.navbar-nav li a,
+.header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle,
+.header-menubar .navbar-nav .editmode-switch-form .input-group label,
+.usermenu .moodle-actionmenu a.dropdown-toggle,
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active,
+.header-logo a.navbar-brand img {
+    font-family: var(--fontfamily_menus);
+}
+.header-menubar .primary-navigation ul.navbar-nav li a {
+    color: var(--text_color) !important;
+}
+#header,
+#nav-drawer .list-group-item.active > div,
+#nav-drawer .list-group-item.active:hover,
+#footer .footer-main {
+    background: var(--background_color);
+    color: var(--text_color) !important;
+}
+.header-logo a.navbar-brand span {
+    font-family: var(--fontfamily_sitename) Arial, Helvetica, sans-serif;
 }
 .pagelayout-maintenance .header-main .navbar-light, .pagelayout-maintenance .header-main .navbar-light * {
     color: #fff;
@@ -11570,7 +11598,6 @@ div.dropdown-item:focus-within {
 /*Blocks*/
 .block {
     border: 0;
-    border-color: rgb(var(--color_names));
     border-radius: 0;
     box-shadow: none;
     padding: 0;
@@ -11593,7 +11620,6 @@ div.dropdown-item:focus-within {
     padding: 0;
 }
 .block .header {
-    background: rgb(var(--color_titles));
     border: 0;
 }
 .block .maincalendar .header {
@@ -11775,7 +11801,6 @@ div.dropdown-item:focus-within {
 }
 .block-region .block .card-body {
     padding: 0 !important;
-    border: 1px solid rgb(var(--color_names));
 }
 .block-region .block .card-body .card-text .block_tree_box {
     padding: 0 !important;
@@ -11796,9 +11821,6 @@ div.dropdown-item:focus-within {
 }
 .block-region .block .card-body .card-text .footer {
     margin-top: 10px;
-}
-.block-region .block .card-body .dashboard-card {
-    border: 1px solid rgb(var(--color_names)) !important;
 }
 .block-region .block .card-body .course-info-container {
     padding: 10px !important;
@@ -11994,8 +12016,18 @@ div.dropdown-item:focus-within {
 #footer .footer-main {
     padding: 36px 0 0;
 }
-#footer .footer-main h4 {
+#footer .footer-main *, #footer .footer-main a {
     color: #fff;
+}
+#footer .footer-main ul, #footer .footer-main ol {
+    padding: 0;
+    margin: 0;
+}
+#footer .footer-main ul, #footer .footer-main li {
+    list-style: none;
+}
+#footer .footer-main h1, #footer .footer-main h2, #footer .footer-main h3, #footer .footer-main h4, #footer .footer-main h5, #footer .footer-main h6 {
+    text-align: center;
 }
 #footer .footer-desc {
     padding: 0 0 20px;
@@ -12073,6 +12105,9 @@ div.dropdown-item:focus-within {
     color: #fff;
     background: rgb(var(--color_buttons));
 }
+#footer .social-media > ul > li > a:hover .media-icon i {
+    color: #fff !important;
+}
 #footer .social-media > ul > li > a:focus {
     color: rgb(var(--color_buttons));
     text-decoration: none;
@@ -12097,6 +12132,7 @@ div.dropdown-item:focus-within {
     margin-right: 10px;
 }
 #footer .social-media > ul > li > a > .media-icon > i {
+    color: var(--background_color);
     line-height: 36px;
 }
 #footer .social-media > ul > .smedia-01 > a > .media-icon {
@@ -12894,6 +12930,10 @@ a#message-user-button {
     margin-top: 15px;
     margin-bottom: 50px;
 }
+.frontpage-course-list .btn-primary {
+    background: var(--background_color);
+    color: var(--text_color) !important;
+}
 .frontpage-course-box {
     border: 1px solid #e9ecef;
     border-radius: 10px;
@@ -13084,7 +13124,7 @@ a#message-user-button {
     background: rgba(255, 255, 255, 0.0784313725);
     box-shadow: 0 10px 50px 0 rgba(26, 46, 85, 0.1);
     border-radius: 5px;
-    padding: 20px;
+    font-family: "Mulish", sans-serif;
 }
 .pagelayout-frontpage .box-page .thumbnail {
     position: relative;
@@ -13104,8 +13144,11 @@ a#message-user-button {
 .pagelayout-frontpage .box-page:hover .thumbnail a img {
     transform: scale(1.1);
 }
+.pagelayout-frontpage .box-page .content {
+    padding: 29px 20px 20px 20px;
+}
 .pagelayout-frontpage .box-page .content .title a {
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 30px;
 }
 .pagelayout-frontpage .box-page .content p {
@@ -13114,6 +13157,13 @@ a#message-user-button {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+.pagelayout-frontpage .box-page .content .price {
+    float: right;
 }
 .pagelayout-frontpage .box-page .content .price .current-price {
     font-weight: 700;
@@ -13566,7 +13616,11 @@ a#message-user-button {
 #coursecat-management #course-detail {
     order: -1;
 }
+#header, #header * {
+    transition: all 0.2s ease-out;
+}
 #header.fixed-top, #header.ever-fixed-top {
+    background: var(--topscroll_background) !important;
     padding: 0;
     top: 0;
     position: fixed;
@@ -13587,6 +13641,24 @@ a#message-user-button {
 #header.fixed-top .dropdown .dropdown-menu, #header.ever-fixed-top .dropdown .dropdown-menu {
     max-height: calc(100vh - 60px);
     overflow-y: initial !important;
+}
+#header.ever-fixed-top .custom-switch .custom-control-label:after {
+    background: var(--topscroll_text) !important;
+}
+#header.ever-fixed-top .header-menubar .navbar-nav .simplesearchform .btn-open,
+#header.ever-fixed-top .popover-region .popover-region-toggle i.icon,
+#header.ever-fixed-top .header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle,
+#header.ever-fixed-top .header-menubar .navbar-nav .editmode-switch-form .input-group label,
+#header.ever-fixed-top .usermenu .moodle-actionmenu a.dropdown-toggle,
+.navbar-light.ever-fixed-top .navbar-nav .show > .nav-link,
+.navbar-light.ever-fixed-top .navbar-nav .active > .nav-link,
+.navbar-light.ever-fixed-top .navbar-nav .nav-link.show,
+.navbar-light.ever-fixed-top .navbar-nav .nav-link.active,
+#header.ever-fixed-top .header-logo a.navbar-brand img,
+#header.ever-fixed-top .header-logo a.navbar-brand span,
+#header.ever-fixed-top .header-menubar .primary-navigation ul.navbar-nav > li > a,
+.header-menubar .navbar-toggler .navbar-toggler-icon:before {
+    color: var(--topscroll_text) !important;
 }
 .minicolors {
     position: relative;
@@ -15061,6 +15133,41 @@ a#next-activity-link {
     [data-bs-theme=auto] .action-menu .dropdown-subpanel.content-displayed .bg-primary-light a:hover {
         background-color: var(--bs-transparent, rgba(0, 0, 0, 0)) !important;
     }
+    [data-bs-theme=auto] #header.fixed-top .header-menubar .navbar-nav .simplesearchform .btn-open,
+    [data-bs-theme=auto] #header.fixed-top .popover-region .popover-region-toggle i.icon,
+    [data-bs-theme=auto] #header.fixed-top .header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle,
+    [data-bs-theme=auto] #header.fixed-top .header-menubar .navbar-nav .editmode-switch-form .input-group label,
+    [data-bs-theme=auto] #header.fixed-top .usermenu .moodle-actionmenu a.dropdown-toggle,
+    [data-bs-theme=auto] #header.fixed-top .header-logo a.navbar-brand img,
+    [data-bs-theme=auto] #header.fixed-top .header-logo a.navbar-brand span,
+    [data-bs-theme=auto] #header.fixed-top .header-menubar .primary-navigation ul.navbar-nav > li > a,
+    [data-bs-theme=auto] #header .popover-region .popover-region-toggle i.icon,
+    [data-bs-theme=auto] .navbar-light.fixed-top .navbar-nav .show > .nav-link,
+    [data-bs-theme=auto] .navbar-light.fixed-top .navbar-nav .active > .nav-link,
+    [data-bs-theme=auto] .navbar-light.fixed-top .navbar-nav .nav-link.show,
+    [data-bs-theme=auto] .navbar-light.fixed-top .navbar-nav .nav-link.active,
+    [data-bs-theme=auto] .header-menubar .navbar-nav .editmode-switch-form .input-group label,
+    [data-bs-theme=auto] .header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle {
+        color: var(--topscroll_text) !important;
+    }
+    [data-bs-theme=auto] .header-menubar #usernavigation .kraus-layout-dark svg path {
+        fill: var(--topscroll_text) !important;
+    }
+    [data-bs-theme=auto] [data-bs-theme=light] .header-menubar .primary-navigation ul.navbar-nav li a,
+    [data-bs-theme=auto] [data-bs-theme=light] .header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle,
+    [data-bs-theme=auto] [data-bs-theme=light] .header-menubar .navbar-nav .editmode-switch-form .input-group label,
+    [data-bs-theme=auto] [data-bs-theme=light] .usermenu .moodle-actionmenu a.dropdown-toggle,
+    [data-bs-theme=auto] [data-bs-theme=light] .navbar-light .navbar-nav .show > .nav-link,
+    [data-bs-theme=auto] [data-bs-theme=light] .navbar-light .navbar-nav .active > .nav-link,
+    [data-bs-theme=auto] [data-bs-theme=light] .navbar-light .navbar-nav .nav-link.show,
+    [data-bs-theme=auto] [data-bs-theme=light] .navbar-light .navbar-nav .nav-link.active,
+    [data-bs-theme=auto] [data-bs-theme=light] .header-logo a.navbar-brand img,
+    [data-bs-theme=auto] [data-bs-theme=light] #header .popover-region .popover-region-toggle i.icon {
+        color: var(--text_color) !important;
+    }
+    [data-bs-theme=auto] [data-bs-theme=light] .header-menubar #usernavigation .kraus-layout-dark svg path {
+        fill: var(--text_color);
+    }
 }
 [data-bs-theme=dark] {
     color-scheme: dark;
@@ -16031,6 +16138,41 @@ a#next-activity-link {
 }
 [data-bs-theme=dark] .action-menu .dropdown-subpanel.content-displayed .bg-primary-light a:hover {
     background-color: var(--bs-transparent, rgba(0, 0, 0, 0)) !important;
+}
+[data-bs-theme=dark] #header.fixed-top .header-menubar .navbar-nav .simplesearchform .btn-open,
+[data-bs-theme=dark] #header.fixed-top .popover-region .popover-region-toggle i.icon,
+[data-bs-theme=dark] #header.fixed-top .header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle,
+[data-bs-theme=dark] #header.fixed-top .header-menubar .navbar-nav .editmode-switch-form .input-group label,
+[data-bs-theme=dark] #header.fixed-top .usermenu .moodle-actionmenu a.dropdown-toggle,
+[data-bs-theme=dark] #header.fixed-top .header-logo a.navbar-brand img,
+[data-bs-theme=dark] #header.fixed-top .header-logo a.navbar-brand span,
+[data-bs-theme=dark] #header.fixed-top .header-menubar .primary-navigation ul.navbar-nav > li > a,
+[data-bs-theme=dark] #header .popover-region .popover-region-toggle i.icon,
+[data-bs-theme=dark] .navbar-light.fixed-top .navbar-nav .show > .nav-link,
+[data-bs-theme=dark] .navbar-light.fixed-top .navbar-nav .active > .nav-link,
+[data-bs-theme=dark] .navbar-light.fixed-top .navbar-nav .nav-link.show,
+[data-bs-theme=dark] .navbar-light.fixed-top .navbar-nav .nav-link.active,
+[data-bs-theme=dark] .header-menubar .navbar-nav .editmode-switch-form .input-group label,
+[data-bs-theme=dark] .header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle {
+    color: var(--topscroll_text) !important;
+}
+[data-bs-theme=dark] .header-menubar #usernavigation .kraus-layout-dark svg path {
+    fill: var(--topscroll_text) !important;
+}
+[data-bs-theme=dark] [data-bs-theme=light] .header-menubar .primary-navigation ul.navbar-nav li a,
+[data-bs-theme=dark] [data-bs-theme=light] .header-menubar .navbar-nav .usermenu .dropdown a#user-menu-toggle,
+[data-bs-theme=dark] [data-bs-theme=light] .header-menubar .navbar-nav .editmode-switch-form .input-group label,
+[data-bs-theme=dark] [data-bs-theme=light] .usermenu .moodle-actionmenu a.dropdown-toggle,
+[data-bs-theme=dark] [data-bs-theme=light] .navbar-light .navbar-nav .show > .nav-link,
+[data-bs-theme=dark] [data-bs-theme=light] .navbar-light .navbar-nav .active > .nav-link,
+[data-bs-theme=dark] [data-bs-theme=light] .navbar-light .navbar-nav .nav-link.show,
+[data-bs-theme=dark] [data-bs-theme=light] .navbar-light .navbar-nav .nav-link.active,
+[data-bs-theme=dark] [data-bs-theme=light] .header-logo a.navbar-brand img,
+[data-bs-theme=dark] [data-bs-theme=light] #header .popover-region .popover-region-toggle i.icon {
+    color: var(--text_color) !important;
+}
+[data-bs-theme=dark] [data-bs-theme=light] .header-menubar #usernavigation .kraus-layout-dark svg path {
+    fill: var(--text_color);
 }
 /** jQuery UI - v1.11.4 - 2015-03-11
 * http://jqueryui.com
@@ -17949,13 +18091,14 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
     }
 }
 #mic-init-access-tool button {
-    border: none;
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
     background: 0 0;
-    border-radius: 0;
     color: #333;
+    background-color: #fff;
+    border: 1px solid #d3d5dc;
+    border-radius: 8px;
 }
 #mic-init-access-tool button path {
     fill: rgb(var(--color_primary));
@@ -17969,16 +18112,12 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
 }
 #mic-init-access-tool a:focus,
 #mic-init-access-tool a:hover {
-    color: #8b0000;
-    border-color: #8b0000;
-    background-color: #ffc;
+    background-color: #f2f3f7;
+    border-color: #aaa;
 }
 #mic-init-access-tool a:focus span,
 #mic-init-access-tool a:hover span {
     color: #8b0000;
-}
-#mic-init-access-tool .atb-hide-if-empty {
-    display: none !important;
 }
 #mic-init-access-tool span.mic-toolbox-images-titles {
     display: none !important;
@@ -18020,7 +18159,10 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
 }
 #mic-init-access-tool .mic-access-tool-general-button > div img {
     display: inline-block;
-    max-width: 45px;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    min-height: 45px;
 }
 #mic-init-access-tool .mic-access-tool-general-button.mic-access-tool-general-button-right {
     left: auto;
@@ -18042,7 +18184,7 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
     -webkit-box-shadow: 1px 0 4px 0 #777;
     box-shadow: 1px 0 4px 0 #777;
     position: fixed;
-    width: 320px;
+    width: 370px;
     top: 10px;
     left: 10px;
     background-color: rgb(var(--color_primary));
@@ -18051,22 +18193,6 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
     opacity: 0;
     -webkit-transition: opacity 0.4s;
     transition: opacity 0.4s;
-}
-#mic-init-access-tool .mic-access-tool-box > div:not(.mic-access-tool-box-header):not(.mic-toolbox-all-credits) {
-    position: relative;
-    background-color: #fff;
-    max-width: 98%;
-    margin: 0 auto 4px;
-    text-align: center;
-    border-radius: 4px;
-}
-#mic-init-access-tool .mic-access-tool-box > div:not(.mic-access-tool-box-header):not(.mic-toolbox-all-credits) .mic-subtitle-span {
-    font-size: 20px !important;
-    display: block;
-    padding: 12px 0;
-    text-align: center;
-    color: #8b0000;
-    font-variant: small-caps;
 }
 #mic-init-access-tool .mic-access-tool-box.opened-mic-access-tool {
     visibility: visible;
@@ -18079,7 +18205,6 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
 #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header {
     position: relative;
     text-align: left;
-    text-transform: uppercase;
     line-height: 1.2;
     font-size: 14px !important;
     font-weight: 700;
@@ -18092,89 +18217,61 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
     cursor: pointer;
     color: #fff;
     font-weight: 700;
-    line-height: 1.1;
-    font-size: 18px !important;
+    font-size: 22px !important;
     right: 0;
     top: 0;
     padding: 8px 5px 8px;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    margin-top: 1px;
+    margin-right: 4px;
 }
 #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button * {
-    font-size: 18px !important;
+    font-size: 13px !important;
 }
-#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus,
-#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover {
-    color: #8b0000;
-    background-color: #ffc;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus span,
-#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover span {
+#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus, #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover {
     color: #8b0000;
 }
-#mic-init-access-tool .mic-access-tool-box .link-access-page {
-    background-color: #fff;
+#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus span, #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover span {
+    color: #8b0000;
+}
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block {
     position: relative;
-    height: auto;
-    text-align: center;
-    max-width: 96%;
-    margin-top: 10px !important;
-    margin-bottom: 20px !important;
-}
-#mic-init-access-tool .mic-access-tool-box .link-access-page a {
-    padding: 10px 0;
+    padding: 7px 10px;
     border-bottom: 1px solid #777;
+    font-size: 12px !important;
+    background: #e6e6e6;
+    margin: 4px;
+    border-radius: 4px;
 }
-#mic-init-access-tool .mic-access-tool-box .link-access-page * {
-    font-size: 18px !important;
-}
-#mic-init-access-tool .mic-access-tool-box .link-access-page #mic-toolbox-disable-buttons-reset-all {
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block h3 {
+    font-size: 20px !important;
     text-align: center;
-    font-weight: 700;
 }
-#mic-init-access-tool .mic-access-tool-box .link-access-page button,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button {
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button {
     position: relative;
-    padding: 12px 5px;
-    border-bottom: 1px solid #777;
-    display: block;
     width: 100%;
-    font-size: 18px !important;
+    padding: 7px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
 }
-#mic-init-access-tool .mic-access-tool-box .link-access-page button img,
-#mic-init-access-tool .mic-access-tool-box .link-access-page button span,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button img,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button span {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 18px !important;
-    color: #333;
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button #mic-toolbox-fonts-up-enabled {
+    position: absolute;
+    right: 2px;
+    top: 8px;
+    color: #e91e63;
 }
-#mic-init-access-tool .mic-access-tool-box .link-access-page button:focus,
-#mic-init-access-tool .mic-access-tool-box .link-access-page button:hover,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:focus,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:hover {
-    color: #8b0000;
-    border-color: #8b0000;
-    background-color: #ffc !important;
-    cursor: pointer;
-}
-#mic-init-access-tool .mic-access-tool-box .link-access-page button:focus span,
-#mic-init-access-tool .mic-access-tool-box .link-access-page button:hover span,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:focus span,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:hover span {
-    color: #8b0000;
-}
-#mic-init-access-tool .mic-access-tool-box .link-access-page button.vi-enabled,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button.vi-enabled {
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled {
     border: dashed 1px #8b0000;
     background-color: #fffff3;
 }
-#mic-init-access-tool .mic-access-tool-box .link-access-page button.vi-enabled span,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button.vi-enabled span {
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled span {
     color: #8b0000 !important;
     font-weight: 700;
 }
-#mic-init-access-tool .mic-access-tool-box .link-access-page button.vi-enabled::before,
-#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button.vi-enabled::before {
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled::before {
     content: "✓";
     position: absolute;
     top: 2px;
@@ -18184,133 +18281,50 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
     line-height: 1 !important;
     font-size: 14px !important;
 }
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block {
-    padding-bottom: 10px;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span,
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span {
-    display: block;
-    position: absolute;
-    color: #333;
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    right: 0;
 }
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span:nth-child(1),
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span:nth-child(1) {
-    top: 14px;
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block .d-flex button {
+    width: 32%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0;
 }
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span:nth-child(2),
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span:nth-child(2) {
-    bottom: 8px;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span:nth-child(3),
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span:nth-child(3) {
-    top: 2px !important;
-    right: 2px !important;
-    color: #00e800 !important;
-    display: inline-block !important;
-    width: auto !important;
-    font-size: 12px !important;
-    direction: ltr !important;
-    line-height: 1 !important;
-    font-family: monospace !important;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button.vi-font-enabled,
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button.vi-font-enabled {
-    border: dashed 1px #8b0000;
-    background-color: #fffff3;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button.vi-font-enabled span,
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button.vi-font-enabled span {
-    color: #8b0000;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-cursors-block button span:last-child {
-    margin-top: 5px;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button {
-    cursor: pointer;
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block img,
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block span {
     display: inline-block;
-    padding: 0 5px;
-    position: relative;
-    text-align: center;
-    width: 30%;
-    height: 80px;
-    border: solid 1px silver;
     vertical-align: middle;
-    line-height: 1;
-    font-weight: 700;
-    font-size: 12px !important;
-    border-radius: 3px;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button span {
-    display: block;
-    font-size: 12px !important;
-    color: #333;
-    line-height: 0.9 !important;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:focus,
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:hover {
-    color: #8b0000;
-    border-color: #8b0000;
-    background-color: #ffc !important;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:focus span,
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:hover span {
-    color: #8b0000;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled {
-    border: dashed 1px #8b0000;
-    background-color: #fffff3;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled span {
-    color: #8b0000 !important;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled::before {
-    content: "✓";
-    direction: ltr !important;
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    color: #00e800;
-    font-weight: 700;
-    font-size: 12px !important;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits {
-    position: relative !important;
-    padding: 0 5px !important;
-    background-color: rgb(var(--color_primary)) !important;
-    text-align: center !important;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a,
-#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits span {
-    display: inline-block !important;
-    vertical-align: middle !important;
-    color: #fff !important;
-    width: auto !important;
-    font-family: monospace !important;
-    font-weight: 700 !important;
     font-size: 15px !important;
+    color: #333;
 }
-#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a {
-    text-decoration: underline !important;
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block img {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    max-width: 22px;
+    max-height: 22px;
 }
-#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a:focus,
-#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a:hover {
-    background-color: transparent !important;
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block #mic-toolbox-disable-buttons-reset-all {
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px;
 }
-@media screen and (max-width: 47em) {
-    #mic-init-access-tool .mic-access-tool-general-button > div span {
-        display: none;
-    }
-    #mic-init-access-tool .mic-disable-buttons {
-        display: none;
-    }
-    #mic-init-access-tool .mic-access-tool-box {
-        width: 100%;
-    }
-    #mic-init-access-tool .mic-cursors-block {
-        display: none;
-    }
+#mic-init-access-tool .mic-access-tool-box .mic-buttons-block:last-child {
+    padding: 0;
+    border-bottom: 0;
+    background: none;
 }
 body.mic-toolbox-zoom-up > :not(#mic-init-access-tool) {
     zoom: 1.4 !important;

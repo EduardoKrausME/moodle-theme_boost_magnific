@@ -304,18 +304,18 @@ body.mic-toolbox-content-headers h6 {
     text-decoration: underline !important;
 }
 body.mic-toolbox-cursor-big-white {
-    cursor: url([[pix:theme_degrade|acctoolbar/pointer]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/w2.cur), auto !important;
+    cursor: url([[pix:theme_boost_magnific|acctoolbar/pointer]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/w2.cur), auto !important;
 }
 body.mic-toolbox-cursor-big-white a,
 body.mic-toolbox-cursor-big-white button {
-    cursor: url([[pix:theme_degrade|acctoolbar/hand]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/wh2.cur), auto !important;
+    cursor: url([[pix:theme_boost_magnific|acctoolbar/hand]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/wh2.cur), auto !important;
 }
 body.mic-toolbox-cursor-big-black {
-    cursor: url([[pix:theme_degrade|acctoolbar/pointer-hover]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/b2.cur), auto !important;
+    cursor: url([[pix:theme_boost_magnific|acctoolbar/pointer-hover]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/b2.cur), auto !important;
 }
 body.mic-toolbox-cursor-big-black a,
 body.mic-toolbox-cursor-big-black button {
-    cursor: url([[pix:theme_degrade|acctoolbar/hand-hover]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/bh2.cur), auto !important;
+    cursor: url([[pix:theme_boost_magnific|acctoolbar/hand-hover]]), url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/bh2.cur), auto !important;
 }
 body.mic-toolbox-content-images span.mic-toolbox-images-titles {
     display: block !important;
