@@ -612,7 +612,6 @@ function theme_boost_magnific_process_css($css, $theme) {
     $customcss = str_replace("&gt;", ">", theme_boost_magnific_get_setting("customcss"));
     $css .= $customcss;
 
-
     // Color list.
     $backgroundcolor = theme_boost_magnific_get_setting("background_color", false);
     $primary = theme_boost_magnific_color("theme_color__color_primary");
@@ -636,12 +635,12 @@ function theme_boost_magnific_process_css($css, $theme) {
     $backgroundprofileurl = theme_boost_magnific_get_setting_image("background_profile_image");
 
     // Color on roll page.
-    $topscroll="";
+    $topscroll = "";
     if ($CFG->theme != "boost_training" && $CFG->theme != "degrade") {
         $topscrollbackground = theme_boost_magnific_get_setting("top_scroll_background_color");
         $topscrolltext = theme_boost_magnific_get_setting("top_scroll_text_color");
 
-        $topscroll= "
+        $topscroll = "
                 --topscroll_background: {$topscrollbackground};
                 --topscroll_text:       {$topscrolltext};";
     }
