@@ -10568,7 +10568,7 @@ div.dropdown-item:focus-within {
     align-items: center;
     justify-content: space-between;
     background-image: url([[pix:theme_boost_magnific|user-modal-background]]);
-    background-image: url(var(--background_profile));
+    background-image: var(--background_profile);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -658,7 +658,7 @@ function theme_boost_magnific_process_css($css, $theme) {
             --fontfamily_sitename: {$fontfamilysitename} Arial, Helvetica, sans-serif;
             --fontfamily_menus:    {$fontfamilymenus}    Arial, Helvetica, sans-serif;
             --text_color:          {$textcolor};
-            --background_profile:  {$backgroundprofileurl};
+            --background_profile:  url({$backgroundprofileurl});
 
             {$topscroll}
         }";
