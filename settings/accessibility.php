@@ -31,4 +31,10 @@ $page->add(new admin_setting_configcheckbox("theme_boost_magnific/enable_accessi
     get_string("settings_accessibility", "theme_boost_magnific"),
     get_string("settings_accessibility_desc", "theme_boost_magnific"), 1));
 
+if ($CFG->lang == "pt_br") {
+    $page->add(new admin_setting_configcheckbox("theme_boost_magnific/enable_vlibras",
+        "Habilitar VLibras",
+        "", 0));
+}
+
 $settings->add($page);
