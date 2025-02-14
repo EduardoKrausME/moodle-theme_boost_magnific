@@ -140,10 +140,7 @@
     font-size: 13px !important;
 }
 #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus, #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover {
-    color: #8b0000;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus span, #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover span {
-    color: #8b0000;
+    color: #ececec;
 }
 #mic-init-access-tool .mic-access-tool-box .mic-buttons-block {
     position: relative;

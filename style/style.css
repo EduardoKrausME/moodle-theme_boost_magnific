@@ -12281,6 +12281,7 @@ button.btn-footer-popover:active {
 }
 #page-header .crumbs li {
     display: inline;
+    max-width: 100%;
 }
 #page-header .crumbs li a, #page-header .crumbs li span {
     text-align: center;
@@ -12294,6 +12295,13 @@ button.btn-footer-popover:active {
     align-items: center;
     white-space: nowrap;
 }
+#page-header .crumbs li a em, #page-header .crumbs li span em {
+    font-style: normal !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
 @media (max-width: 767px) {
     #page-header .crumbs li a, #page-header .crumbs li span {
         font-size: 18px;
@@ -12302,7 +12310,9 @@ button.btn-footer-popover:active {
 #page-header .crumbs li a:before, #page-header .crumbs li span:before {
     content: "";
     width: 11px;
+    min-width: 11px;
     height: 18px;
+    min-height: 18px;
     background-image: url([[pix:theme_boost_magnific|material/crumbs-divisor]]);
     background-size: cover;
     margin-right: 5px;
@@ -18230,10 +18240,7 @@ body.format-weeks .section-courseindex .courseindex .completioninfo.completionin
     font-size: 13px !important;
 }
 #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus, #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover {
-    color: #8b0000;
-}
-#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus span, #mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover span {
-    color: #8b0000;
+    color: #ececec;
 }
 #mic-init-access-tool .mic-access-tool-box .mic-buttons-block {
     position: relative;
@@ -18429,3 +18436,4 @@ body.mic-toolbox-content-images span.mic-toolbox-images-titles {
     padding-right: 0 !important;
     padding-left: 0 !important;
 }
+/*# sourceMappingURL=style.css.map */
