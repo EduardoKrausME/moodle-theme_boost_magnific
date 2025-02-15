@@ -466,6 +466,9 @@ function theme_boost_magnific_coursemodule_standard_elements(&$formwrapper, $mfo
     if ($formwrapper->get_current()->modulename == "label") {
         return;
     }
+    if ($formwrapper->get_current()->modulename == "learningmap") {
+        return;
+    }
 
     if ($CFG->theme == "boost_magnific") {
         $mform->addElement("header", "theme_boost_magnific_icons",
