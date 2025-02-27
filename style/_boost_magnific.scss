@@ -25,3 +25,9 @@
         border-radius: 4px;
     }
 }
+#header {
+    &.fixed-top,
+    &.ever-fixed-top {
+        background: var(--topscroll_background) !important;
+    }
+}
