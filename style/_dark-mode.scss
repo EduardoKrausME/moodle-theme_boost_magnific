@@ -189,13 +189,16 @@
         border-color: rgb(var(--color_primary)) !important;
     }
     .btn {
-        color: #d2d2d2;
+        color: var(--bs-gray-200, #e9ecef);
         &.btn-icon:hover,
         &.btn-icon:focus {
             background-color: rgba(var(--bs-gray-200-rgb, 233, 236, 239), .4);
         }
         &.add-content {
             background-color: var(--bs-gray-1000, #1e1e25);
+        }
+        &:hover {
+            color: var(--bs-gray-600, #6c757d);
         }
     }
     .btn.add-section {
@@ -388,6 +391,10 @@
         color: var(--bs-gray-500, #adb5bd);
         background: var(--bs-gray-1000, #1e1e25) url('[[pix:theme|dark/custom-select]]') right 10px center / 8px 10px no-repeat;
         border-color: var(--bs-gray-900, #2e3134);
+        &:disabled {
+            color: var(--bs-gray-1000, #1e1e25);
+            background-color: var(--bs-gray-500, #adb5bd);
+        }
     }
     
     .form-control,
