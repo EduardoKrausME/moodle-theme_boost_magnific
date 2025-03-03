@@ -461,8 +461,6 @@ function theme_boost_magnific_get_hexa($hexa, $opacity) {
  * @throws coding_exception
  */
 function theme_boost_magnific_coursemodule_standard_elements(&$formwrapper, $mform) {
-    global $CFG;
-
     if ($formwrapper->get_current()->modulename == "label") {
         return;
     }
@@ -470,6 +468,7 @@ function theme_boost_magnific_coursemodule_standard_elements(&$formwrapper, $mfo
         return;
     }
 
+    global $CFG, $PAGE;
     if ($CFG->theme == "boost_magnific") {
         $mform->addElement("header", "theme_boost_magnific_icons",
             get_string("settings_icons_change_icons", "theme_boost_magnific"));
@@ -494,8 +493,16 @@ function theme_boost_magnific_coursemodule_standard_elements(&$formwrapper, $mfo
             "maxfiles" => 1,
         ];
         $mform->addElement("filemanager", "theme_boost_magnific_customicon",
-            get_string("settings_icons_select_icon", "theme_boost_magnific"),
+            get_string("settings_icons_upload_icon", "theme_boost_magnific"),
             null, $filemanageroptions);
+
+        $mform->addElement("text", "theme_boost_magnific_customcolor",
+            get_string("settings_icons_color_icon", "theme_boost_magnific"), []);
+        $mform->setType("theme_boost_magnific_customcolor", PARAM_TEXT);
+        $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'minicolors', ["id_theme_boost_magnific_customcolor"]);
+
+        $mform->addElement("static", "theme_boost_magnific_custom", "",
+            get_string("settings_icons_color_icon", "theme_boost_magnific"));
     }
 }
 
@@ -524,6 +531,13 @@ function theme_boost_magnific_coursemodule_edit_post_actions($data, $course) {
 
         $name = "theme_boost_magnific_customicon_{$data->coursemodule}";
         set_config($name, $filesave, "theme_boost_magnific");
+
+        \cache::make("theme_boost_magnific", "css_cache")->purge();
+    }
+
+    if (isset($data->theme_boost_magnific_customcolor)) {
+        $name = "theme_boost_magnific_customcolor_{$data->coursemodule}";
+        set_config($name, $data->theme_boost_magnific_customcolor, "theme_boost_magnific");
 
         \cache::make("theme_boost_magnific", "css_cache")->purge();
     }
