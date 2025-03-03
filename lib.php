@@ -502,7 +502,7 @@ function theme_boost_magnific_coursemodule_standard_elements(&$formwrapper, $mfo
         $PAGE->requires->js_call_amd('theme_boost_magnific/settings', 'minicolors', ["id_theme_boost_magnific_customcolor"]);
 
         $mform->addElement("static", "theme_boost_magnific_custom", "",
-            get_string("settings_icons_color_icon", "theme_boost_magnific"));
+            get_string("settings_icons_color_icon_desc", "theme_boost_magnific"));
     }
 }
 
