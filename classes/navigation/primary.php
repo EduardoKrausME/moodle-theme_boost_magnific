@@ -141,10 +141,10 @@ class primary extends \core\navigation\output\primary {
                 'value' => 'rolename',
                 'class' => 'role role-##GENERATEDCLASS##',
             ],
-            'userloginfail' => [
-                'value' => 'userloginfail',
-                'class' => 'loginfailures',
-            ],
+            //'userloginfail' => [
+            //    'value' => 'userloginfail',
+            //    'class' => 'loginfailures',
+            //],
             'asmnetuser' => [
                 'value' => 'mnetidprovidername',
                 'class' => 'mnet mnet-##GENERATEDCLASS##',

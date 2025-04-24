@@ -111,14 +111,6 @@ $templatedata = [
     'addblockbutton' => $addblockbutton,
 ];
 
-if (isset($_SESSION['return_course_id']) && isset($_SESSION['refcourse_course_id'])) {
-    if ($_SESSION['refcourse_course_id'] == $COURSE->id) {
-        $templatedata['return_course_id'] = $_SESSION['return_course_id'];
-        $templatedata['return_course_name'] = $_SESSION['return_course_name'];
-        $templatedata['refcourse_course_id'] = $_SESSION['refcourse_course_id'];
-    }
-}
-
 require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/frontapage_data.php");
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\frontapage_data::topo());
 
@@ -127,6 +119,7 @@ $templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer
 
 $contextcourse = context_course::instance($COURSE->id);
 $courseupdate = has_capability('moodle/course:update', $contextcourse);
+
 if ( optional_param("embed-frame-top", 0, PARAM_INT)) {
     echo $OUTPUT->render_from_template('theme_boost_magnific/drawers_embed', $templatedata);
 } else {

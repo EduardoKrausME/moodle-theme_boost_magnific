@@ -104,40 +104,31 @@ $templatedata = [
     "course" => $COURSE,
 ];
 
-if (isset($_SESSION["return_course_id"]) && isset($_SESSION["refcourse_course_id"])) {
-    if ($_SESSION["refcourse_course_id"] == $COURSE->id) {
-        $templatedata["return_course_id"] = $_SESSION["return_course_id"];
-        $templatedata["return_course_name"] = $_SESSION["return_course_name"];
-        $templatedata["refcourse_course_id"] = $_SESSION["refcourse_course_id"];
-    }
-}
-
 require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/frontapage_data.php");
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\frontapage_data::topo());
 
 require_once("{$CFG->dirroot}/theme/boost_magnific/classes/template/footer_data.php");
 $templatedata = array_merge($templatedata, \theme_boost_magnific\template\footer_data::get_data());
 
-if ($PAGE->pagetype == "enrol-index" && file_exists("{$CFG->dirroot}/local/kopere_pay/lib.php")) {
-    global $DB;
-
-    $koperepaydetalhe = $DB->get_record('kopere_pay_detalhe', ['course' => $COURSE->id, 'status' => 'aberto']);
-    if ($koperepaydetalhe) {
-        $enable = \local_kopere_dashboard\util\config::get_key("builder_enable_{$COURSE->id}");
-        if ($enable) {
-            redirect("/local/kopere_pay/view.php?id=13");
-        } else {
-            redirect("/local/kopere_pay/?id={$COURSE->id}");
-        }
-    }
-}
+//if ($PAGE->pagetype == "enrol-index" && file_exists("{$CFG->dirroot}/local/kopere_pay/lib.php")) {
+//    global $DB;
+//
+//    $koperepaydetalhe = $DB->get_record('kopere_pay_detalhe', ['course' => $COURSE->id, 'status' => 'aberto']);
+//    if ($koperepaydetalhe) {
+//        $enable = \local_kopere_dashboard\util\config::get_key("builder_enable_{$COURSE->id}");
+//        if ($enable) {
+//            redirect("/local/kopere_pay/view.php?id=13");
+//        } else {
+//            redirect("/local/kopere_pay/?id={$COURSE->id}");
+//        }
+//    }
+//}
 
 if (!$courseupdate && strpos($_SERVER["REQUEST_URI"], "/scorm/player.php") > 1) {
     echo $OUTPUT->render_from_template("theme_boost_magnific/drawers_scorm", $templatedata);
 } else {
-    if ($COURSE->format == "topics" || $COURSE->format == "weeks") {
-        echo $OUTPUT->render_from_template("theme_boost_magnific/incourse", $templatedata);
-    } else {
-        echo $OUTPUT->render_from_template("theme_boost_magnific/drawers", $templatedata);
-    }
+    //if ($COURSE->format == "topics" || $COURSE->format == "weeks") {
+    //    echo $OUTPUT->render_from_template("theme_boost_magnific/incourse", $templatedata);
+    //} else {
+    echo $OUTPUT->render_from_template("theme_boost_magnific/drawers", $templatedata);
 }
