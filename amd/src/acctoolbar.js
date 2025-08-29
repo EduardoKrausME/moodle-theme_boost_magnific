@@ -145,6 +145,7 @@ boost_magnific_AccessTool.prototype.buildToolBox = function(html) {
     var i = document.createElement("div");
     i.id = "mic-init-access-tool";
     i.innerHTML = html;
+    i.style.display = "none";
     document.body.insertBefore(i, document.body.firstChild);
 
     return true;
@@ -361,7 +362,7 @@ boost_magnific_AccessTool.prototype.imagesAddTitles = function() {
         else {
             var title = document.createElement('span');
             title.className = 'mic-toolbox-images-titles';
-            title.textContent = 'image without text';
+            title.textContent = M.util.get_string("acctoolbar_image_without_alt", "theme_boost_magnific");
             img.parentNode.insertBefore(title, img);
         }
     }
