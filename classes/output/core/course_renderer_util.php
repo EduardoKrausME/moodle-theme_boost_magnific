@@ -21,7 +21,7 @@
  * Moodle's new Boost theme engine
  *
  * @package   theme_boost_magnific
- * @copyright 2024 Eduardo kraus (http://eduardokraus.com)
+ * @copyright 2024 Eduardo Kraus {@link https://eduardokraus.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -37,6 +37,7 @@ use user_picture;
  * @package theme_boost_magnific\output\core
  */
 class course_renderer_util {
+
     /**
      * Function couse_image
      *

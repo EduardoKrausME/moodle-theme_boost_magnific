@@ -20,7 +20,7 @@
  * Moodle's new Boost theme engine
  *
  * @package   theme_boost_magnific
- * @copyright 2024 Eduardo kraus (http://eduardokraus.com)
+ * @copyright 2024 Eduardo Kraus {@link https://eduardokraus.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -34,7 +34,7 @@ use theme_boost_magnific\core_hook_output;
 function theme_boost_magnific_page_init(moodle_page $page) {
     global $CFG;
 
-    $CFG->enableuserfeedback = false;
+    $CFG->enableuserfeedback = " ";
 }
 
 /**
@@ -670,7 +670,7 @@ function theme_boost_magnific_process_css($css, $theme) {
 
     // Color on roll page.
     $topscroll = "";
-    if ($CFG->theme != "boost_training" && $CFG->theme != "degrade") {
+    if ($CFG->theme != "training" && $CFG->theme != "degrade") {
         $topscrollbackground = theme_boost_magnific_get_setting("top_scroll_background_color");
         $topscrolltext = theme_boost_magnific_get_setting("top_scroll_text_color");
 
