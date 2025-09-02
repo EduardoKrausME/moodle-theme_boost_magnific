@@ -18,7 +18,7 @@
  * Theme Settings File
  *
  * @package   theme_boost_magnific
- * @copyright 2024 Eduardo Kraus https://eduardokraus.com/
+ * @copyright 2025 Eduardo Kraus {@link https://eduardokraus.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,6 +26,11 @@ defined('MOODLE_INTERNAL') || die;
 
 $page = new admin_settingpage("theme_boost_magnific_accessibility",
     get_string("settings_accessibility_heading", "theme_boost_magnific"));
+
+$url = "{$CFG->wwwroot}/theme/boost_magnific/quickstart/#accessibility";
+$setting = new admin_setting_heading("theme_boost_magnific_quickstart_accessibility", "",
+    get_string("quickstart_settings_link", "theme_boost_magnific", $url));
+$page->add($setting);
 
 $page->add(new admin_setting_configcheckbox("theme_boost_magnific/enable_accessibility",
     get_string("settings_accessibility", "theme_boost_magnific"),
@@ -36,5 +41,4 @@ if ($CFG->lang == "pt_br") {
         "Habilitar VLibras",
         "", 0));
 }
-
 $settings->add($page);

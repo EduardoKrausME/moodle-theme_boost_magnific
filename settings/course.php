@@ -15,35 +15,39 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * settings-course.php
- *
- * This is built using the boost template to allow for new theme's using
- * Moodle's new Boost theme engine
+ * Course file
  *
  * @package   theme_boost_magnific
- * @copyright 2024 Eduardo Kraus {@link https://eduardokraus.com}
+ * @copyright 2025 Eduardo Kraus {@link https://eduardokraus.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$page = new admin_settingpage("theme_boost_magnific_course", get_string("settings_course_heading", "theme_boost_magnific"));
+// Course settings.
+$page = new admin_settingpage("theme_boost_magnific_course",
+    get_string("coursesettings", "theme_boost_magnific"));
 
-// Profile background image.
-$setting = new admin_setting_configstoredfile("theme_boost_magnific/background_course_image",
-    get_string("background_course_image", "theme_boost_magnific"),
-    get_string("background_course_image_desc", "theme_boost_magnific"),
-    "background_course_image", 0,
-    ["maxfiles" => 1, "accepted_types" => [".jpg", ".jpeg", ".svg", ".png"]]);
-$setting->set_updatedcallback("theme_reset_all_caches");
+$url = "{$CFG->wwwroot}/theme/boost_magnific/quickstart/#courses";
+$setting = new admin_setting_heading("theme_boost_magnific_quickstart_courses", "",
+    get_string("quickstart_settings_link", "theme_boost_magnific", $url));
 $page->add($setting);
 
-if (file_exists("{$CFG->dirroot}/customfield/field/picture/version.php")) {
-    require_once("{$CFG->dirroot}/theme/boost_magnific/db/version-background_course_image.php");
-} else {
-    $setting = new admin_setting_description("theme_boost_magnific/customfield_picture_missing",
-        "", get_string("customfield_picture_missing", "theme_boost_magnific"));
-    $page->add($setting);
-}
+$setting = new admin_setting_configcheckbox("theme_boost_magnific/course_summary",
+    get_string("course_summary", "theme_boost_magnific"),
+    get_string("course_summary_desc", "theme_boost_magnific"),
+    0);
+$page->add($setting);
+
+$options = [
+    0 => get_string("course_summary_banner_none", "theme_boost_magnific"),
+    1 => get_string("course_summary_banner_simple", "theme_boost_magnific"),
+    2 => get_string("course_summary_banner_title", "theme_boost_magnific"),
+];
+$setting = new admin_setting_configselect("theme_boost_magnific/course_summary_banner",
+    get_string("course_summary_banner", "theme_boost_magnific"),
+    get_string("course_summary_banner_desc", "theme_boost_magnific"),
+    0, $options);
+$page->add($setting);
 
 $settings->add($page);
