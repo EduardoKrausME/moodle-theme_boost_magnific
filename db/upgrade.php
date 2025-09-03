@@ -197,7 +197,7 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         }
     }
 
-    if($customcss = get_config("theme_boost_magnific", "customcss")) {
+    if ($customcss = get_config("theme_boost_magnific", "customcss")) {
         set_config("scss", $customcss, "theme_boost_magnific");
     }
 
