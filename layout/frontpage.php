@@ -89,8 +89,8 @@ $templatecontext["footer_background_color"] =
 $templatecontext["footer_background_text_color"] =
     theme_boost_magnific_get_footer_color($templatecontext["footer_background_color"], "#333", false);
 for ($i = 1; $i <= 4; $i++) {
-    $footertitle = $config->{"footer_title_{$i}"};
-    $footerhtml = $config->{"footer_html_{$i}"};
+    $footertitle = @$config->{"footer_title_{$i}"};
+    $footerhtml = @$config->{"footer_html_{$i}"};
 
     if (isset($footerhtml[5])) {
         $templatecontext["footercount"]++;
@@ -111,7 +111,6 @@ if (isset($config->homemode) && $config->homemode) {
     $PAGE->requires->jquery_plugin("ui-css");
 
     if ($editing) {
-        $PAGE->requires->js_call_amd("theme_boost_magnific/frontpage", "editingswitch", []);
         $PAGE->requires->js_call_amd("theme_boost_magnific/frontpage", "block_order", []);
     }
 }
@@ -119,6 +118,10 @@ if ($editing) {
     $templatecontext["editing"] = true;
     $url = "{$CFG->wwwroot}/theme/boost_magnific/_editor/actions.php?action=homemode&local=editing&sesskey=" . sesskey();
     $templatecontext["homemode_form_action"] = $url;
+
+    $url = "{$CFG->wwwroot}/theme/boost_magnific/quickstart/";
+    $templatecontext["homemode_quickstart_action"] = $url;
+    $PAGE->requires->js_call_amd("theme_boost_magnific/frontpage", "editingswitch", []);
 }
 
 echo $OUTPUT->render_from_template("theme_boost_magnific/frontpage", $templatecontext);

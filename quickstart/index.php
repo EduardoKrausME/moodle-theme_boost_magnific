@@ -194,7 +194,7 @@ $homemustache = [
     "homemode" => get_config("theme_boost_magnific", "homemode"),
     "templates" => $templates,
     "next" => "courses",
-    "all_templates" => list_templates(),
+    "all_templates" => list_templates_category(),
 ];
 echo $OUTPUT->render_from_template("theme_boost_magnific/quickstart/home", $homemustache);
 
