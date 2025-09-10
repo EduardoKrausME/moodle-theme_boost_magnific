@@ -34,7 +34,7 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
 
     if ($oldversion < 2025090300) {
         create_theme_boost_magnific_pages();
-            
+
         $color = get_config("theme_boost_magnific", "background_color");
         set_config("startcolor", $color, "theme_boost_magnific");
         set_config("brandcolor", $color, "theme_boost_magnific");
