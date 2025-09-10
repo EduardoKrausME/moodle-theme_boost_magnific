@@ -55,7 +55,7 @@ function xmldb_theme_boost_magnific_install() {
     set_config("loginbackgroundimage", "", "theme_boost_magnific");
 
     set_config("scsspre", "", "theme_boost_magnific");
-    set_config("scss", "", "theme_boost_magnific");
+    set_config("scsspos", "", "theme_boost_magnific");
 
     set_config("course_summary", 0, "theme_boost_magnific");
     set_config("course_summary_banner", 0, "theme_boost_magnific");
