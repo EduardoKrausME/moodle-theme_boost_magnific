@@ -183,7 +183,7 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         }
 
         if ($customcss = get_config("theme_boost_magnific", "customcss")) {
-            set_config("scss", $customcss, "theme_boost_magnific");
+            set_config("scsspos", $customcss, "theme_boost_magnific");
         }
 
         // Footer.
@@ -289,6 +289,12 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         }
 
         upgrade_plugin_savepoint(true, 2025091000, "theme", "boost_magnific");
+    }
+
+    if ($oldversion < 2025091001) {
+        $scss = get_config("scss", "theme_boost_magnific");
+        set_config("scsspos", $scss, "theme_boost_magnific");
+        unset_config("scsspos", "theme_boost_magnific");
     }
 
     return true;
