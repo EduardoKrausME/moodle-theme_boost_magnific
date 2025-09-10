@@ -295,6 +295,8 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         $scss = get_config("scss", "theme_boost_magnific");
         set_config("scsspos", $scss, "theme_boost_magnific");
         unset_config("scsspos", "theme_boost_magnific");
+
+        upgrade_plugin_savepoint(true, 2025091001, "theme", "boost_magnific");
     }
 
     return true;
