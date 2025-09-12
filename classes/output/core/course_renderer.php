@@ -69,25 +69,16 @@ class course_renderer extends \core_course_renderer {
         // Home with block editor.
         if (get_config("theme_boost_magnific", "homemode")) {
             require_once("{$CFG->dirroot}/theme/boost_magnific/_editor/editor-lib.php");
+            $this->page->requires->jquery();
+            $this->page->requires->jquery_plugin("ui");
+            $this->page->requires->jquery_plugin("ui-css");
 
             $editing = $this->page->user_is_editing();
             $lang = $USER->lang ?? $CFG->lang;
-            $userorlang = $USER->id ? $USER->id : $lang;
 
-            $previewdataid = optional_param("dataid", false, PARAM_INT);
-            $cache = cache::make("theme_boost_magnific", "frontpage_cache");
-            $cachekey = "homemode_pages_{$userorlang}";
-            if (!$editing && $cache->has($cachekey) && !$previewdataid) {
-                $compiledpages = json_decode($cache->get($cachekey));
-            } else {
-                $where = "local='home' AND lang IN(:lang, 'all')";
-                $pages = $DB->get_records_select("theme_boost_magnific_pages", $where, ['lang' => $lang], "sort ASC");
-                $compiledpages = compile_pages($pages);
-
-                if (!$editing && !$previewdataid) {
-                    $cache->set($cachekey, json_encode($compiledpages));
-                }
-            }
+            $where = "local='home' AND lang IN(:lang, 'all')";
+            $pages = $DB->get_records_select("theme_boost_magnific_pages", $where, ['lang' => $lang], "sort ASC");
+            $compiledpages = theme_boost_magnific_compile_pages($pages, $lang, $editing);
 
             $csslink = "";
             foreach ($compiledpages->css as $cssfile) {
@@ -114,13 +105,7 @@ class course_renderer extends \core_course_renderer {
 
                 $this->page->requires->strings_for_js(["preview"], "theme_boost_magnific");
                 $this->page->requires->js_call_amd("theme_boost_magnific/frontpage", "add_block", [$lang]);
-            }
-
-            $this->page->requires->jquery();
-            $this->page->requires->jquery_plugin("ui");
-            $this->page->requires->jquery_plugin("ui-css");
-            if ($editing) {
-                $this->page->requires->js_call_amd("theme_boost_magnific/frontpage", "block_order", []);
+                $this->page->requires->js_call_amd("theme_boost_magnific/frontpage", "block_order");
             }
 
             return $csslink . $this->output->render_from_template("theme_boost_magnific/frontpage_editor", $templatecontext);
