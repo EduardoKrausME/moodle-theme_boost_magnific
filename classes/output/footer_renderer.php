@@ -21,7 +21,7 @@ use Exception;
 /**
  * Renderers footer
  *
- * @package   theme_degrade
+ * @package   theme_boost_magnific
  * @copyright 2025 Eduardo Kraus {@link https://eduardokraus.com}
  * @copyright based on work by 2012 Bas Brands, www.basbrands.nl
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
