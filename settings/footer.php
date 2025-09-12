@@ -49,11 +49,13 @@ $setting = new admin_setting_configtext("theme_boost_magnific/footer_background_
     "#1a2a6c");
 $setting->set_updatedcallback("theme_reset_all_caches");
 $PAGE->requires->js_call_amd("theme_boost_magnific/settings", "minicolors", [$setting->get_id()]);
+$setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $setting = new admin_setting_heading("theme_boost_magnific_footer_heading_description",
     get_string("footer_heading_description_title", "theme_boost_magnific"),
     get_string("footer_heading_description_desc", "theme_boost_magnific"));
+$setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 for ($i = 1; $i <= 4; $i++) {
@@ -65,11 +67,13 @@ for ($i = 1; $i <= 4; $i++) {
     $setting = new admin_setting_configtext("theme_boost_magnific/footer_title_{$i}",
         get_string("footer_title", "theme_boost_magnific", $i),
         get_string("footer_title_desc", "theme_boost_magnific", $i), "");
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     $setting = new admin_setting_confightmleditor("theme_boost_magnific/footer_html_{$i}",
         get_string("footer_html", "theme_boost_magnific", $i),
         get_string("footer_html_desc", "theme_boost_magnific", $i), "");
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 }
 
@@ -80,6 +84,7 @@ $page->add($setting);
 $setting = new admin_setting_configcheckbox('theme_boost_magnific/footer_show_copywriter',
     get_string('footer_show_copywriter', 'theme_boost_magnific'),
     get_string('footer_show_copywriter_desc', 'theme_boost_magnific'), 1);
+$setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $settings->add($page);

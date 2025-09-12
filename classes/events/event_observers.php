@@ -49,9 +49,7 @@ class event_observers {
             case '\core\event\course_updated':
             case '\core\event\course_created':
             case '\core\event\config_log_created':
-                cache::make("theme_boost_magnific", "course_cache")->purge();
-                cache::make("theme_boost_magnific", "css_cache")->purge();
-                cache::make("theme_boost_magnific", "frontpage_cache")->purge();
+                theme_reset_all_caches();
                 break;
         }
     }
