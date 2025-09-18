@@ -45,7 +45,7 @@ class footer_renderer {
         }
 
         $brandcolor = get_config("theme_boost", "brandcolor");
-        $footercolor = theme_boost_magnific_default_color("footer_background_color", $brandcolor);
+        $footercolor = theme_boost_magnific_default("footer_background_color", $brandcolor);
 
         $data = [
             "footercount" => 0,

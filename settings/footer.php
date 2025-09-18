@@ -40,8 +40,8 @@ $htmlselect = "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magni
 $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
         "footercolor" => true,
         "colors" => theme_boost_magnific_colors(),
-        "defaultcolor" => theme_boost_magnific_default_color("brandcolor", "#1a2a6c", "theme_boost"),
-        "defaultcolorfooter" => theme_boost_magnific_default_color("footer_background_color", "#1a2a6c"),
+        "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost"),
+        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c"),
     ]);
 $setting = new admin_setting_configtext("theme_boost_magnific/footer_background_color",
     get_string("footer_background_color", "theme_boost_magnific"),

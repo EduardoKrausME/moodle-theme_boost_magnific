@@ -43,7 +43,7 @@ if (file_exists(__DIR__ . "/general-colors.php")) {
     if (!isset($config->startcolor[2])) {
         $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
                 "startcolor" => true, "colors" => theme_boost_magnific_colors(),
-                "defaultcolor" => theme_boost_magnific_default_color("startcolor", "#1a2a6c"),
+                "defaultcolor" => theme_boost_magnific_default("startcolor", "#1a2a6c"),
             ]);
 
         $setting = new admin_setting_configtext(
@@ -56,7 +56,7 @@ if (file_exists(__DIR__ . "/general-colors.php")) {
     } else {
         $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
                 "brandcolor" => true, "colors" => theme_boost_magnific_colors(),
-                "defaultcolor" => theme_boost_magnific_default_color("brandcolor", "#1a2a6c", "theme_boost"),
+                "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost"),
             ]);
 
         // We use an empty default value because the default colour should come from the preset.
