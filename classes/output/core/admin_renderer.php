@@ -17,7 +17,6 @@
 namespace theme_boost_magnific\output\core;
 
 use Exception;
-use moodle_url;
 
 /**
  * Standard HTML output renderer for core_admin subsystem.
