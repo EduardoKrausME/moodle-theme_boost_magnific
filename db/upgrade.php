@@ -291,12 +291,11 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         upgrade_plugin_savepoint(true, 2025091000, "theme", "boost_magnific");
     }
 
-    if ($oldversion < 2025091001) {
-        $scss = get_config("scss", "theme_boost_magnific");
+    if ($oldversion < 2025100400) {
+        $scss = get_config("theme_boost_magnific", "scss");
         set_config("scsspos", $scss, "theme_boost_magnific");
-        unset_config("scsspos", "theme_boost_magnific");
 
-        upgrade_plugin_savepoint(true, 2025091001, "theme", "boost_magnific");
+        upgrade_plugin_savepoint(true, 2025100400, "theme", "boost_magnific");
     }
 
     return true;
