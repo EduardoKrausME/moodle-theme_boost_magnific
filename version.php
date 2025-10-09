@@ -25,12 +25,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2025100800;
+$plugin->version = 2025100900;
 $plugin->requires = 2022010100;
-$plugin->release = "9.2.3";
+$plugin->release = "9.2.4";
 $plugin->maturity = MATURITY_STABLE;
-$plugin->component = 'theme_boost_magnific';
+$plugin->component = "theme_boost_magnific";
 $plugin->dependencies = [
-    "customfield_picture" => 2024100800,
     "theme_boost" => 2022010100,
 ];
