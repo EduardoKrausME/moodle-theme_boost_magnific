@@ -39,4 +39,3 @@ if (empty($PAGE->layout_options["noactivityheader"])) {
 }
 
 echo $OUTPUT->render_from_template("theme_boost_magnific/columns1", $templatecontext);
-
