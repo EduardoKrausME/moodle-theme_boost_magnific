@@ -150,7 +150,7 @@ if ( $coursesummarycourse !== false) {
     $coursesummary = $coursesummarycourse;
 }
 
-$showchangecolors=false;
+$showchangecolors = false;
 $savetheme = optional_param("savetheme", "boost_magnific", PARAM_TEXT);
 if ($savetheme == "boost_magnific") {
     require_once("{$CFG->dirroot}/theme/boost_magnific/lib.php");
