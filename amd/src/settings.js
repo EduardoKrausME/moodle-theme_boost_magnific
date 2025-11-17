@@ -1,7 +1,7 @@
 define(["jquery", "theme_boost_magnific/minicolors"], function($, minicolors) {
     return {
         minicolors: function(elementid) {
-            $("#" + elementid).minicolors();
+            $(`#${elementid}`).minicolors();
         },
 
         form_hide: function () {
