@@ -22,6 +22,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use theme_boost_magnific\editor\editor_tiny;
+
 require_once("../../../config.php");
 global $CFG, $PAGE, $OUTPUT, $DB, $USER;
 require_admin();
@@ -157,7 +159,7 @@ $PAGE->requires->jquery_plugin("ui");
 
 if (file_exists("{$CFG->libdir}/editor/tiny/lib.php")) {
     require("{$CFG->libdir}/editor/tiny/lib.php");
-    $editor = new \theme_boost_magnific\editor\editor_tiny();
+    $editor = new editor_tiny();
     $editor->head_setup();
 }
 
@@ -168,7 +170,6 @@ echo '<input type="hidden" name="POST" value="1" />';
 echo '<input type="hidden" name="sesskey" value="' . sesskey() . '" />';
 
 $savetheme = optional_param("savetheme", "boost_magnific", PARAM_TEXT);
-
 if ($savetheme == "boost_magnific") {
     require_once("{$CFG->dirroot}/theme/boost_magnific/lib.php");
     $themecolors = theme_boost_magnific_colors();

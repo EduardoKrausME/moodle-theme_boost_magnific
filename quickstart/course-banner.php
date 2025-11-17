@@ -29,9 +29,8 @@ require_once("../lib.php");
 global $CFG, $PAGE, $OUTPUT, $DB, $USER;
 
 $courseid = required_param("courseid", PARAM_INT);
-$modal = optional_param("modal", false, PARAM_INT);
 
-if (!isloggedin() && $modal) {
+if (!isloggedin()) {
     $PAGE->set_url(new moodle_url("/course/view.php", ["id" => $courseid]));
 }
 
@@ -43,6 +42,7 @@ if (optional_param("POST", false, PARAM_INT)) {
     // Save configs.
     $configkeys = [
         "course_summary_banner" => PARAM_INT,
+        "override_course_color" => PARAM_RAW,
     ];
     foreach ($configkeys as $name => $type) {
         $value = optional_param($name, false, $type);
@@ -103,9 +103,11 @@ if (optional_param("POST", false, PARAM_INT)) {
         }
     }
 
-    \cache::make("theme_boost_magnific", "course_cache")->purge();
-    \cache::make("theme_boost_magnific", "css_cache")->purge();
-    \cache::make("theme_boost_magnific", "frontpage_cache")->purge();
+    cache::make("theme_boost_magnific", "course_cache")->purge();
+    cache::make("theme_boost_magnific", "css_cache")->purge();
+    cache::make("theme_boost_magnific", "frontpage_cache")->purge();
+    purge_caches(["theme", "courses", "template"]);
+    purge_caches();
 
     redirect(new moodle_url("/course/view.php?id={$courseid}"), get_string("quickstart_banner-saved", "theme_boost_magnific"));
 }
@@ -116,11 +118,9 @@ $PAGE->set_title(get_string("quickstart_title", "theme_boost_magnific"));
 $PAGE->set_heading(get_string("quickstart_title", "theme_boost_magnific"));
 
 $PAGE->requires->css("/theme/boost_magnific/quickstart/style.css");
-if ($modal) {
-    echo "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magnific/quickstart/style.css\"/>";
-} else {
-    echo $OUTPUT->header();
-}
+$PAGE->requires->css("/theme/boost_magnific/scss/colors.css");
+$PAGE->requires->jquery();
+echo $OUTPUT->header();
 
 // Course.
 $bannerfileurl = theme_boost_magnific_setting_file_url("banner_course_file_{$courseid}");
@@ -150,6 +150,16 @@ if ( $coursesummarycourse !== false) {
     $coursesummary = $coursesummarycourse;
 }
 
+$showchangecolors=false;
+$savetheme = optional_param("savetheme", "boost_magnific", PARAM_TEXT);
+if ($savetheme == "boost_magnific") {
+    require_once("{$CFG->dirroot}/theme/boost_magnific/lib.php");
+    $themecolors = theme_boost_magnific_colors();
+    $showchangecolors = true;
+} else {
+    $themecolors = [];
+}
+$brandcolor = theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost");
 $coursesmustache = [
     "no_accordion" => true, // For when calling out of the accordion.
     "course_summary_banner_0" => $coursesummary == 0,
@@ -157,8 +167,19 @@ $coursesmustache = [
     "course_summary_banner_2" => $coursesummary == 2,
     "banner_course_file_url" => $bannerfileurl,
     "banner_course_file_extensions" => "PNG, JPG",
+    "show_change_colors" => $showchangecolors,
+    "courseid" => $courseid,
+    "override_course_color" => get_config("theme_boost_magnific", "override_course_color_{$courseid}"),
+    "colorselect" => $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
+        "coursecolor" => true,
+        "colors" => $themecolors,
+        "defaultcolor" => theme_boost_magnific_default("override_course_color_{$courseid}", $brandcolor),
+        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c"),
+        "brandcolor_background_menu" => (int) theme_boost_magnific_default("brandcolor_background_menu", 0),
+    ]),
 ];
 echo $OUTPUT->render_from_template("theme_boost_magnific/quickstart/courses", $coursesmustache);
+$PAGE->requires->js_call_amd("theme_boost_magnific/settings", "minicolors", ["override_course_color"]);
 
 echo "</form>";
 
