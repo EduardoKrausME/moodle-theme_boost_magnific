@@ -40,5 +40,30 @@ if ($CFG->lang == "pt_br") {
     $page->add(new admin_setting_configcheckbox("theme_boost_magnific/enable_vlibras",
         "Habilitar VLibras",
         "", 0));
+
+    $page->add(new admin_setting_configselect(
+        "theme_boost_magnific/vlibras_position",
+        "Posição do balão do VLibras",
+        "",
+        "R",
+        [
+            "L" => "Esquerda",
+            "R" => "Direita",
+        ]
+    ));
+
+    $page->add(new admin_setting_configselect(
+        "theme_boost_magnific/vlibras_avatar",
+        "Avatar do VLibras",
+        "",
+        "icaro",
+        [
+            "icaro"  => "Ícaro",
+            "hosana" => "Hosana",
+            "guga"   => "Guga",
+            "random" => "Randômico",
+        ]
+    ));
 }
+
 $settings->add($page);
