@@ -22,9 +22,11 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use core\context\course as context_course;
+
 defined('MOODLE_INTERNAL') || die;
 
-global $CFG, $OUTPUT, $PAGE;
+global $CFG, $OUTPUT, $PAGE, $SITE;
 require_once("{$CFG->dirroot}/theme/boost_magnific/lib.php");
 
 $page = new admin_settingpage("theme_boost_magnific_login",
@@ -36,10 +38,27 @@ $options = [
     "selva-canopy" => get_string("logintheme_selva-canopy", "theme_boost_magnific"),
     "clean-minimal" => get_string("logintheme_clean-minimal", "theme_boost_magnific"),
     "clean-outline" => get_string("logintheme_clean-outline", "theme_boost_magnific"),
+    "glassmorphism" => get_string("logintheme_glassmorphism", "theme_boost_magnific"),
+    "serenity-med-blue" => get_string("logintheme_serenity-med-blue", "theme_boost_magnific"),
+    "serenity-med-red" => get_string("logintheme_serenity-med-red", "theme_boost_magnific"),
 ];
+$mustachecontext = (object)[];
+$url = $OUTPUT->get_logo_url();
+$mustachecontext->logourl = $url ? $url->out(false) : null;
+$mustachecontext->sitename = format_string($SITE->fullname);
+$mustachecontext->themes=[];
+foreach ($options as $loginthemename => $option){
+    $mustachecontext->themes[] = [
+        "login_theme" => $loginthemename,
+        "loginbackgroundimageurl" => $OUTPUT->image_url("login/{$loginthemename}", "theme_boost_magnific")->out(false),
+    ];
+}
+$htmldescextra = $OUTPUT->render_from_template("theme_boost_magnific/settings/login", $mustachecontext);
+$htmldescextra = preg_replace('/\s+/', ' ', $htmldescextra);
+
 $setting = new admin_setting_configselect("theme_boost_magnific/logintheme",
     get_string("logintheme", "theme_boost_magnific"),
-    get_string("logintheme_desc", "theme_boost_magnific"),
+    get_string("logintheme_desc", "theme_boost_magnific") . $htmldescextra,
     "aurora", $options);
 $page->add($setting);
 
