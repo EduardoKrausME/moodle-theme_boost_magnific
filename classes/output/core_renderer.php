@@ -357,6 +357,7 @@ class core_renderer extends \core_renderer {
             }
         }
 
+        $header->editing = $this->page->user_is_editing();
         return $this->render_from_template("theme_boost_magnific/core/full_header", $header);
     }
 
