@@ -108,6 +108,7 @@ $templatecontext = [
     "headercontent" => $headercontent,
     "addblockbutton" => $addblockbutton,
     "course_summary" => get_config("theme_boost_magnific", "course_summary"),
+    "scorm_autoenter" => get_config("theme_boost_magnific", "scorm_autoenter"),
 ];
 
 if (optional_param("embed-frame-top", 0, PARAM_INT)) {

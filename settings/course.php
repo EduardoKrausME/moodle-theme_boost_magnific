@@ -50,4 +50,11 @@ $setting = new admin_setting_configselect("theme_boost_magnific/course_summary_b
     0, $options);
 $page->add($setting);
 
+// SCORM auto enter setting.
+$setting = new admin_setting_configcheckbox("theme_boost_magnific/scorm_autoenter",
+    get_string("course_scorm_autoenter", "theme_boost_magnific"),
+    get_string("course_scorm_autoenter_desc", "theme_boost_magnific"),
+    1);
+$page->add($setting);
+
 $settings->add($page);
