@@ -316,6 +316,13 @@ function xmldb_theme_boost_magnific_upgrade($oldversion) {
         upgrade_plugin_savepoint(true, 2025101300, "theme", "boost_magnific");
     }
 
+    if ($oldversion < 2026022500) {
+        set_config("secondary", "#ced4da", "theme_boost");
+        set_config("navbarlayout", "classic", "theme_boost_magnific");
+
+        upgrade_plugin_savepoint(true, 2026022500, "theme", "boost_magnific");
+    }
+
     return true;
 }
 

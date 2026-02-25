@@ -43,8 +43,12 @@ function xmldb_theme_boost_magnific_install() {
         "filename" => "user-modal-background.jpg",
     ];
     $fs->create_file_from_pathname($filerecord, "{$CFG->dirroot}/theme/boost_magnific/pix/user-modal-background.jpg");
+
+    set_config("secondary", "#ced4da", "theme_boost");
+
     set_config("background_profile_image", "/user-modal-background.jpg", "theme_boost_magnific");
     set_config("brandcolor_background_menu", 1, "theme_boost_magnific");
+    set_config("navbarlayout", "classic", "theme_boost_magnific");
 
     set_config("top_scroll_fix", 1, "theme_boost_magnific");
     set_config("top_scroll_background_color", "#5C5D5F", "theme_boost_magnific");
