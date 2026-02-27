@@ -205,6 +205,10 @@ function theme_boost_magnific_get_pre_scss($theme) {
         \$footer-bg    : {$footerbg};
         \$footer-color : {$footercolor};\n";
 
+    if (get_config("theme_eadtraining", "navbarlayout") === "institutional") {
+        $scss .= "\$navbar-height : 127px;\n";
+    }
+
     if ($CFG->theme == "degrade") {
         $angle = theme_boost_magnific_default("angle", 30);
         $gradient1 = theme_boost_magnific_default("brandcolor_gradient_1", "#f54266");
