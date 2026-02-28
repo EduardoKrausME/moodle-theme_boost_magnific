@@ -48,8 +48,8 @@ if (file_exists(__DIR__ . "/general-colors.php")) {
         $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
                 "startcolor" => true, "colors" => theme_boost_magnific_colors(),
                 "defaultcolor" => theme_boost_magnific_default("startcolor", "#1a2a6c"),
-                "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
-                "secondary_color" => $OUTPUT->secondary_color(),
+                "navbar_layout_is_institutional" => get_config("theme_boost_magnific", "navbarlayout") == "institutional",
+                "secondary_color" => theme_boost_magnific_secondary_color(),
             ]);
 
         $setting = new admin_setting_configtext(
@@ -63,8 +63,8 @@ if (file_exists(__DIR__ . "/general-colors.php")) {
         $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
                 "brandcolor" => true, "colors" => theme_boost_magnific_colors(),
                 "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost"),
-                "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
-                "secondary_color" => $OUTPUT->secondary_color(),
+                "navbar_layout_is_institutional" => get_config("theme_boost_magnific", "navbarlayout") == "institutional",
+                "secondary_color" => theme_boost_magnific_secondary_color(),
             ]);
 
         // We use an empty default value because the default colour should come from the preset.
