@@ -17,7 +17,7 @@ define(["jquery", "theme_boost_magnific/minicolors"], function($, minicolors) {
             $("#id_s_theme_boost_magnific_top_scroll_fix").change(toggle__top_scroll_fix);
 
             function toggle__navbarlayout() {
-                if ($("#id_s_theme_degrade_navbarlayout").val() == "institutional") {
+                if ($("#id_s_theme_boost_magnific_navbarlayout").val() == "institutional") {
                     $("#admin-brandcolor_background_menu").hide(200);
                 } else {
                     $("#admin-brandcolor_background_menu").show(200);
