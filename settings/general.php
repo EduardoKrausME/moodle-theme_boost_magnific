@@ -48,6 +48,8 @@ if (file_exists(__DIR__ . "/general-colors.php")) {
         $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
                 "startcolor" => true, "colors" => theme_boost_magnific_colors(),
                 "defaultcolor" => theme_boost_magnific_default("startcolor", "#1a2a6c"),
+                "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
+                "secondary_color" => $OUTPUT->secondary_color(),
             ]);
 
         $setting = new admin_setting_configtext(
@@ -61,6 +63,8 @@ if (file_exists(__DIR__ . "/general-colors.php")) {
         $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
                 "brandcolor" => true, "colors" => theme_boost_magnific_colors(),
                 "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost"),
+                "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
+                "secondary_color" => $OUTPUT->secondary_color(),
             ]);
 
         // We use an empty default value because the default colour should come from the preset.
@@ -76,17 +80,11 @@ if (file_exists(__DIR__ . "/general-colors.php")) {
             "theme_boost/secondary", get_string("secondary", "theme_boost_magnific"),
             get_string("secondary_desc", "theme_boost_magnific"), "#ced4da"
         );
+        $setting->set_updatedcallback("theme_reset_all_caches");
         $page->add($setting);
         $PAGE->requires->js_call_amd("theme_boost_magnific/settings", "minicolors", [$setting->get_id()]);
     }
 }
-
-$setting = new admin_setting_configcheckbox(
-    "theme_boost_magnific/brandcolor_background_menu",
-    get_string("brandcolor_background_menu", "theme_boost_magnific"),
-    get_string("brandcolor_background_menu_desc", "theme_boost_magnific"), 0
-);
-$page->add($setting);
 
 // Navbar layout.
 $navbarlayoutoptions = [
@@ -102,13 +100,20 @@ $setting = new admin_setting_configselect(
 );
 $page->add($setting);
 
+$setting = new admin_setting_configcheckbox(
+    "theme_boost_magnific/brandcolor_background_menu",
+    get_string("brandcolor_background_menu", "theme_boost_magnific"),
+    get_string("brandcolor_background_menu_desc", "theme_boost_magnific"), 0
+);
+$setting->set_updatedcallback("theme_reset_all_caches");
+$page->add($setting);
+
 // Top colors.
 $setting = new admin_setting_heading(
     "theme_boost_magnific/top_color_heading",
     get_string("top_color_heading", "theme_boost_magnific"), ""
 );
 $page->add($setting);
-$PAGE->requires->js_call_amd("theme_boost_magnific/settings", "form_hide");
 
 $setting = new admin_setting_configcheckbox(
     "theme_boost_magnific/top_scroll_fix",
