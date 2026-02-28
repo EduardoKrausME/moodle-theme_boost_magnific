@@ -44,38 +44,53 @@ function xmldb_theme_boost_magnific_install() {
     ];
     $fs->create_file_from_pathname($filerecord, "{$CFG->dirroot}/theme/boost_magnific/pix/user-modal-background.jpg");
 
-    set_config("secondary", "#ced4da", "theme_boost");
+    theme_boost_magnific_set_config("secondary", "#ced4da", "theme_boost");
 
-    set_config("background_profile_image", "/user-modal-background.jpg", "theme_boost_magnific");
-    set_config("brandcolor_background_menu", 1, "theme_boost_magnific");
-    set_config("navbarlayout", "classic", "theme_boost_magnific");
+    theme_boost_magnific_set_config("background_profile_image", "/user-modal-background.jpg");
+    theme_boost_magnific_set_config("brandcolor_background_menu", 1);
+    theme_boost_magnific_set_config("navbarlayout", "classic");
 
-    set_config("top_scroll_fix", 1, "theme_boost_magnific");
-    set_config("top_scroll_background_color", "#5C5D5F", "theme_boost_magnific");
-    set_config("top_scroll_text_color", "#FFFFFF", "theme_boost_magnific");
-    set_config("logo_write", 0, "theme_boost_magnific");
+    theme_boost_magnific_set_config("top_scroll_fix", 1);
+    theme_boost_magnific_set_config("top_scroll_background_color", "#5C5D5F");
+    theme_boost_magnific_set_config("top_scroll_text_color", "#FFFFFF");
+    theme_boost_magnific_set_config("logo_write", 0);
 
-    set_config("backgroundimage", "", "theme_boost_magnific");
-    set_config("loginbackgroundimage", "", "theme_boost_magnific");
+    theme_boost_magnific_set_config("backgroundimage", "");
+    theme_boost_magnific_set_config("loginbackgroundimage", "");
 
-    set_config("scsspre", "", "theme_boost_magnific");
-    set_config("scsspos", "", "theme_boost_magnific");
+    theme_boost_magnific_set_config("scsspre", "");
+    theme_boost_magnific_set_config("scsspos", "");
 
-    set_config("course_summary", 0, "theme_boost_magnific");
-    set_config("course_summary_banner", 0, "theme_boost_magnific");
+    theme_boost_magnific_set_config("course_summary", 0);
+    theme_boost_magnific_set_config("course_summary_banner", 0);
 
-    set_config("enable_accessibility", 0, "theme_boost_magnific");
-    set_config("enable_vlibras", 0, "theme_boost_magnific");
+    theme_boost_magnific_set_config("enable_accessibility", 0);
+    theme_boost_magnific_set_config("enable_vlibras", 0);
 
-    set_config("footer_background_color", "", "theme_boost_magnific");
-    set_config("footer_title_1", "", "theme_boost_magnific");
-    set_config("footer_html_1", "", "theme_boost_magnific");
-    set_config("footer_title_2", "", "theme_boost_magnific");
-    set_config("footer_html_2", "", "theme_boost_magnific");
-    set_config("footer_title_3", "", "theme_boost_magnific");
-    set_config("footer_html_3", "", "theme_boost_magnific");
-    set_config("footer_title_4", "", "theme_boost_magnific");
-    set_config("footer_html_4", "", "theme_boost_magnific");
+    theme_boost_magnific_set_config("footer_background_color", "");
+    theme_boost_magnific_set_config("footer_title_1", "");
+    theme_boost_magnific_set_config("footer_html_1", "");
+    theme_boost_magnific_set_config("footer_title_2", "");
+    theme_boost_magnific_set_config("footer_html_2", "");
+    theme_boost_magnific_set_config("footer_title_3", "");
+    theme_boost_magnific_set_config("footer_html_3", "");
+    theme_boost_magnific_set_config("footer_title_4", "");
+    theme_boost_magnific_set_config("footer_html_4", "");
 
-    set_config("footer_show_copywriter", 1, "theme_boost_magnific");
+    theme_boost_magnific_set_config("footer_show_copywriter", 1);
+}
+
+/**
+ * Function set_config
+ *
+ * @param string $name
+ * @param int|string $value
+ * @param string $plugin
+ * @return void
+ * @throws dml_exception
+ */
+function theme_boost_magnific_set_config($name, $value, $plugin = "theme_boost_magnific") {
+    if (!get_config($plugin, $name)) {
+        set_config($name, $value, $plugin);
+    }
 }
