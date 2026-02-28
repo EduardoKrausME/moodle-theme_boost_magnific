@@ -206,7 +206,8 @@ function theme_boost_magnific_get_pre_scss($theme) {
         \$footer-color : {$footercolor};\n";
 
     if (get_config("theme_boost_magnific", "navbarlayout") == "institutional") {
-        $scss .= "\$navbar-height : 127px;\n";
+        $scss .= "
+            \$navbar-height : 127px;\n";
     }
 
     if ($CFG->theme == "degrade") {
@@ -232,12 +233,14 @@ function theme_boost_magnific_get_pre_scss($theme) {
     if ($courseid) {
         $primarycolor = get_config("theme_boost_magnific", "override_course_primarycolor_{$courseid}");
         if (isset($primarycolor[3]) && preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $primarycolor)) {
-            $scss .= "\$primary : {$primarycolor};";
+            $scss .= "
+                \$primary : {$primarycolor};";
         }
 
         $secondarycolor = get_config("theme_boost_magnific", "override_course_secondarycolor_{$courseid}");
         if (isset($secondarycolor[3]) && preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $secondarycolor)) {
-            $scss .= "\$secondary : {$secondarycolor};";
+            $scss .= "
+                \$secondary : {$secondarycolor};";
         }
     } else if ($profileid) {
         $callbacks = get_plugins_with_function("krausthemes__get_pre_scss");
