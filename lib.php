@@ -389,7 +389,7 @@ function theme_boost_magnific_coursemodule_standard_elements(&$formwrapper, $mfo
         ];
 
         $hasicons = (int) get_config("theme_boost_magnific", "course_sections_icons_{$COURSE->id}");
-        if($hasicons) {
+        if ($hasicons) {
             // Background.
             if (isset($formwrapper->get_current()->coursemodule) && $formwrapper->get_current()->coursemodule) {
                 $context = context_module::instance($formwrapper->get_current()->coursemodule);
