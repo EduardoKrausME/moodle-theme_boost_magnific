@@ -222,9 +222,13 @@ function theme_boost_magnific_get_pre_scss($theme) {
                 background-color: transparent !important;
             }\n";
     } else {
-        if ($topscrollbackgroundcolor = get_config("theme_boost_magnific", "top_scroll_background_color")) {
+        $topscrollbackgroundcolor = get_config("theme_boost_magnific", "top_scroll_background_color");
+        if (preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $topscrollbackgroundcolor)) {
             $scss .= "
                 \$top_scroll_background_color: {$topscrollbackgroundcolor};\n";
+        } else {
+            $scss .= "
+                \$top_scroll_background_color: \$primary;\n";
         }
     }
 
