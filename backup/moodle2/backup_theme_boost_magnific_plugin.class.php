@@ -25,6 +25,9 @@
 // phpcs:disable moodle.Files.MoodleInternal.MoodleInternalGlobalState
 require_once("{$CFG->dirroot}/backup/moodle2/backup_theme_plugin.class.php");
 
+/**
+ * Class backup_theme_boost_magnific_plugin
+ */
 class backup_theme_boost_magnific_plugin extends backup_theme_plugin {
 
     /**
