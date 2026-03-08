@@ -77,7 +77,6 @@ $string['breadcrumb_show_no_link_items'] = 'Show items without link in the bread
 $string['breadcrumb_show_no_link_items_desc'] = 'If enabled, items without action URL will remain visible in the breadcrumb, except the last item rule still applies normally.';
 $string['breadcrumb_show_sections'] = 'Show sections in the breadcrumb';
 $string['breadcrumb_show_sections_desc'] = 'If enabled, section items will remain visible in the breadcrumb even when the course format allows removing them.';
-$string['breadcrumb_settings'] = 'Breadcrumb';
 $string['breadcrumb_show_categories'] = 'Show course categories in the breadcrumb';
 $string['breadcrumb_show_categories_desc'] = 'If enabled, category items will remain visible in the breadcrumb in course and activity pages.';
 $string['breadcrumb_show_course'] = 'Show the course in the breadcrumb';
