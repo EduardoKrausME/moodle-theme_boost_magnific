@@ -40,8 +40,8 @@ $htmlselect = "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magni
 $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
         "footercolor" => true,
         "colors" => theme_boost_magnific_colors(),
-        "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost"),
-        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c"),
+        "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c", '/^#[a-fA-F0-9]{6}([a-fA-F0-9]{2})?$/', "theme_boost"),
+        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c", '/^#[a-fA-F0-9]{6}([a-fA-F0-9]{2})?$/'),
         "navbar_layout_is_institutional" => get_config("theme_boost_magnific", "navbarlayout") == "institutional",
         "secondary_color" => theme_boost_magnific_secondary_color(),
     ]);

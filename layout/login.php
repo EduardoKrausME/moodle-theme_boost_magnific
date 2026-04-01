@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $bodyattributes = $OUTPUT->body_attributes();
 
-$loginthemename = theme_boost_magnific_default("logintheme", "dark-elegante");
+$loginthemename = theme_boost_magnific_default("logintheme", "dark-elegante", '/^[A-Za-z0-9-]+$/');
 $loginbackgroundimageurl = theme_boost_magnific_setting_file_url("loginbackgroundimage");
 if (!$loginbackgroundimageurl) {
     $loginbackgroundimageurl = $OUTPUT->image_url("login/{$loginthemename}", "theme_boost_magnific")->out(false);

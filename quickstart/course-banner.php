@@ -162,7 +162,7 @@ if ($savetheme == "boost_magnific") {
 } else {
     $themecolors = [];
 }
-$brandcolor = theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost");
+$brandcolor = theme_boost_magnific_default("brandcolor", "#1a2a6c", '/^#[a-fA-F0-9]{6}([a-fA-F0-9]{2})?$/', "theme_boost");
 $coursesmustache = [
     "no_accordion" => true, // For when calling out of the accordion.
     "course_summary_banner_0" => $coursesummary == 0,
@@ -181,9 +181,9 @@ $coursesmustache = [
     "colorselect" => $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
         "coursecolor" => true,
         "colors" => $themecolors,
-        "defaultcolor" => theme_boost_magnific_default("override_course_primarycolor_{$course->id}", $brandcolor),
-        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c"),
-        "brandcolor_background_menu" => (int) theme_boost_magnific_default("brandcolor_background_menu", 0),
+        "defaultcolor" => theme_boost_magnific_default("override_course_primarycolor_{$course->id}", $brandcolor, '/^#[a-fA-F0-9]{6}([a-fA-F0-9]{2})?$/'),
+        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c", '/^#[a-fA-F0-9]{6}([a-fA-F0-9]{2})?$/'),
+        "brandcolor_background_menu" => (int) theme_boost_magnific_default("brandcolor_background_menu", 0, '/^-?\d+$/'),
         "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
         "secondary_color" => theme_boost_magnific_secondary_color($course->id),
     ]),
