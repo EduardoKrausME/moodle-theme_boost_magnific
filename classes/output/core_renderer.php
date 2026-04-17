@@ -493,9 +493,8 @@ class core_renderer extends \core_renderer {
      * @throws Exception
      */
     public function brandcolor_background_menu_class() {
-        $class = [
-            "navbar-layout-" . get_config("theme_boost_magnific", "navbarlayout"),
-        ];
+        $navbarlayout = get_config("theme_boost_magnific", "navbarlayout");
+        $class = ["navbar-layout-{$navbarlayout}"];
         if (get_config("theme_boost_magnific", "brandcolor_background_menu")) {
             $class[] = "brandcolor-background";
         }
