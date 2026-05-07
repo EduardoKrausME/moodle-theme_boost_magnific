@@ -58,31 +58,80 @@ class event_observers {
      * Function course_module_deleted
      *
      * @param course_module_deleted $event
-     *
-     * @throws Exception
+     * @return void
+     * @throws \dml_exception
      */
-    public static function course_module_deleted(course_module_deleted $event) {
-        global $DB;
+    public static function course_module_deleted(course_module_deleted $event): void {
+        $cmid = self::get_deleted_coursemodule_id($event);
 
-        if (!isset($event->other['coursemodule'])) {
+        if (!$cmid) {
             return;
         }
 
-        $coursemodule = $event->other['coursemodule'];
-        $sql = "
-            SELECT *
-              FROM {files}
-             WHERE component   = 'theme_boost_magnific'
-               AND filearea    = 'theme_boost_magnific_customicon'
-               AND itemid      = :coursemodule
-               AND filename LIKE '__%'";
-        $files = $DB->get_records_sql($sql, ["coursemodule" => $coursemodule]);
+        self::delete_coursemodule_filearea($cmid, "theme_boost_magnific_customimage");
+        self::delete_coursemodule_filearea($cmid, "theme_boost_magnific_customicon");
+
+        set_config("theme_boost_magnific_customimage_{$cmid}", null, "theme_boost_magnific");
+        set_config("theme_boost_magnific_customicon_{$cmid}", null, "theme_boost_magnific");
+        set_config("theme_boost_magnific_customcolor_{$cmid}", null, "theme_boost_magnific");
+
+        cache::make("theme_boost_magnific", "css_cache")->purge();
+    }
+
+    /**
+     * Get the deleted course module id from the event.
+     *
+     * @param course_module_deleted $event
+     * @return int
+     */
+    private static function get_deleted_coursemodule_id(course_module_deleted $event): int {
+        if (!empty($event->objectid)) {
+            return $event->objectid;
+        }
+
+        if (!empty($event->other["coursemodule"])) {
+            if (is_object($event->other["coursemodule"]) && !empty($event->other["coursemodule"]->id)) {
+                return (int) $event->other["coursemodule"]->id;
+            }
+
+            return (int) $event->other["coursemodule"];
+        }
+
+        return 0;
+    }
+
+    /**
+     * Delete all files from a course module custom filearea.
+     *
+     * @param int $cmid
+     * @param string $filearea
+     * @return void
+     * @throws \dml_exception
+     */
+    private static function delete_coursemodule_filearea(int $cmid, string $filearea): void {
+        global $DB;
 
         $fs = get_file_storage();
-        foreach ($files as $file) {
-            $f = $fs->get_file($file->contextid, $file->component, $file->filearea, $file->itemid, $file->filepath,
-                $file->filename);
-            $f->delete();
+
+        $params = [
+            "component" => "theme_boost_magnific",
+            "filearea" => $filearea,
+            "itemid" => $cmid,
+        ];
+        $contextids = $DB->get_fieldset_select(
+            "files",
+            "DISTINCT contextid",
+            "component = :component AND filearea = :filearea AND itemid = :itemid",
+            $params
+        );
+
+        foreach ($contextids as $contextid) {
+            $fs->delete_area_files(
+                (int) $contextid,
+                "theme_boost_magnific",
+                $filearea,
+                $cmid
+            );
         }
     }
 
@@ -93,8 +142,6 @@ class event_observers {
      * @return void
      */
     public static function enrolment(base $event) {
-        $cache = cache::make("theme_boost_magnific", "frontpage_cache");
-        $cachekey = "homemode_pages_{$event->relateduserid}";
-        $cache->delete($cachekey);
+        cache::make("theme_boost_magnific", "frontpage_cache")->purge();
     }
 }
