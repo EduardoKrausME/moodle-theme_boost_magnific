@@ -41,6 +41,10 @@ class restore_theme_boost_magnific_plugin extends restore_theme_plugin {
                 "boost_magnific_courseopts",
                 $this->get_pathfor("/courseopts")
             ),
+            new restore_path_element(
+                "boost_magnific_moduleopt",
+                $this->get_pathfor("/moduleopts/moduleopt")
+            ),
         ];
     }
 
@@ -83,5 +87,71 @@ class restore_theme_boost_magnific_plugin extends restore_theme_plugin {
      */
     protected function after_execute_course() {
         $this->add_related_files("theme_boost_magnific", "banner_course_file", null);
+
+        $this->add_related_files(
+            "theme_boost_magnific",
+            "theme_boost_magnific_customimage",
+            "theme_boost_magnific_custommodule"
+        );
+
+        $this->add_related_files(
+            "theme_boost_magnific",
+            "theme_boost_magnific_customicon",
+            "theme_boost_magnific_custommodule"
+        );
+
+        cache::make("theme_boost_magnific", "css_cache")->purge();
+    }
+
+    /**
+     * Restore module visual customizations.
+     *
+     * @param array $data
+     * @return void
+     */
+    public function process_boost_magnific_moduleopt($data) {
+        $data = (object) $data;
+
+        if (empty($data->cmid)) {
+            return;
+        }
+
+        $newcmid = $this->get_mappingid("course_module", $data->cmid);
+        if (!$newcmid) {
+            return;
+        }
+
+        if (!empty($data->customimage)) {
+            set_config(
+                "theme_boost_magnific_customimage_{$newcmid}",
+                $data->customimage,
+                "theme_boost_magnific"
+            );
+        }
+
+        if (!empty($data->customicon)) {
+            set_config(
+                "theme_boost_magnific_customicon_{$newcmid}",
+                $data->customicon,
+                "theme_boost_magnific"
+            );
+        }
+
+        if (!empty($data->customcolor)) {
+            set_config(
+                "theme_boost_magnific_customcolor_{$newcmid}",
+                $data->customcolor,
+                "theme_boost_magnific"
+            );
+        }
+
+        // Register old cmid -> new cmid and old module context for file restore.
+        $this->set_mapping(
+            "theme_boost_magnific_custommodule",
+            $data->cmid,
+            $newcmid,
+            true,
+            $data->contextid
+        );
     }
 }
