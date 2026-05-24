@@ -44,6 +44,11 @@ function xmldb_theme_boost_magnific_install() {
     ];
     $fs->create_file_from_pathname($filerecord, "{$CFG->dirroot}/theme/boost_magnific/pix/user-modal-background.jpg");
 
+    $brandcolor = get_config("theme_boost", "brandcolor");
+    if (isset($brandcolor[3]) && preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $brandcolor)) {
+        set_config("brandcolor", "#1a2a6c", "theme_boost");
+    }
+
     theme_boost_magnific_set_config("secondary", "#ced4da", "theme_boost");
 
     theme_boost_magnific_set_config("background_profile_image", "/user-modal-background.jpg");
@@ -74,7 +79,7 @@ function xmldb_theme_boost_magnific_install() {
     theme_boost_magnific_set_config("breadcrumb_show_sections", 0);
     theme_boost_magnific_set_config("breadcrumb_show_no_link_items", 0);
 
-    theme_boost_magnific_set_config("footer_background_color", "");
+    theme_boost_magnific_set_config("footer_background_color", "#1a2a6c");
     theme_boost_magnific_set_config("footer_title_1", "");
     theme_boost_magnific_set_config("footer_html_1", "");
     theme_boost_magnific_set_config("footer_title_2", "");
