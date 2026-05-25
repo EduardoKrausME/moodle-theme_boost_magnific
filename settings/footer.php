@@ -40,9 +40,9 @@ $htmlselect = "<link rel=\"stylesheet\" href=\"{$CFG->wwwroot}/theme/boost_magni
 $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
         "footercolor" => true,
         "colors" => theme_boost_magnific_colors(),
-        "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c",
+        "defaultcolor" => theme_boost_magnific_default("brandcolor", "#314755",
             '/^#[a-fA-F0-9]{6}([a-fA-F0-9]{2})?$/', "theme_boost"),
-        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c",
+        "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#314755",
             '/^#[a-fA-F0-9]{6}([a-fA-F0-9]{2})?$/'),
         "navbar_layout_is_institutional" => get_config("theme_boost_magnific", "navbarlayout") == "institutional",
         "secondary_color" => theme_boost_magnific_secondary_color(),
@@ -50,7 +50,7 @@ $htmlselect .= "\n\n" . $OUTPUT->render_from_template("theme_boost_magnific/sett
 $setting = new admin_setting_configtext("theme_boost_magnific/footer_background_color",
     get_string("footer_background_color", "theme_boost_magnific"),
     get_string("footer_background_color_desc", "theme_boost_magnific") . $htmlselect,
-    "#1a2a6c");
+    "#314755");
 $setting->set_updatedcallback("theme_reset_all_caches");
 $PAGE->requires->js_call_amd("theme_boost_magnific/settings", "minicolors", [$setting->get_id()]);
 $setting->set_updatedcallback('theme_reset_all_caches');
