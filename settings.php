@@ -35,6 +35,10 @@ if ($hassiteconfig) {
     $title = "{$pluginname} - " . get_string("quickstart_title", "theme_boost_magnific");
     $url = new moodle_url("/theme/boost_magnific/quickstart/");
     $ADMIN->add("themes", new admin_externalpage("theme_boost_magnific_link2", $title, $url));
+
+    $title = "{$pluginname} - " . get_string("report_accessibility_title", "theme_boost_magnific");
+    $url = new moodle_url("/theme/boost_magnific/report.php");
+    $ADMIN->add("themes", new admin_externalpage("theme_boost_magnific_report", $title, $url));
 }
 
 if ($ADMIN->fulltree) {
