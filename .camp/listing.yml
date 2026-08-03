@@ -1,0 +1,18 @@
+# (RFC §4.1). Authors update their listing with an ordinary commit; camp
+# ingests and hash-pins it at each tagged release. Listing for theme_boost_magnific.
+
+name: "Boost Magnific"
+summary: "Modern, highly configurable theme designed to transform the visual experience of courses."
+description: |
+  Modern, highly configurable theme designed to transform the visual experience of courses.
+
+  With the new dark mode , you can navigate and study in a much more eye-friendly environment, especially in low-light conditions. The feature automatically adapts to your device settings or can be manually enabled through the top menu.
+
+  Supported Moodle versions in the supplied plugin list: 4.0 - 5.0.
+
+labels:
+  - fully-free
+category: "themes"
+links:
+  docs: https://github.com/EduardoKrausME/moodle-theme_boost_magnific#readme
+  issues: https://github.com/EduardoKrausME/moodle-theme_boost_magnific/issues
