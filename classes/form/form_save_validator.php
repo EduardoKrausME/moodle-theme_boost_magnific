@@ -19,6 +19,8 @@ namespace theme_boost_magnific\form;
 use stdClass;
 
 /**
+ * phpcs:disable Squiz.PHP.CommentedOutCode.Found
+ *
  * Class form_save_validator
  *
  * @package   theme_boost_magnific
