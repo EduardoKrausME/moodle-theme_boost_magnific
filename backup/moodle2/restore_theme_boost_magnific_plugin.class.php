@@ -41,10 +41,19 @@ class restore_theme_boost_magnific_plugin extends restore_theme_plugin {
         return [
             new restore_path_element(
                 "boost_magnific_courseopts",
-                $this->get_pathfor("/courseopts")
+                $this->get_pathfor("/boost_magnific_courseopts")
             ),
             new restore_path_element(
                 "boost_magnific_moduleopt",
+                $this->get_pathfor("/boost_magnific_moduleopts/boost_magnific_moduleopt")
+            ),
+            // Keep restoring backups generated before the element names were namespaced.
+            new restore_path_element(
+                "boost_magnific_legacy_courseopts",
+                $this->get_pathfor("/courseopts")
+            ),
+            new restore_path_element(
+                "boost_magnific_legacy_moduleopt",
                 $this->get_pathfor("/moduleopts/moduleopt")
             ),
         ];
@@ -80,6 +89,16 @@ class restore_theme_boost_magnific_plugin extends restore_theme_plugin {
         if (!empty($data->banner_course_file)) {
             set_config("banner_course_file_{$courseid}", $data->banner_course_file, "theme_boost_magnific");
         }
+    }
+
+    /**
+     * Restore course settings from backups created with the previous XML names.
+     *
+     * @param array $data
+     * @return void
+     */
+    public function process_boost_magnific_legacy_courseopts($data) {
+        $this->process_boost_magnific_courseopts($data);
     }
 
     /**
@@ -155,5 +174,15 @@ class restore_theme_boost_magnific_plugin extends restore_theme_plugin {
             true,
             $data->contextid
         );
+    }
+
+    /**
+     * Restore module settings from backups created with the previous XML names.
+     *
+     * @param array $data
+     * @return void
+     */
+    public function process_boost_magnific_legacy_moduleopt($data) {
+        $this->process_boost_magnific_moduleopt($data);
     }
 }
