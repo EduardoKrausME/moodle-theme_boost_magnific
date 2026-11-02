@@ -192,7 +192,9 @@ class hook_callbacks {
                     "/",
                     $customimage->filename
                 );
-                $images["blocks"][] = ["cmid" => $customimage->itemid, "thumb" => $imageurl->out()];
+                if ($imageurl) {
+                    $images["blocks"][] = ["cmid" => $customimage->itemid, "thumb" => $imageurl->out()];
+                }
             }
 
             // Icons modules.
@@ -212,8 +214,9 @@ class hook_callbacks {
                     "/",
                     $customicon->filename
                 );
-
-                $images["icons"][] = ["cmid" => $customicon->itemid, "thumb" => $imageurl->out()];
+                if ($imageurl) {
+                    $images["icons"][] = ["cmid" => $customicon->itemid, "thumb" => $imageurl->out()];
+                }
             }
 
             // Icons Color.
